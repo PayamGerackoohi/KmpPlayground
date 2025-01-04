@@ -1,0 +1,54 @@
+<resources>
+    <!-- Home -->
+    <string name="home_animations">Animations</string>
+    <string name="home_components">Components</string>
+    <string name="home_graphics">Graphics</string>
+    <string name="home_io">I/O</string>
+    <string name="home_miscellaneous">Miscellaneous</string>
+
+    <!-- Components -->
+    <string name="components_carousel">Carousel</string>
+    <string name="components_pull_to_refresh">Pull to Refresh</string>
+    <string name="components_dialog">Dialog</string>
+    <string name="components_date_time_picker">Date-Time Picker</string>
+
+    <!-- Components.Carousel -->
+    <string name="horizontal_multi_browse_carousel">A horizontal carousel meant to display many items at once for quick browsing of smaller content like album art or photo thumbnails.</string>
+    <string name="horizontal_uncontained_carousel">A horizontal carousel that displays its items with the given size except for one item at the end that is cut off.</string>
+
+    <!-- Components.Dialog -->
+    <string name="alert_dialog">Dialogs provide important prompts in a user flow. They can require an action, communicate information, or help users accomplish a task.</string>
+
+    <!-- Animations -->
+    <string name="animations_animated_content">Animated Content</string>
+    <string name="animations_animated_visibility">Animated Visibility</string>
+    <string name="animations_crossfade">Crossfade</string>
+    <string name="animations_animate_x_as">Animate X as</string>
+
+    <!-- Graphic -->
+    <string name="graphic_charts">Charts</string>
+    <string name="graphic_opengl">OpenGL</string>
+
+    <!-- I/O -->
+    <string name="io_datastore">Datastore</string>
+    <string name="io_database">Database</string>
+    <string name="io_api">API</string>
+    <string name="io_file">File I/O</string>
+
+    <!-- Miscellaneous -->
+    <string name="miscellaneous_cpp">C++</string>
+    <string name="miscellaneous_ble">BLE</string>
+    <string name="miscellaneous_pdf">PDF</string>
+
+    <!-- Toolbar -->
+    <string name="toolbar_back">Back</string>
+    <string name="toolbar_code">Code</string>
+    <string name="toolbar_preview">Preview</string>
+
+    <!-- General -->
+    <string name="settings">Settings</string>
+    <string name="dismissible">Dismissible</string>
+    <string name="mandatory">Mandatory</string>
+    <string name="animate">Animate</string>
+    <string name="instant">Instant</string>
+</resources>

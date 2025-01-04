@@ -1,0 +1,53 @@
+<resources>
+    <string name="home_animations">Animationen</string>
+    <string name="home_components">Komponenten</string>
+    <string name="home_graphics">Grafik</string>
+    <string name="home_io">I/O</string>
+    <string name="home_miscellaneous">Verschiedenes</string>
+
+    <!-- Components -->
+    <string name="components_carousel">Karussell</string>
+    <string name="components_pull_to_refresh">Zum Aktualisieren ziehen</string>
+    <string name="components_dialog">Dialog</string>
+    <string name="components_date_time_picker">Datums-/Uhrzeitauswahl</string>
+
+    <!-- Components.Carousel -->
+    <string name="horizontal_multi_browse_carousel">Ein horizontales Karussell, das viele Elemente gleichzeitig anzeigen soll, um das schnelle Durchsuchen kleinerer Inhalte wie Albumcover oder Miniaturansichten von Fotos zu ermöglichen.</string>
+    <string name="horizontal_uncontained_carousel">Ein horizontales Karussell, das seine Elemente in der angegebenen Größe anzeigt, mit Ausnahme eines Elements am Ende, das abgeschnitten ist.</string>
+
+    <!-- Components.Dialog -->
+    <string name="alert_dialog">Dialoge liefern wichtige Eingabeaufforderungen in einem Benutzerfluss. Sie können eine Aktion erfordern, Informationen übermitteln oder Benutzern beim Erledigen einer Aufgabe helfen.</string>
+
+    <!-- Animations -->
+    <string name="animations_animated_content">Animierter Inhalt</string>
+    <string name="animations_animated_visibility">Animierte Sichtbarkeit</string>
+    <string name="animations_crossfade">Überblendung</string>
+    <string name="animations_animate_x_as">Animieren Sie X als</string>
+
+    <!-- Graphic -->
+    <string name="graphic_charts">Diagramme</string>
+    <string name="graphic_opengl">OpenGL</string>
+
+    <!-- I/O -->
+    <string name="io_datastore">Datenspeicher</string>
+    <string name="io_database">Datenbank</string>
+    <string name="io_api">API</string>
+    <string name="io_file">Datei-E/A</string>
+
+    <!-- Miscellaneous -->
+    <string name="miscellaneous_cpp">C++</string>
+    <string name="miscellaneous_ble">BLE</string>
+    <string name="miscellaneous_pdf">PDF</string>
+
+    <!-- Toolbar -->
+    <string name="toolbar_back">Zurück</string>
+    <string name="toolbar_code">Code</string>
+    <string name="toolbar_preview">Vorschau</string>
+
+    <!-- General -->
+    <string name="settings">Einstellungen</string>
+    <string name="dismissible">Abweisbar</string>
+    <string name="mandatory">Obligatorisch</string>
+    <string name="animate">Animieren</string>
+    <string name="instant">Sofortig</string>
+</resources>

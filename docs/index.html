@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>KMP Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .check {
+      list-style: none;
+    }
+
+    .check::before {
+      content: "✅";
+      margin-left: -1em;
+      margin-right: .5em;
+    }
+
+    .uncheck {
+      list-style: none;
+    }
+
+    .uncheck::before {
+      content: "⃞";
+      margin-left: -1em;
+      margin-right: .5em;
+    }
+
+    .last-edit-box {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      font-size: 60%;
+      color: deepskyblue;
+    }
+
+    .last-edit-box>* {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="last-edit-box">
+    <h2>Last Edit</h2>
+    <h3>2025-01-04T13:00Z</h3>
+    <h3>2025-01-04T16:30+03:30</h3>
+  </div>
+
+  <h1>KMP Playground</h1>
+  <p>A sample Kotlin Multi-platform project to demonstrate different app features, targeted on Android, iOS and Desktop.
+  </p>
+  <h2><a href="screenshots/screenshots.html">Screens</a></h2>
+  <ul>
+    <li class="check">Home</li>
+    <li class="uncheck">Components</li>
+    <ul>
+      <li class="check">Carousel</li>
+      <li class="check">Dialog</li>
+      <li class="uncheck">Date/Time Picker</li>
+      <li class="uncheck">Pull to Refresh</li>
+    </ul>
+    <li class="uncheck">Animations</li>
+    <ul>
+      <li class="uncheck">animate*As</li>
+      <li class="uncheck">Animate Content</li>
+      <li class="uncheck">Animate Visibility</li>
+      <li class="uncheck">Crossfade</li>
+    </ul>
+    <li class="uncheck">Graphics</li>
+    <ul>
+      <li class="uncheck">Charts</li>
+      <li class="uncheck">OpenGL</li>
+    </ul>
+    <li class="uncheck">I/O</li>
+    <ul>
+      <li class="uncheck">API</li>
+      <li class="uncheck">Database</li>
+      <li class="uncheck">Datastore</li>
+      <li class="uncheck">File</li>
+    </ul>
+    <li class="uncheck">Miscellaneous</li>
+    <ul>
+      <li class="uncheck">BLE</li>
+      <li class="uncheck">C++</li>
+      <li class="uncheck">PDF</li>
+    </ul>
+  </ul>
+
+  <!-- <h2>Apk</h2>
+  <h3>Latest</h3>
+  <p>Mock -<a href="mock.apk">Mock.apk</a></p> -->
+
+  <h2>Tests</h2>
+  <ul>
+    <li><a href="reports/test/unit/index.html">Unit Tests</a></li>
+    <li><a href="reports/test/ui/index.html">UI Tests</a></li>
+  </ul>
+
+  <h2>Translations</h2>
+  <ul>
+    <li><a href="resources/values/strings.xml">English</a></li>
+    <li><a href="resources/values-de/strings.xml">German</a></li>
+    <li><a href="resources/values-iw/strings.xml">Hebrew</a></li>
+  </ul>
+
+  <!-- <h2>Ongoing Tasks</h2>
+  <ul>
+    <li>?</li>
+  </ul>
+
+  <h2>Known Issues</h2>
+  <ul>
+    <li>
+      <h3>?</h3>
+    </li>
+  </ul> -->
+</body>

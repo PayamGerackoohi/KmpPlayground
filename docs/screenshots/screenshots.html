@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>Screenshots</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="data.js"></script>
+	<style>
+		body {
+			display: grid;
+			grid-template-columns: auto;
+			grid-template-rows: auto auto;
+			width: 100vw;
+			height: 100vh;
+			margin: 0;
+		}
+
+		h3 {
+			margin: .5em;
+		}
+
+		hr {
+			margin: 0;
+		}
+
+		#toolbar {
+			width: 100%;
+			overflow-x: scroll;
+		}
+
+		#toolbar-row::-webkit-scrollbar {
+			display: none;
+		}
+
+		.toolbar-row {
+			width: 100%;
+			overflow-x: scroll;
+		}
+
+		.toolbar-row>button {
+			min-width: fit-content;
+			height: fit-content;
+			background-color: navy;
+			color: white;
+			padding-left: 2em;
+			padding-right: 2em;
+			padding-top: .5em;
+			padding-bottom: .5em;
+			margin: 0;
+		}
+
+		.toolbar-row>button[selected] {
+			background-color: green;
+		}
+
+		#images {
+			width: calc(100% - 1em);
+			height: calc(100% - 1em);
+			padding: .5em;
+			overflow: scroll;
+		}
+
+		.box {
+			border-color: black;
+			border-width: 1px;
+			border-style: solid;
+		}
+
+		.v-stack {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.h-stack {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.v-stack,
+		.h-stack {
+			width: fit-content;
+		}
+
+		.v-stack>*+* {
+			margin-top: 1em;
+		}
+
+		.h-stack>*+* {
+			margin-left: .5em;
+		}
+
+		.card {
+			background-color: dodgerblue;
+			border-radius: .5em;
+		}
+
+		.card>p {
+			color: white;
+			background-color: green;
+			border-top-left-radius: .5em;
+			border-top-right-radius: .5em;
+			margin: 0;
+			padding: .5em;
+			text-align: center;
+			font-size: small;
+		}
+
+		.card>*+* {
+			margin-top: 0;
+		}
+
+		.card>.h-stack {
+			padding: .5em;
+		}
+
+		.size-container>*+* {
+			margin-top: .5em;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="toolbar"></div>
+	<div id="images" class="v-stack"></div>
+	<script>
+		const toolbarEl = document.getElementById('toolbar')
+		const imagesEl = document.getElementById('images')
+		const dimensionsKeys = Object.keys(dimensions)
+		const dimensionsKeyIndex = {
+			language: nullIfInvalidIndex(dimensionsKeys.indexOf('Language')),
+			uiMode: nullIfInvalidIndex(dimensionsKeys.indexOf('UiMode')),
+			orientation: nullIfInvalidIndex(dimensionsKeys.indexOf('Orientation')),
+			screen: nullIfInvalidIndex(dimensionsKeys.indexOf('Screen')),
+		}
+		const screenDimensionMap = {
+			'XSmall': [1.62, 2.16],
+			'Small': [2.28, 4.05],
+			'Foldable': [2.54, 6.20],
+			'Tablet': [5.72, 8.13],
+			'Desktop': [8.33, 14.82],
+		}
+		const sortMap = {
+			screen: {
+				'XSmall': 0,
+				'Small': 1,
+				'Foldable': 2,
+				'Tablet': 3,
+				'Desktop': 4,
+			},
+			orientation: {
+				'Portrait': 0,
+				'Landscape': 1,
+			},
+			language: {
+				'English': 0,
+				'German': 1,
+				'Hebrew': 2,
+			},
+			uiMode: {
+				'Light': 0,
+				'Dark': 1,
+			}
+		}
+		let selectedGroup = 'Home'
+
+		init()
+
+		function redraw() {
+			init()
+		}
+		function init() {
+			makeToolbar(toolbarEl)
+			makeScreens(imagesEl)
+		}
+		function nullIfInvalidIndex(index) {
+			return index === -1 ? null : index
+		}
+		function makeToolbar(parentEl) {
+			parentEl.innerHTML = ''
+			makeToolbarRow(parentEl, groups)
+
+			function makeToolbarRow(parentEl, groups, prefix = '') {
+				if (Array.isArray(groups)) return
+				const toolbarRowEl = parentEl.appendChild(document.createElement('div'))
+				toolbarRowEl.className = 'toolbar-row'
+				for (group in groups) {
+					const buttonEl = toolbarRowEl.appendChild(document.createElement('button'))
+					buttonEl.textContent = group
+					const groupPrefix = makePrefixName(prefix, group)
+					buttonEl.onclick = () => {
+						if (!buttonEl.hasAttribute('selected')) {
+							selectedGroup = groupPrefix
+							redraw()
+						}
+					}
+					if (selectedGroup.includes(groupPrefix)) {
+						buttonEl.setAttribute('selected', '')
+						makeToolbarRow(parentEl, groups[group], groupPrefix)
+					}
+				}
+				function makePrefixName(prefix, group) {
+					return `${prefix ? `${prefix}_` : prefix}${group}`
+				}
+			}
+		}
+		function makeScreens(parentEl) {
+			parentEl.innerHTML = ''
+			const parts = selectedGroup.split('_')
+			const items = collectItems(groups, parts)
+			const screenKey = dimensionsKeyIndex.screen
+			const orientationKey = dimensionsKeyIndex.orientation
+			const languageKey = dimensionsKeyIndex.language
+			const uiModeKey = dimensionsKeyIndex.uiMode
+			if (items == null) return
+			items.sort((a, b) =>
+				sortMap.screen[a.attributes[screenKey]] - sortMap.screen[b.attributes[screenKey]] ||
+				sortMap.orientation[a.attributes[orientationKey]] - sortMap.orientation[b.attributes[orientationKey]] ||
+				sortMap.language[a.attributes[languageKey]] - sortMap.language[b.attributes[languageKey]] ||
+				sortMap.uiMode[a.attributes[uiModeKey]] - sortMap.uiMode[b.attributes[uiModeKey]]
+			)
+			let current = {}
+			let sizeContainerEl
+			let orientationEl
+			let uiModeEl
+			items.forEach(item => {
+				const screen = item.attributes[screenKey]
+				if (current.screen !== screen) {
+					sizeContainerEl = parentEl.appendChild(document.createElement('div'))
+					sizeContainerEl.className = 'v-stack size-container'
+					makeTitle(sizeContainerEl, screen)
+					current = { screen: screen }
+				}
+				const orientation = item.attributes[orientationKey]
+				if (current.orientation !== orientation) {
+					orientationEl = sizeContainerEl.appendChild(document.createElement('div'))
+					orientationEl.className = 'h-stack'
+					current.orientation = orientation
+				}
+				const language = item.attributes[dimensionsKeyIndex.language]
+				if (current.language !== language) {
+					const cardEl = orientationEl.appendChild(document.createElement('div'))
+					cardEl.classList.add('v-stack', 'card')
+					const titleEl = cardEl.appendChild(document.createElement('p'))
+					titleEl.textContent = language
+					uiModeEl = cardEl.appendChild(document.createElement('div'))
+					uiModeEl.className = 'h-stack'
+					current.language = language
+				}
+				makeImage(uiModeEl, item.name, orientation, screenDimensionMap[screen])
+				function makeImage(parentEl, name, orientation, dimensions) {
+					const imageEl = parentEl.appendChild(document.createElement('img'))
+					imageEl.className = 'box'
+					imageEl.src = `compressed/${name}`
+					const size = orientation === 'Portrait' ? dimensions[0] : dimensions[1]
+					imageEl.style = `width: ${size}in;`
+				}
+			})
+
+			function collectItems(groups, parts, index = 0) {
+				if (parts.length === 0) return null
+				if (index < parts.length) {
+					const part = parts[index]
+					if (part in groups)
+						return collectItems(groups[part], parts, index + 1)
+					else
+						return null
+				} else {
+					if (Array.isArray(groups)) return groups
+					else return null
+				}
+			}
+			function makeTitle(parentEl, name) {
+				const containerEl = parentEl.appendChild(document.createElement('div'))
+				makeHr(containerEl)
+				const titleEl = containerEl.appendChild(document.createElement('h3'))
+				titleEl.textContent = name
+				makeHr(containerEl)
+			}
+			function makeHr(parentEl) {
+				parentEl.appendChild(document.createElement('hr'))
+			}
+		}
+	</script>
+</body>
+
+</html>
