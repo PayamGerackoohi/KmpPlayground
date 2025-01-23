@@ -1,9 +1,7 @@
 package com.payam1991gr.kmp.playground.ui.screens.components.carousel
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.carousel.HorizontalMultiBrowseCarousel
@@ -14,8 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.payam1991gr.kmp.playground.ui.module.RandomImage
 import com.payam1991gr.kmp.playground.ui.module.SamplePage
-import com.payam1991gr.kmp.playground.ui.module.SamplePage.Description
-import com.payam1991gr.kmp.playground.ui.module.SamplePage.Header
+import com.payam1991gr.kmp.playground.ui.module.SamplePage.Preview.Description
+import com.payam1991gr.kmp.playground.ui.module.SamplePage.Preview.Header
+import com.payam1991gr.kmp.playground.ui.module.SamplePage.preview
 import com.payam1991gr.kmp.playground.ui.module.editor.CodePanel
 import com.payam1991gr.kmp.playground.ui.module.editor.rememberCodeEditor
 import com.payam1991gr.kmp.playground.ui.screens.components.carousel.CarouselScreen.State
@@ -38,19 +37,15 @@ class Carousel : Ui<State> {
     }
 
     @Composable
-    fun Preview() {
-        LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-            contentPadding = PaddingValues(vertical = 16.dp),
-        ) {
-            item { Header("Horizontal Multi-Browse Carousel") }
-            item { Description(stringResource(Res.string.horizontal_multi_browse_carousel)) }
-            item { HorizontalMultiBrowseCarouselSample() }
-            item { Header("Horizontal Uncontained Carousel") }
-            item { Description(stringResource(Res.string.horizontal_uncontained_carousel)) }
-            item { HorizontalUncontainedCarouselSample() }
-        }
-    }
+    fun Preview() = preview(
+        { Header("Horizontal Multi-Browse Carousel") },
+        { Description(stringResource(Res.string.horizontal_multi_browse_carousel)) },
+        { HorizontalMultiBrowseCarouselSample() },
+
+        { Header("Horizontal Uncontained Carousel") },
+        { Description(stringResource(Res.string.horizontal_uncontained_carousel)) },
+        { HorizontalUncontainedCarouselSample() },
+    )
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
@@ -90,9 +85,7 @@ class Carousel : Ui<State> {
     fun Code() = CodePanel(
         rememberCodeEditor {
             appendHorizontalMultiBrowseCarouselSample()
-            line()
             appendHorizontalUncontainedCarouselSample()
-            line()
         }
     )
 }

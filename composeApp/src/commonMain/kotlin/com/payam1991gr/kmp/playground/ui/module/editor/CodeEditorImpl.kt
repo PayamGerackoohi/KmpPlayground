@@ -12,7 +12,7 @@ class CodeEditorImpl(private val normalColor: Color) : CodeEditor {
 
     override fun CodeEditor.line(tabs: Int, block: CodeEditor.() -> Unit) = builder.apply {
         if (_lines != 0) append("\n")
-        repeat(tabs) { append("       ") }
+        repeat(tabs) { append("    ") }
         block()
         _lines++
     }
@@ -27,7 +27,9 @@ class CodeEditorImpl(private val normalColor: Color) : CodeEditor {
     override fun CodeEditor.orange(block: () -> String) = color(0xFFD99167, block)
     override fun CodeEditor.gray(block: () -> String) = color(0xFF4C5058, block)
     override fun CodeEditor.blue(block: () -> String) = color(0xFF58A6FF, block)
-    override fun CodeEditor.teal(block: () -> String) = color(0xFF52BED9, block)
+    override fun CodeEditor.cyan(block: () -> String) = color(0xFF52BED9, block)
     override fun CodeEditor.purple(block: () -> String) = color(0xFFE083D7, block)
     override fun CodeEditor.green(block: () -> String) = color(0xFF75C574, block)
+    override fun CodeEditor.lavender(block: () -> String) = color(0xFFC9C9FF, block)
+    override fun CodeEditor.teal(block: () -> String) = color(0xFF008080, block)
 }

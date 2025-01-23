@@ -7,9 +7,10 @@ import com.payam1991gr.kmp.playground.preview.preview
 import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
 import com.payam1991gr.kmp.playground.ui.screens.components.dialog.Dialog
 import com.payam1991gr.kmp.playground.ui.screens.components.dialog.DialogScreen.State
+import com.payam1991gr.kmp.playground.ui.screens.components.picker.datetime.state.rememberDatePickerState
 import kotlinx.collections.immutable.persistentListOf
 
-@SinglePreview
+//@SinglePreview
 //@SimpleDayNightPreview
 @Composable
 fun Dialog_Preview_Preview() = preview {
@@ -20,12 +21,13 @@ fun Dialog_Preview_Preview() = preview {
                 Action.Back,
                 Action.Code,
             ),
+            rememberDatePickerState(),
         ) {},
         Modifier,
     )
 }
 
-//@SinglePreview
+@SinglePreview
 @Composable
 fun Dialog_Code_Preview() = preview {
     Dialog().Content(
@@ -35,6 +37,7 @@ fun Dialog_Code_Preview() = preview {
                 Action.Back,
                 Action.Preview,
             ),
+            rememberDatePickerState(),
         ) {},
         Modifier,
     )

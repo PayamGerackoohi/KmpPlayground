@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.payam1991gr.kmp.playground.ui.module.SamplePage
 import com.payam1991gr.kmp.playground.ui.module.toolbar.rememberToolbarState
 import com.payam1991gr.kmp.playground.ui.screens.components.dialog.DialogScreen.State
+import com.payam1991gr.kmp.playground.ui.screens.components.picker.datetime.state.rememberDatePickerState
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 
@@ -11,7 +12,8 @@ class DialogPresenter(private val navigator: Navigator) : Presenter<State> {
     @Composable
     override fun present(): State {
         val toolbarState = rememberToolbarState()
-        return State(toolbarState.showCode, toolbarState.actions) {
+        val datePickerState = rememberDatePickerState()
+        return State(toolbarState.showCode, toolbarState.actions, datePickerState) {
             when (it) {
                 is State.Event.OnToolbarAction -> when (it.action) {
                     SamplePage.Action.Back -> navigator.pop()

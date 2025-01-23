@@ -18,4 +18,15 @@ class StringUtilTest {
             assertThat(input.toHeader()).isEqualTo(output)
         }
     }
+
+    @Test
+    fun `box - test`() {
+        listOf(
+            null to "☐",
+            "" to "",
+            "asdf" to "asdf",
+        ).forEach { (input, output) ->
+            assertThat(input.box()).isEqualTo(output)
+        }
+    }
 }

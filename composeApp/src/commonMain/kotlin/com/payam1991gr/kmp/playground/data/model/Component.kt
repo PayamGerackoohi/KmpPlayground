@@ -13,7 +13,6 @@ enum class Component(val labelRes: StringResource) {
 /* t o d o
 Chip
 BadgeDefaults
-BaseDatePickerStateImpl
 BottomAppBarDefaults
 BottomAppBarScrollBehavior
 BottomAppBarState
@@ -39,17 +38,6 @@ ClockDialNode
 ColorResourceHelper.class
 ColorScheme
 CompatRippleTheme
-DateInputValidator
-DatePickerColors
-DatePickerDefaults
-DatePickerFormatter
-DatePickerFormatterImpl.class
-DatePickerState
-DatePickerStateImpl.class
-DateRangePickerDefaults
-DateRangePickerState
-DateRangePickerStateImpl.class
-DateVisualTransformation.class
 DefaultDrawerItemsColor.class
 DelegatingThemeAwareRippleNode.class
 DisplayMode
@@ -136,7 +124,6 @@ SegmentedButtonContentMeasurePolicy
 SegmentedButtonDefaults
 SelectableChipColors
 SelectableChipElevation
-SelectableDates
 SelectedRangeInfo
 ShapeDefaults
 Shapes
@@ -175,12 +162,6 @@ TextFieldDefaults
 TextFieldMeasurePolicy.class
 ThumbElement.class
 ThumbNode.class
-TimePickerColors
-TimePickerDefaults
-TimePickerLayoutType
-TimePickerSelectionMode
-TimePickerState
-TimePickerStateImpl.class
 TonalPalette
 TooltipDefaults
 TooltipScope
@@ -208,11 +189,6 @@ CheckboxKt
 ChipKt
 ColorSchemeKt
 ContentColorKt
-DateInputKt
-DatePickerDialog_androidKt
-DatePickerKt
-DateRangeInputKt
-DateRangePickerKt
 DividerKt
 DynamicTonalPaletteKt
 ExposedDropdownMenu_androidKt
@@ -251,9 +227,6 @@ TabKt
 TabRowKt
 TextFieldKt
 TextKt
-TimeFormat_androidKt
-TimePicker_androidKt
-TimePickerKt
 TonalPaletteKt
 Tooltip_androidKt
 TooltipKt

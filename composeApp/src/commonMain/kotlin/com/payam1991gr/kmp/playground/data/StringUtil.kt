@@ -5,3 +5,5 @@ fun String.toHeader(): String = mapIndexed { index, it ->
     else if (it.isLowerCase() || it == ' ') it
     else " $it"
 }.joinToString("")
+
+fun Any?.box() = this?.toString() ?: "☐"

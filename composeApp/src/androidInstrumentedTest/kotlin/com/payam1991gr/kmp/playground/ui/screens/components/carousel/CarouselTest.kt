@@ -60,8 +60,8 @@ class CarouselTest : BaseTest() {
                             horizontalUncontainedCarousel {
                                 title()
                                 description()
+                                image("Image 10")
                                 image("Image 11")
-                                image("Image 12")
                             }
                             on("Code") { performClick() }
                             verify { event(Event.OnToolbarAction(Action.Code)) }

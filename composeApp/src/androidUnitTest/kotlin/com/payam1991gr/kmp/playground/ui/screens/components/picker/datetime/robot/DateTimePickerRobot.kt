@@ -10,8 +10,12 @@ import kotlinx.collections.immutable.toPersistentList
 
 interface DateTimePickerRobot {
     suspend fun onState(
-        showCode: Boolean,
-        vararg toolbarActions: Action,
+        vararg toolbarActions: Action = arrayOf(),
+        showCode: Boolean? = null,
+        datePicker: String? = null,
+        dateRangePicker: String? = null,
+        timePicker: String? = null,
+        timeInput: String? = null,
         block: suspend State.() -> Unit = {},
     ): Any
 }
@@ -20,13 +24,22 @@ typealias Crt = CircuitReceiveTurbine<State>
 
 class DateTimePickerRobotImpl(private val crt: Crt) : DateTimePickerRobot {
     override suspend fun onState(
-        showCode: Boolean,
         vararg toolbarActions: Action,
+        showCode: Boolean?,
+        datePicker: String?,
+        dateRangePicker: String?,
+        timePicker: String?,
+        timeInput: String?,
         block: suspend State.() -> Unit
     ) = crt.awaitItem().apply {
         assertThat(this).isInstanceOf(State::class.java)
-        assertThat(this.showCode).isEqualTo(showCode)
-        assertThat(this.toolbarActions).isEqualTo(toolbarActions.toPersistentList())
+        showCode?.let { assertThat(it).isEqualTo(this.showCode) }
+        if (toolbarActions.isNotEmpty())
+            assertThat(toolbarActions.toPersistentList()).isEqualTo(this.toolbarActions)
+        datePicker?.let { assertThat(this.datePicker.toString()).isEqualTo(it) }
+        dateRangePicker?.let { assertThat(this.dateRangePicker.toString()).isEqualTo(it) }
+        timePicker?.let { assertThat(this.timePicker.toString()).isEqualTo(it) }
+        timeInput?.let { assertThat(this.timeInput.toString()).isEqualTo(it) }
         block()
     }
 }

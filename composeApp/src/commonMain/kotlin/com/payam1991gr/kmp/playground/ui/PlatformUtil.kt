@@ -1,12 +1,12 @@
 package com.payam1991gr.kmp.playground.ui
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.onGloballyPositioned
@@ -43,7 +43,13 @@ fun Modifier.minDimension(onResult: (Dp) -> Unit) = run {
     onGloballyPositioned { sizePx = it.size.minDimension() }
 }
 
+@Stable
 data class ScreenDimension(val width: Dp = 1.dp, val height: Dp = 1.dp)
+
+@Composable
+fun rememberScreenDimension(): MutableState<ScreenDimension> = remember {
+    mutableStateOf(ScreenDimension())
+}
 
 @Stable
 @Composable
@@ -53,5 +59,3 @@ fun Modifier.dimensions(onResult: (ScreenDimension) -> Unit) = run {
     remember(width, height) { onResult(ScreenDimension(width, height)) }
     onGloballyPositioned { sizePx = it.size }
 }
-
-val LocalTestMode = staticCompositionLocalOf { false }

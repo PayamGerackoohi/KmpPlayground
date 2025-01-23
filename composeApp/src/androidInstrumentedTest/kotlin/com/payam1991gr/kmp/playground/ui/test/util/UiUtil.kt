@@ -4,4 +4,5 @@ import android.support.test.uiautomator.UiDevice
 import androidx.test.platform.app.InstrumentationRegistry
 
 private val instrumentation get() = InstrumentationRegistry.getInstrumentation()
-val uiDevice get() = UiDevice.getInstance(instrumentation)
+
+val uiDevice: UiDevice get() = UiDevice.getInstance(instrumentation)

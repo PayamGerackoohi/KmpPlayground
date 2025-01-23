@@ -2,6 +2,7 @@ package com.payam1991gr.kmp.playground.ui.screens.components.dialog
 
 import com.payam1991gr.kmp.playground.platform.KmpParcelize
 import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
+import com.payam1991gr.kmp.playground.ui.screens.components.picker.datetime.DateTimePickerScreen.State.DatePicker
 import com.slack.circuit.runtime.CircuitUiEvent
 import com.slack.circuit.runtime.CircuitUiState
 import com.slack.circuit.runtime.screen.Screen
@@ -12,6 +13,7 @@ data object DialogScreen : Screen {
     data class State(
         val showCode: Boolean,
         val toolbarActions: PersistentList<Action>,
+        val datePicker: DatePicker,
         val event: (Event) -> Unit,
     ) : CircuitUiState {
         sealed interface Event : CircuitUiEvent {

@@ -1,0 +1,18 @@
+# Build Checklist
+- [x] TODO
+  - [x] Code
+  - [x] Unit-Tests
+  - [x] UI-Tests
+- [x] Tests
+  - [x] Unit
+  - [x] UI
+- [x] KMP Playground Website
+  - [x] Screens
+  - [x] Screenshots
+  - [x] Tests
+  - [x] Translations
+  - [x] Versioning / Build / Manual Test
+    - [x] Mac
+    - [x] Android
+    - [x] iOS
+  - [x] Last Edit Label

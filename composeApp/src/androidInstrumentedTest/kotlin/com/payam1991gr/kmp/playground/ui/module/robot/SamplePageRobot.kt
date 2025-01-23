@@ -8,9 +8,12 @@ import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.hasTextExactly
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
 import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.onChild
 import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
+import com.payam1991gr.kmp.playground.ui.module.robot.SamplePageRobot.CodeScope
+import com.payam1991gr.kmp.playground.ui.module.robot.SamplePageRobot.PreviewScope
 import com.payam1991gr.kmp.playground.ui.module.robot.SamplePageRobot.SettingsScope
 import com.payam1991gr.kmp.playground.ui.module.robot.SamplePageRobot.ToolbarScope
 import com.payam1991gr.kmp.playground.ui.test.util.Sni
@@ -18,12 +21,12 @@ import com.payam1991gr.kmp.playground.ui.test.util.SniBlock
 
 interface SamplePageRobot {
     fun toolbar(block: ToolbarScope.() -> Unit = {}): Any
-    fun preview(block: SniBlock = {}): Any
-    fun code(block: SniBlock = {}): Any
-    fun assertThatPreviewPageIsNotDisplayed(): Any
-    fun assertThatCodePageIsNotDisplayed(): Any
     fun header(title: String): Any
     fun description(description: String): Any
+    fun preview(block: PreviewScope.() -> Unit = {}): Any
+    fun code(block: CodeScope.() -> Unit = {}): Any
+    fun assertThatPreviewPageIsNotDisplayed(): Any
+    fun assertThatCodePageIsNotDisplayed(): Any
     fun settings(block: SettingsScope.() -> Unit): Any
 
     interface ToolbarScope {
@@ -34,20 +37,41 @@ interface SamplePageRobot {
     interface SettingsScope {
         fun on(label: String, block: SniBlock = {}): Any
     }
+
+    interface PreviewScope {
+        val sni: Sni
+    }
+
+    interface CodeScope {
+        val sni: Sni
+    }
 }
 
 class SamplePageRobotImpl(private val rule: ComposeContentTestRule) : SamplePageRobot {
-    override fun toolbar(block: ToolbarScope.() -> Unit) = rule.onNodeWithTag("SamplePage.Toolbar")
+    override fun toolbar(block: ToolbarScope.() -> Unit) = rule
+        .onNodeWithTag("SamplePage.Toolbar")
         .assertIsDisplayed()
         .apply { ToolbarScopeImpl(this).block() }
 
-    override fun preview(block: SniBlock) = rule.onNodeWithTag("SamplePage.Preview")
+    override fun header(title: String) = rule
+        .onNodeWithText(title)
         .assertIsDisplayed()
-        .block()
 
-    override fun code(block: SniBlock) = rule.onNodeWithTag("SamplePage.Code")
+    override fun description(description: String) = rule
+        .onNodeWithText(description, substring = true)
         .assertIsDisplayed()
-        .block()
+
+    override fun preview(block: PreviewScope.() -> Unit) = rule
+        .onNodeWithTag("SamplePage.Preview")
+        .onChild()
+        .assertIsDisplayed()
+        .apply { PreviewScopeImpl(this).block() }
+
+    override fun code(block: CodeScope.() -> Unit) = rule
+        .onNodeWithTag("SamplePage.Code")
+        .onChild()
+        .assertIsDisplayed()
+        .apply { CodeScopeImpl(this).block() }
 
     override fun assertThatPreviewPageIsNotDisplayed() = rule
         .onAllNodesWithTag("SamplePage.Preview")
@@ -56,12 +80,6 @@ class SamplePageRobotImpl(private val rule: ComposeContentTestRule) : SamplePage
     override fun assertThatCodePageIsNotDisplayed() = rule
         .onAllNodesWithTag("SamplePage.Code")
         .assertCountEquals(0)
-
-    override fun header(title: String) = rule.onNodeWithText(title).assertIsDisplayed()
-
-    override fun description(description: String) = rule
-        .onNodeWithText(description, substring = true)
-        .assertIsDisplayed()
 
     override fun settings(block: SettingsScope.() -> Unit) = rule.onNode(
         hasAnyChild(hasTextExactly("Settings"))
@@ -86,6 +104,10 @@ class SamplePageRobotImpl(private val rule: ComposeContentTestRule) : SamplePage
             .assertIsDisplayed()
             .block()
     }
+
+    inner class PreviewScopeImpl(override val sni: Sni) : PreviewScope
+
+    inner class CodeScopeImpl(override val sni: Sni) : CodeScope
 }
 
 fun samplePageRobot(

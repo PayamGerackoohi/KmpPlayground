@@ -1,6 +1,11 @@
+import com.android.build.gradle.internal.api.BaseVariantOutputImpl
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.io.FileInputStream
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -9,6 +14,17 @@ plugins {
     alias(libs.plugins.composeCompiler)
     id("kotlin-parcelize")
     alias(libs.plugins.roborazzi)
+}
+
+object AppInfo {
+    const val PACKAGE_NAME = "com.payam1991gr.kmp.playground"
+    const val APP_NAME = "KMP-Playground"
+    const val VERSION = "1.0.0"
+    val buildDate: String = SimpleDateFormat("yyMMdd-HHmm").format(Date())
+}
+
+val keystore = FileInputStream(rootProject.file("keystore/keystore.properties")).let { file ->
+    Properties().apply { load(file) }
 }
 
 kotlin {
@@ -44,6 +60,7 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
@@ -53,8 +70,8 @@ kotlin {
             implementation(libs.circuit)
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)
+            implementation(libs.kotlinx.date.time)
         }
-
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
@@ -80,7 +97,6 @@ kotlin {
             implementation(libs.test.junit)
             implementation(libs.test.mockk)
             implementation(libs.test.ui.automator)
-//            implementation(libs.test.androidx.espresso.core)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -100,17 +116,36 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
-        versionName = "1.0"
+        versionName = AppInfo.VERSION
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+    signingConfigs {
+        create("release") {
+            keystore.apply {
+                storeFile = file(getProperty("storeFile"))
+                storePassword = getProperty("storePassword")
+                keyAlias = getProperty("keyAlias")
+                keyPassword = getProperty("keyPassword")
+            }
         }
     }
     buildTypes {
+        applicationVariants.all {
+            val meta = if (buildType.name == "release") "" else "-${AppInfo.buildDate}"
+            outputs.all {
+                (this as BaseVariantOutputImpl).outputFileName =
+                    "${AppInfo.APP_NAME}-${AppInfo.VERSION}$meta.apk"
+            }
+        }
         getByName("release") {
-            isMinifyEnabled = false
+            isDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -134,10 +169,12 @@ android {
                 it.filter {
                     val properties = project.gradle.startParameter.projectProperties
                     if (properties["screenshotMode"].toString() == "true")
-//                        setIncludePatterns("screenshots.*")
+                        setIncludePatterns("screenshots.*")
 //                        setIncludePatterns("screenshots.home.*")
-                        setIncludePatterns("screenshots.components.carousel.*")
+//                        setIncludePatterns("screenshots.components.carousel.*")
 //                        setIncludePatterns("screenshots.components.dialog.*")
+//                        setIncludePatterns("screenshots.components.picker.*")
+//                        setIncludePatterns("screenshots.components.pull.*")
                     else
                         setExcludePatterns("screenshots.*")
                 }
@@ -158,7 +195,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.payam1991gr.kmp.playground"
-            packageVersion = "1.0.0"
+            packageVersion = AppInfo.VERSION
         }
     }
 }

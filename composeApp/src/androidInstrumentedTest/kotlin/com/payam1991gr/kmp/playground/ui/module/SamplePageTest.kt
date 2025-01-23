@@ -7,10 +7,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextEquals
-import androidx.compose.ui.test.onChild
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import com.payam1991gr.kmp.playground.data.model.sample.rememberSettingItem
+import com.payam1991gr.kmp.playground.data.model.sample.rememberSetting
 import com.payam1991gr.kmp.playground.ui.module.robot.samplePageRobot
 import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
 import com.payam1991gr.kmp.playground.ui.test.util.BaseTest
@@ -62,17 +61,13 @@ class SamplePageTest : BaseTest() {
 
             assertThatCodePageIsNotDisplayed()
             preview {
-                onChild()
-                    .assertIsDisplayed()
-                    .assertTextEquals("Preview Page")
+                sni.assertTextEquals("Preview Page")
             }
 
             showCode = true
             assertThatPreviewPageIsNotDisplayed()
             code {
-                onChild()
-                    .assertIsDisplayed()
-                    .assertTextEquals("Code Page")
+                sni.assertTextEquals("Code Page")
             }
         }
         confirmVerified()
@@ -81,7 +76,7 @@ class SamplePageTest : BaseTest() {
     @Test
     fun headerTest() {
         rule.setContent {
-            SamplePage.Header(title = "Title")
+            SamplePage.Preview.Header(title = "Title")
         }
         samplePageRobot(rule) {
             header("Title")
@@ -91,7 +86,7 @@ class SamplePageTest : BaseTest() {
     @Test
     fun descriptionTest() {
         rule.setContent {
-            SamplePage.Description(description = "Description")
+            SamplePage.Preview.Description(description = "Description")
         }
         samplePageRobot(rule) {
             description("Description")
@@ -101,11 +96,11 @@ class SamplePageTest : BaseTest() {
     @Test
     fun settingsTest() {
         rule.setContent {
-            val isDismissible by rememberSettingItem(true) {
+            val isDismissible = rememberSetting(true) {
                 if (it) Res.string.dismissible else Res.string.mandatory
             }
             Column {
-                SamplePage.Settings(isDismissible)
+                SamplePage.Preview.Settings(isDismissible)
                 Text(if (isDismissible.value) "It's dismissible" else "It's not dismissible")
             }
         }

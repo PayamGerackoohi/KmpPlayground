@@ -18,6 +18,28 @@
 
     <!-- Components.Dialog -->
     <string name="alert_dialog">Dialogs provide important prompts in a user flow. They can require an action, communicate information, or help users accomplish a task.</string>
+    <string name="date_picker_dialog">A dialog for displaying a DatePicker. Date pickers let people select a date.</string>
+    <string name="time_picker_dialog_set_time">Set Time</string>
+    <string name="time_picker_dialog_select_time">Select Time</string>
+
+    <!-- Components.Picker.Date -->
+    <string name="components_date_picker_description">Date pickers let people select a date and preferably should be embedded into Dialogs.</string>
+    <string name="components_date_picker_timestamp_template">Timestamp: %1$s</string>
+    <string name="components_date_picker_date_template">Date: %1$s</string>
+    <string name="components_date_picker_mode_toggle">Mode Toggle</string>
+    <string name="components_date_picker_no_mode_toggle">No Mode Toggle</string>
+
+    <!-- Components.Picker.TimePicker -->
+    <string name="components_time_picker_description">Time pickers help users select and set a specific time. It shows a picker that allows the user to select time. Subscribe to updates through TimePickerState.</string>
+    <string name="components_time_picker_24_hour">24 Hour</string>
+    <string name="components_time_picker_12_hour">12 Hour</string>
+    <string name="components_time_picker_time_template">Time: %1$s:%2$s</string>
+
+    <!-- Components.Picker.TimeInput -->
+    <string name="components_time_input_description">Time pickers help users select and set a specific time. It shows a time input that allows the user to enter the time via two text fields, one for minutes and one for hours Subscribe to updates through TimePickerState.</string>
+
+    <!-- Components.Picker.DateRange -->
+    <string name="components_date_range_picker_description">Date range pickers let people select a range of dates and can be embedded into Dialogs.</string>
 
     <!-- Animations -->
     <string name="animations_animated_content">Animated Content</string>
@@ -51,4 +73,8 @@
     <string name="mandatory">Mandatory</string>
     <string name="animate">Animate</string>
     <string name="instant">Instant</string>
+    <string name="show">Show</string>
+    <string name="confirm">Confirm</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>

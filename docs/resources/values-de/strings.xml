@@ -17,6 +17,28 @@
 
     <!-- Components.Dialog -->
     <string name="alert_dialog">Dialoge liefern wichtige Eingabeaufforderungen in einem Benutzerfluss. Sie können eine Aktion erfordern, Informationen übermitteln oder Benutzern beim Erledigen einer Aufgabe helfen.</string>
+    <string name="date_picker_dialog">Ein Dialogfeld zum Anzeigen eines Datumswählers. Mit Datumswählern können Benutzer ein Datum auswählen.</string>
+    <string name="time_picker_dialog_set_time">Zeit einstellen</string>
+    <string name="time_picker_dialog_select_time">Wähle eine Uhrzeit</string>
+
+    <!-- Components.Picker.Date -->
+    <string name="components_date_picker_description">Mit Datumsauswahlfunktionen können Benutzer ein Datum auswählen und sie sollten vorzugsweise in Dialoge eingebettet werden.</string>
+    <string name="components_date_picker_timestamp_template">Zeitstempel: %1$s</string>
+    <string name="components_date_picker_date_template">Datum: %1$s</string>
+    <string name="components_date_picker_mode_toggle">Modus umschalten</string>
+    <string name="components_date_picker_no_mode_toggle">Kein Modus-Umschalter</string>
+
+    <!-- Components.Picker.TimePicker -->
+    <string name="components_time_picker_description">Zeitauswahlfunktionen helfen Benutzern, eine bestimmte Zeit auszuwählen und festzulegen. Es wird eine Auswahlfunktion angezeigt, mit der der Benutzer eine Zeit auswählen kann. Abonnieren Sie Updates über TimePickerState.</string>
+    <string name="components_time_picker_24_hour">24 Stunden</string>
+    <string name="components_time_picker_12_hour">12 Stunden</string>
+    <string name="components_time_picker_time_template">Zeit: %1$s:%2$s</string>
+
+    <!-- Components.Picker.TimeInput -->
+    <string name="components_time_input_description">Zeitauswahlen helfen Benutzern, eine bestimmte Zeit auszuwählen und festzulegen. Es wird eine Zeiteingabe angezeigt, in die der Benutzer die Zeit über zwei Textfelder eingeben kann, eines für Minuten und eines für Stunden. Abonnieren Sie Updates über TimePickerState.</string>
+
+    <!-- Components.Picker.DateRange -->
+    <string name="components_date_range_picker_description">Mithilfe von Datumsbereichsauswahlen können Benutzer einen Datumsbereich auswählen und diese in Dialoge einbetten.</string>
 
     <!-- Animations -->
     <string name="animations_animated_content">Animierter Inhalt</string>
@@ -50,4 +72,8 @@
     <string name="mandatory">Obligatorisch</string>
     <string name="animate">Animieren</string>
     <string name="instant">Sofortig</string>
+    <string name="show">Zeigen</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Stornieren</string>
 </resources>

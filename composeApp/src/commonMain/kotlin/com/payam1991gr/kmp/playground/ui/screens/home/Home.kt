@@ -38,6 +38,7 @@ import com.payam1991gr.kmp.playground.data.model.HomeItem
 import com.payam1991gr.kmp.playground.ui.ScreenDimension
 import com.payam1991gr.kmp.playground.ui.dimensions
 import com.payam1991gr.kmp.playground.ui.isLtr
+import com.payam1991gr.kmp.playground.ui.rememberScreenDimension
 import com.payam1991gr.kmp.playground.ui.screens.home.HomeScreen.State
 import com.payam1991gr.kmp.playground.ui.screens.home.HomeScreen.State.Event
 import com.slack.circuit.runtime.ui.Ui
@@ -51,7 +52,7 @@ class Home : Ui<State> {
 
     @Composable
     override fun Content(state: State, modifier: Modifier) {
-        var screenDimension by remember { mutableStateOf(ScreenDimension()) }
+        var screenDimension by rememberScreenDimension()
         val screenClass = remember(screenDimension) { screenDimension.klass() }
         Box(
             contentAlignment = Alignment.Center,

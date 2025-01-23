@@ -4,10 +4,16 @@ import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -24,7 +30,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.payam1991gr.kmp.playground.data.model.sample.SettingItem
+import com.payam1991gr.kmp.playground.data.model.sample.Setting
 import com.payam1991gr.kmp.playground.ui.mirrorRtl
 import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
 import kmpplayground.composeapp.generated.resources.*
@@ -104,46 +110,81 @@ object SamplePage {
     }
 
     @Composable
-    fun Header(
-        title: String,
-        modifier: Modifier = Modifier.padding(horizontal = 16.dp),
+    fun preview(
+        vararg contents: @Composable () -> Unit,
+        modifier: Modifier = Modifier.fillMaxSize(),
+    ) = LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(vertical = 16.dp),
+        modifier = modifier
     ) {
-        Text(
-            text = title,
-            style = MaterialTheme.typography.titleLarge,
-            modifier = modifier,
-        )
+        items(contents) { content -> content() }
     }
 
-    @Composable
-    fun Description(
-        description: String,
-        modifier: Modifier = Modifier.padding(horizontal = 16.dp),
-    ) {
-        Text(description, modifier)
-    }
-
-    @Composable
-    fun Settings(
-        vararg items: SettingItem,
-        modifier: Modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
-    ) {
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = modifier,
+    object Preview {
+        @Composable
+        fun Header(
+            title: String,
+            modifier: Modifier = Modifier.padding(horizontal = 16.dp),
         ) {
             Text(
-                stringResource(Res.string.settings),
-                color = MaterialTheme.colorScheme.secondary,
-                style = MaterialTheme.typography.bodySmall,
+                text = title,
+                style = MaterialTheme.typography.titleLarge,
+                modifier = modifier,
             )
-            items.forEach { item ->
-                AssistChip(
-                    label = { Text(stringResource(item.labelRes)) },
-                    onClick = item::toggle,
-                )
+        }
+
+        @Composable
+        fun Description(
+            description: String,
+            modifier: Modifier = Modifier.padding(horizontal = 16.dp),
+        ) {
+            Text(description, modifier)
+        }
+
+        @OptIn(ExperimentalLayoutApi::class)
+        @Composable
+        fun Settings(
+            vararg items: Setting,
+            modifier: Modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        ) {
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = modifier,
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.fillMaxRowHeight()
+                ) {
+                    Text(
+                        stringResource(Res.string.settings),
+                        style = MaterialTheme.typography.bodySmall,
+                    )
+                }
+                items.forEach { item ->
+                    AssistChip(
+                        label = {
+                            Text(
+                                stringResource(item.labelRes),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                        },
+                        onClick = item::toggle,
+                    )
+                }
             }
         }
+
+        @Composable
+        fun ContentList(
+            modifier: Modifier = Modifier,
+            content: @Composable ColumnScope.() -> Unit,
+        ) = Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = modifier.fillMaxWidth(),
+            content = content,
+        )
     }
 }

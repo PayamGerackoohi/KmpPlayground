@@ -13,16 +13,26 @@ class DialogPresenterTest {
     fun test() = runTest {
         val navigator = FakeNavigator(DialogScreen)
         DialogPresenter(navigator).robot {
-            onState(false, Action.Back, Action.Code) {
+            onState(
+                Action.Back, Action.Code,
+                showCode = false,
+                datePicker = "DatePicker(initialDisplayDate=null, date=Date(ms=null, text=null))",
+            ) {
                 event(Event.OnToolbarAction(Action.Back))
                 assertThat(navigator.awaitPop()).isEqualTo(FakeNavigator.PopEvent(null))
 
                 event(Event.OnToolbarAction(Action.Code))
             }
-            onState(true, Action.Back, Action.Preview) {
+            onState(
+                Action.Back, Action.Preview,
+                showCode = true,
+            ) {
                 event(Event.OnToolbarAction(Action.Preview))
             }
-            onState(false, Action.Back, Action.Code)
+            onState(
+                Action.Back, Action.Code,
+                showCode = false,
+            )
         }
     }
 }
