@@ -2,12 +2,11 @@ package com.payam1991gr.kmp.playground.preview.screens.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.payam1991gr.kmp.playground.data.model.Component
 import com.payam1991gr.kmp.playground.preview.*
 import com.payam1991gr.kmp.playground.preview.preview
-import com.payam1991gr.kmp.playground.ui.screens.components.Components
-import com.payam1991gr.kmp.playground.ui.screens.components.ComponentsScreen.State
+import com.payam1991gr.kmp.playground.view.screens.components.Components
+import com.payam1991gr.kmp.playground.view.screens.components.ComponentsScreen.State
 import kotlinx.collections.immutable.persistentListOf
 
 //@SinglePreview

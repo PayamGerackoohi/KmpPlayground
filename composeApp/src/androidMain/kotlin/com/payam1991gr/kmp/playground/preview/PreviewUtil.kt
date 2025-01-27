@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
-import com.payam1991gr.kmp.playground.ui.theme.KmpPlaygroundTheme
+import com.payam1991gr.kmp.playground.view.theme.KmpPlaygroundTheme
 
 @Preview(showBackground = true, apiLevel = 33)
 annotation class SinglePreview

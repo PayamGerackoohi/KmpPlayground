@@ -1,0 +1,183 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>composeApp Coverage Report > GraphicsPresenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.graphics</a>
+</div>
+
+<h1>Coverage Summary for Class: GraphicsPresenter (com.payam1991gr.kmp.playground.presenter.screens.graphics)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">GraphicsPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (3/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.7%
+  </span>
+  <span class="absValue">
+    (89/94)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">GraphicsPresenter$WhenMappings</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (3/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (8/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.7%
+  </span>
+  <span class="absValue">
+    (89/94)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.graphics
+&nbsp;
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import com.payam1991gr.kmp.playground.data.model.GraphicItem
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.GraphicsScreen.State
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.charts.ChartsScreen
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.opengl.OpenGlScreen
+&nbsp;import com.slack.circuit.runtime.Navigator
+&nbsp;import com.slack.circuit.runtime.presenter.Presenter
+&nbsp;import kotlinx.collections.immutable.toPersistentList
+&nbsp;
+<b class="fc">&nbsp;class GraphicsPresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
+<b class="fc">&nbsp;    private val items = GraphicItem.entries.toPersistentList()</b>
+&nbsp;
+&nbsp;    @Composable
+&nbsp;    override fun present(): State {
+<b class="pc">&nbsp;        return State(items = items) {</b>
+<b class="fc">&nbsp;            when (it) {</b>
+<b class="fc">&nbsp;                is State.Event.OnClick -&gt; when (it.item) {</b>
+<b class="fc">&nbsp;                    GraphicItem.Charts -&gt; navigator.goTo(ChartsScreen)</b>
+<b class="fc">&nbsp;                    GraphicItem.OpenGL -&gt; navigator.goTo(OpenGlScreen)</b>
+&nbsp;                }
+&nbsp;
+<b class="fc">&nbsp;                State.Event.OnBackPressed -&gt; navigator.pop()</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-01-27 19:21</div>
+</div>
+</body>
+</html>

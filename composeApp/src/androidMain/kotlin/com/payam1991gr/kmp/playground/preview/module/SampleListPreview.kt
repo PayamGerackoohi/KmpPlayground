@@ -2,8 +2,7 @@ package com.payam1991gr.kmp.playground.preview.module
 
 import androidx.compose.runtime.Composable
 import com.payam1991gr.kmp.playground.preview.*
-import com.payam1991gr.kmp.playground.ui.module.SampleList
-import kotlinx.collections.immutable.persistentListOf
+import com.payam1991gr.kmp.playground.view.module.SampleList
 import kotlinx.collections.immutable.toPersistentList
 
 @SimpleDayNightPreview

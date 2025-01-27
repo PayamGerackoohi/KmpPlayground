@@ -4,10 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.payam1991gr.kmp.playground.preview.*
 import com.payam1991gr.kmp.playground.preview.preview
-import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
-import com.payam1991gr.kmp.playground.ui.screens.components.dialog.Dialog
-import com.payam1991gr.kmp.playground.ui.screens.components.dialog.DialogScreen.State
-import com.payam1991gr.kmp.playground.ui.screens.components.picker.datetime.state.rememberDatePickerState
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
+import com.payam1991gr.kmp.playground.view.screens.components.dialog.Dialog
+import com.payam1991gr.kmp.playground.view.screens.components.dialog.DialogScreen.State
+import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.state.rememberDatePickerState
 import kotlinx.collections.immutable.persistentListOf
 
 //@SinglePreview

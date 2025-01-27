@@ -1,0 +1,355 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>composeApp Coverage Report > Component</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.model</a>
+</div>
+
+<h1>Coverage Summary for Class: Component (com.payam1991gr.kmp.playground.data.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">Component</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (47/47)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.model
+&nbsp;
+&nbsp;import kmpplayground.composeapp.generated.resources.*
+&nbsp;import org.jetbrains.compose.resources.StringResource
+&nbsp;
+<b class="fc">&nbsp;enum class Component(val labelRes: StringResource) {</b>
+<b class="fc">&nbsp;    Carousel(Res.string.components_carousel),</b>
+<b class="fc">&nbsp;    PullToRefresh(Res.string.components_pull_to_refresh),</b>
+<b class="fc">&nbsp;    Dialog(Res.string.components_dialog),</b>
+<b class="fc">&nbsp;    DateTimePicker(Res.string.components_date_time_picker),</b>
+&nbsp;}
+&nbsp;
+&nbsp;/* t o d o
+&nbsp;Chip
+&nbsp;BadgeDefaults
+&nbsp;BottomAppBarDefaults
+&nbsp;BottomAppBarScrollBehavior
+&nbsp;BottomAppBarState
+&nbsp;BottomAppBarStateImpl.class
+&nbsp;BottomSheetDefaults
+&nbsp;BottomSheetScaffoldState
+&nbsp;ButtonColors
+&nbsp;ButtonDefaults
+&nbsp;ButtonElevation
+&nbsp;CardColors
+&nbsp;CardDefaults
+&nbsp;CardElevation
+&nbsp;CaretType.class
+&nbsp;CenteredContentMeasurePolicy.class
+&nbsp;CheckboxColors
+&nbsp;CheckboxDefaults
+&nbsp;CheckDrawingCache.class
+&nbsp;ChipBorder
+&nbsp;ChipColors
+&nbsp;ChipElevation
+&nbsp;ClockDialModifier
+&nbsp;ClockDialNode
+&nbsp;ColorResourceHelper.class
+&nbsp;ColorScheme
+&nbsp;CompatRippleTheme
+&nbsp;DefaultDrawerItemsColor.class
+&nbsp;DelegatingThemeAwareRippleNode.class
+&nbsp;DisplayMode
+&nbsp;DividerDefaults
+&nbsp;DrawerDefaults
+&nbsp;DrawerPredictiveBackState
+&nbsp;DrawerState
+&nbsp;DrawerValue
+&nbsp;EnterAlwaysScrollBehavior.class
+&nbsp;EqualWeightContentMeasurePolicy.class
+&nbsp;ExitAlwaysScrollBehavior.class
+&nbsp;ExitUntilCollapsedScrollBehavior.class
+&nbsp;ExperimentalMaterial3Api
+&nbsp;ExposedDropdownMenuBoxScope
+&nbsp;ExposedDropdownMenuBoxScopeImpl.class
+&nbsp;ExposedDropdownMenuDefaults
+&nbsp;ExposedDropdownMenuPositionProvider
+&nbsp;ExpressiveNavigationBarDefaults
+&nbsp;ExpressiveNavigationBarItemDefaults
+&nbsp;FabPlacement
+&nbsp;FabPosition
+&nbsp;FadeInFadeOutAnimationItem.class
+&nbsp;FadeInFadeOutState.class
+&nbsp;FilterChipDefaults
+&nbsp;FloatingActionButtonDefaults
+&nbsp;FloatingActionButtonElevation
+&nbsp;FloatingActionButtonElevationAnimatable.class
+&nbsp;IconButtonColors
+&nbsp;IconButtonDefaults
+&nbsp;IconToggleButtonColors
+&nbsp;InputChipDefaults
+&nbsp;InputIdentifier
+&nbsp;LabelStateImpl.class
+&nbsp;LayoutId.class
+&nbsp;ListItemColors
+&nbsp;ListItemDefaults
+&nbsp;ListItemMeasurePolicy.class
+&nbsp;ListItemType.class
+&nbsp;Locale24.class
+&nbsp;MaterialTheme
+&nbsp;MenuAnchorType
+&nbsp;MenuDefaults
+&nbsp;MenuItemColors
+&nbsp;MinimumInteractiveModifier
+&nbsp;MinimumInteractiveModifierNode
+&nbsp;ModalBottomSheetDefaults
+&nbsp;ModalBottomSheetDialogLayout.class
+&nbsp;ModalBottomSheetDialogWrapper.class
+&nbsp;ModalBottomSheetProperties
+&nbsp;MultiChoiceSegmentedButtonRowScope
+&nbsp;MultiChoiceSegmentedButtonScopeWrapper.class
+&nbsp;NavigationBarArrangement
+&nbsp;NavigationBarDefaults
+&nbsp;NavigationBarItemColors
+&nbsp;NavigationBarItemDefaults
+&nbsp;NavigationDrawerItemColors
+&nbsp;NavigationDrawerItemDefaults
+&nbsp;NavigationItemColors
+&nbsp;NavigationItemIconPosition
+&nbsp;NavigationRailDefaults
+&nbsp;NavigationRailItemColors
+&nbsp;NavigationRailItemDefaults
+&nbsp;OutlinedTextFieldDefaults
+&nbsp;OutlinedTextFieldMeasurePolicy.class
+&nbsp;PinnedScrollBehavior.class
+&nbsp;ProgressIndicatorDefaults
+&nbsp;RadioButtonColors
+&nbsp;RadioButtonDefaults
+&nbsp;RangeSliderComponents.class
+&nbsp;RangeSliderLogic.class
+&nbsp;RangeSliderState
+&nbsp;RichTooltipColors
+&nbsp;RippleConfiguration
+&nbsp;RippleDefaults
+&nbsp;RippleNodeFactory.class
+&nbsp;ScaffoldDefaults
+&nbsp;ScaffoldLayoutContent.class
+&nbsp;ScrollableTabData.class
+&nbsp;ScrolledOffset.class
+&nbsp;SearchBarColors
+&nbsp;SearchBarDefaults
+&nbsp;SegmentedButtonColors
+&nbsp;SegmentedButtonContentMeasurePolicy
+&nbsp;SegmentedButtonDefaults
+&nbsp;SelectableChipColors
+&nbsp;SelectableChipElevation
+&nbsp;SelectedRangeInfo
+&nbsp;ShapeDefaults
+&nbsp;Shapes
+&nbsp;SheetState
+&nbsp;SheetValue
+&nbsp;SingleChoiceSegmentedButtonRowScope
+&nbsp;SingleChoiceSegmentedButtonScopeWrapper.class
+&nbsp;SliderColors
+&nbsp;SliderComponents.class
+&nbsp;SliderDefaults
+&nbsp;SliderPositions
+&nbsp;SliderRange
+&nbsp;SliderState
+&nbsp;SnackbarData
+&nbsp;SnackbarDefaults
+&nbsp;SnackbarDuration
+&nbsp;SnackbarHostState
+&nbsp;SnackbarResult
+&nbsp;SnackbarVisuals
+&nbsp;StartIconMeasurePolicy.class
+&nbsp;SuggestionChipDefaults
+&nbsp;SwipeToDismissBoxDefaults
+&nbsp;SwipeToDismissBoxState
+&nbsp;SwipeToDismissBoxValue
+&nbsp;SwitchColors
+&nbsp;SwitchDefaults
+&nbsp;TabIndicatorModifier
+&nbsp;TabIndicatorOffsetNode
+&nbsp;TabIndicatorScope
+&nbsp;TabPosition
+&nbsp;TabPositionsHolder
+&nbsp;TabRowDefaults
+&nbsp;TabSlots.class
+&nbsp;TextFieldColors
+&nbsp;TextFieldDefaults
+&nbsp;TextFieldMeasurePolicy.class
+&nbsp;ThumbElement.class
+&nbsp;ThumbNode.class
+&nbsp;TonalPalette
+&nbsp;TooltipDefaults
+&nbsp;TooltipScope
+&nbsp;TooltipScopeImpl
+&nbsp;TooltipState
+&nbsp;TooltipStateImpl.class
+&nbsp;TopAppBarColors
+&nbsp;TopAppBarDefaults
+&nbsp;TopAppBarScrollBehavior
+&nbsp;TopAppBarState
+&nbsp;TopIconOrIconOnlyMeasurePolicy.class
+&nbsp;Typography
+&nbsp;VisibleModifier.class
+&nbsp;AlertDialogKt
+&nbsp;AndroidAlertDialog_androidKt
+&nbsp;AndroidMenu_androidKt
+&nbsp;AppBarKt
+&nbsp;BadgeKt
+&nbsp;BottomSheetScaffoldKt
+&nbsp;ButtonKt
+&nbsp;CalendarLocale_androidKt
+&nbsp;CalendarLocale_jvmKt
+&nbsp;CardKt
+&nbsp;CheckboxKt
+&nbsp;ChipKt
+&nbsp;ColorSchemeKt
+&nbsp;ContentColorKt
+&nbsp;DividerKt
+&nbsp;DynamicTonalPaletteKt
+&nbsp;ExposedDropdownMenu_androidKt
+&nbsp;ExpressiveNavigationBarKt
+&nbsp;FloatingActionButtonKt
+&nbsp;IconButtonKt
+&nbsp;IconKt
+&nbsp;InteractiveComponentSizeKt
+&nbsp;LabelKt
+&nbsp;ListItemKt
+&nbsp;MaterialThemeKt
+&nbsp;MenuKt
+&nbsp;ModalBottomSheet_androidKt
+&nbsp;ModalBottomSheetKt
+&nbsp;NavigationBarKt
+&nbsp;NavigationDrawer_androidKt
+&nbsp;NavigationDrawerKt
+&nbsp;NavigationItemKt
+&nbsp;NavigationRailKt
+&nbsp;OutlinedTextFieldKt
+&nbsp;ProgressIndicatorKt
+&nbsp;RadioButtonKt
+&nbsp;RippleKt
+&nbsp;ScaffoldKt
+&nbsp;SearchBar_androidKt
+&nbsp;SegmentedButtonKt
+&nbsp;ShapesKt
+&nbsp;SheetDefaultsKt
+&nbsp;SliderKt
+&nbsp;SnackbarHostKt
+&nbsp;SnackbarKt
+&nbsp;SurfaceKt
+&nbsp;SwipeToDismissBoxKt
+&nbsp;SwitchKt
+&nbsp;TabKt
+&nbsp;TabRowKt
+&nbsp;TextFieldKt
+&nbsp;TextKt
+&nbsp;TonalPaletteKt
+&nbsp;Tooltip_androidKt
+&nbsp;TooltipKt
+&nbsp;TypographyKt
+&nbsp;*/
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-01-27 19:21</div>
+</div>
+</body>
+</html>

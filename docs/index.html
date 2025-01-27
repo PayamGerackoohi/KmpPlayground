@@ -43,7 +43,7 @@
 <body>
   <div class="last-edit-box">
     <h2>Last Edit</h2>
-    <h3>2025-01-23T17:06Z</h3>
+    <h3>2025-01-27T16:21Z</h3>
   </div>
 
   <h1>KMP Playground</h1>
@@ -76,30 +76,31 @@
       <li class="uncheck">Animate Visibility</li>
       <li class="uncheck">Crossfade</li>
     </ul>
-    <li class="uncheck">Graphics</li>
-    <ul>
-      <li class="uncheck">Charts</li>
-      <li class="uncheck">OpenGL</li>
-    </ul>
-    <li class="uncheck">I/O</li>
-    <ul>
-      <li class="uncheck">API</li>
-      <li class="uncheck">Database</li>
-      <li class="uncheck">Datastore</li>
-      <li class="uncheck">File</li>
-    </ul>
-    <li class="uncheck">Miscellaneous</li>
-    <ul>
-      <li class="uncheck">BLE</li>
-      <li class="uncheck">C++</li>
-      <li class="uncheck">PDF</li>
-    </ul>
+    <!--    <li class="uncheck">Graphics</li>-->
+    <!--    <ul>-->
+    <!--      <li class="uncheck">Charts</li>-->
+    <!--      <li class="uncheck">OpenGL</li>-->
+    <!--    </ul>-->
+    <!--    <li class="uncheck">I/O</li>-->
+    <!--    <ul>-->
+    <!--      <li class="uncheck">API</li>-->
+    <!--      <li class="uncheck">Database</li>-->
+    <!--      <li class="uncheck">Datastore</li>-->
+    <!--      <li class="uncheck">File</li>-->
+    <!--    </ul>-->
+    <!--    <li class="uncheck">Miscellaneous</li>-->
+    <!--    <ul>-->
+    <!--      <li class="uncheck">BLE</li>-->
+    <!--      <li class="uncheck">C++</li>-->
+    <!--      <li class="uncheck">PDF</li>-->
+    <!--    </ul>-->
   </ul>
 
   <h2>Tests</h2>
   <ul>
     <li><a href="reports/test/unit/index.html">Unit Tests</a></li>
     <li><a href="reports/test/ui/index.html">UI Tests</a></li>
+    <li><a href="reports/test/kover/index.html">Coverage</a></li>
   </ul>
 
   <h2>Translations</h2>
@@ -107,5 +108,22 @@
     <li><a href="resources/values/strings.xml">English</a></li>
     <li><a href="resources/values-de/strings.xml">German</a></li>
     <li><a href="resources/values-he/strings.xml">Hebrew</a></li>
+  </ul>
+
+  <h2>Known Issues</h2>
+  <ul>
+    <li>Kover False-Negative
+      <ul>
+        <li>Kotlin: ?:
+          <p>#com.payam1991gr.kmp.playground.data.StringUtilKt { java.lang.String box(java.lang.Object); }</p>
+        </li>
+        <li>Compose: by, remember
+          <p>#com.payam1991gr.kmp.playground.data.time.DateImpl</p>
+        </li>
+        <li>Circuit: event
+          <p>#com.payam1991gr.kmp.playground.presenter.screens.animations.AnimationsPresenter</p>
+        </li>
+      </ul>
+    </li>
   </ul>
 </body>

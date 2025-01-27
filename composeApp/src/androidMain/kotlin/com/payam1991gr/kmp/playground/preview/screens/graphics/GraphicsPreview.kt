@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.payam1991gr.kmp.playground.data.model.GraphicItem
 import com.payam1991gr.kmp.playground.preview.preview
-import com.payam1991gr.kmp.playground.ui.screens.graphics.Graphics
-import com.payam1991gr.kmp.playground.ui.screens.graphics.GraphicsScreen.State
+import com.payam1991gr.kmp.playground.view.screens.graphics.Graphics
+import com.payam1991gr.kmp.playground.view.screens.graphics.GraphicsScreen.State
 import kotlinx.collections.immutable.toPersistentList
 
 @Composable

@@ -6,4 +6,5 @@ fun String.toHeader(): String = mapIndexed { index, it ->
     else " $it"
 }.joinToString("")
 
-fun Any?.box() = this?.toString() ?: "☐"
+@Suppress("IfThenToElvis") // to make kover happy
+fun Any?.box() = if (this == null) "☐" else toString()

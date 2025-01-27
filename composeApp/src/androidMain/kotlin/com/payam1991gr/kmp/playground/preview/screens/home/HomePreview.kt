@@ -5,8 +5,8 @@ import androidx.compose.ui.Modifier
 import com.payam1991gr.kmp.playground.data.model.HomeItem
 import com.payam1991gr.kmp.playground.preview.*
 import com.payam1991gr.kmp.playground.preview.preview
-import com.payam1991gr.kmp.playground.ui.screens.home.Home
-import com.payam1991gr.kmp.playground.ui.screens.home.HomeScreen.State
+import com.payam1991gr.kmp.playground.view.screens.home.Home
+import com.payam1991gr.kmp.playground.view.screens.home.HomeScreen.State
 import kotlinx.collections.immutable.toPersistentList
 
 //@SinglePreview

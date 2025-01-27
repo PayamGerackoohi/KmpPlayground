@@ -3,9 +3,9 @@ package com.payam1991gr.kmp.playground.preview.screens.animations.crossfade
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.payam1991gr.kmp.playground.preview.preview
-import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
-import com.payam1991gr.kmp.playground.ui.screens.animations.crossfade.Crossfade
-import com.payam1991gr.kmp.playground.ui.screens.animations.crossfade.CrossfadeScreen.State
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
+import com.payam1991gr.kmp.playground.view.screens.animations.crossfade.Crossfade
+import com.payam1991gr.kmp.playground.view.screens.animations.crossfade.CrossfadeScreen.State
 import kotlinx.collections.immutable.persistentListOf
 
 @Composable

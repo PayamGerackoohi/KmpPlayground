@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.payam1991gr.kmp.playground.preview.*
 import com.payam1991gr.kmp.playground.preview.preview
-import com.payam1991gr.kmp.playground.ui.module.RandomImage
+import com.payam1991gr.kmp.playground.view.module.RandomImage
 
 @ScreensPreview
 @Composable

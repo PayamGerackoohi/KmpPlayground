@@ -6,11 +6,11 @@ import com.payam1991gr.kmp.playground.data.model.Time
 import com.payam1991gr.kmp.playground.preview.*
 import com.payam1991gr.kmp.playground.preview.Fake.timestamp
 import com.payam1991gr.kmp.playground.preview.Fake.timestamp2
-import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
-import com.payam1991gr.kmp.playground.ui.screens.components.picker.datetime.DateTimePicker
-import com.payam1991gr.kmp.playground.ui.screens.components.picker.datetime.DateTimePickerScreen.State
-import com.payam1991gr.kmp.playground.ui.screens.components.picker.datetime.state.rememberDatePickerState
-import com.payam1991gr.kmp.playground.ui.screens.components.picker.datetime.state.rememberDateRangePickerState
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
+import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePicker
+import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePickerScreen.State
+import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.state.rememberDatePickerState
+import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.state.rememberDateRangePickerState
 import kotlinx.collections.immutable.persistentListOf
 
 @SinglePreview

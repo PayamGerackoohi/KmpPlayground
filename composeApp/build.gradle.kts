@@ -14,10 +14,12 @@ plugins {
     alias(libs.plugins.composeCompiler)
     id("kotlin-parcelize")
     alias(libs.plugins.roborazzi)
+    alias(libs.plugins.kover)
 }
 
 object AppInfo {
     const val PACKAGE_NAME = "com.payam1991gr.kmp.playground"
+    const val PROJECT_NAME = "kmpplayground"
     const val APP_NAME = "KMP-Playground"
     const val VERSION = "1.0.0"
     val buildDate: String = SimpleDateFormat("yyMMdd-HHmm").format(Date())
@@ -131,7 +133,8 @@ android {
     }
     buildTypes {
         applicationVariants.all {
-            val meta = if (buildType.name == "release") "" else "-${AppInfo.buildDate}"
+//            val meta = if (buildType.name == "release") "" else "-${AppInfo.buildDate}"
+            val meta = "-${AppInfo.buildDate}"
             outputs.all {
                 (this as BaseVariantOutputImpl).outputFileName =
                     "${AppInfo.APP_NAME}-${AppInfo.VERSION}$meta.apk"
@@ -183,6 +186,25 @@ android {
     }
 }
 
+kover {
+    reports {
+        filters {
+            AppInfo.apply {
+                excludes {
+                    classes(
+                        "${PACKAGE_NAME}.*.sample.*",
+                        "${PACKAGE_NAME}.*_ComposeKt",
+                        "${PACKAGE_NAME}.preview.*",
+                        "${PACKAGE_NAME}.view.*",
+                        "${PACKAGE_NAME}.data.koin.*",
+                        "${PROJECT_NAME}.composeapp.generated.resources.*",
+                    )
+                }
+            }
+        }
+    }
+}
+
 dependencies {
     debugImplementation(compose.uiTooling)
     debugImplementation(libs.test.androidx.ui.manifest)
@@ -190,7 +212,7 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "com.payam1991gr.kmp.playground.MainKt"
+        mainClass = "com.payam1991gr.kmp.playground.view.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)

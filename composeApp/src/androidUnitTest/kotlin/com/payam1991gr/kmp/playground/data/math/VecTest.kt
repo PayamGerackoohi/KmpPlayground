@@ -45,8 +45,25 @@ class VecTest {
     }
 
     @Test
-    fun `equality - test`() {
+    fun `content - equality - test`() {
         assertThat(Vec.tor()).isEqualTo(Vec.tor())
         assertThat(Vec.tor(1f, 2f, 3f)).isEqualTo(Vec.tor(1f, 2f, 3f))
+    }
+
+    @Test
+    fun `non-content equality - test`() { // to make kover happy
+        Vec.tor().apply {
+            assertThat(equals(this)).isTrue()
+            assertThat(equals(null)).isFalse()
+            assertThat(equals(0)).isFalse()
+        }
+    }
+
+    @Test
+    fun `hashCode - test`() {
+        assertThat(Vec.tor().hashCode())
+            .isEqualTo(Vec.tor().hashCode())
+        assertThat(Vec.tor(1f, 2f, 3f).hashCode())
+            .isEqualTo(Vec.tor(1f, 2f, 3f).hashCode())
     }
 }

@@ -1,7 +1,7 @@
 package com.payam1991gr.kmp.playground.data.time.sample
 
-import com.payam1991gr.kmp.playground.ui.module.editor.CodeEditor
-import com.payam1991gr.kmp.playground.ui.sample.appendComposable
+import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.sample.appendComposable
 
 @Suppress("FunctionName")
 fun CodeEditor.appendTime_format() {

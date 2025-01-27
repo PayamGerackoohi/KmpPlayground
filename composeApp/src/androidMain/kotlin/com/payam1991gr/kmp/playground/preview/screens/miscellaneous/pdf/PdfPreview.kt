@@ -3,9 +3,9 @@ package com.payam1991gr.kmp.playground.preview.screens.miscellaneous.pdf
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.payam1991gr.kmp.playground.preview.preview
-import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
-import com.payam1991gr.kmp.playground.ui.screens.miscellaneous.pdf.Pdf
-import com.payam1991gr.kmp.playground.ui.screens.miscellaneous.pdf.PdfScreen.State
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
+import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.Pdf
+import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.PdfScreen.State
 import kotlinx.collections.immutable.persistentListOf
 
 @Composable

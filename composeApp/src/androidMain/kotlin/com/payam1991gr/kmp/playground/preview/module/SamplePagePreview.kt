@@ -8,11 +8,11 @@ import androidx.compose.ui.text.style.TextAlign
 import com.payam1991gr.kmp.playground.data.model.sample.rememberSetting
 import com.payam1991gr.kmp.playground.preview.*
 import com.payam1991gr.kmp.playground.preview.preview
-import com.payam1991gr.kmp.playground.ui.module.SamplePage
-import com.payam1991gr.kmp.playground.ui.module.SamplePage.Action
-import com.payam1991gr.kmp.playground.ui.module.SamplePage.Preview
-import com.payam1991gr.kmp.playground.ui.module.editor.CodePanel
-import com.payam1991gr.kmp.playground.ui.module.editor.rememberCodeEditor
+import com.payam1991gr.kmp.playground.view.module.SamplePage
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview
+import com.payam1991gr.kmp.playground.view.module.editor.CodePanel
+import com.payam1991gr.kmp.playground.view.module.editor.rememberCodeEditor
 import kmpplayground.composeapp.generated.resources.*
 import kotlinx.collections.immutable.persistentListOf
 

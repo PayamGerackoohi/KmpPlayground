@@ -101,8 +101,9 @@ class MatTest {
     }
 
     @Test
-    fun `equality - test`() {
+    fun `content - equality - test`() {
         assertThat(Mat.rix()).isEqualTo(Mat.rix())
+
         assertThat(
             Mat.rix()
                 .row(1f, 2f, 3f)
@@ -111,6 +112,44 @@ class MatTest {
             Mat.rix()
                 .row(1f, 2f, 3f)
                 .row(4f, 5f, 6f)
+        )
+
+        assertThat(Mat.rix()).isNotEqualTo(Mat.rix().row(1f))
+
+        assertThat(
+            Mat.rix()
+                .row(1f, 2f, 3f)
+                .row(4f, 5f, 6f)
+        ).isNotEqualTo(
+            Mat.rix()
+                .row(1f, 2f, 3f)
+                .row(4f, .5f, 6f)
+        )
+    }
+
+    @Test
+    fun `non-content equality - test`() { // to make kover happy
+        Mat.rix().apply {
+            assertThat(equals(this)).isTrue()
+            assertThat(equals(null)).isFalse()
+            assertThat(equals(0)).isFalse()
+        }
+    }
+
+    @Test
+    fun `hashCode - test`() {
+        assertThat(Mat.rix().hashCode())
+            .isEqualTo(Mat.rix().hashCode())
+        assertThat(
+            Mat.rix()
+                .row(1f, 2f, 3f)
+                .row(4f, 5f, 6f)
+                .hashCode()
+        ).isEqualTo(
+            Mat.rix()
+                .row(1f, 2f, 3f)
+                .row(4f, 5f, 6f)
+                .hashCode()
         )
     }
 }
