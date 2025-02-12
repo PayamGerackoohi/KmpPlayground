@@ -41,6 +41,13 @@
     <!-- Components.Picker.DateRange -->
     <string name="components_date_range_picker_description">Date range pickers let people select a range of dates and can be embedded into Dialogs.</string>
 
+    <!-- Components.Pull.To.Refresh -->
+    <string name="components_pull_to_refresh_item_template">Item %1$s</string>
+    <string name="components_pull_to_refresh_linear_progress_indicator">Linear Progress Indicator</string>
+    <string name="components_pull_to_refresh_box">Pull to Refresh Box</string>
+    <string name="components_pull_to_refresh_scaling">Scaling</string>
+    <string name="components_pull_to_refresh_custom_behavior">Custom Behavior</string>
+
     <!-- Animations -->
     <string name="animations_animated_content">Animated Content</string>
     <string name="animations_animated_visibility">Animated Visibility</string>
@@ -77,4 +84,5 @@
     <string name="confirm">Confirm</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="trigger_refresh">Trigger Refresh</string>
 </resources>

@@ -40,6 +40,13 @@
     <!-- Components.Picker.DateRange -->
     <string name="components_date_range_picker_description">בוחרים טווח תאריכים מאפשרים לאנשים לבחור טווח של תאריכים וניתן להטמיע אותם בדיאלוגים.</string>
 
+    <!-- Components.Pull.To.Refresh -->
+    <string name="components_pull_to_refresh_item_template">פריט %1$s</string>
+    <string name="components_pull_to_refresh_linear_progress_indicator">מחוון התקדמות ליניארי</string>
+    <string name="components_pull_to_refresh_box">משוך ל-Refresh Box</string>
+    <string name="components_pull_to_refresh_scaling">דֵרוּג</string>
+    <string name="components_pull_to_refresh_custom_behavior">התנהגות מותאמת אישית</string>
+
     <!-- Animations -->
     <string name="animations_animated_content">תוכן מונפש</string>
     <string name="animations_animated_visibility">נראות מונפשת</string>
@@ -76,4 +83,5 @@
     <string name="confirm">לְאַשֵׁר</string>
     <string name="ok">בְּסֵדֶר</string>
     <string name="cancel">לְבַטֵל</string>
+    <string name="trigger_refresh">טריגר רענון</string>
 </resources>

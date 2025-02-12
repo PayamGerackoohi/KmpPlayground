@@ -19,6 +19,8 @@ import com.payam1991gr.kmp.playground.view.module.editor.CodePanel
 import com.payam1991gr.kmp.playground.view.module.editor.rememberCodeEditor
 import com.payam1991gr.kmp.playground.view.screens.components.carousel.CarouselScreen.State
 import com.payam1991gr.kmp.playground.view.screens.components.carousel.CarouselScreen.State.Event
+import com.payam1991gr.kmp.playground.view.screens.components.carousel.sample.appendHorizontalMultiBrowseCarouselSample
+import com.payam1991gr.kmp.playground.view.screens.components.carousel.sample.appendHorizontalUncontainedCarouselSample
 import com.slack.circuit.runtime.ui.Ui
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource

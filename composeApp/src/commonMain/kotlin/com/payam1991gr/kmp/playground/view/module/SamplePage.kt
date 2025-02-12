@@ -41,6 +41,17 @@ import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
 
+/**
+ * A screen to show sample usage of kmp features, components, ...
+ * @param showCode whether the screen should show the code or the preview of the content
+ * @param titleRes the string resource of the screen title
+ * @param actions the action-bar icons
+ * @param onClick events, triggered by clicking on the action-bar icons
+ * @param preview a simple preview of the content
+ * @sample com.payam1991gr.kmp.playground.view.screens.components.carousel.Carousel.Preview
+ * @param code a simple and sufficient code to produce the content
+ * @sample com.payam1991gr.kmp.playground.view.screens.components.carousel.Carousel.Code
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SamplePage(
@@ -66,9 +77,7 @@ fun SamplePage(
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary),
-                navigationIcon = {
-                    if (showBack) SamplePage.ToolbarButton(Action.Back, onClick)
-                },
+                navigationIcon = { if (showBack) SamplePage.ToolbarButton(Action.Back, onClick) },
                 actions = {
                     localActions.forEach { action -> SamplePage.ToolbarButton(action, onClick) }
                 },
@@ -109,6 +118,20 @@ object SamplePage {
         }
     }
 
+    /**
+     * A helper composable method to make preview of the content in a sample screen
+     * It can hold any content, framed and separated by a margin of `16.dp`. It also provides some
+     * helper functions:
+     * - [Preview.Header] The header of the sample section
+     * - [Preview.Description] A concise description for the sample
+     * - [Preview.Settings] Some settings to make the sample a little adjustable
+     * - [Preview.ContentList] A simple content list with proper margins
+     * @param contents a collection of contents to be placed in a `LazyColumn` host
+     * @param modifier the composable host modifier
+     * @sample com.payam1991gr.kmp.playground.view.screens.components.carousel.Carousel.Preview
+     * @sample com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePicker.TimeSample
+     *
+     */
     @Composable
     fun preview(
         vararg contents: @Composable () -> Unit,

@@ -1,4 +1,4 @@
-package com.payam1991gr.kmp.playground.view.screens.components.carousel
+package com.payam1991gr.kmp.playground.view.screens.components.carousel.sample
 
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
 import com.payam1991gr.kmp.playground.view.sample.appendComposable
