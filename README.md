@@ -11,15 +11,17 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
   - [x] Carousel
   - [x] Dialog
   - [x] Date/Time Picker
-  - [ ] Pull to Refresh
+  - [x] Pull to Refresh
+  - [ ] ...
 - [ ] Animations
   - [ ] animate*As
   - [ ] Animate Content
-  - [ ] Animate Visibility
+  - [x] Animate Visibility
   - [ ] Crossfade
 
 ### Graphics
 - [ ] Charts
+- [x] Color Scheme
 - [ ] OpenGL
 
 ### I/O

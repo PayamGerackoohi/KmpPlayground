@@ -18,6 +18,11 @@ fun CodeEditor.appendState_PtrState_PullToRefresh() {
     line(1) { cyan { "topBar = " }; normal { "{" } }
     line(2) { normal { "TopAppBar(" } }
     line(3) { cyan { "title = " }; normal { "{ Text(title) }," } }
+    line(3) { cyan { "colors = " }; normal { "TopAppBarDefaults.topAppBarColors(" } }
+    line(4) { cyan { "containerColor = " }; normal { "MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "primaryContainer" }; normal { "," } }
+    line(4) { cyan { "titleContentColor = " }; normal { "MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "onPrimaryContainer" }; normal { "," } }
+    line(4) { cyan { "actionIconContentColor = " }; normal { "MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "onPrimaryContainer" }; normal { "," } }
+    line(3) { normal { ")," } }
     line(3) { cyan { "actions = " }; normal { "{ " }; gray { "// Provide an accessible alternative to trigger refresh." } }
     line(4) { normal { "IconButton(" }; cyan { "onClick = " }; normal { "::onRefresh) {" } }
     line(5) { normal { "Icon(" } }
@@ -40,6 +45,7 @@ fun CodeEditor.appendState_PtrState_PullToRefresh() {
     line(6) { normal { ")" } }
     line(5) { normal { ")" } }
     line(4) { normal { "})" } }
+    line(4) { normal { "HorizontalDivider()" } }
     line(3) { normal { "}" } }
     line(2) { normal { "}" } }
     line(1) { normal { "}" } }
@@ -156,9 +162,8 @@ fun CodeEditor.appendState_PtrState_CustomBehaviorSample() {
 
 fun CodeEditor.appendModifier_module() {
     line { orange { "private fun " }; normal { "Modifier." }; blue { "module" }; normal { "(tag: String) = " }; orange { "this" } }
-    line(1) { normal { "." }; blue { "padding" }; normal { "(" }; cyan { "horizontal = 16" }; normal { "." }; purple { "dp" }; normal { ")" } }
     line(1) { normal { "." }; blue { "height" }; normal { "(" }; cyan { "250" }; normal { "." }; purple { "dp" }; normal { ")" } }
-    line(1) { normal { "." }; blue { "border" }; normal { "(" }; cyan { "2" }; normal { "." }; purple { "dp" }; normal { ", Color." }; purple { "Red" }; normal { ")" } }
+    line(1) { normal { "." }; blue { "border" }; normal { "(" }; cyan { "2" }; normal { "." }; purple { "dp" }; normal { ", Color." }; purple { "Red" }; normal { ", RoundedCornerShape(" }; cyan { "topStart = 16" }; normal { "." }; purple { "dp" }; normal { ", " }; cyan { "bottomEnd = 16" }; normal { "." }; purple { "dp" }; normal { "))" } }
     line(1) { normal { "." }; blue { "testTag" }; normal { "(" }; green { "\"Module." }; orange { "\$" }; normal { "tag" }; green { "\"" }; normal { ")" } }
     line()
 }

@@ -13,16 +13,20 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.PullToRefreshState
@@ -31,6 +35,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.testTag
@@ -78,6 +83,11 @@ class PullToRefresh : Ui<State> {
         topBar = {
             TopAppBar(
                 title = { Text(title) },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                    actionIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                ),
                 actions = { // Provide an accessible alternative to trigger refresh.
                     IconButton(onClick = ::onRefresh) {
                         Icon(
@@ -85,7 +95,8 @@ class PullToRefresh : Ui<State> {
                             stringResource(Res.string.trigger_refresh),
                         )
                     }
-                }
+                },
+                modifier = Modifier.clip(RoundedCornerShape(topStart = 16.dp))
             )
         },
     ) {
@@ -100,6 +111,7 @@ class PullToRefresh : Ui<State> {
                             )
                         )
                     })
+                    HorizontalDivider()
                 }
             }
         }
@@ -201,9 +213,8 @@ class PullToRefresh : Ui<State> {
     }
 
     private fun Modifier.module(tag: String) = this
-        .padding(horizontal = 16.dp)
         .height(250.dp)
-        .border(2.dp, Color.Red)
+        .border(2.dp, Color.Red, RoundedCornerShape(topStart = 16.dp, bottomEnd = 16.dp))
         .testTag("Module.$tag")
 
     private fun Modifier.moduleList(tag: String) = this

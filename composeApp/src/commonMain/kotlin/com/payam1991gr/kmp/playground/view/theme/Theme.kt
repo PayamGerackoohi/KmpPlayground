@@ -50,7 +50,8 @@ fun KmpPlaygroundTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
-    val colorScheme = dynamicColorScheme(dynamicColor, darkTheme) ?: when {
+//    val colorScheme = dynamicColorScheme(dynamicColor, darkTheme) ?: when {
+    val colorScheme = when {
         forceMode == ColorMode.Light -> LightColors
         forceMode == ColorMode.Dark -> DarkColors
         darkTheme -> DarkColors

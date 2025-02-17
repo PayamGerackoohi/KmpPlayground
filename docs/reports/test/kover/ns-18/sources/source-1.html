@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > MiscellaneousPresenter</title>
+  <title>composeApp Coverage Report > FilePresenter</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.miscellaneous</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.io.file</a>
 </div>
 
-<h1>Coverage Summary for Class: MiscellaneousPresenter (com.payam1991gr.kmp.playground.presenter.screens.miscellaneous)</h1>
+<h1>Coverage Summary for Class: FilePresenter (com.payam1991gr.kmp.playground.presenter.screens.io.file)</h1>
 
 <table class="coverageStats">
 
@@ -46,7 +46,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">MiscellaneousPresenter</td>
+  <td class="name">FilePresenter</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -57,31 +57,31 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </td>
 <td class="coverageStat">
   <span class="percent">
-    80%
+    85.7%
   </span>
   <span class="absValue">
-    (4/5)
+    (6/7)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    88.9%
   </span>
   <span class="absValue">
-    (9/9)
+    (8/9)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    95%
+    92.5%
   </span>
   <span class="absValue">
-    (95/100)
+    (98/106)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">MiscellaneousPresenter$WhenMappings</td>
+    <td class="name">FilePresenter$WhenMappings</td>
     <td class="coverageStat"/>
   </tr>
 <tr>
@@ -96,26 +96,26 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </td>
 <td class="coverageStat">
   <span class="percent">
-    80%
+    85.7%
   </span>
   <span class="absValue">
-    (4/5)
+    (6/7)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    88.9%
   </span>
   <span class="absValue">
-    (9/9)
+    (8/9)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    95%
+    92.5%
   </span>
   <span class="absValue">
-    (95/100)
+    (98/106)
   </span>
 </td>
 </tr>
@@ -126,32 +126,26 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.miscellaneous
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.io.file
 &nbsp;
 &nbsp;import androidx.compose.runtime.Composable
-&nbsp;import com.payam1991gr.kmp.playground.data.model.MiscellaneousItem
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.miscellaneous.MiscellaneousScreen.State
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.miscellaneous.ble.BleScreen
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.miscellaneous.cpp.CppScreen
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.PdfScreen
+&nbsp;import com.payam1991gr.kmp.playground.view.module.SamplePage
+&nbsp;import com.payam1991gr.kmp.playground.view.module.toolbar.rememberToolbarState
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.io.file.FileScreen.State
 &nbsp;import com.slack.circuit.runtime.Navigator
 &nbsp;import com.slack.circuit.runtime.presenter.Presenter
-&nbsp;import kotlinx.collections.immutable.toPersistentList
 &nbsp;
-<b class="fc">&nbsp;class MiscellaneousPresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
-<b class="fc">&nbsp;    private val items = MiscellaneousItem.entries.toPersistentList()</b>
-&nbsp;
+<b class="fc">&nbsp;class FilePresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
 &nbsp;    @Composable
-&nbsp;    override fun present(): State {
-<b class="pc">&nbsp;        return State(items = items) {</b>
+<b class="nc">&nbsp;    override fun present(): State {</b>
+<b class="fc">&nbsp;        val toolbarState = rememberToolbarState()</b>
+<b class="pc">&nbsp;        return State(toolbarState.showCode, toolbarState.actions) {</b>
 <b class="fc">&nbsp;            when (it) {</b>
-<b class="fc">&nbsp;                is State.Event.OnClick -&gt; when (it.item) {</b>
-<b class="fc">&nbsp;                    MiscellaneousItem.Cpp -&gt; navigator.goTo(CppScreen)</b>
-<b class="fc">&nbsp;                    MiscellaneousItem.Ble -&gt; navigator.goTo(BleScreen)</b>
-<b class="fc">&nbsp;                    MiscellaneousItem.Pdf -&gt; navigator.goTo(PdfScreen)</b>
+<b class="fc">&nbsp;                is State.Event.OnToolbarAction -&gt; when (it.action) {</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Back -&gt; navigator.pop()</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Code -&gt; toolbarState.code()</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Preview -&gt; toolbarState.preview()</b>
 &nbsp;                }
-&nbsp;
-<b class="fc">&nbsp;                State.Event.OnBackPressed -&gt; navigator.pop()</b>
 &nbsp;            }
 &nbsp;        }
 &nbsp;    }
@@ -179,7 +173,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-01-27 19:21</div>
+    <div style="float:right;">generated on 2025-02-17 12:06</div>
 </div>
 </body>
 </html>

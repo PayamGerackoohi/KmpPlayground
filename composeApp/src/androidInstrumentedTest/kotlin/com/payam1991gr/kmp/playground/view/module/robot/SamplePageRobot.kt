@@ -5,6 +5,7 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.filterToOne
 import androidx.compose.ui.test.hasAnyChild
 import androidx.compose.ui.test.hasContentDescription
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.hasTextExactly
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
 import androidx.compose.ui.test.onAllNodesWithTag
@@ -12,6 +13,7 @@ import androidx.compose.ui.test.onChild
 import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.performScrollToNode
 import com.payam1991gr.kmp.playground.view.module.robot.SamplePageRobot.CodeScope
 import com.payam1991gr.kmp.playground.view.module.robot.SamplePageRobot.PreviewScope
 import com.payam1991gr.kmp.playground.view.module.robot.SamplePageRobot.SettingsScope
@@ -44,6 +46,8 @@ interface SamplePageRobot {
 
     interface CodeScope {
         val sni: Sni
+        fun title(text: String, block: SniBlock = {})
+        fun snippet(text: String): Any
     }
 }
 
@@ -107,7 +111,20 @@ class SamplePageRobotImpl(private val rule: ComposeContentTestRule) : SamplePage
 
     inner class PreviewScopeImpl(override val sni: Sni) : PreviewScope
 
-    inner class CodeScopeImpl(override val sni: Sni) : CodeScope
+    inner class CodeScopeImpl(override val sni: Sni) : CodeScope {
+        override fun title(text: String, block: SniBlock) {
+            sni.performScrollToNode(hasText(text))
+            rule.onNodeWithText(text)
+                .assertIsDisplayed()
+                .block()
+        }
+
+        override fun snippet(text: String) {
+            sni.performScrollToNode(hasText(text, substring = true))
+            rule.onNodeWithText(text, substring = true)
+                .assertIsDisplayed()
+        }
+    }
 }
 
 fun samplePageRobot(

@@ -2,7 +2,9 @@ package com.payam1991gr.kmp.playground.view.test.util
 
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.SemanticsNodeInteraction
+import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.hasAnyAncestor
+import androidx.compose.ui.test.hasStateDescription
 import androidx.compose.ui.test.junit4.ComposeTestRule
 
 typealias Sni = SemanticsNodeInteraction
@@ -17,3 +19,5 @@ fun Sni.onDescendant(
         SemanticsMatcher("Same node?") { it.id == node.id }
     ))
 }
+
+fun Sni.hasState(state: String) = assert(hasStateDescription(state))

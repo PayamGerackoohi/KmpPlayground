@@ -12,8 +12,9 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -135,20 +136,24 @@ object SamplePage {
     @Composable
     fun preview(
         vararg contents: @Composable () -> Unit,
+        gridCells: GridCells = GridCells.Fixed(1),
         modifier: Modifier = Modifier.fillMaxSize(),
-    ) = LazyColumn(
+    ) = LazyVerticalGrid(
+        gridCells,
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
-        contentPadding = PaddingValues(vertical = 16.dp),
+//        contentPadding = PaddingValues(vertical = 16.dp),
+        contentPadding = PaddingValues(16.dp),
         modifier = modifier
     ) {
-        items(contents) { content -> content() }
+        items(contents) { it() }
     }
 
     object Preview {
         @Composable
         fun Header(
             title: String,
-            modifier: Modifier = Modifier.padding(horizontal = 16.dp),
+            modifier: Modifier = Modifier,
         ) {
             Text(
                 text = title,
@@ -160,7 +165,7 @@ object SamplePage {
         @Composable
         fun Description(
             description: String,
-            modifier: Modifier = Modifier.padding(horizontal = 16.dp),
+            modifier: Modifier = Modifier,
         ) {
             Text(description, modifier)
         }
@@ -169,7 +174,7 @@ object SamplePage {
         @Composable
         fun Settings(
             vararg items: Setting,
-            modifier: Modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            modifier: Modifier = Modifier.fillMaxWidth(),
         ) {
             FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),

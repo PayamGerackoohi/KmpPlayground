@@ -1,6 +1,5 @@
 package com.payam1991gr.kmp.playground.view.screens.components.carousel
 
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -56,7 +55,6 @@ class Carousel : Ui<State> {
             state = rememberCarouselState { 10 },
             preferredItemWidth = 200.dp,
             itemSpacing = 8.dp,
-            contentPadding = PaddingValues(horizontal = 16.dp),
         ) { index ->
             RandomImage(
                 contentDescription = "Image $index",
@@ -73,7 +71,6 @@ class Carousel : Ui<State> {
             state = rememberCarouselState { 10 },
             itemWidth = 200.dp,
             itemSpacing = 8.dp,
-            contentPadding = PaddingValues(horizontal = 16.dp),
         ) { index ->
             RandomImage(
                 contentDescription = "Image ${10 + index}",

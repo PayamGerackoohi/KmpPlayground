@@ -17,10 +17,10 @@
     <string name="horizontal_uncontained_carousel">A horizontal carousel that displays its items with the given size except for one item at the end that is cut off.</string>
 
     <!-- Components.Dialog -->
-    <string name="alert_dialog">Dialogs provide important prompts in a user flow. They can require an action, communicate information, or help users accomplish a task.</string>
-    <string name="date_picker_dialog">A dialog for displaying a DatePicker. Date pickers let people select a date.</string>
-    <string name="time_picker_dialog_set_time">Set Time</string>
-    <string name="time_picker_dialog_select_time">Select Time</string>
+    <string name="components_alert_dialog">Dialogs provide important prompts in a user flow. They can require an action, communicate information, or help users accomplish a task.</string>
+    <string name="components_date_picker_dialog">A dialog for displaying a DatePicker. Date pickers let people select a date.</string>
+    <string name="components_time_picker_dialog_set_time">Set Time</string>
+    <string name="components_time_picker_dialog_select_time">Select Time</string>
 
     <!-- Components.Picker.Date -->
     <string name="components_date_picker_description">Date pickers let people select a date and preferably should be embedded into Dialogs.</string>
@@ -41,14 +41,42 @@
     <!-- Components.Picker.DateRange -->
     <string name="components_date_range_picker_description">Date range pickers let people select a range of dates and can be embedded into Dialogs.</string>
 
+    <!-- Components.Pull.To.Refresh -->
+    <string name="components_pull_to_refresh_item_template">Item %1$s</string>
+    <string name="components_pull_to_refresh_linear_progress_indicator">Linear Progress Indicator</string>
+    <string name="components_pull_to_refresh_box">Pull to Refresh Box</string>
+    <string name="components_pull_to_refresh_scaling">Scaling</string>
+    <string name="components_pull_to_refresh_custom_behavior">Custom Behavior</string>
+
     <!-- Animations -->
     <string name="animations_animated_content">Animated Content</string>
     <string name="animations_animated_visibility">Animated Visibility</string>
     <string name="animations_crossfade">Crossfade</string>
     <string name="animations_animate_x_as">Animate X as</string>
 
+    <!-- Animations.AnimatedVisibility -->
+    <string name="animations_animated_visibility_horizontal_transition">Horizontal Transition</string>
+    <string name="animations_animated_visibility_slide_transition">Slide Transition</string>
+    <string name="animations_animated_visibility_fade_transition">Fade Transition</string>
+    <string name="animations_animated_visibility_fully_loaded_transition">Fully Loaded Transition</string>
+    <string name="animations_animated_visibility_boolean_visible_param_no_receiver">Boolean Visible Param - No Receiver</string>
+    <string name="animations_animated_visibility_floating_action_button">Floating Action Button</string>
+    <string name="animations_animated_visibility_slide_in_out">Slide In-Out</string>
+    <string name="animations_animated_visibility_expand_shrink_vertically">Expand Shrink Vertically</string>
+    <string name="animations_animated_visibility_expand_in_shrink_out">Expand In Shrink Out</string>
+    <string name="animations_animated_visibility_row">Row</string>
+    <string name="animations_animated_visibility_scope_animate_enter_exit">Scope Animate Enter-Exit</string>
+    <string name="animations_animated_visibility_scope_animate_enter_exit_transition_finished">Transition Finished</string>
+    <string name="animations_animated_visibility_adding_to_generic_transition">Adding to Generic Transition</string>
+    <string name="animations_animated_visibility_lazy_row">Lazy Row</string>
+    <string name="animations_animated_visibility_lazy_row_remove">Remove Item: %1$s</string>
+    <string name="animations_animated_visibility_row_scope_with_mutable_transition_state">Row-Scope with Mutable Transition State</string>
+    <string name="animations_animated_visibility_animate_enter_exit_partial_content">Animate Enter-Exit Partial Content</string>
+    <string name="animations_animated_visibility_scaled_enter_exit">Scaled Enter-Exit</string>
+
     <!-- Graphic -->
     <string name="graphic_charts">Charts</string>
+    <string name="graphic_color_scheme">Color Scheme</string>
     <string name="graphic_opengl">OpenGL</string>
 
     <!-- I/O -->
@@ -77,4 +105,11 @@
     <string name="confirm">Confirm</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="trigger_refresh">Trigger Refresh</string>
+    <string name="favorite">Favorite</string>
+    <string name="add">Add</string>
+    <string name="clear_all">Clear All</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="shared">Shared</string>
 </resources>

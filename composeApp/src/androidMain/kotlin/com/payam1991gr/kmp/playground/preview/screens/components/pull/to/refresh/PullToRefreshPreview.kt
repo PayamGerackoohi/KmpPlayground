@@ -13,6 +13,7 @@ import kotlinx.collections.immutable.persistentListOf
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SinglePreview
+//@SimpleDayNightPreview
 @Composable
 fun PullToRefresh_Preview_Preview() = preview {
     PullToRefresh().Content(

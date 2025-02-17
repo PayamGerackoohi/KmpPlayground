@@ -70,21 +70,28 @@ class Home : Ui<State> {
                     }
                 }
             )
+//            Text(
+//                "$screenClass :: ${screenDimension.run { "$width x $height" }}",
+//                color = Color.White,
+//                style = MaterialTheme.typography.headlineSmall,
+//                modifier = Modifier
+//                    .align(Alignment.Center)
+//                    .background(Color.Black.copy(.3f))
+//            )
         }
     }
 
     private fun ScreenDimension.klass() = when {
         height < 400.dp -> ScreenClass.A
+        (5 * 200).dp < height -> ScreenClass.D
+        (5 * 120).dp < height -> ScreenClass.B
         width in 500.dp..700.dp -> ScreenClass.B
         height < 600.dp -> when {
             900.dp < width -> ScreenClass.C
             else -> ScreenClass.A
         }
 
-        else -> when {
-            500.dp < width -> ScreenClass.D
-            else -> ScreenClass.A
-        }
+        else -> ScreenClass.A
     }
 
     companion object {

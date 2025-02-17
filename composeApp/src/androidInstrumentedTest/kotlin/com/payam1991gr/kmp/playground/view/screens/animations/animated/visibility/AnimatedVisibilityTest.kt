@@ -48,7 +48,22 @@ class AnimatedVisibilityTest : BaseTest() {
 
                     assertThatCodePageIsNotDisplayed()
                     preview {
-                        previewContent()
+                        horizontalTransitionSample()
+                        slideTransitionSample()
+                        fadeTransitionSample()
+                        fullyLoadedTransitionSample()
+                        booleanVisibleParamNoReceiverSample()
+                        floatingActionButtonSample()
+                        slideInOutSample()
+                        expandShrinkVerticallySample()
+                        expandInShrinkOutSample()
+                        rowSample()
+                        scopeAnimateEnterExitSample()
+                        addingToGenericTransitionSample()
+                        lazyRowSample()
+                        rowScopeWithMutableTransitionStateSample()
+                        animateEnterExitPartialContentSample()
+                        scaledEnterExitSample()
 
                         on("Code") { performClick() }
                         verify { event(Event.OnToolbarAction(Action.Code)) }
@@ -57,7 +72,23 @@ class AnimatedVisibilityTest : BaseTest() {
 
                     assertThatPreviewPageIsNotDisplayed()
                     code {
-                        codeContent()
+                        shared()
+                        horizontalTransitionSample()
+                        slideTransitionSample()
+                        fadeTransitionSample()
+                        fullyLoadedTransitionSample()
+                        booleanVisibleParamNoReceiverSample()
+                        animatedFloatingActionButtonSample()
+                        slideInOutSample()
+                        expandShrinkVerticallySample()
+                        expandInShrinkOutSample()
+                        rowSample()
+                        scopeAnimateEnterExitSample()
+                        addingToGenericTransitionSample()
+                        lazyRowSample()
+                        rowScopeWithMutableTransitionStateSample()
+                        animateEnterExitPartialContentSample()
+                        scaledEnterExitSample()
 
                         on("Preview") { performClick() }
                         verify { event(Event.OnToolbarAction(Action.Preview)) }

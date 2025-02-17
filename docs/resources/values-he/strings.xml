@@ -16,10 +16,10 @@
     <string name="horizontal_uncontained_carousel">קרוסלה אופקית המציגה את פריטיה בגודל הנתון למעט פריט אחד בקצה הנחתך.</string>
 
     <!-- Components.Dialog -->
-    <string name="alert_dialog">דיאלוגים מספקים הנחיות חשובות בזרימת משתמש. הם יכולים לדרוש פעולה, לתקשר מידע או לעזור למשתמשים לבצע משימה.</string>
-    <string name="date_picker_dialog">דו-שיח להצגת בורר תאריכים. בוחר תאריכים מאפשר לאנשים לבחור תאריך.</string>
-    <string name="time_picker_dialog_set_time">הגדר זמן</string>
-    <string name="time_picker_dialog_select_time">בחר זמן</string>
+    <string name="components_alert_dialog">דיאלוגים מספקים הנחיות חשובות בזרימת משתמש. הם יכולים לדרוש פעולה, לתקשר מידע או לעזור למשתמשים לבצע משימה.</string>
+    <string name="components_date_picker_dialog">דו-שיח להצגת בורר תאריכים. בוחר תאריכים מאפשר לאנשים לבחור תאריך.</string>
+    <string name="components_time_picker_dialog_set_time">הגדר זמן</string>
+    <string name="components_time_picker_dialog_select_time">בחר זמן</string>
 
     <!-- Components.Picker.Date -->
     <string name="components_date_picker_description">בוחרים תאריכים מאפשרים לאנשים לבחור תאריך ורצוי שיהיו מוטמעים בדיאלוגים.</string>
@@ -40,14 +40,42 @@
     <!-- Components.Picker.DateRange -->
     <string name="components_date_range_picker_description">בוחרים טווח תאריכים מאפשרים לאנשים לבחור טווח של תאריכים וניתן להטמיע אותם בדיאלוגים.</string>
 
+    <!-- Components.Pull.To.Refresh -->
+    <string name="components_pull_to_refresh_item_template">פריט %1$s</string>
+    <string name="components_pull_to_refresh_linear_progress_indicator">מחוון התקדמות ליניארי</string>
+    <string name="components_pull_to_refresh_box">משוך ל-Refresh Box</string>
+    <string name="components_pull_to_refresh_scaling">דֵרוּג</string>
+    <string name="components_pull_to_refresh_custom_behavior">התנהגות מותאמת אישית</string>
+
     <!-- Animations -->
     <string name="animations_animated_content">תוכן מונפש</string>
     <string name="animations_animated_visibility">נראות מונפשת</string>
     <string name="animations_crossfade">Crossfade</string>
     <string name="animations_animate_x_as">הנפשת X בתור</string>
 
+    <!-- Animations.AnimatedVisibility -->
+    <string name="animations_animated_visibility_horizontal_transition">מעבר אופקי</string>
+    <string name="animations_animated_visibility_slide_transition">Slide Transition</string>
+    <string name="animations_animated_visibility_fade_transition">מעבר לדעוך</string>
+    <string name="animations_animated_visibility_fully_loaded_transition">מעבר טעון במלואו</string>
+    <string name="animations_animated_visibility_boolean_visible_param_no_receiver">Param Visible Boolean - ללא מקלט</string>
+    <string name="animations_animated_visibility_floating_action_button">כפתור פעולה צף</string>
+    <string name="animations_animated_visibility_slide_in_out">החלק פנימה-אאוט</string>
+    <string name="animations_animated_visibility_expand_shrink_vertically">הרחב כיווץ אנכית</string>
+    <string name="animations_animated_visibility_expand_in_shrink_out">הרחב ב-Shrink Out</string>
+    <string name="animations_animated_visibility_row">שׁוּרָה</string>
+    <string name="animations_animated_visibility_scope_animate_enter_exit">Scope Animate Enter-Exit</string>
+    <string name="animations_animated_visibility_scope_animate_enter_exit_transition_finished">המעבר הסתיים</string>
+    <string name="animations_animated_visibility_adding_to_generic_transition">הוספה למעבר גנרי</string>
+    <string name="animations_animated_visibility_lazy_row">שורה עצלה</string>
+    <string name="animations_animated_visibility_lazy_row_remove">הסר פריט: %1$s</string>
+    <string name="animations_animated_visibility_row_scope_with_mutable_transition_state">שורה-סקופ עם מצב מעבר ניתן לשינוי</string>
+    <string name="animations_animated_visibility_animate_enter_exit_partial_content">הנפשה של תוכן חלקי של כניסה-יציאה</string>
+    <string name="animations_animated_visibility_scaled_enter_exit">קנה מידה של כניסה-יציאה</string>
+
     <!-- Graphic -->
     <string name="graphic_charts">תרשימים</string>
+    <string name="graphic_color_scheme">ערכת צבעים</string>
     <string name="graphic_opengl">OpenGL</string>
 
     <!-- I/O -->
@@ -76,4 +104,11 @@
     <string name="confirm">לְאַשֵׁר</string>
     <string name="ok">בְּסֵדֶר</string>
     <string name="cancel">לְבַטֵל</string>
+    <string name="trigger_refresh">טריגר רענון</string>
+    <string name="favorite">מוּעֲדָף</string>
+    <string name="add">לְהוֹסִיף</string>
+    <string name="clear_all">נקה הכל</string>
+    <string name="red">אָדוֹם</string>
+    <string name="green">יָרוֹק</string>
+    <string name="shared">מְשׁוּתָף</string>
 </resources>

@@ -5,5 +5,6 @@ import org.jetbrains.compose.resources.StringResource
 
 enum class GraphicItem(val labelRes: StringResource) {
     Charts(Res.string.graphic_charts),
+    ColorScheme(Res.string.graphic_color_scheme),
     OpenGL(Res.string.graphic_opengl),
 }

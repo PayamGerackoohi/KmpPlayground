@@ -93,11 +93,11 @@ class Dialog : Ui<State> {
     @Composable
     fun Preview(state: State) = preview(
         { Header("Basic Alert Dialog") },
-        { Description(stringResource(Res.string.alert_dialog)) },
+        { Description(stringResource(Res.string.components_alert_dialog)) },
         { BasicAlertDialogSample() },
 
         { Header("Date Picker Dialog") },
-        { Description(stringResource(Res.string.date_picker_dialog)) },
+        { Description(stringResource(Res.string.components_date_picker_dialog)) },
         { DatePickerDialogSample(state.datePicker) },
 
         { Header("Time Picker Dialog") },
@@ -230,11 +230,11 @@ class Dialog : Ui<State> {
                 onClick = { showTimePicker = true },
                 modifier = Modifier.testTag("TimePicker.SetTime")
             ) {
-                Text(stringResource(Res.string.time_picker_dialog_set_time))
+                Text(stringResource(Res.string.components_time_picker_dialog_set_time))
             }
 
             if (showTimePicker) TimePickerDialog(
-                title = stringResource(Res.string.time_picker_dialog_select_time),
+                title = stringResource(Res.string.components_time_picker_dialog_select_time),
                 onCancel = { showTimePicker = false },
                 onConfirm = {
                     time = time()

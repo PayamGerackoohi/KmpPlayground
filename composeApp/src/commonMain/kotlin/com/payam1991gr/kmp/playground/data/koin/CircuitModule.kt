@@ -12,6 +12,7 @@ import com.payam1991gr.kmp.playground.presenter.screens.components.picker.dateti
 import com.payam1991gr.kmp.playground.presenter.screens.components.pull.to.refresh.PullToRefreshPresenter
 import com.payam1991gr.kmp.playground.presenter.screens.graphics.GraphicsPresenter
 import com.payam1991gr.kmp.playground.presenter.screens.graphics.charts.ChartsPresenter
+import com.payam1991gr.kmp.playground.presenter.screens.graphics.color.scheme.ColorSchemePresenter
 import com.payam1991gr.kmp.playground.presenter.screens.graphics.opengl.OpenGlPresenter
 import com.payam1991gr.kmp.playground.presenter.screens.home.HomePresenter
 import com.payam1991gr.kmp.playground.presenter.screens.io.IoPresenter
@@ -47,6 +48,8 @@ import com.payam1991gr.kmp.playground.view.screens.graphics.Graphics
 import com.payam1991gr.kmp.playground.view.screens.graphics.GraphicsScreen
 import com.payam1991gr.kmp.playground.view.screens.graphics.charts.Charts
 import com.payam1991gr.kmp.playground.view.screens.graphics.charts.ChartsScreen
+import com.payam1991gr.kmp.playground.view.screens.graphics.color.scheme.ColorScheme
+import com.payam1991gr.kmp.playground.view.screens.graphics.color.scheme.ColorSchemeScreen
 import com.payam1991gr.kmp.playground.view.screens.graphics.opengl.OpenGl
 import com.payam1991gr.kmp.playground.view.screens.graphics.opengl.OpenGlScreen
 import com.payam1991gr.kmp.playground.view.screens.home.Home
@@ -90,6 +93,7 @@ val circuitModule by lazy {
                         is DateTimePickerScreen -> DateTimePicker()
                         is GraphicsScreen -> Graphics()
                         is ChartsScreen -> Charts()
+                        is ColorSchemeScreen -> ColorScheme()
                         is OpenGlScreen -> OpenGl()
                         is HomeScreen -> Home()
                         is IoScreen -> Io()
@@ -118,6 +122,7 @@ val circuitModule by lazy {
                         is DateTimePickerScreen -> DateTimePickerPresenter(navigator)
                         is GraphicsScreen -> GraphicsPresenter(navigator)
                         is ChartsScreen -> ChartsPresenter(navigator)
+                        is ColorSchemeScreen -> ColorSchemePresenter(navigator)
                         is OpenGlScreen -> OpenGlPresenter(navigator)
                         is HomeScreen -> HomePresenter(navigator)
                         is IoScreen -> IoPresenter(navigator)

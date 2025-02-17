@@ -2,26 +2,39 @@ import java.util.Locale
 
 /**
  * Adds circuit bases screen (State-UI-Presenter)
+ * @param path   the destination files local path
+ * @param screen the screen name
  * @sample ./gradlew addScreen -Pscreen=samplePage
  * It produces:
  * [PACKAGE_DIR]
- *   ∟ ui
+ *   ∟ view
  *     ∟ screens
  *       ∟ sample
  *         ∟ page
  *           ∟ SamplePage.kt
  *           ∟ SamplePageScreen.kt
+ * [PACKAGE_DIR]
+ *   ∟ presenter
+ *     ∟ screens
+ *       ∟ sample
+ *         ∟ page
  *           ∟ SamplePagePresenter.kt
  * @sample ./gradlew addScreen -Ppath=path.to.screen -Pscreen=samplePage
  * It produces:
  * [PACKAGE_DIR]
- *   ∟ ui
+ *   ∟ view
  *     ∟ screens
  *       ∟ path
  *         ∟ to
  *           ∟ screen
  *             ∟ SamplePage.kt
  *             ∟ SamplePageScreen.kt
+ * [PACKAGE_DIR]
+ *   ∟ presenter
+ *     ∟ screens
+ *       ∟ path
+ *         ∟ to
+ *           ∟ screen
  *             ∟ SamplePagePresenter.kt
  */
 abstract class AddScreenTask : DefaultTask() {
@@ -48,21 +61,23 @@ abstract class AddScreenTask : DefaultTask() {
     fun action() {
         val screen = "${className}Screen"
         val presenter = "${className}Presenter"
-        val packageName = Util.run {
-            "com.payam1991gr.kmp.playground.ui.screens".joinWith(subDirectory.dot, ".")
+        val viewPackageName = Util.run {
+            "com.payam1991gr.kmp.playground.view.screens".joinWith(subDirectory.dot, ".")
+        }
+        val presenterPackageName = Util.run {
+            "com.payam1991gr.kmp.playground.presenter.screens".joinWith(subDirectory.dot, ".")
         }
         val projectDir = project.gradle.rootProject.projectDir
-        val directory =
-            "${projectDir}/composeApp/src/commonMain/kotlin/com/payam1991gr/kmp/playground/ui/screens".let {
-                Util.run { it.joinWith(subDirectory.slash, "/") }
-            }.let { File(it) }
-        if (!directory.exists()) directory.mkdirs()
+        val rootDir =
+            "${projectDir}/composeApp/src/commonMain/kotlin/com/payam1991gr/kmp/playground"
+        val viewDirectory = Util.makeDirectory(rootDir, subDirectory, "view")
+        val presenterDirectory = Util.makeDirectory(rootDir, subDirectory, "presenter")
 
-        val screenFile = File(directory, "${screen}.kt")
+        val screenFile = File(viewDirectory, "${screen}.kt")
         screenFile.createNewFile()
         screenFile.writeText(
             """
-            package $packageName
+            package $viewPackageName
 
             import com.payam1991gr.kmp.playground.platform.KmpParcelize
             import com.slack.circuit.runtime.CircuitUiState
@@ -76,11 +91,11 @@ abstract class AddScreenTask : DefaultTask() {
         """.trimIndent()
         )
 
-        val uiFile = File(directory, "${className}.kt")
-        uiFile.createNewFile()
-        uiFile.writeText(
+        val viewFile = File(viewDirectory, "${className}.kt")
+        viewFile.createNewFile()
+        viewFile.writeText(
             """
-            package $packageName
+            package $viewPackageName
 
             import androidx.compose.foundation.layout.Arrangement
             import androidx.compose.foundation.layout.Column
@@ -88,7 +103,7 @@ abstract class AddScreenTask : DefaultTask() {
             import androidx.compose.runtime.Composable
             import androidx.compose.ui.Alignment
             import androidx.compose.ui.Modifier
-            import $packageName.$screen.State
+            import $viewPackageName.$screen.State
             import com.slack.circuit.runtime.ui.Ui
 
             class $className : Ui<State> {
@@ -107,14 +122,14 @@ abstract class AddScreenTask : DefaultTask() {
         """.trimIndent()
         )
 
-        val presenterFile = File(directory, "$presenter.kt")
+        val presenterFile = File(presenterDirectory, "$presenter.kt")
         presenterFile.createNewFile()
         presenterFile.writeText(
             """
-            package $packageName
+            package $presenterPackageName
 
             import androidx.compose.runtime.Composable
-            import $packageName.$screen.State
+            import $viewPackageName.$screen.State
             import com.slack.circuit.runtime.presenter.Presenter
 
             class $presenter : Presenter<State> {
@@ -151,4 +166,13 @@ object Util {
     fun String.joinWith(other: String, spacer: String) =
         if (other.isEmpty()) this
         else "$this$spacer$other"
+
+    fun makeDirectory(rootDir: String, subDir: Dir, dirType: String) =
+        "${rootDir}/${dirType}/screens".let {
+            it.joinWith(subDir.slash, "/")
+        }.let {
+            File(it)
+        }.apply {
+            if (!exists()) mkdirs()
+        }
 }

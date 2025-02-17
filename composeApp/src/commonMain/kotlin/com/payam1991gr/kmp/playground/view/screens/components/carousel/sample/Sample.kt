@@ -12,7 +12,6 @@ fun CodeEditor.appendHorizontalMultiBrowseCarouselSample() {
     line(2) { cyan { "state = " }; normal { "rememberCarouselState { " }; cyan { "10" }; normal { " }," } }
     line(2) { cyan { "preferredItemWidth = 200" }; normal { "." }; purple { "dp" }; normal { "," } }
     line(2) { cyan { "itemSpacing = 8" }; normal { "." }; purple { "dp" }; normal { "," } }
-    line(2) { cyan { "contentPadding = " }; normal { "PaddingValues(" }; cyan { "horizontal = 16" }; normal { "." }; purple { "dp" }; normal { ")" } }
     line(1) { normal { ")  {  index ->" } }
     line(2) { normal { "RandomImage(" } }
     line(3) { cyan { "contentDescription = " }; green { "\"Image " }; orange { "\$" }; normal { "index" }; green { "\"" }; normal { "," } }
@@ -32,7 +31,6 @@ fun CodeEditor.appendHorizontalUncontainedCarouselSample() {
     line(2) { cyan { "state = " }; normal { "rememberCarouselState { " }; cyan { "10" }; normal { " }," } }
     line(2) { cyan { "itemWidth = 200" }; normal { "." }; purple { "dp" }; normal { "," } }
     line(2) { cyan { "itemSpacing = 8" }; normal { "." }; purple { "dp" }; normal { "," } }
-    line(2) { cyan { "contentPadding = " }; normal { "PaddingValues(" }; cyan { "horizontal = 16" }; normal { "." }; purple { "dp" }; normal { ")" } }
     line(1) { normal { ")  {  index ->" } }
     line(2) { normal { "RandomImage(" } }
     line(3) { cyan { "contentDescription = " }; green { "\"Image " }; orange { "\$" }; normal { "index" }; green { "\"" }; normal { "," } }

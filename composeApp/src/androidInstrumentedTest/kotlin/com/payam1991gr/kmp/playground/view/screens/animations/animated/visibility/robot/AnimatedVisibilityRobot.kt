@@ -1,24 +1,26 @@
 package com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.robot
 
-import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
-import androidx.compose.ui.test.onNodeWithText
+import com.payam1991gr.kmp.playground.view.module.robot.SamplePageRobot.CodeScope
 
-interface AnimatedVisibilityRobot {
-    fun previewContent(): Any
-    fun codeContent(): Any
-}
-
-class AnimatedVisibilityRobotImpl(
-    private val rule: ComposeContentTestRule,
-) : AnimatedVisibilityRobot {
-    override fun previewContent() = rule
-        .onNodeWithText("Preview")
-        .assertIsDisplayed()
-
-    override fun codeContent() = rule
-        .onNodeWithText("Code")
-        .assertIsDisplayed()
+interface AnimatedVisibilityRobot :
+    HorizontalTransitionRobot,
+    SlideTransitionRobot,
+    FadeTransitionRobot,
+    FullyLoadedTransitionRobot,
+    BooleanVisibleParamNoReceiverRobot,
+    FloatingActionButtonRobot,
+    SlideInOutRobot,
+    ExpandShrinkVerticallyRobot,
+    ExpandInShrinkOutRobot,
+    RowRobot,
+    ScopeAnimateEnterExitRobot,
+    AddingToGenericTransitionRobot,
+    LazyRowRobot,
+    RowScopeWithMutableTransitionStateRobot,
+    AnimateEnterExitPartialContentRobot,
+    ScaledEnterExitRobot {
+    fun CodeScope.shared(): Any
 }
 
 fun animatedVisibilityRobot(

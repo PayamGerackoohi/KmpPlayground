@@ -16,10 +16,10 @@
     <string name="horizontal_uncontained_carousel">Ein horizontales Karussell, das seine Elemente in der angegebenen Größe anzeigt, mit Ausnahme eines Elements am Ende, das abgeschnitten ist.</string>
 
     <!-- Components.Dialog -->
-    <string name="alert_dialog">Dialoge liefern wichtige Eingabeaufforderungen in einem Benutzerfluss. Sie können eine Aktion erfordern, Informationen übermitteln oder Benutzern beim Erledigen einer Aufgabe helfen.</string>
-    <string name="date_picker_dialog">Ein Dialogfeld zum Anzeigen eines Datumswählers. Mit Datumswählern können Benutzer ein Datum auswählen.</string>
-    <string name="time_picker_dialog_set_time">Zeit einstellen</string>
-    <string name="time_picker_dialog_select_time">Wähle eine Uhrzeit</string>
+    <string name="components_alert_dialog">Dialoge liefern wichtige Eingabeaufforderungen in einem Benutzerfluss. Sie können eine Aktion erfordern, Informationen übermitteln oder Benutzern beim Erledigen einer Aufgabe helfen.</string>
+    <string name="components_date_picker_dialog">Ein Dialogfeld zum Anzeigen eines Datumswählers. Mit Datumswählern können Benutzer ein Datum auswählen.</string>
+    <string name="components_time_picker_dialog_set_time">Zeit einstellen</string>
+    <string name="components_time_picker_dialog_select_time">Wähle eine Uhrzeit</string>
 
     <!-- Components.Picker.Date -->
     <string name="components_date_picker_description">Mit Datumsauswahlfunktionen können Benutzer ein Datum auswählen und sie sollten vorzugsweise in Dialoge eingebettet werden.</string>
@@ -53,8 +53,29 @@
     <string name="animations_crossfade">Überblendung</string>
     <string name="animations_animate_x_as">Animieren Sie X als</string>
 
+    <!-- Animations.AnimatedVisibility -->
+    <string name="animations_animated_visibility_horizontal_transition">Horizontaler Übergang</string>
+    <string name="animations_animated_visibility_slide_transition">Folienübergang</string>
+    <string name="animations_animated_visibility_fade_transition">Übergang verblassen</string>
+    <string name="animations_animated_visibility_fully_loaded_transition">Vollständig geladener Übergang</string>
+    <string name="animations_animated_visibility_boolean_visible_param_no_receiver">Boolescher sichtbarer Parameter – Kein Empfänger</string>
+    <string name="animations_animated_visibility_floating_action_button">Schwebende Aktionsschaltfläche</string>
+    <string name="animations_animated_visibility_slide_in_out">Ein- und Auszug</string>
+    <string name="animations_animated_visibility_expand_shrink_vertically">Vertikal erweitern/verkleinern</string>
+    <string name="animations_animated_visibility_expand_in_shrink_out">Einklappen Einklappen</string>
+    <string name="animations_animated_visibility_row">Reihe</string>
+    <string name="animations_animated_visibility_scope_animate_enter_exit">Umfang Animieren Ein-Aus</string>
+    <string name="animations_animated_visibility_scope_animate_enter_exit_transition_finished">Übergang abgeschlossen</string>
+    <string name="animations_animated_visibility_adding_to_generic_transition">Hinzufügen zum allgemeinen Übergang</string>
+    <string name="animations_animated_visibility_lazy_row">Faules Rudern</string>
+    <string name="animations_animated_visibility_lazy_row_remove">Artikel entfernen: %1$s</string>
+    <string name="animations_animated_visibility_row_scope_with_mutable_transition_state">Zeilenbereich mit veränderlichem Übergangszustand</string>
+    <string name="animations_animated_visibility_animate_enter_exit_partial_content">Animieren Sie den Enter-Exit-Teilinhalt</string>
+    <string name="animations_animated_visibility_scaled_enter_exit">Skaliertes Ein- und Aussteigen</string>
+
     <!-- Graphic -->
     <string name="graphic_charts">Diagramme</string>
+    <string name="graphic_color_scheme">Farbschema</string>
     <string name="graphic_opengl">OpenGL</string>
 
     <!-- I/O -->
@@ -84,4 +105,10 @@
     <string name="ok">OK</string>
     <string name="cancel">Stornieren</string>
     <string name="trigger_refresh">Aktualisierung auslösen</string>
+    <string name="favorite">Favorit</string>
+    <string name="add">Hinzufügen</string>
+    <string name="clear_all">Alles löschen</string>
+    <string name="red">Rot</string>
+    <string name="green">Grün</string>
+    <string name="shared">Geteilt</string>
 </resources>
