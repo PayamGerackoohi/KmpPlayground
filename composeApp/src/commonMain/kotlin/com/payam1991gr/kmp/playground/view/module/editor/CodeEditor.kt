@@ -32,7 +32,7 @@ typealias CodeEditorData = Pair<AnnotatedString, Int>
 
 /**
  * An editor to feed data to the code panel
- * @sample com.payam1991gr.kmp.playground.view.screens.components.carousel.appendHorizontalMultiBrowseCarouselSample
+ * @sample com.payam1991gr.kmp.playground.view.screens.components.carousel.sample.appendHorizontalMultiBrowseCarouselSample
  */
 @Composable
 fun rememberCodeEditor(block: CodeEditor.() -> Unit): CodeEditorData {

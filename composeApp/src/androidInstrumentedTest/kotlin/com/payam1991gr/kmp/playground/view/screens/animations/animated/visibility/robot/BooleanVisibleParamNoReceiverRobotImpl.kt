@@ -21,6 +21,6 @@ class BooleanVisibleParamNoReceiverRobotImpl(
 
     override fun CodeScope.booleanVisibleParamNoReceiverSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.BooleanVisibleParamNoReceiverSample(")
+        snippet("fun BooleanVisibleParamNoReceiverSample(")
     }
 }

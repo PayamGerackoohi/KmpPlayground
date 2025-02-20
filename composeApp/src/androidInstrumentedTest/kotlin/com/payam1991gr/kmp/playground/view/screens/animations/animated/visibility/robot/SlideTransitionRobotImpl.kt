@@ -19,6 +19,6 @@ class SlideTransitionRobotImpl(private val rule: ComposeContentTestRule) : Slide
 
     override fun CodeScope.slideTransitionSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.SlideTransitionSample() {")
+        snippet("fun SlideTransitionSample() {")
     }
 }

@@ -12,15 +12,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.unit.IntOffset
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility.Module
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.SlideInOutSample() {
+fun SlideInOutSample() {
     var visible by rememberBoolean()
     val tag = stringResource(Res.string.animations_animated_visibility_slide_in_out)
     Module(tag, { visible = !visible }) {
@@ -41,7 +41,7 @@ fun AnimatedVisibility.SlideInOutSample() {
 
 fun CodeEditor.appendSlideInOutSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "SlideInOutSample" }; normal { "() {" } }
+    line { `fun`; blue { "SlideInOutSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_slide_in_out" }; normal { ")" } }
     line(1) { normal { "Module(tag, { visible = !visible }) {" } }

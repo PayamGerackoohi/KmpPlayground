@@ -41,6 +41,6 @@ class FloatingActionButtonRobotImpl(
 
     override fun CodeScope.animatedFloatingActionButtonSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.FloatingActionButtonSample() {")
+        snippet("fun FloatingActionButtonSample() {")
     }
 }

@@ -1,20 +1,20 @@
 # Build Checklist
-- [x] TODO
-  - [x] Code
-  - [x] Unit-Tests
-  - [x] UI-Tests
-- [x] Tests
-  - [x] Unit
-  - [x] Coverage (gradle koverHtmlReport)
-  - [x] UI
-- [x] README.md
+- [ ] TODO
+  - [ ] Code
+  - [ ] Unit-Tests
+  - [ ] UI-Tests
+- [ ] Tests
+  - [ ] Unit
+  - [ ] Coverage (gradle koverHtmlReport)
+  - [ ] UI
+- [ ] README.md
 - [ ] KMP Playground Website
-  - [x] Screens
-  - [x] Screenshots
-  - [x] Tests
-  - [x] Translations
+  - [ ] Screens
+  - [ ] Screenshots
+  - [ ] Tests
+  - [ ] Translations
   - [ ] Versioning / Build / Manual Test
     - [ ] Mac (gradle packageDmg)
-    - [x] Android
+    - [ ] Android
     - [ ] iOS
-  - [x] Last Edit Label
+  - [ ] Last Edit Label

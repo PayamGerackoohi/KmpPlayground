@@ -53,6 +53,14 @@
     <string name="animations_crossfade">Überblendung</string>
     <string name="animations_animate_x_as">Animieren Sie X als</string>
 
+    <!-- Animations.AnimateXAsState -->
+    <string name="animations_animate_float">Float als Status animieren</string>
+    <string name="animations_animate_offset">Offset als Status animieren</string>
+    <string name="animations_animate_dp">DP als Status animieren</string>
+    <string name="animations_animate_color">Farbe als Status animieren</string>
+    <string name="animations_animate_int">Int als Status animieren</string>
+    <string name="animations_animate_value">Wert als Status animieren</string>
+
     <!-- Animations.AnimatedVisibility -->
     <string name="animations_animated_visibility_horizontal_transition">Horizontaler Übergang</string>
     <string name="animations_animated_visibility_slide_transition">Folienübergang</string>
@@ -111,4 +119,8 @@
     <string name="red">Rot</string>
     <string name="green">Grün</string>
     <string name="shared">Geteilt</string>
+    <string name="opaque">Undurchsichtig</string>
+    <string name="transparent">Transparent</string>
+    <string name="collapsed">Ausgeklappt</string>
+    <string name="expanded">Erweitert</string>
 </resources>

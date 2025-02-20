@@ -3,8 +3,7 @@
 package com.payam1991gr.kmp.playground.view.screens.components.pull.to.refresh.sample
 
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
-import com.payam1991gr.kmp.playground.view.sample.appendComposable
-import com.payam1991gr.kmp.playground.view.sample.appendExperimentalMaterial3Api
+import com.payam1991gr.kmp.playground.view.sample.*
 
 fun CodeEditor.appendState_PtrState_PullToRefresh() {
     appendExperimentalMaterial3Api()
@@ -66,9 +65,9 @@ fun CodeEditor.appendState_PtrState_LinearProgressIndicatorSample() {
     line { normal { ") { padding, content ->" } }
     line(1) { normal { "Box(Modifier." }; blue { "padding" }; normal { "(padding)) {" } }
     line(2) { normal { "content()" } }
-    line(2) { orange { "val " }; normal { "modifier = Modifier." }; blue { "fillMaxWidth" }; normal { "()" } }
-    line(2) { orange { "if " }; normal { "(" }; purple { "isRefreshing" }; normal { ") LinearProgressIndicator(modifier)" } }
-    line(2) { orange { "else " }; normal { "LinearProgressIndicator({ " }; purple { "state" }; normal { "." }; purple { "distanceFraction " }; normal { "}, modifier)" } }
+    line(2) { `val`; normal { " modifier = Modifier." }; blue { "fillMaxWidth" }; normal { "()" } }
+    line(2) { `if`; normal { " (" }; purple { "isRefreshing" }; normal { ") LinearProgressIndicator(modifier)" } }
+    line(2) { `else`; normal { " LinearProgressIndicator({ " }; purple { "state" }; normal { "." }; purple { "distanceFraction " }; normal { "}, modifier)" } }
     line(1) { normal { "}" } }
     line { normal { "}" } }
     line()
@@ -94,9 +93,9 @@ fun CodeEditor.appendState_PtrState_ScalingSample() {
     appendExperimentalMaterial3Api()
     appendComposable()
     line { orange { "private fun " }; normal { "State.PtrState." }; blue { "ScalingSample" }; normal { "() {" } }
-    line(1) { orange { "val " }; normal { "scaleFraction = {" } }
-    line(2) { orange { "if " }; normal { "(" }; purple { "isRefreshing" }; normal { ") " }; cyan { "1f" } }
-    line(2) { orange { "else " }; purple { "LinearOutSlowInEasing" }; normal { ".transform(" }; purple { "state" }; normal { "." }; purple { "distanceFraction" }; normal { ")." }; blue { "coerceIn" }; normal { "(" }; cyan { "0f" }; normal { ", " }; cyan { "1f" }; normal { ")" } }
+    line(1) { `val`; normal { " scaleFraction = {" } }
+    line(2) { `if`; normal { " (" }; purple { "isRefreshing" }; normal { ") " }; cyan { "1f" } }
+    line(2) { `else`; purple { " LinearOutSlowInEasing" }; normal { ".transform(" }; purple { "state" }; normal { "." }; purple { "distanceFraction" }; normal { ")." }; blue { "coerceIn" }; normal { "(" }; cyan { "0f" }; normal { ", " }; cyan { "1f" }; normal { ")" } }
     line(1) { normal { "}" } }
     line(1) { blue { "PullToRefresh" }; normal { "(" } }
     line(2) { cyan { "title = " }; normal { "stringResource(Res.string." }; purple { "components_pull_to_refresh_scaling" }; normal { ")," } }
@@ -131,10 +130,10 @@ fun CodeEditor.appendState_PtrState_CustomBehaviorSample() {
     appendExperimentalMaterial3Api()
     appendComposable()
     line { orange { "private fun " }; normal { "State.PtrState." }; blue { "CustomBehaviorSample" }; normal { "() {" } }
-    line(1) { orange { "val " }; normal { "state = remember {" } }
-    line(2) { orange { "object " }; normal { ": PullToRefreshState {" } }
+    line(1) { `val`; normal { " state = remember {" } }
+    line(2) { `object`; normal { " : PullToRefreshState {" } }
     line(3) { orange { "private val " }; purple { "anim " }; normal { "= Animatable(" }; cyan { "0f" }; normal { ", Float." }; purple { "VectorConverter" }; normal { ")" } }
-    line(3) { orange { "override val " }; purple { "distanceFraction " }; orange { "get" }; normal { "() = " }; purple { "anim" }; normal { "." }; purple { "value" } }
+    line(3) { orange { "override val " }; purple { "distanceFraction " }; `get`; normal { "() = " }; purple { "anim" }; normal { "." }; purple { "value" } }
     line(3) { orange { "override suspend fun " }; blue { "snapTo" }; normal { "(targetValue: Float) = " }; purple { "anim" }; normal { ".snapTo(targetValue)" } }
     line()
     line(3) { orange { "override suspend fun " }; blue { "animateToThreshold" }; normal { "() {" } }
@@ -161,7 +160,7 @@ fun CodeEditor.appendState_PtrState_CustomBehaviorSample() {
 }
 
 fun CodeEditor.appendModifier_module() {
-    line { orange { "private fun " }; normal { "Modifier." }; blue { "module" }; normal { "(tag: String) = " }; orange { "this" } }
+    line { orange { "private fun " }; normal { "Modifier." }; blue { "module" }; normal { "(tag: String) = " }; `this` }
     line(1) { normal { "." }; blue { "height" }; normal { "(" }; cyan { "250" }; normal { "." }; purple { "dp" }; normal { ")" } }
     line(1) { normal { "." }; blue { "border" }; normal { "(" }; cyan { "2" }; normal { "." }; purple { "dp" }; normal { ", Color." }; purple { "Red" }; normal { ", RoundedCornerShape(" }; cyan { "topStart = 16" }; normal { "." }; purple { "dp" }; normal { ", " }; cyan { "bottomEnd = 16" }; normal { "." }; purple { "dp" }; normal { "))" } }
     line(1) { normal { "." }; blue { "testTag" }; normal { "(" }; green { "\"Module." }; orange { "\$" }; normal { "tag" }; green { "\"" }; normal { ")" } }
@@ -169,7 +168,7 @@ fun CodeEditor.appendModifier_module() {
 }
 
 fun CodeEditor.appendModifier_moduleList() {
-    line { orange { "private fun " }; normal { "Modifier." }; blue { "moduleList" }; normal { "(tag: String) = " }; orange { "this" } }
+    line { orange { "private fun " }; normal { "Modifier." }; blue { "moduleList" }; normal { "(tag: String) = " }; `this` }
     line(1) { normal { "." }; blue { "fillMaxSize" }; normal { "()" } }
     line(1) { normal { "." }; blue { "testTag" }; normal { "(" }; green { "\"Module.List." }; orange { "\$" }; normal { "tag" }; green { "\"" }; normal { ")" } }
     line()
@@ -178,14 +177,14 @@ fun CodeEditor.appendModifier_moduleList() {
 fun CodeEditor.appendRememberPtrState() {
     appendExperimentalMaterial3Api()
     appendComposable()
-    line { orange { "fun " }; blue { "rememberPtrState" }; normal { "(" } }
+    line { `fun`; blue { " rememberPtrState" }; normal { "(" } }
     line(1) { normal { "initialItemCount: Int = " }; cyan { "5" }; normal { "," } }
     line(1) { normal { "state: PullToRefreshState = rememberPullToRefreshState()," } }
     line(1) { normal { "coroutineScope: CoroutineScope = rememberCoroutineScope()," } }
     line { normal { "): PtrState {" } }
-    line(1) { orange { "val " }; normal { "isRefreshing = remember { mutableStateOf(" }; orange { "false" }; normal { ") }" } }
-    line(1) { orange { "val " }; normal { "itemCount = remember { mutableIntStateOf(initialItemCount) }" } }
-    line(1) { orange { "return " }; normal { "remember { PtrStateImpl(state, isRefreshing, itemCount, coroutineScope) }" } }
+    line(1) { `val`; normal { " isRefreshing = remember { mutableStateOf(" }; `false`; normal { ") }" } }
+    line(1) { `val`; normal { " itemCount = remember { mutableIntStateOf(initialItemCount) }" } }
+    line(1) { `return`; normal { " remember { PtrStateImpl(state, isRefreshing, itemCount, coroutineScope) }" } }
     line { normal { "}" } }
     line()
 }

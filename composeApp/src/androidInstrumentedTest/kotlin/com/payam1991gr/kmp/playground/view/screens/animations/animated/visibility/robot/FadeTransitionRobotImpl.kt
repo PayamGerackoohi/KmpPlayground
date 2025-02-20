@@ -19,6 +19,6 @@ class FadeTransitionRobotImpl(private val rule: ComposeContentTestRule) : FadeTr
 
     override fun CodeScope.fadeTransitionSample(){
         title(TAG){performClick()}
-        snippet("fun AnimatedVisibility.FadeTransitionSample() {")
+        snippet("fun FadeTransitionSample() {")
     }
 }

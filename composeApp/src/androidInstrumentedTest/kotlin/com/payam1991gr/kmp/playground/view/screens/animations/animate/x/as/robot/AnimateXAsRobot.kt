@@ -1,22 +1,16 @@
 package com.payam1991gr.kmp.playground.view.screens.animations.animate.x.`as`.robot
 
-import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
-import androidx.compose.ui.test.onNodeWithText
+import com.payam1991gr.kmp.playground.view.module.robot.SamplePageRobot.CodeScope
 
-interface AnimateXAsRobot {
-    fun previewContent(): Any
-    fun codeContent(): Any
-}
-
-class AnimateXAsRobotImpl(private val rule: ComposeContentTestRule) : AnimateXAsRobot {
-    override fun previewContent() = rule
-        .onNodeWithText("Preview")
-        .assertIsDisplayed()
-
-    override fun codeContent() = rule
-        .onNodeWithText("Code")
-        .assertIsDisplayed()
+interface AnimateXAsRobot :
+    FloatRobot,
+    OffsetRobot,
+    DpRobot,
+    ColorRobot,
+    IntRobot,
+    ValueRobot {
+    fun CodeScope.shared(): Any
 }
 
 fun animateXAsRobot(

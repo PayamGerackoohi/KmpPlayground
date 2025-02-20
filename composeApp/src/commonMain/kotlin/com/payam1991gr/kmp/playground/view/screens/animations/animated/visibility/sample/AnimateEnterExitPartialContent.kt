@@ -18,16 +18,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.moduleSize
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility.Module
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.moduleSize
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.AnimateEnterExitPartialContentSample() {
+fun AnimateEnterExitPartialContentSample() {
     var visible by rememberBoolean()
     val shape = RoundedCornerShape(bottomStart = 16.dp, bottomEnd = 16.dp)
     val tag = stringResource(
@@ -64,7 +64,7 @@ fun AnimatedVisibility.AnimateEnterExitPartialContentSample() {
 
 fun CodeEditor.appendAnimateEnterExitPartialContentSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "AnimateEnterExitPartialContentSample" }; normal { "() {" } }
+    line { `fun`; blue { "AnimateEnterExitPartialContentSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " shape = RoundedCornerShape(" }; cyan { "bottomStart = 16" }; normal { "." }; purple { "dp" }; normal { ", " }; cyan { "bottomEnd = 16" }; normal { "." }; purple { "dp" }; normal { ")" } }
     line(1) { `val`; normal { " tag = stringResource(" } }

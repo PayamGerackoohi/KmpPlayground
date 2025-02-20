@@ -34,6 +34,6 @@ class AddingToGenericTransitionRobotImpl(
 
     override fun CodeScope.addingToGenericTransitionSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.AddingToGenericTransitionSample() {")
+        snippet("fun AddingToGenericTransitionSample() {")
     }
 }

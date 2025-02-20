@@ -54,6 +54,14 @@
     <string name="animations_crossfade">Crossfade</string>
     <string name="animations_animate_x_as">Animate X as</string>
 
+    <!-- Animations.AnimateXAsState -->
+    <string name="animations_animate_float">Animate Float as State</string>
+    <string name="animations_animate_offset">Animate Offset as State</string>
+    <string name="animations_animate_dp">Animate DP as State</string>
+    <string name="animations_animate_color">Animate Color as State</string>
+    <string name="animations_animate_int">Animate Int as State</string>
+    <string name="animations_animate_value">Animate Value as State</string>
+
     <!-- Animations.AnimatedVisibility -->
     <string name="animations_animated_visibility_horizontal_transition">Horizontal Transition</string>
     <string name="animations_animated_visibility_slide_transition">Slide Transition</string>
@@ -112,4 +120,8 @@
     <string name="red">Red</string>
     <string name="green">Green</string>
     <string name="shared">Shared</string>
+    <string name="opaque">Opaque</string>
+    <string name="transparent">Transparent</string>
+    <string name="collapsed">Collapsed</string>
+    <string name="expanded">Expanded</string>
 </resources>

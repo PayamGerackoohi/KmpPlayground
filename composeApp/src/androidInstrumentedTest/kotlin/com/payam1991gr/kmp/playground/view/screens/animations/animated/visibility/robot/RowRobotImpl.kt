@@ -30,6 +30,6 @@ class RowRobotImpl(private val rule: ComposeContentTestRule) : RowRobot,
 
     override fun CodeScope.rowSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.RowSample() {")
+        snippet("fun RowSample() {")
     }
 }

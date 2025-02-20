@@ -15,17 +15,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
 import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.ContentList
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility.Module
 import kmpplayground.composeapp.generated.resources.Res
 import kmpplayground.composeapp.generated.resources.animations_animated_visibility_boolean_visible_param_no_receiver
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.BooleanVisibleParamNoReceiverSample(
+fun BooleanVisibleParamNoReceiverSample(
     initHeaderColor: Color = MaterialTheme.colorScheme.secondary,
 ) = ContentList {
     var visible by rememberBoolean()
@@ -65,7 +65,7 @@ fun AnimatedVisibility.BooleanVisibleParamNoReceiverSample(
 
 fun CodeEditor.appendBooleanVisibleParamNoReceiverSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "BooleanVisibleParamNoReceiverSample" }; normal { "(" } }
+    line { `fun`; blue { "BooleanVisibleParamNoReceiverSample" }; normal { "(" } }
     line(1) { normal { "initHeaderColor: Color = MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "secondary" }; normal { "," } }
     line { normal { ") = ContentList {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }

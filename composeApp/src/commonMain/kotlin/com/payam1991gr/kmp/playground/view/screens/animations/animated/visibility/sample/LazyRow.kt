@@ -42,14 +42,16 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module.content
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.LazyRowSample() {
+fun LazyRowSample() {
     var visible by rememberBoolean()
     val model = remember { MyModel() }
     val state by derivedStateOf {
@@ -65,7 +67,7 @@ fun AnimatedVisibility.LazyRowSample() {
             exit = fadeOut() + slideOutVertically(),
             modifier = Modifier
                 .clipToBounds()
-                .testTag("$tag.Content")
+                .content(tag)
         ) {
             Column {
                 Row(
@@ -190,7 +192,7 @@ private class MyModel {
 
 fun CodeEditor.appendLazyRowSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "LazyRowSample" }; normal { "() {" } }
+    line { `fun`; blue { "LazyRowSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " model = remember { MyModel() }" } }
     line(1) { `val`; normal { " state " }; `by`; normal { " derivedStateOf {" } }

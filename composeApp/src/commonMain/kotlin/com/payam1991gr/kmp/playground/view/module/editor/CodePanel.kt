@@ -42,6 +42,10 @@ import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * An editor to feed data to the code panel with multi-file view
+ * @sample com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility.Code
+ */
 @Composable
 fun codes(vararg contents: Pair<StringResource, CodeEditor.() -> Unit>) {
     LazyColumn(

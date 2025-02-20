@@ -33,19 +33,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module.content
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.moduleSize
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.moduleSize
 import kmpplayground.composeapp.generated.resources.Res
 import kmpplayground.composeapp.generated.resources.animations_animated_visibility_scope_animate_enter_exit
 import kmpplayground.composeapp.generated.resources.animations_animated_visibility_scope_animate_enter_exit_transition_finished
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.ScopeAnimateEnterExitSample() {
+fun ScopeAnimateEnterExitSample() {
     val state = remember { MutableTransitionState(true) }
     val tag = stringResource(Res.string.animations_animated_visibility_scope_animate_enter_exit)
     Module(
@@ -71,7 +71,7 @@ fun AnimatedVisibility.ScopeAnimateEnterExitSample() {
                         modifier = Modifier
                             .moduleSize()
                             .padding(4.dp)
-                            .testTag("$tag.Content")
+                            .content(tag)
                     ) {
                         listOf(
                             0xffff6f69, 0xff6fff69, 0xff6f69ff,
@@ -143,7 +143,7 @@ private fun AnimatedVisibilityScope.Item(modifier: Modifier, backgroundColor: Co
 
 fun CodeEditor.appendScopeAnimateEnterExitSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "ScopeAnimateEnterExitSample" }; normal { "() {" } }
+    line { `fun`; blue { "ScopeAnimateEnterExitSample" }; normal { "() {" } }
     line(1) { `val`; normal { " state = remember { MutableTransitionState(" }; `true`; normal { ") }" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_scope_animate_enter_exit" }; normal { ")" } }
     line(1) { normal { "Module(" } }

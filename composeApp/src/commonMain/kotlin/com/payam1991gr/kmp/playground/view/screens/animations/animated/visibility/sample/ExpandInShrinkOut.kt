@@ -11,15 +11,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.IntSize
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility.Module
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.ExpandInShrinkOutSample() {
+fun ExpandInShrinkOutSample() {
     var visible by rememberBoolean()
     val tag = stringResource(
         Res.string.animations_animated_visibility_expand_in_shrink_out
@@ -47,7 +47,7 @@ fun AnimatedVisibility.ExpandInShrinkOutSample() {
 
 fun CodeEditor.appendExpandInShrinkOutSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "ExpandInShrinkOutSample" }; normal { "() {" } }
+    line { `fun`; blue { "ExpandInShrinkOutSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(" } }
     line(2) { normal { "Res.string." }; purple { "animations_animated_visibility_expand_in_shrink_out" } }

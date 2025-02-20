@@ -9,31 +9,43 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AssistChip
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.payam1991gr.kmp.playground.data.model.sample.Setting
 import com.payam1991gr.kmp.playground.view.mirrorRtl
 import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.moduleSize
 import kmpplayground.composeapp.generated.resources.*
 import kotlinx.collections.immutable.PersistentList
 import kotlinx.collections.immutable.persistentListOf
@@ -127,11 +139,12 @@ object SamplePage {
      * - [Preview.Description] A concise description for the sample
      * - [Preview.Settings] Some settings to make the sample a little adjustable
      * - [Preview.ContentList] A simple content list with proper margins
+     * - [Preview.Module] A simple module list
+     * - [Preview.EmptySample] An empty simple as a placeholder
      * @param contents a collection of contents to be placed in a `LazyColumn` host
      * @param modifier the composable host modifier
      * @sample com.payam1991gr.kmp.playground.view.screens.components.carousel.Carousel.Preview
      * @sample com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePicker.TimeSample
-     *
      */
     @Composable
     fun preview(
@@ -214,5 +227,76 @@ object SamplePage {
             modifier = modifier.fillMaxWidth(),
             content = content,
         )
+
+        @Composable
+        fun Module(
+            label: String,
+            onToggle: () -> Unit,
+            colors: Module.Colors = Module.Defaults.colors(),
+            animator: @Composable () -> Unit,
+        ) = Column(Modifier.fillMaxWidth()) {
+            TextButton(
+                onClick = onToggle,
+                colors = ButtonDefaults.textButtonColors(
+                    containerColor = colors.header,
+                    contentColor = MaterialTheme.colorScheme.onSecondary,
+                ),
+                shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp)
+            ) {
+                Text(
+                    label,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+            animator()
+        }
+
+        fun Modifier.moduleSize(ratio: Float = 2f) = this
+            .fillMaxWidth()
+            .aspectRatio(ratio)
+
+        object Module {
+            val cells by lazy { GridCells.Adaptive(minSize = 300.dp) }
+
+            @Immutable
+            class Colors(val header: Color)
+
+            object Defaults {
+                @Composable
+                fun colors(header: Color = MaterialTheme.colorScheme.secondary): Colors =
+                    Colors(header)
+            }
+
+            @Composable
+            fun Content(tag: String, cornerRadius: Dp = 0.dp) {
+                Box(
+                    Modifier
+                        .fillMaxWidth()
+                        .clip(
+                            RoundedCornerShape(
+                                bottomStart = cornerRadius,
+                                bottomEnd = cornerRadius,
+                            )
+                        )
+                ) {
+                    RandomImage(
+                        contentDescription = "$tag.Content",
+                        modifier = Modifier.moduleSize()
+                    )
+                }
+            }
+
+            fun Modifier.content(tag: String, state: String? = null): Modifier =
+                testTag("$tag.Content").run {
+                    state?.let { semantics { stateDescription = it } } ?: this
+                }
+        }
+
+        @Composable
+        fun EmptySample() = Box(Modifier.moduleSize(1.5f))
     }
 }

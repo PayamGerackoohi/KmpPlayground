@@ -24,8 +24,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -33,9 +31,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
@@ -45,7 +44,7 @@ private const val LONG_TEXT =
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor."""
 
 @Composable
-fun AnimatedVisibility.AddingToGenericTransitionSample() {
+fun AddingToGenericTransitionSample() {
     var selected by rememberBoolean(false)
     val tag = stringResource(Res.string.animations_animated_visibility_adding_to_generic_transition)
     Module(tag, { selected = !selected }) {
@@ -129,7 +128,7 @@ private fun TextLine() = Box(
 
 fun CodeEditor.appendAddingToGenericTransitionSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "AddingToGenericTransitionSample" }; normal { "() {" } }
+    line { `fun`; blue { "AddingToGenericTransitionSample" }; normal { "() {" } }
     line(1) { `var`; normal { " selected " }; `by`; normal { " rememberBoolean(" }; `false`; normal { ")" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_adding_to_generic_transition" }; normal { ")" } }
     line(1) { normal { "Module(tag, { selected = !selected }) {" } }

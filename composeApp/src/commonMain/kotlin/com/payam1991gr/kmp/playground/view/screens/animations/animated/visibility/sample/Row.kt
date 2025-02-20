@@ -14,18 +14,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module.content
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.moduleSize
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.moduleSize
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.RowSample() {
+fun RowSample() {
     var index by remember { mutableStateOf(0) }
     val colors = listOf(Color.Red, Color.Green, Color.Blue)
     val tag = stringResource(Res.string.animations_animated_visibility_row)
@@ -37,7 +37,7 @@ fun AnimatedVisibility.RowSample() {
             Modifier
                 .moduleSize()
                 .clickable { onClick() }
-                .testTag("$tag.Content")
+                .content(tag)
                 .semantics { stateDescription = "State ${index + 1}" }
         ) {
             colors.forEachIndexed { i, color ->
@@ -56,7 +56,7 @@ fun AnimatedVisibility.RowSample() {
 
 fun CodeEditor.appendRowSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "RowSample" }; normal { "() {" } }
+    line { `fun`; blue { "RowSample" }; normal { "() {" } }
     line(1) { `var`; normal { " index " }; `by`; normal { " remember { mutableStateOf(" }; cyan { "0" }; normal { ") }" } }
     line(1) { `val`; normal { " colors = listOf(Color." }; purple { "Red" }; normal { ", Color." }; purple { "Green" }; normal { ", Color." }; purple { "Blue" }; normal { ")" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_row" }; normal { ")" } }

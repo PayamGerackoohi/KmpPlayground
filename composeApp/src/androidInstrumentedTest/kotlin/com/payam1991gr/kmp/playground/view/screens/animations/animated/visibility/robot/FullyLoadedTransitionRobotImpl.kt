@@ -21,6 +21,6 @@ class FullyLoadedTransitionRobotImpl(
 
     override fun CodeScope.fullyLoadedTransitionSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.FullyLoadedTransitionSample() = ContentList {")
+        snippet("fun FullyLoadedTransitionSample() = ContentList {")
     }
 }

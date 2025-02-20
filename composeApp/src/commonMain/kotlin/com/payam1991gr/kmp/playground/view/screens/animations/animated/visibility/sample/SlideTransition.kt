@@ -13,16 +13,16 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility.Module
 import kmpplayground.composeapp.generated.resources.Res
 import kmpplayground.composeapp.generated.resources.animations_animated_visibility_slide_transition
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.SlideTransitionSample() {
+fun SlideTransitionSample() {
     var visible by rememberBoolean()
     val tag = stringResource(Res.string.animations_animated_visibility_slide_transition)
     Module(
@@ -44,7 +44,7 @@ fun AnimatedVisibility.SlideTransitionSample() {
 
 fun CodeEditor.appendSlideTransitionSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "SlideTransitionSample" }; normal { "() {" } }
+    line { `fun`; blue { "SlideTransitionSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_slide_transition" }; normal { ")" } }
     line(1) { normal { "Module(" } }

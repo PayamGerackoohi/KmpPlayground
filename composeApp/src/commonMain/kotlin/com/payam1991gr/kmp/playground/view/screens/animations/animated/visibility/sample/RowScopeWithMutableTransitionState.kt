@@ -13,18 +13,19 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module.content
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.moduleSize
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.moduleSize
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.RowScopeWithMutableTransitionStateSample() {
+fun RowScopeWithMutableTransitionStateSample() {
     var visible by rememberBoolean()
     val colors = listOf(
         MaterialTheme.colorScheme.primaryContainer,
@@ -38,7 +39,7 @@ fun AnimatedVisibility.RowScopeWithMutableTransitionStateSample() {
         Row(
             Modifier
                 .moduleSize()
-                .testTag("$tag.Content")
+                .content(tag)
                 .semantics { stateDescription = if (visible) "Expanded" else "Collapsed" }
         ) {
             repeat(3) {
@@ -63,7 +64,7 @@ fun AnimatedVisibility.RowScopeWithMutableTransitionStateSample() {
 
 fun CodeEditor.appendRowScopeWithMutableTransitionStateSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "RowScopeWithMutableTransitionStateSample" }; normal { "() {" } }
+    line { `fun`; blue { "RowScopeWithMutableTransitionStateSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " colors = listOf(" } }
     line(2) { normal { "MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "primaryContainer" }; normal { "," } }

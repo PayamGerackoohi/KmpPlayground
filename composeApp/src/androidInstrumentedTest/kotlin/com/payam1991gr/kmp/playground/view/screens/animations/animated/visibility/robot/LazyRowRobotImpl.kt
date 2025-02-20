@@ -81,6 +81,6 @@ class LazyRowRobotImpl(private val rule: ComposeContentTestRule) : LazyRowRobot,
 
     override fun CodeScope.lazyRowSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.LazyRowSample() {")
+        snippet("fun LazyRowSample() {")
     }
 }

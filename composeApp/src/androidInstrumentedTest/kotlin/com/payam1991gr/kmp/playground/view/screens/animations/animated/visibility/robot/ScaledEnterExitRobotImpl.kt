@@ -67,6 +67,6 @@ class ScaledEnterExitRobotImpl(private val rule: ComposeContentTestRule) : Scale
 
     override fun CodeScope.scaledEnterExitSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.ScaledEnterExitSample() {")
+        snippet("fun ScaledEnterExitSample() {")
     }
 }

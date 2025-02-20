@@ -1,13 +1,12 @@
 package com.payam1991gr.kmp.playground.view.screens.components.carousel.sample
 
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
-import com.payam1991gr.kmp.playground.view.sample.appendComposable
-import com.payam1991gr.kmp.playground.view.sample.appendExperimentalMaterial3Api
+import com.payam1991gr.kmp.playground.view.sample.*
 
 fun CodeEditor.appendHorizontalMultiBrowseCarouselSample() {
     appendExperimentalMaterial3Api()
     appendComposable()
-    line { orange { "fun " }; blue { "HorizontalMultiBrowseCarouselSample" }; normal { "() {" } }
+    line { `fun`; blue { " HorizontalMultiBrowseCarouselSample" }; normal { "() {" } }
     line(1) { normal { "HorizontalMultiBrowseCarousel(" } }
     line(2) { cyan { "state = " }; normal { "rememberCarouselState { " }; cyan { "10" }; normal { " }," } }
     line(2) { cyan { "preferredItemWidth = 200" }; normal { "." }; purple { "dp" }; normal { "," } }
@@ -26,7 +25,7 @@ fun CodeEditor.appendHorizontalMultiBrowseCarouselSample() {
 fun CodeEditor.appendHorizontalUncontainedCarouselSample() {
     appendExperimentalMaterial3Api()
     appendComposable()
-    line { orange { "fun " }; blue { "HorizontalUncontainedCarouselSample" }; normal { "() {" } }
+    line { `fun`; blue { " HorizontalUncontainedCarouselSample" }; normal { "() {" } }
     line(1) { normal { "HorizontalUncontainedCarousel(" } }
     line(2) { cyan { "state = " }; normal { "rememberCarouselState { " }; cyan { "10" }; normal { " }," } }
     line(2) { cyan { "itemWidth = 200" }; normal { "." }; purple { "dp" }; normal { "," } }

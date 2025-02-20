@@ -21,6 +21,6 @@ class ExpandInShrinkOutRobotImpl(
 
     override fun CodeScope.expandInShrinkOutSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.ExpandInShrinkOutSample() {")
+        snippet("fun ExpandInShrinkOutSample() {")
     }
 }

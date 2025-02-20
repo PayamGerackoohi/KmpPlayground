@@ -1,6 +1,5 @@
 import com.android.build.gradle.internal.api.BaseVariantOutputImpl
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.io.FileInputStream
 import java.text.SimpleDateFormat
@@ -15,6 +14,7 @@ plugins {
     id("kotlin-parcelize")
     alias(libs.plugins.roborazzi)
     alias(libs.plugins.kover)
+    kotlin("plugin.serialization")
 }
 
 object AppInfo {
@@ -31,7 +31,6 @@ val keystore = FileInputStream(rootProject.file("keystore/keystore.properties"))
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
             freeCompilerArgs.addAll(
@@ -73,6 +72,7 @@ kotlin {
             implementation(project.dependencies.platform(libs.koin.bom))
             implementation(libs.koin.core)
             implementation(libs.kotlinx.date.time)
+            implementation(libs.kotlinx.serialization.json)
         }
         androidMain.dependencies {
             implementation(compose.preview)
@@ -173,11 +173,6 @@ android {
                     val properties = project.gradle.startParameter.projectProperties
                     if (properties["screenshotMode"].toString() == "true")
                         setIncludePatterns("screenshots.*")
-//                        setIncludePatterns("screenshots.home.*")
-//                        setIncludePatterns("screenshots.components.carousel.*")
-//                        setIncludePatterns("screenshots.components.dialog.*")
-//                        setIncludePatterns("screenshots.components.picker.*")
-//                        setIncludePatterns("screenshots.components.pull.*")
                     else
                         setExcludePatterns("screenshots.*")
                 }
@@ -186,23 +181,15 @@ android {
     }
 }
 
-kover {
-    reports {
-        filters {
-            AppInfo.apply {
-                excludes {
-                    classes(
-                        "${PACKAGE_NAME}.*.sample.*",
-                        "${PACKAGE_NAME}.*_ComposeKt",
-                        "${PACKAGE_NAME}.preview.*",
-                        "${PACKAGE_NAME}.view.*",
-                        "${PACKAGE_NAME}.data.koin.*",
-                        "${PROJECT_NAME}.composeapp.generated.resources.*",
-                    )
-                }
-            }
-        }
-    }
+AppInfo.apply {
+    kover.reports.filters.excludes.classes(
+        "${PACKAGE_NAME}.*.sample.*",
+        "${PACKAGE_NAME}.*_ComposeKt",
+        "${PACKAGE_NAME}.preview.*",
+        "${PACKAGE_NAME}.view.*",
+        "${PACKAGE_NAME}.data.koin.*",
+        "${PROJECT_NAME}.composeapp.generated.resources.*",
+    )
 }
 
 dependencies {
@@ -210,15 +197,19 @@ dependencies {
     debugImplementation(libs.test.androidx.ui.manifest)
 }
 
-compose.desktop {
-    application {
-        mainClass = "com.payam1991gr.kmp.playground.view.MainKt"
-
-        nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.payam1991gr.kmp.playground"
-            packageVersion = AppInfo.VERSION
-        }
+compose.desktop.application {
+    mainClass = "com.payam1991gr.kmp.playground.view.MainKt"
+    nativeDistributions {
+        packageName = "KMP Playground"
+        packageVersion = AppInfo.VERSION
+        targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+        outputBaseDir.set(project.layout.buildDirectory.dir("desktop"))
+        licenseFile.set(project.file("../LICENSE"))
+    }
+    buildTypes.release.proguard {
+        obfuscate.set(true)
+        optimize.set(true)
+        configurationFiles.from(project.file("compose-desktop.pro"))
     }
 }
 

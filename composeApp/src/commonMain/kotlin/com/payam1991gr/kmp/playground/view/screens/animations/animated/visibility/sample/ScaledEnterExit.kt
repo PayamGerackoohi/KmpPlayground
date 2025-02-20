@@ -36,15 +36,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module.content
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.moduleSize
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.moduleSize
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.ScaledEnterExitSample() {
+fun ScaledEnterExitSample() {
     var visible by rememberBoolean()
     var showGreen by rememberBoolean()
     var showRed by rememberBoolean()
@@ -56,7 +58,7 @@ fun AnimatedVisibility.ScaledEnterExitSample() {
             exit = slideOutVertically { -it },
             modifier = Modifier
                 .clipToBounds()
-                .testTag("$tag.Content")
+                .content(tag)
         ) {
             Column(Modifier.moduleSize()) {
                 Controls(
@@ -148,7 +150,7 @@ private fun Item(color: Color) = Box(
 
 fun CodeEditor.appendScaledEnterExitSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "ScaledEnterExitSample" }; normal { "() {" } }
+    line { `fun`; blue { "ScaledEnterExitSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `var`; normal { " showGreen " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `var`; normal { " showRed " }; `by`; normal { " rememberBoolean()" } }

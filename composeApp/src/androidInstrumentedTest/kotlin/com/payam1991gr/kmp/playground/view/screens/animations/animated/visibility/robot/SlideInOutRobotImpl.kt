@@ -19,6 +19,6 @@ class SlideInOutRobotImpl(private val rule: ComposeContentTestRule) : SlideInOut
 
     override fun CodeScope.slideInOutSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.SlideInOutSample() {")
+        snippet("fun SlideInOutSample() {")
     }
 }

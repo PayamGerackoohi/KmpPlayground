@@ -59,3 +59,6 @@ fun Modifier.dimensions(onResult: (ScreenDimension) -> Unit) = run {
     remember(width, height) { onResult(ScreenDimension(width, height)) }
     onGloballyPositioned { sizePx = it.size }
 }
+
+@Composable
+fun rememberBoolean(init: Boolean = true) = remember { mutableStateOf(init) }

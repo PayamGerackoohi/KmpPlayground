@@ -13,6 +13,7 @@ import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
 import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview
 import com.payam1991gr.kmp.playground.view.module.editor.CodePanel
 import com.payam1991gr.kmp.playground.view.module.editor.rememberCodeEditor
+import com.payam1991gr.kmp.playground.view.sample.*
 import kmpplayground.composeapp.generated.resources.*
 import kotlinx.collections.immutable.persistentListOf
 
@@ -69,7 +70,7 @@ fun SamplePage_Code_Preview() = preview {
                 line()
                 line { orange { "int " }; blue { "main" }; normal { "() {" } }
                 line(1) { normal { "cout " }; teal { "<< " };green { "\"Hi\" " }; teal { "<< " }; normal { "endl;" } }
-                line(1) { orange { "return " }; cyan { "0" }; normal { ";" } }
+                line(1) { `return`; cyan { " 0" }; normal { ";" } }
                 line { normal { "}" } }
                 line()
             })

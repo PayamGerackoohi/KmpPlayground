@@ -1,11 +1,11 @@
 package com.payam1991gr.kmp.playground.view.screens.graphics.color.scheme.sample
 
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
-import com.payam1991gr.kmp.playground.view.sample.appendComposable
+import com.payam1991gr.kmp.playground.view.sample.*
 
 fun CodeEditor.appendItem() {
     appendComposable()
-    line { orange { "fun " }; blue { "Item" }; normal { "(label: String, color: Color) = Surface(" } }
+    line { `fun`; blue { " Item" }; normal { "(label: String, color: Color) = Surface(" } }
     line(1) { cyan { "shadowElevation = 4" }; normal { "." }; purple { "dp" }; normal { "," } }
     line(1) { cyan { "modifier = " }; normal { "Modifier" } }
     line(2) { normal { "." }; blue { "border" }; normal { "(" }; cyan { "1" }; normal { "." }; purple { "dp" }; normal { ", MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "outline" }; normal { ")" } }

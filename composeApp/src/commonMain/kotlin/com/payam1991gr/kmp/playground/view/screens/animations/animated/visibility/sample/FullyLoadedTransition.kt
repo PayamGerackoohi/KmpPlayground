@@ -14,17 +14,17 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.TransformOrigin
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
 import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.ContentList
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility.Module
 import kmpplayground.composeapp.generated.resources.Res
 import kmpplayground.composeapp.generated.resources.animations_animated_visibility_fully_loaded_transition
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.FullyLoadedTransitionSample() = ContentList {
+fun FullyLoadedTransitionSample() = ContentList {
     var visible by rememberBoolean()
     val tag = stringResource(Res.string.animations_animated_visibility_fully_loaded_transition)
     Module(
@@ -49,7 +49,7 @@ fun AnimatedVisibility.FullyLoadedTransitionSample() = ContentList {
 
 fun CodeEditor.appendFullyLoadedTransitionSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "FullyLoadedTransitionSample" }; normal { "() = ContentList {" } }
+    line { `fun`; blue { "FullyLoadedTransitionSample" }; normal { "() = ContentList {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_fully_loaded_transition" }; normal { ")" } }
     line(1) { normal { "Module(" } }

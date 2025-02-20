@@ -36,6 +36,6 @@ class ScopeAnimateEnterExitRobotImpl(
 
     override fun CodeScope.scopeAnimateEnterExitSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.ScopeAnimateEnterExitSample() {")
+        snippet("fun ScopeAnimateEnterExitSample() {")
     }
 }

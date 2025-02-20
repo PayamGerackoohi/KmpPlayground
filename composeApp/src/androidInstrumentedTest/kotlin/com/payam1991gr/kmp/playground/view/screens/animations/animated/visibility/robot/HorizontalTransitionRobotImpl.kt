@@ -21,6 +21,6 @@ class HorizontalTransitionRobotImpl(
 
     override fun CodeScope.horizontalTransitionSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.HorizontalTransitionSample() {")
+        snippet("fun HorizontalTransitionSample() {")
     }
 }

@@ -48,7 +48,13 @@ class AnimateXAsTest : BaseTest() {
 
                     assertThatCodePageIsNotDisplayed()
                     preview {
-                        previewContent()
+                        floatSample()
+                        offsetSample()
+                        dpSample()
+                        colorSample()
+                        intSample()
+                        valueSample()
+
                         on("Code") { performClick() }
                         verify { event(Event.OnToolbarAction(Action.Code)) }
                         showCode = true
@@ -56,7 +62,14 @@ class AnimateXAsTest : BaseTest() {
 
                     assertThatPreviewPageIsNotDisplayed()
                     code {
-                        codeContent()
+                        shared()
+                        floatSample()
+                        offsetSample()
+                        dpSample()
+                        colorSample()
+                        intSample()
+                        valueSample()
+
                         on("Preview") { performClick() }
                         verify { event(Event.OnToolbarAction(Action.Preview)) }
                     }

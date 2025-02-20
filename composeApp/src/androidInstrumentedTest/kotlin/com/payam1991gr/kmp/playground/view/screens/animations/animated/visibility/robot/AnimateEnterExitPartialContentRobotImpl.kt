@@ -21,6 +21,6 @@ class AnimateEnterExitPartialContentRobotImpl(
 
     override fun CodeScope.animateEnterExitPartialContentSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.AnimateEnterExitPartialContentSample() {")
+        snippet("fun AnimateEnterExitPartialContentSample() {")
     }
 }

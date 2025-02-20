@@ -23,6 +23,6 @@ class RowScopeWithMutableTransitionStateRobotImpl(
 
     override fun CodeScope.rowScopeWithMutableTransitionStateSample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.RowScopeWithMutableTransitionStateSample() {")
+        snippet("fun RowScopeWithMutableTransitionStateSample() {")
     }
 }

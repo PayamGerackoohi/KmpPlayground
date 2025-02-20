@@ -8,15 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility.Module
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.HorizontalTransitionSample() {
+fun HorizontalTransitionSample() {
     var visible by rememberBoolean()
     val tag = stringResource(Res.string.animations_animated_visibility_horizontal_transition)
     Module(
@@ -38,7 +38,7 @@ fun AnimatedVisibility.HorizontalTransitionSample() {
 
 fun CodeEditor.appendHorizontalTransitionSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "HorizontalTransitionSample" }; normal { "() {" } }
+    line { `fun`; blue { "HorizontalTransitionSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_horizontal_transition" }; normal { ")" } }
     line(1) { normal { "Module(" } }

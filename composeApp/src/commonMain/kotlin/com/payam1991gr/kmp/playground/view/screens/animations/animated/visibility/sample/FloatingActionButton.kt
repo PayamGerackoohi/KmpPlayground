@@ -13,25 +13,24 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.Module.content
+import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.moduleSize
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
+import com.payam1991gr.kmp.playground.view.rememberBoolean
 import com.payam1991gr.kmp.playground.view.sample.*
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.AnimatedVisibility
-import com.payam1991gr.kmp.playground.view.screens.animations.animated.visibility.moduleSize
 import kmpplayground.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun AnimatedVisibility.FloatingActionButtonSample() {
-    var expanded by remember { mutableStateOf(false) }
+fun FloatingActionButtonSample() {
+    var expanded by rememberBoolean(false)
     val tag = stringResource(Res.string.animations_animated_visibility_floating_action_button)
     Module(tag, { expanded = !expanded }) {
         Column(
@@ -39,7 +38,7 @@ fun AnimatedVisibility.FloatingActionButtonSample() {
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
                 .moduleSize()
-                .testTag("$tag.Content")
+                .content(tag)
         ) {
             FloatingActionButton({ expanded = !expanded }) {
                 Row(

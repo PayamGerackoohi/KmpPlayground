@@ -21,6 +21,6 @@ class ExpandShrinkVerticallyRobotImpl(
 
     override fun CodeScope.expandShrinkVerticallySample() {
         title(TAG) { performClick() }
-        snippet("fun AnimatedVisibility.ExpandShrinkVerticallySample() {")
+        snippet("fun ExpandShrinkVerticallySample() {")
     }
 }
