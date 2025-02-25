@@ -15,13 +15,15 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
   - [ ] ...
 - [ ] Animations
   - [x] animate*As
-  - [ ] Animate Content
-  - [x] Animate Visibility
+  - [x] Animated Content
+  - [x] Animated Visibility
   - [ ] Crossfade
+  - [ ] ...
 
 ### Graphics
 - [ ] Charts
 - [x] Color Scheme
+- [x] Icons
 - [ ] OpenGL
 
 ### I/O

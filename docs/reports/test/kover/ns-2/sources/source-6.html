@@ -1,0 +1,192 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>composeApp Coverage Report > IconsImpl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.icon</a>
+</div>
+
+<h1>Coverage Summary for Class: IconsImpl (com.payam1991gr.kmp.playground.data.icon)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">IconsImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (58/58)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (519/519)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.icon
+&nbsp;
+&nbsp;import androidx.compose.material.icons.Icons.AutoMirrored.Filled as AutoMirroredIcon
+&nbsp;import androidx.compose.material.icons.Icons.Default as Icon
+&nbsp;import androidx.compose.material.icons.automirrored.filled.*
+&nbsp;import androidx.compose.material.icons.filled.*
+&nbsp;import com.payam1991gr.kmp.playground.data.model.IconData
+&nbsp;import kotlinx.collections.immutable.persistentListOf
+&nbsp;import kotlinx.collections.immutable.toPersistentList
+&nbsp;
+<b class="fc">&nbsp;class IconsImpl : Icons {</b>
+<b class="fc">&nbsp;    override fun core() = persistentListOf(</b>
+<b class="fc">&nbsp;        IconData(&quot;AccountBox&quot;, Icon.AccountBox),</b>
+<b class="fc">&nbsp;        IconData(&quot;AccountCircle&quot;, Icon.AccountCircle),</b>
+<b class="fc">&nbsp;        IconData(&quot;AddCircle&quot;, Icon.AddCircle),</b>
+<b class="fc">&nbsp;        IconData(&quot;Add&quot;, Icon.Add),</b>
+<b class="fc">&nbsp;        IconData(&quot;ArrowBack&quot;, AutoMirroredIcon.ArrowBack),</b>
+<b class="fc">&nbsp;        IconData(&quot;ArrowDropDown&quot;, Icon.ArrowDropDown),</b>
+<b class="fc">&nbsp;        IconData(&quot;ArrowForward&quot;, AutoMirroredIcon.ArrowForward),</b>
+<b class="fc">&nbsp;        IconData(&quot;Build&quot;, Icon.Build),</b>
+<b class="fc">&nbsp;        IconData(&quot;Call&quot;, Icon.Call),</b>
+<b class="fc">&nbsp;        IconData(&quot;CheckCircle&quot;, Icon.CheckCircle),</b>
+<b class="fc">&nbsp;        IconData(&quot;Check&quot;, Icon.Check),</b>
+<b class="fc">&nbsp;        IconData(&quot;Clear&quot;, Icon.Clear),</b>
+<b class="fc">&nbsp;        IconData(&quot;Close&quot;, Icon.Close),</b>
+<b class="fc">&nbsp;        IconData(&quot;Create&quot;, Icon.Create),</b>
+<b class="fc">&nbsp;        IconData(&quot;DateRange&quot;, Icon.DateRange),</b>
+<b class="fc">&nbsp;        IconData(&quot;Delete&quot;, Icon.Delete),</b>
+<b class="fc">&nbsp;        IconData(&quot;Done&quot;, Icon.Done),</b>
+<b class="fc">&nbsp;        IconData(&quot;Edit&quot;, Icon.Edit),</b>
+<b class="fc">&nbsp;        IconData(&quot;Email&quot;, Icon.Email),</b>
+<b class="fc">&nbsp;        IconData(&quot;ExitToApp&quot;, AutoMirroredIcon.ExitToApp),</b>
+<b class="fc">&nbsp;        IconData(&quot;Face&quot;, Icon.Face),</b>
+<b class="fc">&nbsp;        IconData(&quot;FavoriteBorder&quot;, Icon.FavoriteBorder),</b>
+<b class="fc">&nbsp;        IconData(&quot;Favorite&quot;, Icon.Favorite),</b>
+<b class="fc">&nbsp;        IconData(&quot;Home&quot;, Icon.Home),</b>
+<b class="fc">&nbsp;        IconData(&quot;Info&quot;, Icon.Info),</b>
+<b class="fc">&nbsp;        IconData(&quot;KeyboardArrowDown&quot;, Icon.KeyboardArrowDown),</b>
+<b class="fc">&nbsp;        IconData(&quot;KeyboardArrowLeft&quot;, AutoMirroredIcon.KeyboardArrowLeft),</b>
+<b class="fc">&nbsp;        IconData(&quot;KeyboardArrowRight&quot;, AutoMirroredIcon.KeyboardArrowRight),</b>
+<b class="fc">&nbsp;        IconData(&quot;KeyboardArrowUp&quot;, Icon.KeyboardArrowUp),</b>
+<b class="fc">&nbsp;        IconData(&quot;List&quot;, AutoMirroredIcon.List),</b>
+<b class="fc">&nbsp;        IconData(&quot;LocationOn&quot;, Icon.LocationOn),</b>
+<b class="fc">&nbsp;        IconData(&quot;Lock&quot;, Icon.Lock),</b>
+<b class="fc">&nbsp;        IconData(&quot;MailOutline&quot;, Icon.MailOutline),</b>
+<b class="fc">&nbsp;        IconData(&quot;Menu&quot;, Icon.Menu),</b>
+<b class="fc">&nbsp;        IconData(&quot;MoreVert&quot;, Icon.MoreVert),</b>
+<b class="fc">&nbsp;        IconData(&quot;Notifications&quot;, Icon.Notifications),</b>
+<b class="fc">&nbsp;        IconData(&quot;Person&quot;, Icon.Person),</b>
+<b class="fc">&nbsp;        IconData(&quot;Phone&quot;, Icon.Phone),</b>
+<b class="fc">&nbsp;        IconData(&quot;Place&quot;, Icon.Place),</b>
+<b class="fc">&nbsp;        IconData(&quot;PlayArrow&quot;, Icon.PlayArrow),</b>
+<b class="fc">&nbsp;        IconData(&quot;Refresh&quot;, Icon.Refresh),</b>
+<b class="fc">&nbsp;        IconData(&quot;Search&quot;, Icon.Search),</b>
+<b class="fc">&nbsp;        IconData(&quot;Send&quot;, AutoMirroredIcon.Send),</b>
+<b class="fc">&nbsp;        IconData(&quot;Settings&quot;, Icon.Settings),</b>
+<b class="fc">&nbsp;        IconData(&quot;Share&quot;, Icon.Share),</b>
+<b class="fc">&nbsp;        IconData(&quot;ShoppingCart&quot;, Icon.ShoppingCart),</b>
+<b class="fc">&nbsp;        IconData(&quot;Star&quot;, Icon.Star),</b>
+<b class="fc">&nbsp;        IconData(&quot;ThumbUp&quot;, Icon.ThumbUp),</b>
+<b class="fc">&nbsp;        IconData(&quot;Warning&quot;, Icon.Warning),</b>
+&nbsp;    )
+&nbsp;
+<b class="fc">&nbsp;    override suspend fun extended() = listOf(</b>
+<b class="fc">&nbsp;        extended1(),</b>
+<b class="fc">&nbsp;        extended2(),</b>
+<b class="fc">&nbsp;        extended3(),</b>
+<b class="fc">&nbsp;        extended4(),</b>
+<b class="fc">&nbsp;        extended5(),</b>
+<b class="fc">&nbsp;    ).flatten().toPersistentList()</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-02-25 18:27</div>
+</div>
+</body>
+</html>

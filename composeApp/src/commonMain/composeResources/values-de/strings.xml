@@ -53,6 +53,13 @@
     <string name="animations_crossfade">Überblendung</string>
     <string name="animations_animate_x_as">Animieren Sie X als</string>
 
+    <!-- Animations.AnimatedContent -->
+    <string name="animations_animated_content_simple">Einfach</string>
+    <string name="animations_animated_content_increment_decrement">Erhöhen / Verringern</string>
+    <string name="animations_animated_content_transition_spec">Übergangsspezifikation</string>
+    <string name="animations_animated_content_transition_extension">Übergangsverlängerung</string>
+    <string name="animations_animated_content_slide_into_container">In den Behälter schieben</string>
+
     <!-- Animations.AnimateXAsState -->
     <string name="animations_animate_float">Float als Status animieren</string>
     <string name="animations_animate_offset">Offset als Status animieren</string>
@@ -84,7 +91,12 @@
     <!-- Graphic -->
     <string name="graphic_charts">Diagramme</string>
     <string name="graphic_color_scheme">Farbschema</string>
+    <string name="graphic_icons">Symbole</string>
     <string name="graphic_opengl">OpenGL</string>
+
+    <!-- Graphic.Icons -->
+    <string name="graphic_icons_core">Kernsymbole</string>
+    <string name="graphic_icons_extended">Erweiterte Symbole</string>
 
     <!-- I/O -->
     <string name="io_datastore">Datenspeicher</string>
@@ -115,6 +127,7 @@
     <string name="trigger_refresh">Aktualisierung auslösen</string>
     <string name="favorite">Favorit</string>
     <string name="add">Hinzufügen</string>
+    <string name="remove">Entfernen</string>
     <string name="clear_all">Alles löschen</string>
     <string name="red">Rot</string>
     <string name="green">Grün</string>
@@ -123,4 +136,6 @@
     <string name="transparent">Transparent</string>
     <string name="collapsed">Ausgeklappt</string>
     <string name="expanded">Erweitert</string>
+    <string name="increment">Inkrement</string>
+    <string name="decrement">Dekrement</string>
 </resources>

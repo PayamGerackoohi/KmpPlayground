@@ -68,7 +68,7 @@ fun FloatingActionButtonSample() {
 
 fun CodeEditor.appendFloatingActionButtonSample() {
     appendComposable()
-    line { `fun`; normal { " AnimatedVisibility." }; blue { "FloatingActionButtonSample" }; normal { "() {" } }
+    line { `fun`; blue { " FloatingActionButtonSample" }; normal { "() {" } }
     line(1) { `var`; normal { " expanded " }; `by`; normal { " remember { mutableStateOf(" }; `false`; normal { ") }" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_floating_action_button" }; normal { ")" } }
     line(1) { normal { "Module(tag, { expanded = !expanded }) {" } }

@@ -54,6 +54,21 @@
     <string name="animations_crossfade">Crossfade</string>
     <string name="animations_animate_x_as">Animate X as</string>
 
+    <!-- Animations.AnimatedContent -->
+    <string name="animations_animated_content_simple">Simple</string>
+    <string name="animations_animated_content_increment_decrement">Increment / Decrement</string>
+    <string name="animations_animated_content_transition_spec">Transition Spec</string>
+    <string name="animations_animated_content_transition_extension">Transition Extension</string>
+    <string name="animations_animated_content_slide_into_container">Slide Into Container</string>
+
+    <!-- Animations.AnimateXAsState -->
+    <string name="animations_animate_float">Animate Float as State</string>
+    <string name="animations_animate_offset">Animate Offset as State</string>
+    <string name="animations_animate_dp">Animate DP as State</string>
+    <string name="animations_animate_color">Animate Color as State</string>
+    <string name="animations_animate_int">Animate Int as State</string>
+    <string name="animations_animate_value">Animate Value as State</string>
+
     <!-- Animations.AnimatedVisibility -->
     <string name="animations_animated_visibility_horizontal_transition">Horizontal Transition</string>
     <string name="animations_animated_visibility_slide_transition">Slide Transition</string>
@@ -77,7 +92,12 @@
     <!-- Graphic -->
     <string name="graphic_charts">Charts</string>
     <string name="graphic_color_scheme">Color Scheme</string>
+    <string name="graphic_icons">Icons</string>
     <string name="graphic_opengl">OpenGL</string>
+
+    <!-- Graphic.Icons -->
+    <string name="graphic_icons_core">Core Icons</string>
+    <string name="graphic_icons_extended">Extended Icons</string>
 
     <!-- I/O -->
     <string name="io_datastore">Datastore</string>
@@ -108,8 +128,15 @@
     <string name="trigger_refresh">Trigger Refresh</string>
     <string name="favorite">Favorite</string>
     <string name="add">Add</string>
+    <string name="remove">Remove</string>
     <string name="clear_all">Clear All</string>
     <string name="red">Red</string>
     <string name="green">Green</string>
     <string name="shared">Shared</string>
+    <string name="opaque">Opaque</string>
+    <string name="transparent">Transparent</string>
+    <string name="collapsed">Collapsed</string>
+    <string name="expanded">Expanded</string>
+    <string name="increment">Increment</string>
+    <string name="decrement">Decrement</string>
 </resources>

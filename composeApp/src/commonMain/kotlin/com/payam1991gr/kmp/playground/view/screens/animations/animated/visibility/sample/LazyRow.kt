@@ -192,7 +192,7 @@ private class MyModel {
 
 fun CodeEditor.appendLazyRowSample() {
     appendComposable()
-    line { `fun`; blue { "LazyRowSample" }; normal { "() {" } }
+    line { `fun`; blue { " LazyRowSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " model = remember { MyModel() }" } }
     line(1) { `val`; normal { " state " }; `by`; normal { " derivedStateOf {" } }

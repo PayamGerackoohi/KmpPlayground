@@ -66,6 +66,11 @@ object Order : Node() {
             val Code = Leaf("Code", this)
         }
 
+        object Icons : Node("Icons", this) {
+            val Preview = Leaf("Preview", this)
+            val Code = Leaf("Code", this)
+        }
+
         object OpenGl : Node("OpenGl", this) {
             val Preview = Leaf("Preview", this)
             val Code = Leaf("Code", this)

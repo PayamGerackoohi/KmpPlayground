@@ -39,7 +39,7 @@ class FloatingActionButtonRobotImpl(
         favoriteButton { isExpanded() }
     }
 
-    override fun CodeScope.animatedFloatingActionButtonSample() {
+    override fun CodeScope.floatingActionButtonSample() {
         title(TAG) { performClick() }
         snippet("fun FloatingActionButtonSample() {")
     }

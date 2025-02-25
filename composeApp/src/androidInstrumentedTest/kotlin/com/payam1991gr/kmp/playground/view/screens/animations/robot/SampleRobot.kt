@@ -1,7 +1,9 @@
 package com.payam1991gr.kmp.playground.view.screens.animations.robot
 
+import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.hasAnyAncestor
 import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
@@ -22,6 +24,7 @@ interface SampleRobot {
     fun PreviewScope.title(block: SniBlock = {}): Sni
     fun PreviewScope.content(withTag: Boolean = false, block: ContentScope.() -> Unit = {}): Sni
     fun noContent(withTag: Boolean = false): Any
+    fun hasModuleAsAncestor(tag: String): SemanticsMatcher
 
     interface ContentScope {
         fun state(value: String): Any
@@ -63,4 +66,6 @@ class SampleRobotImpl(
             .hasState(value)
             .assertIsDisplayed()
     }
+
+    override fun hasModuleAsAncestor(tag: String) = hasAnyAncestor(hasTestTag("Module.$tag"))
 }

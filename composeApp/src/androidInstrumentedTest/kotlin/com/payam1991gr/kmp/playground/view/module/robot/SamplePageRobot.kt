@@ -47,7 +47,7 @@ interface SamplePageRobot {
     interface CodeScope {
         val sni: Sni
         fun title(text: String, block: SniBlock = {})
-        fun snippet(text: String): Any
+        fun snippet(text: String, scroll: Boolean = true): Any
     }
 }
 
@@ -119,8 +119,8 @@ class SamplePageRobotImpl(private val rule: ComposeContentTestRule) : SamplePage
                 .block()
         }
 
-        override fun snippet(text: String) {
-            sni.performScrollToNode(hasText(text, substring = true))
+        override fun snippet(text: String, scroll: Boolean) {
+            if (scroll) sni.performScrollToNode(hasText(text, substring = true))
             rule.onNodeWithText(text, substring = true)
                 .assertIsDisplayed()
         }

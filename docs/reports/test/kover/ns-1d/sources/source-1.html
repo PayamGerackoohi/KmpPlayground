@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > KmpParcelize_androidKt</title>
+  <title>composeApp Coverage Report > CppPresenter</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,24 +19,106 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.platform</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.miscellaneous.cpp</a>
 </div>
 
-<h1>Coverage Summary for Class: KmpParcelize_androidKt (com.payam1991gr.kmp.playground.platform)</h1>
+<h1>Coverage Summary for Class: CppPresenter (com.payam1991gr.kmp.playground.presenter.screens.miscellaneous.cpp)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
 <th class="coverageStat 
 ">
+  Method, %
+</th>
+<th class="coverageStat 
+">
   Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
 </th>
 </tr>
 <tr>
-  <td class="name">KmpParcelize_androidKt</td>
-    <td class="coverageStat"/>
+  <td class="name">CppPresenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (6/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (8/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.5%
+  </span>
+  <span class="absValue">
+    (98/106)
+  </span>
+</td>
 </tr>
-
+  <tr>
+    <td class="name">CppPresenter$WhenMappings</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (6/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (8/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92.5%
+  </span>
+  <span class="absValue">
+    (98/106)
+  </span>
+</td>
+</tr>
 </table>
 
 <br/>
@@ -44,10 +126,30 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.platform
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.miscellaneous.cpp
 &nbsp;
-&nbsp;@Suppress(&quot;EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING&quot;)
-&nbsp;actual typealias KmpParcelize = kotlinx.parcelize.Parcelize
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import com.payam1991gr.kmp.playground.view.module.SamplePage
+&nbsp;import com.payam1991gr.kmp.playground.view.module.toolbar.rememberToolbarState
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.miscellaneous.cpp.CppScreen.State
+&nbsp;import com.slack.circuit.runtime.Navigator
+&nbsp;import com.slack.circuit.runtime.presenter.Presenter
+&nbsp;
+<b class="fc">&nbsp;class CppPresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
+&nbsp;    @Composable
+<b class="nc">&nbsp;    override fun present(): State {</b>
+<b class="fc">&nbsp;        val toolbarState = rememberToolbarState()</b>
+<b class="pc">&nbsp;        return State(toolbarState.showCode, toolbarState.actions) {</b>
+<b class="fc">&nbsp;            when (it) {</b>
+<b class="fc">&nbsp;                is State.Event.OnToolbarAction -&gt; when (it.action) {</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Back -&gt; navigator.pop()</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Code -&gt; toolbarState.code()</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Preview -&gt; toolbarState.preview()</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -71,7 +173,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-02-17 12:06</div>
+    <div style="float:right;">generated on 2025-02-25 18:27</div>
 </div>
 </body>
 </html>

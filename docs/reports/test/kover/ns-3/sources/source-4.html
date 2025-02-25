@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > HomeItem</title>
+  <title>composeApp Coverage Report > VecImpl</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.model</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.math</a>
 </div>
 
-<h1>Coverage Summary for Class: HomeItem (com.payam1991gr.kmp.playground.data.model)</h1>
+<h1>Coverage Summary for Class: VecImpl (com.payam1991gr.kmp.playground.data.math)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -49,7 +49,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">HomeItem</td>
+  <td class="name">VecImpl</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -63,10 +63,9 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (2/2)
+    (6/6)
   </span>
 </td>
-    <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -80,7 +79,15 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (85/85)
+    (13/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (65/65)
   </span>
 </td>
 </tr>
@@ -92,19 +99,30 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.model
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.math
 &nbsp;
-&nbsp;import androidx.compose.ui.graphics.Color
-&nbsp;import kmpplayground.composeapp.generated.resources.*
-&nbsp;import org.jetbrains.compose.resources.DrawableResource
-&nbsp;import org.jetbrains.compose.resources.StringResource
+<b class="fc">&nbsp;class VecImpl(vararg x: Float) : Vec() {</b>
+<b class="fc">&nbsp;    private var data = mutableListOf&lt;Float&gt;()</b>
 &nbsp;
-<b class="fc">&nbsp;enum class HomeItem(val labelRes: StringResource, val iconRes: DrawableResource, val color: Color) {</b>
-<b class="fc">&nbsp;    Components(Res.string.home_components, Res.drawable.ic_components, Color(0xFF00a000)),</b>
-<b class="fc">&nbsp;    Animations(Res.string.home_animations, Res.drawable.ic_animation, Color.Red),</b>
-<b class="fc">&nbsp;    Graphics(Res.string.home_graphics, Res.drawable.ic_graphics, Color.Blue),</b>
-<b class="fc">&nbsp;    Io(Res.string.home_io, Res.drawable.ic_io, Color.Magenta),</b>
-<b class="fc">&nbsp;    Miscellaneous(Res.string.home_miscellaneous, Res.drawable.ic_miscellaneous, Color(0xFF00A0A0)),</b>
+<b class="fc">&nbsp;    init {</b>
+<b class="fc">&nbsp;        data.addAll(x.toTypedArray())</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+<b class="fc">&nbsp;    override operator fun get(index: Int): Float = data[index]</b>
+<b class="fc">&nbsp;    override fun toString(): String = data.joinToString(&quot;, &quot;, prefix = &quot;[&quot;, postfix = &quot;]&quot;)</b>
+<b class="fc">&nbsp;    override fun size(): Int = data.size</b>
+&nbsp;    override fun equals(other: Any?): Boolean {
+<b class="fc">&nbsp;        if (this === other) return true</b>
+<b class="fc">&nbsp;        if (other == null || this::class != other::class) return false</b>
+&nbsp;
+<b class="fc">&nbsp;        other as VecImpl</b>
+&nbsp;
+<b class="fc">&nbsp;        return data == other.data</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun hashCode(): Int {
+<b class="fc">&nbsp;        return data.hashCode()</b>
+&nbsp;    }
 &nbsp;}
 </code>
 </pre>
@@ -129,7 +147,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-02-17 12:06</div>
+    <div style="float:right;">generated on 2025-02-25 18:27</div>
 </div>
 </body>
 </html>

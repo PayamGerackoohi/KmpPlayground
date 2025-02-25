@@ -6,13 +6,15 @@ import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 
 fun main() = application {
-    Window(
-        title = "KmpPlayground",
-        state = rememberWindowState(
-            placement = WindowPlacement.Fullscreen,
-        ),
-        onCloseRequest = ::exitApplication,
-    ) {
-        App().Start()
+    App().apply {
+        Window(
+            title = "KMP Playground",
+            state = rememberWindowState(
+                placement = WindowPlacement.Fullscreen,
+            ),
+            onCloseRequest = ::exitApplication,
+        ) {
+                Start()
+        }
     }
 }

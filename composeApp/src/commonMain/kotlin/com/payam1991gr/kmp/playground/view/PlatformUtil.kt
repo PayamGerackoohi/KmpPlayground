@@ -62,3 +62,5 @@ fun Modifier.dimensions(onResult: (ScreenDimension) -> Unit) = run {
 
 @Composable
 fun rememberBoolean(init: Boolean = true) = remember { mutableStateOf(init) }
+
+fun nothing() {}

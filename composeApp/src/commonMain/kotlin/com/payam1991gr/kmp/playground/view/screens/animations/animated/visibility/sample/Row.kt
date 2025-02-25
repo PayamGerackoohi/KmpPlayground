@@ -56,7 +56,7 @@ fun RowSample() {
 
 fun CodeEditor.appendRowSample() {
     appendComposable()
-    line { `fun`; blue { "RowSample" }; normal { "() {" } }
+    line { `fun`; blue { " RowSample" }; normal { "() {" } }
     line(1) { `var`; normal { " index " }; `by`; normal { " remember { mutableStateOf(" }; cyan { "0" }; normal { ") }" } }
     line(1) { `val`; normal { " colors = listOf(Color." }; purple { "Red" }; normal { ", Color." }; purple { "Green" }; normal { ", Color." }; purple { "Blue" }; normal { ")" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_row" }; normal { ")" } }

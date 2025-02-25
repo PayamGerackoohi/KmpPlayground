@@ -13,6 +13,7 @@ import com.payam1991gr.kmp.playground.presenter.screens.components.pull.to.refre
 import com.payam1991gr.kmp.playground.presenter.screens.graphics.GraphicsPresenter
 import com.payam1991gr.kmp.playground.presenter.screens.graphics.charts.ChartsPresenter
 import com.payam1991gr.kmp.playground.presenter.screens.graphics.color.scheme.ColorSchemePresenter
+import com.payam1991gr.kmp.playground.presenter.screens.graphics.icons.IconsPresenter
 import com.payam1991gr.kmp.playground.presenter.screens.graphics.opengl.OpenGlPresenter
 import com.payam1991gr.kmp.playground.presenter.screens.home.HomePresenter
 import com.payam1991gr.kmp.playground.presenter.screens.io.IoPresenter
@@ -50,6 +51,8 @@ import com.payam1991gr.kmp.playground.view.screens.graphics.charts.Charts
 import com.payam1991gr.kmp.playground.view.screens.graphics.charts.ChartsScreen
 import com.payam1991gr.kmp.playground.view.screens.graphics.color.scheme.ColorScheme
 import com.payam1991gr.kmp.playground.view.screens.graphics.color.scheme.ColorSchemeScreen
+import com.payam1991gr.kmp.playground.view.screens.graphics.icons.Icons
+import com.payam1991gr.kmp.playground.view.screens.graphics.icons.IconsScreen
 import com.payam1991gr.kmp.playground.view.screens.graphics.opengl.OpenGl
 import com.payam1991gr.kmp.playground.view.screens.graphics.opengl.OpenGlScreen
 import com.payam1991gr.kmp.playground.view.screens.home.Home
@@ -94,6 +97,7 @@ val circuitModule by lazy {
                         is GraphicsScreen -> Graphics()
                         is ChartsScreen -> Charts()
                         is ColorSchemeScreen -> ColorScheme()
+                        is IconsScreen -> Icons()
                         is OpenGlScreen -> OpenGl()
                         is HomeScreen -> Home()
                         is IoScreen -> Io()
@@ -123,6 +127,7 @@ val circuitModule by lazy {
                         is GraphicsScreen -> GraphicsPresenter(navigator)
                         is ChartsScreen -> ChartsPresenter(navigator)
                         is ColorSchemeScreen -> ColorSchemePresenter(navigator)
+                        is IconsScreen -> IconsPresenter(navigator, get())
                         is OpenGlScreen -> OpenGlPresenter(navigator)
                         is HomeScreen -> HomePresenter(navigator)
                         is IoScreen -> IoPresenter(navigator)

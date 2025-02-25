@@ -2,8 +2,7 @@ package com.payam1991gr.kmp.playground.preview.screens.graphics.color.scheme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.payam1991gr.kmp.playground.preview.SimpleDayNightPreview
-import com.payam1991gr.kmp.playground.preview.SinglePreview
+import com.payam1991gr.kmp.playground.preview.*
 import com.payam1991gr.kmp.playground.preview.preview
 import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
 import com.payam1991gr.kmp.playground.view.screens.graphics.color.scheme.ColorScheme

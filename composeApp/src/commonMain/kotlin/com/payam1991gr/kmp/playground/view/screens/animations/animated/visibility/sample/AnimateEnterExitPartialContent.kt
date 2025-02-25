@@ -64,7 +64,7 @@ fun AnimateEnterExitPartialContentSample() {
 
 fun CodeEditor.appendAnimateEnterExitPartialContentSample() {
     appendComposable()
-    line { `fun`; blue { "AnimateEnterExitPartialContentSample" }; normal { "() {" } }
+    line { `fun`; blue { " AnimateEnterExitPartialContentSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " shape = RoundedCornerShape(" }; cyan { "bottomStart = 16" }; normal { "." }; purple { "dp" }; normal { ", " }; cyan { "bottomEnd = 16" }; normal { "." }; purple { "dp" }; normal { ")" } }
     line(1) { `val`; normal { " tag = stringResource(" } }

@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > ApiPresenter</title>
+  <title>composeApp Coverage Report > HomePresenter</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.io.api</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.home</a>
 </div>
 
-<h1>Coverage Summary for Class: ApiPresenter (com.payam1991gr.kmp.playground.presenter.screens.io.api)</h1>
+<h1>Coverage Summary for Class: HomePresenter (com.payam1991gr.kmp.playground.presenter.screens.home)</h1>
 
 <table class="coverageStats">
 
@@ -46,21 +46,13 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">ApiPresenter</td>
+  <td class="name">HomePresenter</td>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
     (3/3)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    85.7%
-  </span>
-  <span class="absValue">
-    (6/7)
   </span>
 </td>
 <td class="coverageStat">
@@ -73,15 +65,23 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.5%
+    100%
   </span>
   <span class="absValue">
-    (98/106)
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.5%
+  </span>
+  <span class="absValue">
+    (107/112)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">ApiPresenter$WhenMappings</td>
+    <td class="name">HomePresenter$WhenMappings</td>
     <td class="coverageStat"/>
   </tr>
 <tr>
@@ -96,14 +96,6 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </td>
 <td class="coverageStat">
   <span class="percent">
-    85.7%
-  </span>
-  <span class="absValue">
-    (6/7)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
     88.9%
   </span>
   <span class="absValue">
@@ -112,10 +104,18 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </td>
 <td class="coverageStat">
   <span class="percent">
-    92.5%
+    100%
   </span>
   <span class="absValue">
-    (98/106)
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.5%
+  </span>
+  <span class="absValue">
+    (107/112)
   </span>
 </td>
 </tr>
@@ -126,25 +126,33 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.io.api
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.home
 &nbsp;
 &nbsp;import androidx.compose.runtime.Composable
-&nbsp;import com.payam1991gr.kmp.playground.view.module.SamplePage
-&nbsp;import com.payam1991gr.kmp.playground.view.module.toolbar.rememberToolbarState
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.io.api.ApiScreen.State
+&nbsp;import com.payam1991gr.kmp.playground.data.model.HomeItem
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.animations.AnimationsScreen
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.ComponentsScreen
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.GraphicsScreen
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.home.HomeScreen.State
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.io.IoScreen
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.miscellaneous.MiscellaneousScreen
 &nbsp;import com.slack.circuit.runtime.Navigator
 &nbsp;import com.slack.circuit.runtime.presenter.Presenter
+&nbsp;import kotlinx.collections.immutable.toPersistentList
 &nbsp;
-<b class="fc">&nbsp;class ApiPresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
+<b class="fc">&nbsp;class HomePresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
+<b class="fc">&nbsp;    private val items = HomeItem.entries.toPersistentList()</b>
+&nbsp;
 &nbsp;    @Composable
-<b class="nc">&nbsp;    override fun present(): State {</b>
-<b class="fc">&nbsp;        val toolbarState = rememberToolbarState()</b>
-<b class="pc">&nbsp;        return State(toolbarState.showCode, toolbarState.actions) {</b>
+&nbsp;    override fun present(): State {
+<b class="pc">&nbsp;        return State(items) {</b>
 <b class="fc">&nbsp;            when (it) {</b>
-<b class="fc">&nbsp;                is State.Event.OnToolbarAction -&gt; when (it.action) {</b>
-<b class="fc">&nbsp;                    SamplePage.Action.Back -&gt; navigator.pop()</b>
-<b class="fc">&nbsp;                    SamplePage.Action.Code -&gt; toolbarState.code()</b>
-<b class="fc">&nbsp;                    SamplePage.Action.Preview -&gt; toolbarState.preview()</b>
+<b class="fc">&nbsp;                is State.Event.OnItemClicked -&gt; when (it.item) {</b>
+<b class="fc">&nbsp;                    HomeItem.Components -&gt; navigator.goTo(ComponentsScreen)</b>
+<b class="fc">&nbsp;                    HomeItem.Animations -&gt; navigator.goTo(AnimationsScreen)</b>
+<b class="fc">&nbsp;                    HomeItem.Graphics -&gt; navigator.goTo(GraphicsScreen)</b>
+<b class="fc">&nbsp;                    HomeItem.Io -&gt; navigator.goTo(IoScreen)</b>
+<b class="fc">&nbsp;                    HomeItem.Miscellaneous -&gt; navigator.goTo(MiscellaneousScreen)</b>
 &nbsp;                }
 &nbsp;            }
 &nbsp;        }
@@ -173,7 +181,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-02-17 12:06</div>
+    <div style="float:right;">generated on 2025-02-25 18:27</div>
 </div>
 </body>
 </html>

@@ -38,7 +38,7 @@ fun HorizontalTransitionSample() {
 
 fun CodeEditor.appendHorizontalTransitionSample() {
     appendComposable()
-    line { `fun`; blue { "HorizontalTransitionSample" }; normal { "() {" } }
+    line { `fun`; blue { " HorizontalTransitionSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_horizontal_transition" }; normal { ")" } }
     line(1) { normal { "Module(" } }

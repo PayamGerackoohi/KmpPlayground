@@ -78,7 +78,7 @@ class AnimatedVisibilityTest : BaseTest() {
                         fadeTransitionSample()
                         fullyLoadedTransitionSample()
                         booleanVisibleParamNoReceiverSample()
-                        animatedFloatingActionButtonSample()
+                        floatingActionButtonSample()
                         slideInOutSample()
                         expandShrinkVerticallySample()
                         expandInShrinkOutSample()

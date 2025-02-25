@@ -150,13 +150,14 @@ object SamplePage {
     fun preview(
         vararg contents: @Composable () -> Unit,
         gridCells: GridCells = GridCells.Fixed(1),
+        spacing: Dp = 16.dp,
+        contentPadding: Dp = 16.dp,
         modifier: Modifier = Modifier.fillMaxSize(),
     ) = LazyVerticalGrid(
         gridCells,
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
-//        contentPadding = PaddingValues(vertical = 16.dp),
-        contentPadding = PaddingValues(16.dp),
+        horizontalArrangement = Arrangement.spacedBy(spacing),
+        verticalArrangement = Arrangement.spacedBy(spacing),
+        contentPadding = PaddingValues(contentPadding),
         modifier = modifier
     ) {
         items(contents) { it() }
@@ -234,7 +235,11 @@ object SamplePage {
             onToggle: () -> Unit,
             colors: Module.Colors = Module.Defaults.colors(),
             animator: @Composable () -> Unit,
-        ) = Column(Modifier.fillMaxWidth()) {
+        ) = Column(
+            Modifier
+                .fillMaxWidth()
+                .testTag("Module.$label")
+        ) {
             TextButton(
                 onClick = onToggle,
                 colors = ButtonDefaults.textButtonColors(

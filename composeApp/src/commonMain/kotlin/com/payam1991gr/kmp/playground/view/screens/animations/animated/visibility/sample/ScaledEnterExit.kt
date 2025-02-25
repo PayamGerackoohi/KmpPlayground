@@ -150,7 +150,7 @@ private fun Item(color: Color) = Box(
 
 fun CodeEditor.appendScaledEnterExitSample() {
     appendComposable()
-    line { `fun`; blue { "ScaledEnterExitSample" }; normal { "() {" } }
+    line { `fun`; blue { " ScaledEnterExitSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `var`; normal { " showGreen " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `var`; normal { " showRed " }; `by`; normal { " rememberBoolean()" } }

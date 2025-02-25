@@ -32,10 +32,15 @@
       right: 1em;
       font-size: 60%;
       color: deepskyblue;
+      text-align: right;
     }
 
     .last-edit-box>* {
       margin: 0;
+    }
+
+    .small {
+      font-size: 70%;
     }
   </style>
 </head>
@@ -43,7 +48,7 @@
 <body>
   <div class="last-edit-box">
     <h2>Last Edit</h2>
-    <h3>2025-02-17T09:13Z</h3>
+    <h3>2025-02-25T16:26Z</h3>
   </div>
 
   <h1>KMP Playground</h1>
@@ -53,19 +58,21 @@
   <ul>
     <li>Android</li>
     <ul>
-      <a href="output/apk/KMP-Playground-1.0.0-250217-1130.apk">KMP-Playground-1.0.0-250217-1130.apk [1.8 MB]</a>
+      <a href="output/apk/KMP-Playground-1.0.0-250225-1847.apk">KMP-Playground-1.0.0-250225-1847.apk [2.5 MB]</a>
     </ul>
     <li>Desktop</li>
     <ul>
       <li>MacOS</li>
-      <ul>KMP Playground-1.0.0.dmg [54 MB]</ul>
+      <ul>
+        <a href="https://drive.google.com/file/d/1kujIv6r9cU2oxTW-KOPjA8af8ts5qEIm/view?usp=sharing">KMP-Playground-1.0.0-250225-1847.dmg [54.4 MB]</a>
+      </ul>
       <li>Linux</li>
       <li>Windows</li>
     </ul>
     <li>iOS</li>
   </ul>
 
-  <h2><a href="screenshots/screenshots.html">Screens</a></h2>
+  <h2>Screens (<a class="small" href="screenshots/screenshots.html">Screenshots</a>)</h2>
   <ul>
     <li class="check">Home</li>
     <li class="uncheck">Components</li>
@@ -79,14 +86,16 @@
     <li class="uncheck">Animations</li>
     <ul>
       <li class="check">animate*As</li>
-      <li class="uncheck">Animated Content</li>
+      <li class="check">Animated Content</li>
       <li class="check">Animated Visibility</li>
       <li class="uncheck">Crossfade</li>
+      <li class="uncheck">Animatable</li>
     </ul>
     <li class="uncheck">Graphics</li>
     <ul>
       <li class="uncheck">Charts</li>
       <li class="check">Color Scheme</li>
+      <li class="check">Icons</li>
       <li class="uncheck">OpenGL</li>
     </ul>
     <!--    <li class="uncheck">I/O</li>-->
@@ -136,7 +145,7 @@
     <li>Desktop</li>
     <ul>
       <li>Components::PullToRefresh: gestures are not involved</li>
-      <li>Too big output file</li>
+      <li>Too big output file (>50MB for obfuscated optimized release)</li>
     </ul>
   </ul>
 </body>

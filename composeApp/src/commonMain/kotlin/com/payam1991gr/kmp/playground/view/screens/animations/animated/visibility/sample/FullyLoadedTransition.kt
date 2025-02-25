@@ -49,7 +49,7 @@ fun FullyLoadedTransitionSample() = ContentList {
 
 fun CodeEditor.appendFullyLoadedTransitionSample() {
     appendComposable()
-    line { `fun`; blue { "FullyLoadedTransitionSample" }; normal { "() = ContentList {" } }
+    line { `fun`; blue { " FullyLoadedTransitionSample" }; normal { "() = ContentList {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_fully_loaded_transition" }; normal { ")" } }
     line(1) { normal { "Module(" } }

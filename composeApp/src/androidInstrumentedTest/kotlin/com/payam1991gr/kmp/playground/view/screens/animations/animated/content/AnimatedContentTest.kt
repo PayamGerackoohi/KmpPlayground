@@ -47,7 +47,12 @@ class AnimatedContentTest : BaseTest() {
 
                     assertThatCodePageIsNotDisplayed()
                     preview {
-                        previewContent()
+                        simpleSample()
+                        incrementDecrementSample()
+                        transitionSpecSample()
+                        transitionExtensionSample()
+                        slideIntoContainerSample()
+
                         on("Code") { performClick() }
                         verify { event(Event.OnToolbarAction(Action.Code)) }
                         showCode = true
@@ -55,7 +60,13 @@ class AnimatedContentTest : BaseTest() {
 
                     assertThatPreviewPageIsNotDisplayed()
                     code {
-                        codeContent()
+                        shared()
+                        simpleSample()
+                        incrementDecrementSample()
+                        transitionSpecSample()
+                        transitionExtensionSample()
+                        slideIntoContainerSample()
+
                         on("Preview") { performClick() }
                         verify { event(Event.OnToolbarAction(Action.Preview)) }
                     }

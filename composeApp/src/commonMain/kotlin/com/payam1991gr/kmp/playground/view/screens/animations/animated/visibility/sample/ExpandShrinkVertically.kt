@@ -34,7 +34,7 @@ fun ExpandShrinkVerticallySample() {
 
 fun CodeEditor.appendExpandShrinkVerticallySample() {
     appendComposable()
-    line { `fun`; blue { "ExpandShrinkVerticallySample" }; normal { "() {" } }
+    line { `fun`; blue { " ExpandShrinkVerticallySample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(" } }
     line(2) { normal { "Res.string." }; purple { "animations_animated_visibility_expand_shrink_vertically" } }

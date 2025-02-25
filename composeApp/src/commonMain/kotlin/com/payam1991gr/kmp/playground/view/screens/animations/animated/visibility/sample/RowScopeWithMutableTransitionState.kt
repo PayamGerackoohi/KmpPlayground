@@ -64,7 +64,7 @@ fun RowScopeWithMutableTransitionStateSample() {
 
 fun CodeEditor.appendRowScopeWithMutableTransitionStateSample() {
     appendComposable()
-    line { `fun`; blue { "RowScopeWithMutableTransitionStateSample" }; normal { "() {" } }
+    line { `fun`; blue { " RowScopeWithMutableTransitionStateSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " colors = listOf(" } }
     line(2) { normal { "MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "primaryContainer" }; normal { "," } }

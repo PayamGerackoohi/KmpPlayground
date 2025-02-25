@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > GraphicItem</title>
+  <title>composeApp Coverage Report > Vec</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,18 +19,15 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.model</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.math</a>
 </div>
 
-<h1>Coverage Summary for Class: GraphicItem (com.payam1991gr.kmp.playground.data.model)</h1>
+<h1>Coverage Summary for Class: Vec (com.payam1991gr.kmp.playground.data.math)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -49,7 +46,16 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">GraphicItem</td>
+  <td class="name">Vec</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -66,13 +72,24 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     (2/2)
   </span>
 </td>
+</tr>
+  <tr>
+    <td class="name">Vec$Companion</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (4/4)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
@@ -80,11 +97,38 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (39/39)
+    (8/8)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
   </span>
 </td>
 </tr>
-
 </table>
 
 <br/>
@@ -92,15 +136,15 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.model
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.math
 &nbsp;
-&nbsp;import kmpplayground.composeapp.generated.resources.*
-&nbsp;import org.jetbrains.compose.resources.StringResource
+<b class="fc">&nbsp;abstract class Vec {</b>
+&nbsp;    companion object {
+<b class="fc">&nbsp;        fun tor(vararg x: Float): Vec = VecImpl(*x)</b>
+&nbsp;    }
 &nbsp;
-<b class="fc">&nbsp;enum class GraphicItem(val labelRes: StringResource) {</b>
-<b class="fc">&nbsp;    Charts(Res.string.graphic_charts),</b>
-<b class="fc">&nbsp;    ColorScheme(Res.string.graphic_color_scheme),</b>
-<b class="fc">&nbsp;    OpenGL(Res.string.graphic_opengl),</b>
+&nbsp;    abstract operator fun get(index: Int): Float
+&nbsp;    abstract fun size(): Int
 &nbsp;}
 </code>
 </pre>
@@ -125,7 +169,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-02-17 12:06</div>
+    <div style="float:right;">generated on 2025-02-25 18:27</div>
 </div>
 </body>
 </html>

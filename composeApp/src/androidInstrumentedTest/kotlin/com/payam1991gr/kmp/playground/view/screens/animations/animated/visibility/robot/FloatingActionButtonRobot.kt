@@ -5,5 +5,5 @@ import com.payam1991gr.kmp.playground.view.module.robot.SamplePageRobot.PreviewS
 
 interface FloatingActionButtonRobot {
     fun PreviewScope.floatingActionButtonSample(): Any
-    fun CodeScope.animatedFloatingActionButtonSample(): Any
+    fun CodeScope.floatingActionButtonSample(): Any
 }

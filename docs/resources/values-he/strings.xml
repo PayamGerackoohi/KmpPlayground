@@ -53,6 +53,21 @@
     <string name="animations_crossfade">Crossfade</string>
     <string name="animations_animate_x_as">הנפשת X בתור</string>
 
+    <!-- Animations.AnimatedContent -->
+    <string name="animations_animated_content_simple">פָּשׁוּט</string>
+    <string name="animations_animated_content_increment_decrement">הגדלה / ירידה</string>
+    <string name="animations_animated_content_transition_spec">מפרט מעבר</string>
+    <string name="animations_animated_content_transition_extension">הרחבת מעבר</string>
+    <string name="animations_animated_content_slide_into_container">החלק לתוך מיכל</string>
+
+    <!-- Animations.AnimateXAsState -->
+    <string name="animations_animate_float">הנפשה לצוף כמדינה</string>
+    <string name="animations_animate_offset">הנפשת היסט כמצב</string>
+    <string name="animations_animate_dp">הנפש את DP כמדינה</string>
+    <string name="animations_animate_color">הנפשת צבע כמדינה</string>
+    <string name="animations_animate_int">הנפש את Int כמדינה</string>
+    <string name="animations_animate_value">הנפשת ערך כמדינה</string>
+
     <!-- Animations.AnimatedVisibility -->
     <string name="animations_animated_visibility_horizontal_transition">מעבר אופקי</string>
     <string name="animations_animated_visibility_slide_transition">Slide Transition</string>
@@ -76,7 +91,12 @@
     <!-- Graphic -->
     <string name="graphic_charts">תרשימים</string>
     <string name="graphic_color_scheme">ערכת צבעים</string>
+    <string name="graphic_icons">אייקונים</string>
     <string name="graphic_opengl">OpenGL</string>
+
+    <!-- Graphic.Icons -->
+    <string name="graphic_icons_core">אייקוני ליבה</string>
+    <string name="graphic_icons_extended">סמלים מורחבים</string>
 
     <!-- I/O -->
     <string name="io_datastore">מאגר נתונים</string>
@@ -107,8 +127,15 @@
     <string name="trigger_refresh">טריגר רענון</string>
     <string name="favorite">מוּעֲדָף</string>
     <string name="add">לְהוֹסִיף</string>
+    <string name="remove">לְהַסִיר</string>
     <string name="clear_all">נקה הכל</string>
     <string name="red">אָדוֹם</string>
     <string name="green">יָרוֹק</string>
     <string name="shared">מְשׁוּתָף</string>
+    <string name="opaque">אָטוּם</string>
+    <string name="transparent">שָׁקוּף</string>
+    <string name="collapsed">התמוטט</string>
+    <string name="expanded">מוּרחָב</string>
+    <string name="increment">תוֹסֶפֶת</string>
+    <string name="decrement">ירידה</string>
 </resources>

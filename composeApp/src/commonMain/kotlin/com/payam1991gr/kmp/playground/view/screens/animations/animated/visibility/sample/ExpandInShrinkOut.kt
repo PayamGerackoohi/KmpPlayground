@@ -47,7 +47,7 @@ fun ExpandInShrinkOutSample() {
 
 fun CodeEditor.appendExpandInShrinkOutSample() {
     appendComposable()
-    line { `fun`; blue { "ExpandInShrinkOutSample" }; normal { "() {" } }
+    line { `fun`; blue { " ExpandInShrinkOutSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(" } }
     line(2) { normal { "Res.string." }; purple { "animations_animated_visibility_expand_in_shrink_out" } }

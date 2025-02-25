@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > TimeUtilKt</title>
+  <title>composeApp Coverage Report > GraphicItem</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.time</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.model</a>
 </div>
 
-<h1>Coverage Summary for Class: TimeUtilKt (com.payam1991gr.kmp.playground.data.time)</h1>
+<h1>Coverage Summary for Class: GraphicItem (com.payam1991gr.kmp.playground.data.model)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -49,7 +49,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">TimeUtilKt</td>
+  <td class="name">GraphicItem</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -63,7 +63,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (1/1)
+    (2/2)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -72,7 +72,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (1/1)
+    (5/5)
   </span>
 </td>
 <td class="coverageStat">
@@ -80,7 +80,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (5/5)
+    (47/47)
   </span>
 </td>
 </tr>
@@ -92,9 +92,17 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.time
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.model
 &nbsp;
-<b class="fc">&nbsp;fun Int.toPaddedString() = toString().padStart(2, &#39;0&#39;)</b>
+&nbsp;import kmpplayground.composeapp.generated.resources.*
+&nbsp;import org.jetbrains.compose.resources.StringResource
+&nbsp;
+<b class="fc">&nbsp;enum class GraphicItem(val labelRes: StringResource) {</b>
+<b class="fc">&nbsp;    Charts(Res.string.graphic_charts),</b>
+<b class="fc">&nbsp;    ColorScheme(Res.string.graphic_color_scheme),</b>
+<b class="fc">&nbsp;    Icons(Res.string.graphic_icons),</b>
+<b class="fc">&nbsp;    OpenGL(Res.string.graphic_opengl),</b>
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -118,7 +126,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-02-17 12:06</div>
+    <div style="float:right;">generated on 2025-02-25 18:27</div>
 </div>
 </body>
 </html>

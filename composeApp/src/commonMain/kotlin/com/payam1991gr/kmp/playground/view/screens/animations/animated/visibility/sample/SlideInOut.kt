@@ -41,7 +41,7 @@ fun SlideInOutSample() {
 
 fun CodeEditor.appendSlideInOutSample() {
     appendComposable()
-    line { `fun`; blue { "SlideInOutSample" }; normal { "() {" } }
+    line { `fun`; blue { " SlideInOutSample" }; normal { "() {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_slide_in_out" }; normal { ")" } }
     line(1) { normal { "Module(tag, { visible = !visible }) {" } }

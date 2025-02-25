@@ -65,7 +65,7 @@ fun BooleanVisibleParamNoReceiverSample(
 
 fun CodeEditor.appendBooleanVisibleParamNoReceiverSample() {
     appendComposable()
-    line { `fun`; blue { "BooleanVisibleParamNoReceiverSample" }; normal { "(" } }
+    line { `fun`; blue { " BooleanVisibleParamNoReceiverSample" }; normal { "(" } }
     line(1) { normal { "initHeaderColor: Color = MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "secondary" }; normal { "," } }
     line { normal { ") = ContentList {" } }
     line(1) { `var`; normal { " visible " }; `by`; normal { " rememberBoolean()" } }

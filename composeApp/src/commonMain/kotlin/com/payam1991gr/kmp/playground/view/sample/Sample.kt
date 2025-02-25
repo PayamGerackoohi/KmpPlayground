@@ -20,6 +20,8 @@ val CodeEditor.`else` get() = orange { "else" }
 val CodeEditor.`null` get() = orange { "null" }
 val CodeEditor.`get` get() = orange { "get" }
 val CodeEditor.`return` get() = orange { "return" }
+val CodeEditor.`is` get() = orange { "is" }
+val CodeEditor.`out` get() = orange { "out" }
 
 fun CodeEditor.appendExperimentalMaterial3Api() {
     line { optIn; normal { "(" }; yellow { "ExperimentalMaterial3Api" }; normal { "::" }; `class`; normal { ")" } }
