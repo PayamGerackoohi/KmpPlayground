@@ -14,8 +14,8 @@ fun CodeEditor.appendBasicAlertDialogSample() {
     appendComposable()
     line { `fun`; blue { " BasicAlertDialogSample" }; normal { "() = ContentList {" } }
     line(1) { `val`; normal { " animationDuration = " }; `if`; normal { " (" }; purple { "LocalTestMode.current" }; normal { ") " }; cyan { "0 " }; `else`; cyan { " 300" } }
-    line(1) { `var`; normal { " showDialog " }; `by`; normal { " remember { mutableStateOf(" }; `false`; normal { ") }" } }
-    line(1) { `var`; normal { " animateDialog " }; `by`; normal { " remember { mutableStateOf(" }; `false`; normal { ") }" } }
+    line(1) { `var`; normal { " showDialog " }; `by`; normal { " remember { mutableStateOf(" }; _false; normal { ") }" } }
+    line(1) { `var`; normal { " animateDialog " }; `by`; normal { " remember { mutableStateOf(" }; _false; normal { ") }" } }
     line(1) { `val`; normal { " animationSpec = tween<Float>(animationDuration)" } }
     line(1) { `val`; normal { " alpha " }; `by`; normal { " animateFloatAsState(" } }
     line(2) { `if`; normal { " (animateDialog) " }; cyan { "1f " }; `else`; cyan { " 0f" }; normal { "," } }
@@ -31,17 +31,17 @@ fun CodeEditor.appendBasicAlertDialogSample() {
     line(1) { normal { "Settings(isDismissible, shouldAnimate)" } }
     line()
     line(1) { `fun`; blue { " onClose" }; normal { "(): Any = " }; `if`; normal { " (shouldAnimate." }; purple { "value" }; normal { ") scope." }; cyan { "launch " }; normal { "{" } }
-    line(2) { normal { "animateDialog = " }; `false` }
+    line(2) { normal { "animateDialog = " }; _false }
     line(2) { normal { "delay(animationDuration.toLong())" } }
-    line(2) { normal { "showDialog = " }; `false` }
-    line(1) { normal { "} " }; `else`; normal { " showDialog = " }; `false` }
+    line(2) { normal { "showDialog = " }; _false }
+    line(1) { normal { "} " }; `else`; normal { " showDialog = " }; _false }
     line()
     line(1) { normal { "Button(" } }
     line(2) { cyan { "onClick = " }; normal { "{" } }
-    line(3) { normal { "showDialog = " }; `true` }
+    line(3) { normal { "showDialog = " }; _true }
     line(3) { `if`; normal { " (shouldAnimate." }; purple { "value" }; normal { ") scope." }; cyan { "launch " }; normal { "{" } }
     line(4) { normal { "delay(animationDuration.toLong())" } }
-    line(4) { normal { "animateDialog = " }; `true` }
+    line(4) { normal { "animateDialog = " }; _true }
     line(3) { normal { "}" } }
     line(2) { normal { "}," } }
     line(2) { cyan { "modifier = " }; normal { "Modifier." }; blue { "testTag" }; normal { "(" }; green { "\"BasicAlertDialog.Show\"" }; normal { ")" } }
@@ -78,7 +78,7 @@ fun CodeEditor.appendDatePickerDialogSample() {
     appendExperimentalMaterial3Api()
     appendComposable()
     line { `fun`; blue { " DatePickerDialogSample" }; normal { "(state: DatePicker) = ContentList {" } }
-    line(1) { `var`; normal { " showDialog " }; `by`; normal { " remember { mutableStateOf(" }; `false`; normal { ") }" } }
+    line(1) { `var`; normal { " showDialog " }; `by`; normal { " remember { mutableStateOf(" }; _false; normal { ") }" } }
     line(1) { normal { "state." }; blue { "run " }; normal { "{" } }
     line(2) { normal { "rememberDatePickerState(" } }
     line(3) { cyan { "initialDisplayedMonthMillis = " }; purple { "initialDisplayDate" }; normal { "," } }
@@ -90,7 +90,7 @@ fun CodeEditor.appendDatePickerDialogSample() {
     line(3) { normal { "Text(stringResource(" }; purple { "dateStringRes" }; normal { ", " }; purple { "text" }; normal { "." }; blue { "box" }; normal { "()))" } }
     line(2) { normal { "}" } }
     line(2) { normal { "Button(" } }
-    line(3) { cyan { "onClick = " }; normal { "{ showDialog = " }; `true`; normal { " }," } }
+    line(3) { cyan { "onClick = " }; normal { "{ showDialog = " }; _true; normal { " }," } }
     line(3) { cyan { "modifier = " }; normal { "Modifier." }; blue { "testTag" }; normal { "(" }; green { "\"DatePickerDialog.Show\"" }; normal { ")" } }
     line(2) { normal { ") {" } }
     line(3) { normal { "Text(stringResource(Res.string." }; purple { "show" }; normal { "))" } }
@@ -98,18 +98,18 @@ fun CodeEditor.appendDatePickerDialogSample() {
     line(2) { `if`; normal { " (showDialog) {" } }
     line(3) { `val`; normal { " confirmEnabled = remember { derivedStateOf { " }; purple { "hasDate " }; normal { "} }" } }
     line(3) { normal { "DatePickerDialog(" } }
-    line(4) { cyan { "onDismissRequest = " }; normal { "{ showDialog = " }; `false`; normal { " }," } }
+    line(4) { cyan { "onDismissRequest = " }; normal { "{ showDialog = " }; _false; normal { " }," } }
     line(4) { cyan { "confirmButton = " }; normal { "{" } }
     line(5) { normal { "TextButton(" } }
     line(6) { cyan { "onClick = " }; normal { "{" } }
-    line(7) { normal { "showDialog = " }; `false` }
+    line(7) { normal { "showDialog = " }; _false }
     line(7) { purple { "selectedDateMillis" }; normal { "?." }; blue { "let " }; normal { "{ ms -> state." }; purple { "date" };normal { "." }; purple { "ms " }; normal { "= ms }" } }
     line(6) { normal { "}," } }
     line(6) { cyan { "enabled = " }; normal { "confirmEnabled." }; purple { "value" }; normal { "," } }
     line(5) { normal { ") { Text(stringResource(Res.string." }; purple { "ok" }; normal { ")) }" } }
     line(4) { normal { "}," } }
     line(4) { cyan { "dismissButton = " }; normal { "{" } }
-    line(5) { normal { "TextButton({ showDialog = " }; `false`; normal { " }) {" } }
+    line(5) { normal { "TextButton({ showDialog = " }; _false; normal { " }) {" } }
     line(6) { normal { "Text(stringResource(Res.string." }; purple { "cancel" }; normal { "))" } }
     line(5) { normal { "}" } }
     line(4) { normal { "}," } }
@@ -133,7 +133,7 @@ fun CodeEditor.appendTimePickerDialogSample() {
     appendComposable()
     line { `fun`; blue { " TimePickerDialogSample" }; normal { "() = ContentList {" } }
     line(1) { `var`; normal { " time " }; `by`; normal { " remember { mutableStateOf(Time()) }" } }
-    line(1) { `var`; normal { " showTimePicker " }; `by`; normal { " remember { mutableStateOf(" }; `false`; normal { ") }" } }
+    line(1) { `var`; normal { " showTimePicker " }; `by`; normal { " remember { mutableStateOf(" }; _false; normal { ") }" } }
     line()
     line(1) { normal { "rememberTimePickerState(" } }
     line(2) { cyan { "initialHour = " }; normal { "time." }; purple { "hour" }; normal { "," } }
@@ -144,7 +144,7 @@ fun CodeEditor.appendTimePickerDialogSample() {
     line(2) { cyan { "modifier = " }; normal { "Modifier." }; blue { "testTag" }; normal { "(" }; green { "\"TimePicker.Text\"" }; normal { ")" } }
     line(1) { normal { ")" } }
     line(2) { normal { "Button(" } }
-    line(3) { cyan { "onClick = " }; normal { "{ showTimePicker = " }; `true`; normal { " }," } }
+    line(3) { cyan { "onClick = " }; normal { "{ showTimePicker = " }; _true; normal { " }," } }
     line(3) { cyan { "modifier = " }; normal { "Modifier." }; blue { "testTag" }; normal { "(" }; green { "\"TimePicker.SetTime\"" }; normal { ")" } }
     line(2) { normal { ") {" } }
     line(3) { normal { "Text(stringResource(Res.string." }; purple { "time_picker_dialog_set_time" }; normal { "))" } }
@@ -152,10 +152,10 @@ fun CodeEditor.appendTimePickerDialogSample() {
     line()
     line(2) { `if`; normal { " (showTimePicker) TimePickerDialog(" } }
     line(3) { cyan { "title = " }; normal { "stringResource(Res.string." }; purple { "time_picker_dialog_select_time" }; normal { ")," } }
-    line(3) { cyan { "onCancel = " }; normal { "{ showTimePicker = " }; `false`; normal { " }," } }
+    line(3) { cyan { "onCancel = " }; normal { "{ showTimePicker = " }; _false; normal { " }," } }
     line(3) { cyan { "onConfirm = " }; normal { "{" } }
     line(4) { normal { "time = " }; blue { "time" }; normal { "()" } }
-    line(4) { normal { "showTimePicker = " }; `false` }
+    line(4) { normal { "showTimePicker = " }; _false }
     line(3) { normal { "}," } }
     line(2) { normal { ") { TimePicker(" }; `this`; normal { ") }" } }
     line(1) { normal { "}" } }
@@ -173,7 +173,7 @@ fun CodeEditor.appendTimePickerDialog() {
     line { normal { ") {" } }
     line(1) { normal { "Dialog(" } }
     line(2) { cyan { "onDismissRequest = " }; normal { "onCancel," } }
-    line(2) { cyan { "properties = " }; normal { "DialogProperties(" }; cyan { "usePlatformDefaultWidth = " }; `false`; normal { ")," } }
+    line(2) { cyan { "properties = " }; normal { "DialogProperties(" }; cyan { "usePlatformDefaultWidth = " }; _false; normal { ")," } }
     line(1) { normal { ") {" } }
     line(2) { normal { "Surface(" } }
     line(3) { cyan { "shape = " }; normal { "MaterialTheme." }; purple { "shapes" }; normal { "." }; purple { "extraLarge" }; normal { "," } }

@@ -145,7 +145,7 @@ fun CodeEditor.appendIncrementDecrementSample() {
     line(5) { normal { "} " }; `else`; normal { " {" } }
     line(6) { normal { "slideInVertically { it } + fadeIn() " }; blue { "togetherWith" } }
     line(8) { normal { "slideOutVertically { -it } + fadeOut()" } }
-    line(5) { normal { "}." }; blue { "using" }; normal { "(SizeTransform(" }; cyan { "clip = " }; `false`; normal { "))" } }
+    line(5) { normal { "}." }; blue { "using" }; normal { "(SizeTransform(" }; cyan { "clip = " }; _false; normal { "))" } }
     line(4) { normal { "}" } }
     line(3) { normal { ") { targetCount ->" } }
     line(4) { normal { "Text(" } }

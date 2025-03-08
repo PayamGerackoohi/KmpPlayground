@@ -21,6 +21,7 @@ lifecycleRuntimeAndroid = '2.8.7'
 logback = '1.5.11'
 circuit = '0.25.0'
 koin = '4.1.0-Beta1'
+datastore = '1.1.2'
 
 # Test
 junit = '4.13.2'
@@ -54,6 +55,9 @@ ktor-server-netty = { module = 'io.ktor:ktor-server-netty-jvm', version.ref = 'k
 circuit = { module = 'com.slack.circuit:circuit-foundation', version.ref = 'circuit' }
 koin-bom = { module = 'io.insert-koin:koin-bom', version.ref = 'koin' }
 koin-core = { module = 'io.insert-koin:koin-core' }
+koin-android = { module = 'io.insert-koin:koin-android' }
+datastore = { module = 'androidx.datastore:datastore', version.ref = 'datastore' }
+datastore-preferences = { module = 'androidx.datastore:datastore-preferences', version.ref = 'datastore' }
 # Test
 kotlin-test = { module = 'org.jetbrains.kotlin:kotlin-test', version.ref = 'kotlin' }
 kotlin-test-junit = { module = 'org.jetbrains.kotlin:kotlin-test-junit', version.ref = 'kotlin' }

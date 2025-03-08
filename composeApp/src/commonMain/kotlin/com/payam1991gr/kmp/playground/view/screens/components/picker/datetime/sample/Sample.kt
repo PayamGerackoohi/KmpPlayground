@@ -124,7 +124,7 @@ fun CodeEditor.appendTimeSample() {
 
 fun CodeEditor.appendRememberModeToggleSetting() {
     appendComposable()
-    line { `fun`; blue { " rememberModeToggleSetting" }; normal { "() = rememberSetting(" }; `true`; normal { ") {" } }
+    line { `fun`; blue { " rememberModeToggleSetting" }; normal { "() = rememberSetting(" }; _true; normal { ") {" } }
     line(1) { `if`; normal { " (it) Res.string." }; purple { "components_date_picker_mode_toggle" } }
     line(1) { `else`; normal { " Res.string." }; purple { "components_date_picker_no_mode_toggle" } }
     line { normal { "}" } }

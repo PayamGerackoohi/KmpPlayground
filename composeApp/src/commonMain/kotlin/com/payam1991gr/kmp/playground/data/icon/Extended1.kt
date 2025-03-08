@@ -87,7 +87,6 @@ fun extended1() = persistentListOf(
     IconData("AddBusiness", Icon.AddBusiness),
     IconData("AddCard", Icon.AddCard),
     IconData("AddChart", Icon.AddChart),
-    IconData("Addchart", Icon.Addchart),
     IconData("AddCircleOutline", Icon.AddCircleOutline),
     IconData("AddComment", Icon.AddComment),
     IconData("AddHome", Icon.AddHome),

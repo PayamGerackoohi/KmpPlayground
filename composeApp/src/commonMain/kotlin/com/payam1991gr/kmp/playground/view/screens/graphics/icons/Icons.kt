@@ -38,6 +38,7 @@ import com.payam1991gr.kmp.playground.view.screens.graphics.icons.IconsScreen.St
 import com.slack.circuit.runtime.ui.Ui
 import kmpplayground.composeapp.generated.resources.*
 import kotlinx.collections.immutable.PersistentList
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 import org.jetbrains.compose.resources.StringResource
@@ -59,9 +60,13 @@ class Icons : Ui<State> {
         val spacing = 2.dp
         val snackbarState = remember { SnackbarHostState() }
         val scope = rememberCoroutineScope()
-        fun showMessage(text: String) = scope.launch {
-            withTimeout(1000) {
-                snackbarState.showSnackbar(text)
+        var job: Job? = remember { null }
+        fun showMessage(text: String) {
+            job?.cancel()
+            job = scope.launch {
+                withTimeout(1000) {
+                    snackbarState.showSnackbar(text)
+                }
             }
         }
         state.ObserveEffects(::showMessage)

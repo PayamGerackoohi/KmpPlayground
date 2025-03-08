@@ -89,6 +89,9 @@
     <string name="animations_animated_visibility_animate_enter_exit_partial_content">Animate Enter-Exit Partial Content</string>
     <string name="animations_animated_visibility_scaled_enter_exit">Scaled Enter-Exit</string>
 
+    <!-- Animations.Crossfade -->
+    <string name="animations_crossfade_description">It allows to switch between two layouts with a crossfade animation.</string>
+
     <!-- Graphic -->
     <string name="graphic_charts">Charts</string>
     <string name="graphic_color_scheme">Color Scheme</string>
@@ -104,6 +107,11 @@
     <string name="io_database">Database</string>
     <string name="io_api">API</string>
     <string name="io_file">File I/O</string>
+
+    <!-- I/O.Datastore -->
+    <string name="io_datastore_int_template">Int %1$s</string>
+    <string name="io_datastore_float_template">Float %1$s</string>
+    <string name="io_datastore_byte_array_template">Byte Array %1$s</string>
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_cpp">C++</string>
@@ -139,4 +147,6 @@
     <string name="expanded">Expanded</string>
     <string name="increment">Increment</string>
     <string name="decrement">Decrement</string>
+    <string name="toggle">Toggle</string>
+    <string name="save">Save</string>
 </resources>

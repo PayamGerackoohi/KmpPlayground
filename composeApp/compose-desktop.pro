@@ -20,6 +20,14 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+
+#######################
+###### DataStore ######
+#######################
+-keep class androidx.datastore.*.** { *; }
+-dontwarn okio.AsyncTimeout$Watchdog
+-dontwarn androidx.datastore.preferences.protobuf.**
+
 ##################################
 ###### Kotlin Serialization ######
 ##################################

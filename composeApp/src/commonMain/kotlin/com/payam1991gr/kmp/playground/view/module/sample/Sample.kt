@@ -1,14 +1,7 @@
 package com.payam1991gr.kmp.playground.view.module.sample
 
 import com.payam1991gr.kmp.playground.view.module.editor.CodeEditor
-import com.payam1991gr.kmp.playground.view.sample.appendComposable
-import com.payam1991gr.kmp.playground.view.sample.`class`
-import com.payam1991gr.kmp.playground.view.sample.composable
-import com.payam1991gr.kmp.playground.view.sample.`fun`
-import com.payam1991gr.kmp.playground.view.sample.immutable
-import com.payam1991gr.kmp.playground.view.sample.`object`
-import com.payam1991gr.kmp.playground.view.sample.`this`
-import com.payam1991gr.kmp.playground.view.sample.`val`
+import com.payam1991gr.kmp.playground.view.sample.*
 
 fun CodeEditor.appendContentList() {
     appendComposable()
@@ -87,5 +80,56 @@ fun CodeEditor.appendModuleSize() {
     line { `fun`;normal { " Modifier." }; blue { "moduleSize" }; normal { "(ratio: Float = " }; cyan { "2f" }; normal { ") = " }; `this` }
     line(1) { normal { "." }; blue { "fillMaxWidth" }; normal { "()" } }
     line(1) { normal { "." }; blue { "aspectRatio" }; normal { "(ratio)" } }
+    line()
+}
+
+fun CodeEditor.appendTextFieldInput() {
+    appendComposable()
+    line { `fun`; normal { " <" }; teal { "T" }; normal { "> " }; blue { "TextFieldInput" }; normal { "(" } }
+    line(1) { normal { "title: String," } }
+    line(1) { normal { "initialData: " }; teal { "T" }; normal { "," } }
+    line(1) { normal { "converter: Converter<" }; teal { "T" }; normal { ">," } }
+    line(1) { normal { "modifier: Modifier = Modifier," } }
+    line(1) { normal { "tag: String = " }; green { "\"\"" }; normal { "," } }
+    line(1) { normal { "onTextChanged: (String) -> String = { it }," } }
+    line(1) { normal { "canSave: Data<" }; teal { "T" }; normal { ">.() -> Boolean = { !(" }; purple { "hasError" }; normal { " || " }; purple { "value" }; normal { " == initialData) }," } }
+    line(1) { normal { "visualTransformation: VisualTransformation = VisualTransformation." }; purple { "None" }; normal { "," } }
+    line(1) { normal { "onSave: " }; teal { "T" }; normal { ".() -> Unit," } }
+    line { normal { ") {" } }
+    line(1) { `var`; normal { " value " }; `by`; normal { " remember(initialData) { mutableStateOf(converter.from(initialData)) }" } }
+    line(1) { `val`; normal { " data = remember(value) { converter." }; blue { "run" }; normal { " { value." }; blue { "toData" }; normal { "() } }" } }
+    line(1) { `val`; normal { " localTag = " }; green { "\"TextFieldInput\"" }; blue { " merge " }; normal { "tag" } }
+    line(1) { normal { "Column(" } }
+    line(2) { cyan { "verticalArrangement = " }; normal { "Arrangement.spacedBy(" }; cyan { "8" }; normal { "." }; purple { "dp" }; normal { ")," } }
+    line(2) { cyan { "modifier = " }; normal { "modifier," } }
+    line(1) { normal { ") {" } }
+    line(2) { normal { "Header(title)" } }
+    line(2) { normal { "Row(" } }
+    line(3) { cyan { "horizontalArrangement = " }; normal { "Arrangement.spacedBy(" }; cyan { "8" }; normal { "." }; purple { "dp" }; normal { ")," } }
+    line(3) { cyan { "verticalAlignment = " }; normal { "Alignment." }; purple { "CenterVertically" }; normal { "," } }
+    line(2) { normal { ") {" } }
+    line(3) { normal { "TextField(" } }
+    line(4) { cyan { "value = " }; normal { "value," } }
+    line(4) { cyan { "onValueChange = " }; normal { "{ value = onTextChanged(it) }," } }
+    line(4) { cyan { "singleLine = " }; _true; normal { "," } }
+    line(4) { cyan { "visualTransformation = " }; normal { "visualTransformation," } }
+    line(4) { cyan { "isError = " }; normal { "data." }; purple { "hasError" }; normal { "," } }
+    line(4) { cyan { "colors = " }; normal { "TextFieldDefaults.colors(" } }
+    line(5) { cyan { "errorContainerColor = " }; normal { "MaterialTheme." }; purple { "colorScheme" }; normal { "." }; purple { "errorContainer" }; normal { "," } }
+    line(4) { normal { ")," } }
+    line(4) { cyan { "modifier = " }; normal { "Modifier" } }
+    line(5) { normal { "." }; blue { "weight" }; normal { "(" }; cyan { "1f" }; normal { ")" } }
+    line(5) { normal { "." }; blue { "testTag" }; normal { "(localTag)" } }
+    line(3) { normal { ")" } }
+    line(3) { normal { "Button(" } }
+    line(4) { normal { "{ onSave(data." }; purple { "value" }; normal { ") }," } }
+    line(4) { cyan { "enabled = " }; normal { "data.canSave()," } }
+    line(4) { cyan { "modifier = " }; normal { "Modifier." }; blue { "testTag" }; normal { "(localTag " }; blue { "merge " }; green { "\"SaveButton\"" }; normal { ")" } }
+    line(3) { normal { ") {" } }
+    line(4) { normal { "Text(stringResource(Res.string." }; purple { "save" }; normal { "))" } }
+    line(3) { normal { "}" } }
+    line(2) { normal { "}" } }
+    line(1) { normal { "}" } }
+    line { normal { "}" } }
     line()
 }

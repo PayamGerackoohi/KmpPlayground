@@ -10,7 +10,7 @@ import kotlinx.collections.immutable.toPersistentList
 
 interface DatastoreRobot {
     suspend fun onState(
-        showCode: Boolean,
+        showCode: Boolean? = null,
         vararg toolbarActions: Action,
         block: suspend State.() -> Unit = {},
     ): Any
@@ -20,13 +20,14 @@ typealias Crt = CircuitReceiveTurbine<State>
 
 class DatastoreRobotImpl(private val crt: Crt) : DatastoreRobot {
     override suspend fun onState(
-        showCode: Boolean,
+        showCode: Boolean?,
         vararg toolbarActions: Action,
         block: suspend State.() -> Unit
     ) = crt.awaitItem().apply {
         assertThat(this).isInstanceOf(State::class.java)
-        assertThat(this.showCode).isEqualTo(showCode)
-        assertThat(this.toolbarActions).isEqualTo(toolbarActions.toPersistentList())
+        showCode?.let { assertThat(this.showCode).isEqualTo(it) }
+        if (toolbarActions.isNotEmpty())
+            assertThat(this.toolbarActions).isEqualTo(toolbarActions.toPersistentList())
         block()
     }
 }

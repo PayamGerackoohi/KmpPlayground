@@ -9,9 +9,13 @@ fun CodeEditor.appendPreview() {
     line(1) { `val`; normal { " spacing = " }; cyan { "2" }; normal { "." }; purple { "dp" } }
     line(1) { `val`; normal { " snackbarState = remember { SnackbarHostState() }" } }
     line(1) { `val`; normal { " scope = rememberCoroutineScope()" } }
-    line(1) { `fun`; blue { " showMessage" }; normal { "(text: String) = scope." }; blue { "launch" }; normal { " {" } }
-    line(2) { normal { "withTimeout(" }; cyan { "1000" }; normal { ") {" } }
-    line(3) { normal { "snackbarState.showSnackbar(text)" } }
+    line(1) { `var`; normal { " job: Job? = remember { " }; `null`; normal { " }" } }
+    line(1) { `fun`; blue { " showMessage" }; normal { "(text: String) {" } }
+    line(2) { normal { "job?.cancel()" } }
+    line(2) { normal { "job = scope." }; blue { "launch" }; normal { " {" } }
+    line(3) { normal { "withTimeout(" }; cyan { "1000" }; normal { ") {" } }
+    line(4) { normal { "snackbarState.showSnackbar(text)" } }
+    line(3) { normal { "}" } }
     line(2) { normal { "}" } }
     line(1) { normal { "}" } }
     line(2) { normal { "state." }; blue { "ObserveEffects" }; normal { "(::showMessage)" } }

@@ -182,7 +182,7 @@ fun CodeEditor.appendRememberPtrState() {
     line(1) { normal { "state: PullToRefreshState = rememberPullToRefreshState()," } }
     line(1) { normal { "coroutineScope: CoroutineScope = rememberCoroutineScope()," } }
     line { normal { "): PtrState {" } }
-    line(1) { `val`; normal { " isRefreshing = remember { mutableStateOf(" }; `false`; normal { ") }" } }
+    line(1) { `val`; normal { " isRefreshing = remember { mutableStateOf(" }; _false; normal { ") }" } }
     line(1) { `val`; normal { " itemCount = remember { mutableIntStateOf(initialItemCount) }" } }
     line(1) { `return`; normal { " remember { PtrStateImpl(state, isRefreshing, itemCount, coroutineScope) }" } }
     line { normal { "}" } }

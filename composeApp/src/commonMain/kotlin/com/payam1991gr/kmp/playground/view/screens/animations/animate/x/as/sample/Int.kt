@@ -90,7 +90,7 @@ private fun Bar(
 fun CodeEditor.appendIntSample() {
     appendComposable()
     line { `fun`; blue { " IntSample" }; normal { "(maxCount: Int = " }; cyan { "100" }; normal { ", spacing: Dp = " }; cyan { "2" }; normal { "." }; purple { "dp" }; normal { ") {" } }
-    line(1) { `var`; normal { " isSelected " }; `by`; normal { " rememberBoolean(" }; `false`; normal { ")" } }
+    line(1) { `var`; normal { " isSelected " }; `by`; normal { " rememberBoolean(" }; _false; normal { ")" } }
     line(1) { `val`; normal { " count " }; `by`; normal { " animateIntAsState(" } }
     line(2) { `if`; normal { " (isSelected) maxCount " }; `else`; cyan { " 0" }; normal { "," } }
     line(2) { cyan { "animationSpec = " }; normal { "tween(" }; cyan { "1000" }; normal { ")," } }

@@ -47,7 +47,7 @@ class CrossfadeTest : BaseTest() {
 
                     assertThatCodePageIsNotDisplayed()
                     preview {
-                        previewContent()
+                        sample()
 
                         on("Code") { performClick() }
                         verify { event(Event.OnToolbarAction(Action.Code)) }
@@ -56,7 +56,7 @@ class CrossfadeTest : BaseTest() {
 
                     assertThatPreviewPageIsNotDisplayed()
                     code {
-                        codeContent()
+                        sample()
 
                         on("Preview") { performClick() }
                         verify { event(Event.OnToolbarAction(Action.Preview)) }

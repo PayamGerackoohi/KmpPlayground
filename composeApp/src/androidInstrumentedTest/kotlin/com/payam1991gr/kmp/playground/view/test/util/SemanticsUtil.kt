@@ -1,6 +1,9 @@
 package com.payam1991gr.kmp.playground.view.test.util
 
+import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.test.SemanticsMatcher
+import androidx.compose.ui.test.SemanticsMatcher.Companion.expectValue
+import androidx.compose.ui.test.SemanticsMatcher.Companion.keyNotDefined
 import androidx.compose.ui.test.SemanticsNodeInteraction
 import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.hasAnyAncestor
@@ -21,3 +24,5 @@ fun Sni.onDescendant(
 }
 
 fun Sni.hasState(state: String) = assert(hasStateDescription(state))
+fun Sni.hasError(value: String) = assert(expectValue(SemanticsProperties.Error, value))
+fun Sni.hasNoError() = assert(keyNotDefined(SemanticsProperties.Error))

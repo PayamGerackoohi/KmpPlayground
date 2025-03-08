@@ -45,7 +45,6 @@ import androidx.compose.ui.unit.dp
 import com.payam1991gr.kmp.playground.data.model.sample.Setting
 import com.payam1991gr.kmp.playground.view.mirrorRtl
 import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
-import com.payam1991gr.kmp.playground.view.module.SamplePage.Preview.moduleSize
 import kmpplayground.composeapp.generated.resources.*
 import kotlinx.collections.immutable.PersistentList
 import kotlinx.collections.immutable.persistentListOf

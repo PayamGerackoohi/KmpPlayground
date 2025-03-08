@@ -9,8 +9,6 @@ val CodeEditor.`class` get() = orange { "class" }
 val CodeEditor.`object` get() = orange { "object" }
 val CodeEditor.`fun` get() = orange { "fun" }
 val CodeEditor.`this` get() = orange { "this" }
-val CodeEditor.`true` get() = orange { "true" }
-val CodeEditor.`false` get() = orange { "false" }
 val CodeEditor.`val` get() = orange { "val" }
 val CodeEditor.`var` get() = orange { "var" }
 val CodeEditor.`by` get() = orange { "by" }
@@ -21,7 +19,16 @@ val CodeEditor.`null` get() = orange { "null" }
 val CodeEditor.`get` get() = orange { "get" }
 val CodeEditor.`return` get() = orange { "return" }
 val CodeEditor.`is` get() = orange { "is" }
+val CodeEditor.`in` get() = orange { "in" }
 val CodeEditor.`out` get() = orange { "out" }
+val CodeEditor.`interface` get() = orange { "interface" }
+val CodeEditor.`as` get() = orange { "as" }
+
+@Suppress("ObjectPropertyName")
+val CodeEditor._true get() = orange { "true" } // `true` cannot compile to swift
+
+@Suppress("ObjectPropertyName")
+val CodeEditor._false get() = orange { "false" } // `false` cannot compile to swift
 
 fun CodeEditor.appendExperimentalMaterial3Api() {
     line { optIn; normal { "(" }; yellow { "ExperimentalMaterial3Api" }; normal { "::" }; `class`; normal { ")" } }

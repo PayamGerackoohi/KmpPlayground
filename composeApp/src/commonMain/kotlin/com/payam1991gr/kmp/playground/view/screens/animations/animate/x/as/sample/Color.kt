@@ -38,7 +38,7 @@ fun ColorSample() {
 fun CodeEditor.appendColorSample() {
     appendComposable()
     line { `fun`; blue { " ColorSample" }; normal { "() {" } }
-    line(1) { `var`; normal { " isPrimary " }; `by`; normal { " rememberBoolean(" }; `true`; normal { ")" } }
+    line(1) { `var`; normal { " isPrimary " }; `by`; normal { " rememberBoolean(" }; _true; normal { ")" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animate_color" }; normal { ")" } }
     line(1) { normal { "Module(tag, { isPrimary = !isPrimary }) {" } }
     line(2) { `val`; normal { " color " }; `by`; normal { " animateColorAsState(" } }

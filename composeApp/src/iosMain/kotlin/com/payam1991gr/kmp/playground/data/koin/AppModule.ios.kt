@@ -1,0 +1,30 @@
+package com.payam1991gr.kmp.playground.data.koin
+
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import com.payam1991gr.kmp.playground.data.store.createDataStore
+import com.payam1991gr.kmp.playground.data.store.dataStoreFileName
+import kotlinx.cinterop.ExperimentalForeignApi
+import org.koin.dsl.module
+import platform.Foundation.NSDocumentDirectory
+import platform.Foundation.NSFileManager
+import platform.Foundation.NSURL
+import platform.Foundation.NSUserDomainMask
+
+@OptIn(ExperimentalForeignApi::class)
+actual val dataStoreModule by lazy {
+    module {
+        single<DataStore<Preferences>> {
+            createDataStore {
+                val documentDirectory: NSURL? = NSFileManager.defaultManager.URLForDirectory(
+                    directory = NSDocumentDirectory,
+                    inDomain = NSUserDomainMask,
+                    appropriateForURL = null,
+                    create = false,
+                    error = null,
+                )
+                requireNotNull(documentDirectory).path + "/$dataStoreFileName"
+            }
+        }
+    }
+}

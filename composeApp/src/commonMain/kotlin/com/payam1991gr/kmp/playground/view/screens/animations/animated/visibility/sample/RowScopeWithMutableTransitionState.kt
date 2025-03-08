@@ -84,7 +84,7 @@ fun CodeEditor.appendRowScopeWithMutableTransitionStateSample() {
     line(3) { normal { "repeat(" }; cyan { "3" }; normal { ") {" } }
     line(4) { blue { "AnimatedVisibility" }; normal { "(" } }
     line(5) { cyan { "visibleState = " }; normal { "remember {" } }
-    line(6) { normal { "MutableTransitionState(" }; cyan { "initialState = " }; `false`; normal { ")" } }
+    line(6) { normal { "MutableTransitionState(" }; cyan { "initialState = " }; _false; normal { ")" } }
     line(5) { normal { "}." }; blue { "apply" }; normal { " {" } }
     line(6) { purple { "targetState" }; normal { " = visible" } }
     line(5) { normal { "}," } }

@@ -1,0 +1,82 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>composeApp Coverage Report > DataBuilder</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.model.textfield</a>
+</div>
+
+<h1>Coverage Summary for Class: DataBuilder (com.payam1991gr.kmp.playground.data.model.textfield)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+</tr>
+<tr>
+  <td class="name">DataBuilder</td>
+    <td class="coverageStat"/>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.model.textfield
+&nbsp;
+&nbsp;interface DataBuilder&lt;T&gt; {
+&nbsp;    fun error(): Nothing?
+&nbsp;}
+&nbsp;
+&nbsp;fun &lt;T&gt; buildData(block: DataBuilder&lt;T&gt;.() -&gt; T): Data&lt;T&gt; = DataBuilderImpl&lt;T&gt;().run {
+&nbsp;    build(block())
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-03-07 19:36</div>
+</div>
+</body>
+</html>

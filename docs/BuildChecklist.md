@@ -8,13 +8,16 @@
   - [x] Unit
   - [x] UI
 - [x] README.md
-- [ ] KMP Playground Website
+- [x] KMP Playground Website
   - [x] Screens
   - [x] Screenshots
   - [x] Tests
+    - [x] Coverage
+    - [x] Unit
+    - [x] UI
   - [x] Translations
-  - [ ] Versioning / Build / Manual Test
+  - [x] Versioning / Build / Manual Test
     - [x] Mac (gradle packageReleaseDmg)
     - [x] Android
-    - [ ] iOS
+    - [x] iOS
   - [x] Last Edit Label

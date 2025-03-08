@@ -21,11 +21,11 @@ import kotlinx.coroutines.delay
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-class App : KoinComponent {
+class App(setupKoin: Boolean = true) : KoinComponent {
     private val circuit: Circuit by inject()
 
     init {
-        initKoin()
+        if (setupKoin) initKoin()
     }
 
     @Composable

@@ -4,21 +4,21 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
 
 ## Screens
 
+### [Screenshots](http://localhost:63342/KmpPlayground/docs/screenshots/screenshots.html)
+
 ### Home
 
 ### Compose
-- [ ] Components
+- [x] Components
   - [x] Carousel
   - [x] Dialog
   - [x] Date/Time Picker
   - [x] Pull to Refresh
-  - [ ] ...
-- [ ] Animations
+- [x] Animations
   - [x] animate*As
   - [x] Animated Content
   - [x] Animated Visibility
-  - [ ] Crossfade
-  - [ ] ...
+  - [x] Crossfade
 
 ### Graphics
 - [ ] Charts
@@ -28,7 +28,7 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
 
 ### I/O
 - [ ] Datastore
-  - [ ] Key-Value
+  - [x] Key-Value
   - [ ] Protobuf
 - [ ] Database
   - [ ] Room
@@ -46,6 +46,7 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
 
 ## Build
 ### Android
+Android Studio :: Build >> Build App Bundle(s) / APK(s) >> Build APK(s)
 
 ### MacOS
 Install Java Coretto 17
@@ -59,7 +60,8 @@ gradle createReleaseDistributable
 gradle packageDmg
 gradle packageReleaseDmg
 ```
-Info:
+
+#### Info
 - jpackage
 - [jlink](https://openjdk.org/jeps/282)
 ```kotlin

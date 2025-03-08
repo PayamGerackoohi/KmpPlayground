@@ -63,7 +63,15 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (2/2)
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (24/24)
   </span>
 </td>
 <td class="coverageStat">
@@ -79,15 +87,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (6/6)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (54/54)
+    (93/93)
   </span>
 </td>
 </tr>
@@ -109,6 +109,12 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 &nbsp;
 &nbsp;@Suppress(&quot;IfThenToElvis&quot;) // to make kover happy
 <b class="fc">&nbsp;fun Any?.box() = if (this == null) &quot;☐&quot; else toString()</b>
+&nbsp;
+<b class="fc">&nbsp;fun Char.isDecimal() = isDigit() || this == &#39;-&#39;</b>
+<b class="fc">&nbsp;fun Char.isFloat() = isDecimal() || this == &#39;.&#39;</b>
+<b class="fc">&nbsp;fun Char.isDecimalArray() = isDecimal() || this == &#39;,&#39;</b>
+&nbsp;
+<b class="fc">&nbsp;infix fun String.merge(other: String) = if (other.isBlank()) this else &quot;$this.${other.trim()}&quot;</b>
 </code>
 </pre>
 </div>
@@ -132,7 +138,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-02-25 18:27</div>
+    <div style="float:right;">generated on 2025-03-07 19:36</div>
 </div>
 </body>
 </html>

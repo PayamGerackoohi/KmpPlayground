@@ -133,7 +133,7 @@ val circuitModule by lazy {
                         is IoScreen -> IoPresenter(navigator)
                         is ApiScreen -> ApiPresenter(navigator)
                         is DatabaseScreen -> DatabasePresenter(navigator)
-                        is DatastoreScreen -> DatastorePresenter(navigator)
+                        is DatastoreScreen -> DatastorePresenter(navigator, get())
                         is FileScreen -> FilePresenter(navigator)
                         is MiscellaneousScreen -> MiscellaneousPresenter(navigator)
                         is BleScreen -> BlePresenter(navigator)

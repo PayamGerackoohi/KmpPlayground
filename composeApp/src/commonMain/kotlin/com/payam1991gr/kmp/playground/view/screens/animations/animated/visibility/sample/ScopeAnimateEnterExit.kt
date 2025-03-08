@@ -144,7 +144,7 @@ private fun AnimatedVisibilityScope.Item(modifier: Modifier, backgroundColor: Co
 fun CodeEditor.appendScopeAnimateEnterExitSample() {
     appendComposable()
     line { `fun`; blue { " ScopeAnimateEnterExitSample" }; normal { "() {" } }
-    line(1) { `val`; normal { " state = remember { MutableTransitionState(" }; `true`; normal { ") }" } }
+    line(1) { `val`; normal { " state = remember { MutableTransitionState(" }; _true; normal { ") }" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_scope_animate_enter_exit" }; normal { ")" } }
     line(1) { normal { "Module(" } }
     line(2) { cyan { "label = " }; normal { "tag," } }

@@ -22,7 +22,7 @@ object AppInfo {
     const val PROJECT_NAME = "kmpplayground"
     const val APP_NAME = "KMP-Playground"
     const val VERSION = "1.0.0"
-    val buildDate: String = SimpleDateFormat("yyMMdd-HHmm").format(Date())
+    val buildDate: String by lazy { SimpleDateFormat("yyMMdd-HHmm").format(Date()) }
 }
 
 val keystore = FileInputStream(rootProject.file("keystore/keystore.properties")).let { file ->
@@ -73,11 +73,14 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.kotlinx.date.time)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.datastore)
+            implementation(libs.datastore.preferences)
         }
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.lifecycle.runtime.android)
+            implementation(libs.koin.android)
             implementation("androidx.annotation:annotation-jvm") { version { strictly("1.8.2") } }
         }
         androidUnitTest.dependencies {
@@ -187,7 +190,9 @@ AppInfo.apply {
         "${PACKAGE_NAME}.*_ComposeKt",
         "${PACKAGE_NAME}.preview.*",
         "${PACKAGE_NAME}.view.*",
+        "${PACKAGE_NAME}.AndroidApplication",
         "${PACKAGE_NAME}.data.koin.*",
+        "${PACKAGE_NAME}.data.store.*",
         "${PROJECT_NAME}.composeapp.generated.resources.*",
     )
 }
@@ -205,6 +210,9 @@ compose.desktop.application {
         targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
         outputBaseDir.set(project.layout.buildDirectory.dir("desktop"))
         licenseFile.set(project.file("../LICENSE"))
+        // todo
+        modules("jdk.unsupported")
+        modules("jdk.unsupported.desktop")
     }
     buildTypes.release.proguard {
         obfuscate.set(true)

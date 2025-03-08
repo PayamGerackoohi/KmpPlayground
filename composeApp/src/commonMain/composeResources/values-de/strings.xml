@@ -88,6 +88,9 @@
     <string name="animations_animated_visibility_animate_enter_exit_partial_content">Animieren Sie den Enter-Exit-Teilinhalt</string>
     <string name="animations_animated_visibility_scaled_enter_exit">Skaliertes Ein- und Aussteigen</string>
 
+    <!-- Animations.Crossfade -->
+    <string name="animations_crossfade_description">Es ermöglicht den Wechsel zwischen zwei Layouts mit einer Überblendanimation.</string>
+
     <!-- Graphic -->
     <string name="graphic_charts">Diagramme</string>
     <string name="graphic_color_scheme">Farbschema</string>
@@ -103,6 +106,11 @@
     <string name="io_database">Datenbank</string>
     <string name="io_api">API</string>
     <string name="io_file">Datei-E/A</string>
+
+    <!-- I/O.Datastore -->
+    <string name="io_datastore_int_template">Int %1$s</string>
+    <string name="io_datastore_float_template">Float %1$s</string>
+    <string name="io_datastore_byte_array_template">Byte-Array %1$s</string>
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_cpp">C++</string>
@@ -138,4 +146,5 @@
     <string name="expanded">Erweitert</string>
     <string name="increment">Inkrement</string>
     <string name="decrement">Dekrement</string>
+    <string name="toggle">Umschalten</string>
 </resources>

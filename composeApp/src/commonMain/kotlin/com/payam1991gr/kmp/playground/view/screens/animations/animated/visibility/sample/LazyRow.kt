@@ -315,14 +315,14 @@ private fun CodeEditor.appendMyModel() {
     line(2) { purple { "lastItemId" }; normal { "++" } }
     line(2) { purple { "_items" }; normal { ".add(" } }
     line(3) { normal { "ColoredItem(" } }
-    line(4) { normal { "MutableTransitionState(" }; `false`; normal { ")." }; blue { "apply" }; normal { " { " }; purple { "targetState" }; normal { " = " }; `true`; normal { " }," } }
+    line(4) { normal { "MutableTransitionState(" }; _false; normal { ")." }; blue { "apply" }; normal { " { " }; purple { "targetState" }; normal { " = " }; _true; normal { " }," } }
     line(4) { purple { "lastItemId" }; normal { "," } }
     line(3) { normal { ")" } }
     line(2) { normal { ")" } }
     line(1) { normal { "}" } }
     line()
     line(1) { `fun`; blue { " removeItem" }; normal { "(item: ColoredItem) {" } }
-    line(2) { normal { "item." }; purple { "visible" }; normal { "." }; purple { "targetState" }; normal { " = " }; `false` }
+    line(2) { normal { "item." }; purple { "visible" }; normal { "." }; purple { "targetState" }; normal { " = " }; _false }
     line(1) { normal { "}" } }
     line()
     line(1) { `fun`; blue { " pruneItems" }; normal { "() {" } }
@@ -335,7 +335,7 @@ private fun CodeEditor.appendMyModel() {
     line()
     line(1) { `fun`; blue { " removeAll" }; normal { "() {" } }
     line(2) { purple { "_items" }; normal { "." }; blue { "forEach" }; normal { " {" } }
-    line(3) { normal { "it." }; purple { "visible" }; normal { "." }; purple { "targetState" }; normal { " = " }; `false` }
+    line(3) { normal { "it." }; purple { "visible" }; normal { "." }; purple { "targetState" }; normal { " = " }; _false }
     line(2) { normal { "}" } }
     line(1) { normal { "}" } }
     line { normal { "}" } }

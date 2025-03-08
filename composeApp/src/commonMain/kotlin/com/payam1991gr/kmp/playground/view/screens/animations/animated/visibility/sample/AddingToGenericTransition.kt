@@ -129,7 +129,7 @@ private fun TextLine() = Box(
 fun CodeEditor.appendAddingToGenericTransitionSample() {
     appendComposable()
     line { `fun`; blue { " AddingToGenericTransitionSample" }; normal { "() {" } }
-    line(1) { `var`; normal { " selected " }; `by`; normal { " rememberBoolean(" }; `false`; normal { ")" } }
+    line(1) { `var`; normal { " selected " }; `by`; normal { " rememberBoolean(" }; _false; normal { ")" } }
     line(1) { `val`; normal { " tag = stringResource(Res.string." }; purple { "animations_animated_visibility_adding_to_generic_transition" }; normal { ")" } }
     line(1) { normal { "Module(tag, { selected = !selected }) {" } }
     line(2) { normal { "Box(" } }

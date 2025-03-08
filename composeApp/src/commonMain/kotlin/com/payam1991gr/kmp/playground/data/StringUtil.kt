@@ -8,3 +8,9 @@ fun String.toHeader(): String = mapIndexed { index, it ->
 
 @Suppress("IfThenToElvis") // to make kover happy
 fun Any?.box() = if (this == null) "☐" else toString()
+
+fun Char.isDecimal() = isDigit() || this == '-'
+fun Char.isFloat() = isDecimal() || this == '.'
+fun Char.isDecimalArray() = isDecimal() || this == ','
+
+infix fun String.merge(other: String) = if (other.isBlank()) this else "$this.${other.trim()}"

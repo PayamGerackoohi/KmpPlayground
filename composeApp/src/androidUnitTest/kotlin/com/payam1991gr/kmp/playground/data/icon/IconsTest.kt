@@ -20,7 +20,7 @@ class IconsTest {
     fun `extended icons test`() = runTest {
         val icons = IconsImpl()
         val extendedIcons = icons.extended()
-        assertThat(extendedIcons.size).isEqualTo(2083)
+        assertThat(extendedIcons.size).isEqualTo(2082)
         assertThat(extendedIcons[0].title).isEqualTo("_1k")
         assertThat(extendedIcons[1].title).isEqualTo("_1kPlus")
         assertThat(extendedIcons[2].title).isEqualTo("_1xMobiledata")

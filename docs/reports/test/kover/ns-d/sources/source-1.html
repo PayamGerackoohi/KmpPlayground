@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > DialogPresenter</title>
+  <title>composeApp Coverage Report > CarouselPresenter</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.components.dialog</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.components.carousel</a>
 </div>
 
-<h1>Coverage Summary for Class: DialogPresenter (com.payam1991gr.kmp.playground.presenter.screens.components.dialog)</h1>
+<h1>Coverage Summary for Class: CarouselPresenter (com.payam1991gr.kmp.playground.presenter.screens.components.carousel)</h1>
 
 <table class="coverageStats">
 
@@ -46,7 +46,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">DialogPresenter</td>
+  <td class="name">CarouselPresenter</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -65,23 +65,23 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </td>
 <td class="coverageStat">
   <span class="percent">
-    90%
+    88.9%
   </span>
   <span class="absValue">
-    (9/10)
+    (8/9)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    93.2%
+    92.5%
   </span>
   <span class="absValue">
-    (109/117)
+    (98/106)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">DialogPresenter$WhenMappings</td>
+    <td class="name">CarouselPresenter$WhenMappings</td>
     <td class="coverageStat"/>
   </tr>
 <tr>
@@ -104,18 +104,18 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </td>
 <td class="coverageStat">
   <span class="percent">
-    90%
+    88.9%
   </span>
   <span class="absValue">
-    (9/10)
+    (8/9)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    93.2%
+    92.5%
   </span>
   <span class="absValue">
-    (109/117)
+    (98/106)
   </span>
 </td>
 </tr>
@@ -126,27 +126,26 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.components.dialog
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.components.carousel
 &nbsp;
 &nbsp;import androidx.compose.runtime.Composable
-&nbsp;import com.payam1991gr.kmp.playground.view.module.SamplePage
+&nbsp;import com.payam1991gr.kmp.playground.view.module.SamplePage.Action
 &nbsp;import com.payam1991gr.kmp.playground.view.module.toolbar.rememberToolbarState
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.dialog.DialogScreen.State
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.state.rememberDatePickerState
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.carousel.CarouselScreen.State
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.carousel.CarouselScreen.State.Event
 &nbsp;import com.slack.circuit.runtime.Navigator
 &nbsp;import com.slack.circuit.runtime.presenter.Presenter
 &nbsp;
-<b class="fc">&nbsp;class DialogPresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
+<b class="fc">&nbsp;class CarouselPresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
 &nbsp;    @Composable
 <b class="nc">&nbsp;    override fun present(): State {</b>
 <b class="fc">&nbsp;        val toolbarState = rememberToolbarState()</b>
-<b class="fc">&nbsp;        val datePickerState = rememberDatePickerState()</b>
-<b class="pc">&nbsp;        return State(toolbarState.showCode, toolbarState.actions, datePickerState) {</b>
+<b class="pc">&nbsp;        return State(toolbarState.showCode, toolbarState.actions) {</b>
 <b class="fc">&nbsp;            when (it) {</b>
-<b class="fc">&nbsp;                is State.Event.OnToolbarAction -&gt; when (it.action) {</b>
-<b class="fc">&nbsp;                    SamplePage.Action.Back -&gt; navigator.pop()</b>
-<b class="fc">&nbsp;                    SamplePage.Action.Code -&gt; toolbarState.code()</b>
-<b class="fc">&nbsp;                    SamplePage.Action.Preview -&gt; toolbarState.preview()</b>
+<b class="fc">&nbsp;                is Event.OnToolbarAction -&gt; when (it.action) {</b>
+<b class="fc">&nbsp;                    Action.Back -&gt; navigator.pop()</b>
+<b class="fc">&nbsp;                    Action.Code -&gt; toolbarState.code()</b>
+<b class="fc">&nbsp;                    Action.Preview -&gt; toolbarState.preview()</b>
 &nbsp;                }
 &nbsp;            }
 &nbsp;        }
@@ -175,7 +174,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-02-25 18:27</div>
+    <div style="float:right;">generated on 2025-03-07 19:36</div>
 </div>
 </body>
 </html>
