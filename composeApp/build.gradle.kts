@@ -187,7 +187,8 @@ android {
 AppInfo.apply {
     kover.reports.filters.excludes.classes(
         "${PACKAGE_NAME}.*.sample.*",
-        "${PACKAGE_NAME}.*_ComposeKt",
+        "${PACKAGE_NAME}.*.*_ComposeKt",
+        "${PACKAGE_NAME}.*.*_PlatformKt*",
         "${PACKAGE_NAME}.preview.*",
         "${PACKAGE_NAME}.view.*",
         "${PACKAGE_NAME}.AndroidApplication",
@@ -210,9 +211,8 @@ compose.desktop.application {
         targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
         outputBaseDir.set(project.layout.buildDirectory.dir("desktop"))
         licenseFile.set(project.file("../LICENSE"))
-        // todo
-        modules("jdk.unsupported")
-        modules("jdk.unsupported.desktop")
+        modules("jdk.unsupported") // datastore
+        modules("jdk.unsupported.desktop") // datastore
     }
     buildTypes.release.proguard {
         obfuscate.set(true)

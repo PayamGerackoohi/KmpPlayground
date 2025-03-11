@@ -8,7 +8,7 @@
   - [x] Unit
   - [x] UI
 - [x] README.md
-- [x] KMP Playground Website
+- [ ] KMP Playground Website
   - [x] Screens
   - [x] Screenshots
   - [x] Tests
@@ -21,3 +21,4 @@
     - [x] Android
     - [x] iOS
   - [x] Last Edit Label
+

@@ -38,22 +38,17 @@ private val DarkColors = ThemeColors.Dark.run {
     )
 }
 
-enum class ColorMode { Light, Dark, None }
-
 @Composable
 expect fun dynamicColorScheme(dynamicColor: Boolean, darkTheme: Boolean): ColorScheme?
 
 @Composable
 fun KmpPlaygroundTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    forceMode: ColorMode = ColorMode.None,
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
 //    val colorScheme = dynamicColorScheme(dynamicColor, darkTheme) ?: when {
     val colorScheme = when {
-        forceMode == ColorMode.Light -> LightColors
-        forceMode == ColorMode.Dark -> DarkColors
         darkTheme -> DarkColors
         else -> LightColors
     }

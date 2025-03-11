@@ -8,7 +8,7 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextReplacement
-import com.payam1991gr.kmp.playground.data.model.Time
+import com.payam1991gr.kmp.playground.data.model.time.Time
 import com.payam1991gr.kmp.playground.data.time.DateImpl
 import com.payam1991gr.kmp.playground.preview.Fake
 import com.payam1991gr.kmp.playground.view.module.SamplePage.Action

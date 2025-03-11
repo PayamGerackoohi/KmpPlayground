@@ -1,6 +1,19 @@
 package com.payam1991gr.kmp.playground.data.math
 
+import kotlin.math.cos
+import kotlin.math.sin
+
 class MatImpl : Mat() {
+    companion object {
+        fun rotationOf(angle: Float): Mat {
+            val c = cos(angle)
+            val s = sin(angle)
+            return MatImpl()
+                .row(c, -s)
+                .row(s, c)
+        }
+    }
+
     private var rows = mutableListOf<MutableList<Float>>()
 
     override fun row(vararg n: Float) = apply {
@@ -26,6 +39,10 @@ class MatImpl : Mat() {
         }
         return result
     }
+
+    override fun flatten() = if (rows.isEmpty() || rows[0].isEmpty()) Vec.tor()
+    else if (!rows.all { it.size == 1 }) throw RuntimeException("Invalid Dimension")
+    else Vec.tor(*(rows.map { it.first() }).toFloatArray())
 
     override fun toString(): String = rows.joinToString("\n") { row ->
         row.joinToString(", ", prefix = "[", postfix = "]")

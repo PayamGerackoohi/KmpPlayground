@@ -2,7 +2,7 @@ package com.payam1991gr.kmp.playground.preview.screens.components.picker.datetim
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.payam1991gr.kmp.playground.data.model.Time
+import com.payam1991gr.kmp.playground.data.model.time.Time
 import com.payam1991gr.kmp.playground.preview.*
 import com.payam1991gr.kmp.playground.preview.Fake.timestamp
 import com.payam1991gr.kmp.playground.preview.Fake.timestamp2

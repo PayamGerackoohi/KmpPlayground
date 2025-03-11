@@ -1,7 +1,7 @@
 package com.payam1991gr.kmp.playground.view.screens.components.picker.datetime
 
 import androidx.compose.runtime.Stable
-import com.payam1991gr.kmp.playground.data.model.Time
+import com.payam1991gr.kmp.playground.data.model.time.Time
 import com.payam1991gr.kmp.playground.data.time.Date
 import com.payam1991gr.kmp.playground.platform.KmpParcelize
 import com.payam1991gr.kmp.playground.view.module.SamplePage.Action

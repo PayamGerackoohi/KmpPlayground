@@ -1,6 +1,6 @@
 package com.payam1991gr.kmp.playground.preview
 
-import com.payam1991gr.kmp.playground.data.model.Time
+import com.payam1991gr.kmp.playground.data.model.time.Time
 import com.payam1991gr.kmp.playground.data.time.Date
 import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePickerScreen.State
 import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePickerScreen.State.TimeState.Event

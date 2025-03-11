@@ -7,6 +7,7 @@ import com.payam1991gr.kmp.playground.view.screens.miscellaneous.MiscellaneousSc
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.MiscellaneousScreen.State.Event
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.ble.BleScreen
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.cpp.CppScreen
+import com.payam1991gr.kmp.playground.view.screens.miscellaneous.datetime.DateTimeScreen
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.PdfScreen
 import com.slack.circuit.test.FakeNavigator
 import kotlinx.coroutines.test.runTest
@@ -18,7 +19,10 @@ class MiscellaneousPresenterTest {
         val navigator = FakeNavigator(MiscellaneousScreen)
         MiscellaneousPresenter(navigator).robot {
             onState {
-                assertThat(items.size).isEqualTo(3)
+                assertThat(items.size).isEqualTo(4)
+
+                event(Event.OnClick(MiscellaneousItem.DateTime))
+                assertThat(navigator.awaitNextScreen()).isEqualTo(DateTimeScreen)
 
                 event(Event.OnClick(MiscellaneousItem.Cpp))
                 assertThat(navigator.awaitNextScreen()).isEqualTo(CppScreen)

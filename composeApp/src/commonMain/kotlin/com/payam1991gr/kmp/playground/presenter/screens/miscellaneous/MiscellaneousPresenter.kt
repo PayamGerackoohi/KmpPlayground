@@ -5,6 +5,7 @@ import com.payam1991gr.kmp.playground.data.model.MiscellaneousItem
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.MiscellaneousScreen.State
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.ble.BleScreen
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.cpp.CppScreen
+import com.payam1991gr.kmp.playground.view.screens.miscellaneous.datetime.DateTimeScreen
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.PdfScreen
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
@@ -21,6 +22,7 @@ class MiscellaneousPresenter(private val navigator: Navigator) : Presenter<State
                     MiscellaneousItem.Cpp -> navigator.goTo(CppScreen)
                     MiscellaneousItem.Ble -> navigator.goTo(BleScreen)
                     MiscellaneousItem.Pdf -> navigator.goTo(PdfScreen)
+                    MiscellaneousItem.DateTime -> navigator.goTo(DateTimeScreen)
                 }
 
                 State.Event.OnBackPressed -> navigator.pop()

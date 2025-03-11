@@ -11,16 +11,14 @@ import kmpplayground.composeapp.generated.resources.*
 
 class Pdf : Ui<State> {
     @Composable
-    override fun Content(state: State, modifier: Modifier) {
-        SamplePage(
-            showCode = state.showCode,
-            titleRes = Res.string.miscellaneous_pdf,
-            actions = state.toolbarActions,
-            onClick = { state.event(Event.OnToolbarAction(it)) },
-            preview = { Preview() },
-            code = { Code() },
-        )
-    }
+    override fun Content(state: State, modifier: Modifier) = SamplePage(
+        showCode = state.showCode,
+        titleRes = Res.string.miscellaneous_pdf,
+        actions = state.toolbarActions,
+        onClick = { state.event(Event.OnToolbarAction(it)) },
+        preview = { Preview() },
+        code = { Code() },
+    )
 
     @Composable
     fun Preview() {

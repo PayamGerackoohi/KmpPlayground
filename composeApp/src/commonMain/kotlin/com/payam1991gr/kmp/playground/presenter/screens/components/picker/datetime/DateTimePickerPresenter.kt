@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import com.payam1991gr.kmp.playground.data.model.Time
+import com.payam1991gr.kmp.playground.data.model.time.Time
 import com.payam1991gr.kmp.playground.view.module.SamplePage
 import com.payam1991gr.kmp.playground.view.module.toolbar.rememberToolbarState
 import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePickerScreen.State

@@ -2,6 +2,11 @@ package com.payam1991gr.kmp.playground.data.koin
 
 import com.payam1991gr.kmp.playground.data.icon.Icons
 import com.payam1991gr.kmp.playground.data.icon.IconsImpl
+import com.payam1991gr.kmp.playground.data.repository.TimeZoneRepository
+import com.payam1991gr.kmp.playground.data.repository.TimeZoneRepositoryImpl
+import com.payam1991gr.kmp.playground.data.time.FrameGen
+import com.payam1991gr.kmp.playground.data.time.frameGenImpl
+import kotlinx.datetime.Clock
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
@@ -15,6 +20,9 @@ fun initKoin(starterBlock: KoinApplication.() -> Unit = {}) = startKoin {
 val appModule by lazy {
     module {
         single<Icons> { IconsImpl() }
+        single<TimeZoneRepository> { TimeZoneRepositoryImpl() }
+        single<Clock> { Clock.System }
+        factory<FrameGen> { frameGenImpl() }
     }
 }
 

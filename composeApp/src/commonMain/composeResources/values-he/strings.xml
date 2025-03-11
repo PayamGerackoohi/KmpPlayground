@@ -113,9 +113,14 @@
     <string name="io_datastore_byte_array_template">מערך בתים %1$s</string>
 
     <!-- Miscellaneous -->
+    <string name="miscellaneous_date_time">תאריך/שעה</string>
     <string name="miscellaneous_cpp">C++</string>
     <string name="miscellaneous_ble">BLE</string>
     <string name="miscellaneous_pdf">PDF</string>
+
+    <!-- Miscellaneous.DateTime -->
+    <string name="miscellaneous_date_time_analog_clock">שעון אנלוגי</string>
+    <string name="miscellaneous_date_time_time_zone_data">נתוני אזור זמן</string>
 
     <!-- Toolbar -->
     <string name="toolbar_back">בְּחֲזָרָה</string>

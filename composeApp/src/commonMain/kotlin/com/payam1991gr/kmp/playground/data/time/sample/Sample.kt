@@ -13,3 +13,18 @@ fun CodeEditor.appendTime_format() {
     line { normal { ")" } }
     line()
 }
+
+fun CodeEditor.appendTimeZoneData() {
+    line { orange { "data class" }; normal { " TimeZoneData(" }; `val`; purple { " name" }; normal { ": String, " }; `val`; purple { " offset" }; normal { ": String)" } }
+    line()
+    line { orange { "data class" }; normal { " LabeledTimeZone(" }; `val`; purple { " value" }; normal { ": TimeZone, " }; `val`; purple { " label" }; normal { ": String)" } }
+    line()
+    line { `fun`; normal { " TimeZone." }; blue { "offsetStringAt" }; normal { "(instant: Instant) = " }; blue { "offsetAt" }; normal { "(instant)." }; blue { "string" }; normal { "()" } }
+    line()
+    line { orange { "infix fun" }; normal { " TimeZone." }; blue { "label" }; normal { "(label: String) = LabeledTimeZone(" }; `this`; normal { ", label)" } }
+    line()
+    line { `fun`; normal { " UtcOffset." }; blue { "string" }; normal { "() = " }; `if`; normal { " (" }; `this`; normal { " == UtcOffset." }; purple { "ZERO" }; normal { ") " }; green { "\"+0 HRS\" " }; `else`; normal { " toString()" } }
+    line()
+    line { `fun`; normal { " UtcOffset." }; blue { "asLabeledTimeZone" }; normal { "() = " }; blue { "asTimeZone" }; normal { "()." }; blue { "run" }; normal { " { LabeledTimeZone(" }; `this`; normal { ", " }; purple { "id" }; normal { ") }" } }
+    line()
+}

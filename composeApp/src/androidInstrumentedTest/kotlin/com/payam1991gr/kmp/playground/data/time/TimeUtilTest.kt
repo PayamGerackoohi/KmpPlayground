@@ -2,7 +2,7 @@ package com.payam1991gr.kmp.playground.data.time
 
 import androidx.compose.ui.test.junit4.createComposeRule
 import com.google.common.truth.Truth.assertThat
-import com.payam1991gr.kmp.playground.data.model.Time
+import com.payam1991gr.kmp.playground.data.model.time.Time
 import org.junit.Rule
 import org.junit.Test
 

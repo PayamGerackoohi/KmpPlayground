@@ -80,7 +80,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (1/1)
+    (2/2)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -89,7 +89,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (1/1)
+    (2/2)
   </span>
 </td>
 <td class="coverageStat">
@@ -97,7 +97,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (4/4)
+    (7/7)
   </span>
 </td>
   </tr>
@@ -108,7 +108,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (2/2)
+    (3/3)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -117,7 +117,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (2/2)
+    (3/3)
   </span>
 </td>
 <td class="coverageStat">
@@ -125,7 +125,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (6/6)
+    (9/9)
   </span>
 </td>
 </tr>
@@ -141,6 +141,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 <b class="fc">&nbsp;abstract class Mat {</b>
 &nbsp;    companion object {
 <b class="fc">&nbsp;        fun rix(): Mat = MatImpl()</b>
+<b class="fc">&nbsp;        fun rotationOf(angle: Float): Mat = MatImpl.rotationOf(angle)</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    abstract fun row(vararg n: Float): Mat
@@ -148,6 +149,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 &nbsp;    abstract fun dimension(): Pair&lt;Int, Int&gt;
 &nbsp;    abstract operator fun get(index: Int): List&lt;Float&gt;
 &nbsp;    abstract operator fun times(v: Vec): Mat
+&nbsp;    abstract fun flatten(): Vec
 &nbsp;}
 </code>
 </pre>
@@ -172,7 +174,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-03-07 19:36</div>
+    <div style="float:right;">generated on 2025-03-11 16:51</div>
 </div>
 </body>
 </html>

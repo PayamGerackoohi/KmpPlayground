@@ -3,8 +3,13 @@ package com.payam1991gr.kmp.playground.data.math
 import com.google.common.truth.Truth.*
 import io.mockk.InternalPlatformDsl.toStr
 import org.junit.Test
+import kotlin.math.PI
 
 class MatTest {
+    companion object {
+        private const val C = (PI / 180).toFloat()
+    }
+
     @Test
     fun `definition - test`() {
         data class Case(val matrix: Mat, val string: String, val dimension: Pair<Int, Int>)
@@ -151,5 +156,52 @@ class MatTest {
                 .row(4f, 5f, 6f)
                 .hashCode()
         )
+    }
+
+    @Test
+    fun `rotationOf - test`() = listOf(
+        0f to Mat.rix().row(1f, -0f).row(0f, 1f),
+        30f to Mat.rix().row(0.8660254f, -0.5f).row(0.5f, 0.8660254f),
+        45f to Mat.rix().row(0.70710677f, -0.70710677f).row(0.70710677f, 0.70710677f),
+        60f to Mat.rix().row(0.49999997f, -0.86602545f).row(0.86602545f, 0.49999997f),
+        90f to Mat.rix().row(-4.371139E-8f, -1.0f).row(1.0f, -4.371139E-8f),
+        135f to Mat.rix().row(-0.70710677f, -0.70710677f).row(0.70710677f, -0.70710677f),
+        180f to Mat.rix().row(-1.0f, 8.742278E-8f).row(-8.742278E-8f, -1.0f),
+        270f to Mat.rix().row(1.1924881E-8f, 1.0f).row(-1.0f, 1.1924881E-8f),
+        360f to Mat.rix().row(1.0f, -1.7484555E-7f).row(1.7484555E-7f, 1.0f),
+    ).forEach { (input, output) ->
+        assertWithMessage("rotationOf($input deg) = $output")
+            .that(Mat.rotationOf(input * C))
+            .isEqualTo(output)
+    }
+
+    @Test
+    fun `flatten - valid - test`() {
+        listOf(
+            Mat.rix() to Vec.tor(),
+            Mat.rix().row() to Vec.tor(),
+            Mat.rix().row(1f) to Vec.tor(1f),
+            Mat.rix().row(1f).row(2f) to Vec.tor(1f, 2f),
+            Mat.rix().row(10f).row(20f).row(30f) to Vec.tor(10f, 20f, 30f),
+        ).forEach { (input, output) ->
+            assertWithMessage("${input}.flatten() = $output")
+                .that(input.flatten())
+                .isEqualTo(output)
+        }
+    }
+
+    @Test
+    fun `flatten - invalid - test`() {
+        listOf(
+            Mat.rix().row(1f, 2f),
+            Mat.rix().row(1f, 2f).row(3f, 4f),
+            Mat.rix().row(1f).row(3f, 4f),
+        ).forEach { input ->
+            try {
+                input.flatten()
+            } catch (e: Exception) {
+                assertThat(e.message).isEqualTo("Invalid Dimension")
+            }
+        }
     }
 }

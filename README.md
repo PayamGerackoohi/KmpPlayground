@@ -40,6 +40,7 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
 - [ ] File
 
 ### Miscellaneous
+- [x] Date/Time
 - [ ] C++
 - [ ] BLE
 - [ ] PDF

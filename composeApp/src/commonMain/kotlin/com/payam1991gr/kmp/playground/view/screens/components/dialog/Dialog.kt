@@ -42,11 +42,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.payam1991gr.kmp.playground.data.box
-import com.payam1991gr.kmp.playground.data.model.Time
+import com.payam1991gr.kmp.playground.data.model.time.Time
 import com.payam1991gr.kmp.playground.data.model.sample.appendTime
 import com.payam1991gr.kmp.playground.data.model.sample.appendTimePickerState_time
 import com.payam1991gr.kmp.playground.data.model.sample.rememberSetting
-import com.payam1991gr.kmp.playground.data.model.time
+import com.payam1991gr.kmp.playground.data.model.time.time
 import com.payam1991gr.kmp.playground.data.time.format
 import com.payam1991gr.kmp.playground.data.time.sample.appendTime_format
 import com.payam1991gr.kmp.playground.view.LocalTestMode

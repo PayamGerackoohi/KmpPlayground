@@ -114,6 +114,11 @@ object Order : Node() {
             val Code = Leaf("Code", this)
         }
 
+        object DateTime : Node("DateTime", this) {
+            val Preview = Leaf("Preview", this)
+            val Code = Leaf("Code", this)
+        }
+
         object Pdf : Node("Pdf", this) {
             val Preview = Leaf("Preview", this)
             val Code = Leaf("Code", this)

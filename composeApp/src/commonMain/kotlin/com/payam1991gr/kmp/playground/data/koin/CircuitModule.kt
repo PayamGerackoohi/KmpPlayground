@@ -24,6 +24,7 @@ import com.payam1991gr.kmp.playground.presenter.screens.io.file.FilePresenter
 import com.payam1991gr.kmp.playground.presenter.screens.miscellaneous.MiscellaneousPresenter
 import com.payam1991gr.kmp.playground.presenter.screens.miscellaneous.ble.BlePresenter
 import com.payam1991gr.kmp.playground.presenter.screens.miscellaneous.cpp.CppPresenter
+import com.payam1991gr.kmp.playground.presenter.screens.miscellaneous.datetime.DateTimePresenter
 import com.payam1991gr.kmp.playground.presenter.screens.miscellaneous.pdf.PdfPresenter
 import com.payam1991gr.kmp.playground.view.screens.animations.animate.x.`as`.AnimateXAs
 import com.payam1991gr.kmp.playground.view.screens.animations.animate.x.`as`.AnimateXAsScreen
@@ -73,6 +74,8 @@ import com.payam1991gr.kmp.playground.view.screens.miscellaneous.ble.Ble
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.ble.BleScreen
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.cpp.Cpp
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.cpp.CppScreen
+import com.payam1991gr.kmp.playground.view.screens.miscellaneous.datetime.DateTime
+import com.payam1991gr.kmp.playground.view.screens.miscellaneous.datetime.DateTimeScreen
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.Pdf
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.PdfScreen
 import com.slack.circuit.foundation.Circuit
@@ -108,6 +111,7 @@ val circuitModule by lazy {
                         is MiscellaneousScreen -> Miscellaneous()
                         is BleScreen -> Ble()
                         is CppScreen -> Cpp()
+                        is DateTimeScreen -> DateTime()
                         is PdfScreen -> Pdf()
                         else -> null
                     }
@@ -138,6 +142,7 @@ val circuitModule by lazy {
                         is MiscellaneousScreen -> MiscellaneousPresenter(navigator)
                         is BleScreen -> BlePresenter(navigator)
                         is CppScreen -> CppPresenter(navigator)
+                        is DateTimeScreen -> DateTimePresenter(navigator, get(), get(), get())
                         is PdfScreen -> PdfPresenter(navigator)
                         else -> null
                     }

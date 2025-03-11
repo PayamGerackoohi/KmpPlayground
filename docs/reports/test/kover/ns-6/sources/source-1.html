@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > DateImpl</title>
+  <title>composeApp Coverage Report > LabeledTimeZone</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.time</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.model.time</a>
 </div>
 
-<h1>Coverage Summary for Class: DateImpl (com.payam1991gr.kmp.playground.data.time)</h1>
+<h1>Coverage Summary for Class: LabeledTimeZone (com.payam1991gr.kmp.playground.data.model.time)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -49,7 +49,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">DateImpl</td>
+  <td class="name">LabeledTimeZone</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -63,7 +63,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (5/5)
+    (1/1)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -72,7 +72,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (10/10)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
@@ -80,7 +80,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (68/68)
+    (12/12)
   </span>
 </td>
 </tr>
@@ -92,31 +92,11 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.time
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.model.time
 &nbsp;
-&nbsp;import androidx.compose.runtime.Stable
-&nbsp;import androidx.compose.runtime.derivedStateOf
-&nbsp;import androidx.compose.runtime.mutableStateOf
+&nbsp;import kotlinx.datetime.TimeZone
 &nbsp;
-&nbsp;@Stable
-<b class="fc">&nbsp;class DateImpl(initialTimestamp: Long? = null) : Date {</b>
-&nbsp;    // override var ms by mutableStateOf(initialTimestamp) // to make kover happy
-<b class="fc">&nbsp;    private var _ms = mutableStateOf(initialTimestamp)</b>
-&nbsp;    override var ms
-<b class="fc">&nbsp;        get() = _ms.value</b>
-&nbsp;        set(value) {
-<b class="fc">&nbsp;            _ms.value = value</b>
-&nbsp;        }
-&nbsp;
-&nbsp;    // override val text by derivedStateOf { ms.toString() } // to make kover happy
-<b class="fc">&nbsp;    private val _text = derivedStateOf { ms.toDate() }</b>
-<b class="fc">&nbsp;    override val text get() = _text.value</b>
-&nbsp;
-<b class="fc">&nbsp;    override fun toString(): String = listOf(</b>
-<b class="fc">&nbsp;        &quot;ms=$ms&quot;,</b>
-<b class="fc">&nbsp;        &quot;text=$text&quot;,</b>
-<b class="fc">&nbsp;    ).joinToString(&quot;, &quot;, &quot;Date(&quot;, &quot;)&quot;)</b>
-&nbsp;}
+<b class="fc">&nbsp;data class LabeledTimeZone(val value: TimeZone, val label: String)</b>
 </code>
 </pre>
 </div>
@@ -140,7 +120,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-03-07 19:36</div>
+    <div style="float:right;">generated on 2025-03-11 16:51</div>
 </div>
 </body>
 </html>
