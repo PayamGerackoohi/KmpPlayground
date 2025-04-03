@@ -3,7 +3,7 @@ package com.payam1991gr.kmp.playground.view.module.clock.robot
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
 import androidx.compose.ui.test.onNodeWithTag
-import com.payam1991gr.kmp.playground.data.merge
+import com.payam1991gr.kmp.playground.data.string.merge
 import com.payam1991gr.kmp.playground.view.module.clock.robot.AnalogClockRobot.ClockScope
 import com.payam1991gr.kmp.playground.view.test.util.Sni
 import com.payam1991gr.kmp.playground.view.test.util.hasState

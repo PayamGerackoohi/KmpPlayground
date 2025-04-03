@@ -2,11 +2,11 @@
 
 A sample Kotlin Multi-platform project to demonstrate different app features, targeted on Android, iOS and Desktop.
 
-## Screens
-
-### [Screenshots](http://localhost:63342/KmpPlayground/docs/screenshots/screenshots.html)
+## [Screens](http://localhost:63342/KmpPlayground/docs/screenshots/screenshots.html)
 
 ### Home
+<!--suppress CheckImageSize -->
+<img alt='Home' src='docs/screenshots/compressed/0.Home-English-Dark-Landscape-Small.webp' width='99%'/>
 
 ### Compose
 - [x] Components
@@ -20,11 +20,20 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
   - [x] Animated Visibility
   - [x] Crossfade
 
+<div>
+  <img alt='Carousel Preview' src='docs/screenshots/compressed/2.Components_1.Carousel_0.Preview-German-Dark-Portrait-Foldable.webp' width='49%'/>
+  <img alt='Carousel Code' src='docs/screenshots/compressed/2.Components_1.Carousel_1.Code-German-Dark-Portrait-Foldable.webp' width='49%'/>
+</div>
+
 ### Graphics
-- [ ] Charts
 - [x] Color Scheme
 - [x] Icons
+- [ ] Charts
 - [ ] OpenGL
+
+<img alt='Icons' src='docs/screenshots/compressed/3.Graphics_3.Icons_0.Preview-English-Dark-Landscape-Small.webp' width='99%'/>
+<img alt='Color Scheme Preview' src='docs/screenshots/compressed/3.Graphics_2.ColorScheme_0.Preview-English-Dark-Landscape-Small.webp' width='99%'/>
+<img alt='Color Scheme Code' src='docs/screenshots/compressed/3.Graphics_2.ColorScheme_1.Code-Hebrew-Dark-Landscape-Small.webp' width='99%'/>
 
 ### I/O
 - [ ] Datastore
@@ -39,15 +48,38 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
   - [ ] GRPC
 - [ ] File
 
+<div>
+  <img alt='DataStore Preview' src='docs/screenshots/compressed/4.Io_3.Datastore_0.Preview-English-Light-Portrait-Small.webp' width='49%'/>
+  <img alt='DataStore Code' src='docs/screenshots/compressed/4.Io_3.Datastore_1.Code-Hebrew-Light-Portrait-Small.webp' width='49%'/>
+</div>
+
 ### Miscellaneous
 - [x] Date/Time
-- [ ] C++
+- [x] C++
 - [ ] BLE
 - [ ] PDF
 
+<img alt='Date-Time' src='docs/screenshots/compressed/5.Miscellaneous_3.DateTime_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
+<img alt='C++' src='docs/screenshots/compressed/5.Miscellaneous_2.C++_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
+
+## Languages
+- [English](docs/resources/values/strings.xml)
+- [German](docs/resources/values-de/strings.xml)
+- [Hebrew](docs/resources/values-iw/strings.xml)
+
+## Themes
+- Light
+- Dark
+
+## Code Quality and Automation
+- [x] [Unit Tests](docs/reports/test/unit/index.html)
+- [x] [UI Tests](docs/reports/test/ui/index.html)
+- [x] [Coverage (Kover)](docs/reports/test/kover/index.html)
+- [ ] CI/CD
+
 ## Build
 ### Android
-Android Studio :: Build >> Build App Bundle(s) / APK(s) >> Build APK(s)
+Android Studio :: Build | Build App Bundle(s) / APK(s) | Build APK(s)
 
 ### MacOS
 Install Java Coretto 17
@@ -61,6 +93,21 @@ gradle createReleaseDistributable
 gradle packageDmg
 gradle packageReleaseDmg
 ```
+
+### C++
+#### Android
+The C++ code compiles during the gradle build system using `android.externalNativeBuild` tool.
+
+#### MacOs
+```shell
+./scripts/cmake-build-macos.sh
+```
+
+#### iOS
+- The `cpp` source code is added as a group inside xcode.
+- `ios-bridge.h` is added in iosApp.xcodeproj | Build Settings | Swift Compiler - General | Objective-C Bridging Header 
+- cpp sources are added in Build Phases | Compile Sources
+- `libBridge.def` is configured in gradle to build kotlin interfaces out of c headers using cinterop tool 
 
 #### Info
 - jpackage

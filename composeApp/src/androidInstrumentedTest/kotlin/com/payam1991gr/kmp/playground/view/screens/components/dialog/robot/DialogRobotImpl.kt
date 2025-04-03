@@ -102,7 +102,7 @@ class DialogRobotImpl(private val rule: ComposeContentTestRule) : DialogRobot {
                 .assertIsDisplayed()
                 .block()
 
-            // t o d o actually not clicking outside!
+            // t*do actually not clicking outside!
 //            override fun clickOutside() = rule.onRoot().performTouchInput { click(Offset.Zero) } // not working
 //            override fun clickOutside() = rule.onAllNodes(isRoot())[0].performTouchInput { click(Offset.Zero) } // not working
 //            override fun clickOutside() = rule.onAllNodes(isRoot())[1].performTouchInput { click(Offset.Zero) } // not working

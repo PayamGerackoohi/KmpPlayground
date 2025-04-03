@@ -32,7 +32,7 @@ class Animations : Ui<State> {
         )
     }
 }
-/* t o d o Animatable
+/* t*do Animatable
 @Sampled
 fun AnimatableColor() {
     @Composable

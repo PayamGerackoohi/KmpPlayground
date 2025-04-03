@@ -10,6 +10,10 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		7110F1BD2D90A30B0034BD0E /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7110F1952D90A30B0034BD0E /* CMakeLists.txt */; };
+		7110F1BE2D90A30B0034BD0E /* ios-bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7110F1962D90A30B0034BD0E /* ios-bridge.cpp */; };
+		7110F1C02D90A30B0034BD0E /* libBridge.def in Resources */ = {isa = PBXBuildFile; fileRef = 7110F1992D90A30B0034BD0E /* libBridge.def */; };
+		71CD33982D945D4300CC882E /* math-util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71CD33972D945D4300CC882E /* math-util.cpp */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -17,6 +21,13 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		7110F1952D90A30B0034BD0E /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		7110F1962D90A30B0034BD0E /* ios-bridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "ios-bridge.cpp"; sourceTree = "<group>"; };
+		7110F1972D90A30B0034BD0E /* ios-bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ios-bridge.h"; sourceTree = "<group>"; };
+		7110F1982D90A30B0034BD0E /* jvm-bridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "jvm-bridge.cpp"; sourceTree = "<group>"; };
+		7110F1992D90A30B0034BD0E /* libBridge.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libBridge.def; sourceTree = "<group>"; };
+		71CD33962D945D3900CC882E /* math-util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "math-util.hpp"; sourceTree = "<group>"; };
+		71CD33972D945D4300CC882E /* math-util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "math-util.cpp"; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* KmpPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KmpPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +60,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7110F1922D90A30B0034BD0E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				71CD33962D945D3900CC882E /* math-util.hpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		7110F1942D90A30B0034BD0E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				71CD33972D945D4300CC882E /* math-util.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		7110F19A2D90A30B0034BD0E /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				7110F1922D90A30B0034BD0E /* include */,
+				7110F1942D90A30B0034BD0E /* src */,
+				7110F1952D90A30B0034BD0E /* CMakeLists.txt */,
+				7110F1962D90A30B0034BD0E /* ios-bridge.cpp */,
+				7110F1972D90A30B0034BD0E /* ios-bridge.h */,
+				7110F1982D90A30B0034BD0E /* jvm-bridge.cpp */,
+				7110F1992D90A30B0034BD0E /* libBridge.def */,
+			);
+			name = cpp;
+			path = ../../composeApp/src/cpp;
+			sourceTree = "<group>";
+		};
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +112,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				7110F19A2D90A30B0034BD0E /* cpp */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -153,6 +196,8 @@
 			files = (
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
+				7110F1BD2D90A30B0034BD0E /* CMakeLists.txt in Resources */,
+				7110F1C02D90A30B0034BD0E /* libBridge.def in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +231,8 @@
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				7110F1BE2D90A30B0034BD0E /* ios-bridge.cpp in Sources */,
+				71CD33982D945D4300CC882E /* math-util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +246,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -262,7 +309,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -316,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
@@ -334,6 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${BUNDLE_ID}${TEAM_ID}";
 				PRODUCT_NAME = "${APP_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../composeApp/src/cpp/ios-bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -343,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
@@ -361,6 +411,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${BUNDLE_ID}${TEAM_ID}";
 				PRODUCT_NAME = "${APP_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../composeApp/src/cpp/ios-bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

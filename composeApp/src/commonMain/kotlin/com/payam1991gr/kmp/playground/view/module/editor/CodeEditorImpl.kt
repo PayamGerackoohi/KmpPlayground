@@ -32,4 +32,5 @@ class CodeEditorImpl(private val normalColor: Color) : CodeEditor {
     override fun CodeEditor.green(block: () -> String) = color(0xFF75C574, block)
     override fun CodeEditor.lavender(block: () -> String) = color(0xFFC9C9FF, block)
     override fun CodeEditor.teal(block: () -> String) = color(0xFF008080, block)
+    override fun CodeEditor.olive(block: () -> String) = color(0xFF898337, block)
 }

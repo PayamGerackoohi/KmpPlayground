@@ -1,6 +1,13 @@
 package com.payam1991gr.kmp.playground.data
 
 import com.google.common.truth.Truth.*
+import com.payam1991gr.kmp.playground.data.string.box
+import com.payam1991gr.kmp.playground.data.string.decimalFormat
+import com.payam1991gr.kmp.playground.data.string.isDecimal
+import com.payam1991gr.kmp.playground.data.string.isDecimalArray
+import com.payam1991gr.kmp.playground.data.string.isFloat
+import com.payam1991gr.kmp.playground.data.string.merge
+import com.payam1991gr.kmp.playground.data.string.toHeader
 import org.junit.Test
 
 class StringUtilTest {
@@ -131,6 +138,31 @@ class StringUtilTest {
             "ment" to "Base.ment",
         ).forEach { (input, output) ->
             assertThat(base merge input).isEqualTo(output)
+        }
+    }
+
+    @Test
+    fun `decimalFormat - test`() {
+        listOf(
+            "" to "",
+            "1" to "1",
+            "12" to "12",
+            "123" to "123",
+            "1234" to "1,234",
+            "12345" to "12,345",
+            "123456" to "123,456",
+            "1234567" to "1,234,567",
+            "12345678" to "12,345,678",
+            "123456789" to "123,456,789",
+            "1234567890" to "1,234,567,890",
+            "12345678901" to "12,345,678,901",
+            "123456789012" to "123,456,789,012",
+            "1234567890123" to "1,234,567,890,123",
+            "12345678901234" to "12,345,678,901,234",
+        ).forEach { (input, output) ->
+            assertWithMessage("${input}.decimalFormat() = $output")
+                .that(input.decimalFormat())
+                .isEqualTo(output)
         }
     }
 }

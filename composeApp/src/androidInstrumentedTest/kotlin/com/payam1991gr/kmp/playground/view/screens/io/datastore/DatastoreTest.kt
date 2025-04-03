@@ -65,15 +65,15 @@ class DatastoreTest : BaseTest() {
                             input {
                                 hasText("1")
                                 noError()
-                                saveButton(isEnabled = false)
+                                confirmButton(isEnabled = false)
 
                                 putText("3000000000")
                                 hasError()
-                                saveButton(isEnabled = false)
+                                confirmButton(isEnabled = false)
 
                                 putText("10")
                                 noError()
-                                saveButton { performClick() }
+                                confirmButton { performClick() }
                                 verify { event(Event.OnItemChanged(10)) }
                             }
                         }
@@ -82,11 +82,11 @@ class DatastoreTest : BaseTest() {
                             input {
                                 hasText("2.0")
                                 noError()
-                                saveButton(isEnabled = false)
+                                confirmButton(isEnabled = false)
 
                                 putText("20")
                                 noError()
-                                saveButton { performClick() }
+                                confirmButton { performClick() }
                                 verify { event(Event.OnItemChanged(20f)) }
                             }
                         }
@@ -95,23 +95,23 @@ class DatastoreTest : BaseTest() {
                             input {
                                 hasText("[3,4]")
                                 noError()
-                                saveButton(isEnabled = false)
+                                confirmButton(isEnabled = false)
 
                                 putText("200")
                                 hasError()
-                                saveButton(isEnabled = false)
+                                confirmButton(isEnabled = false)
 
                                 putText("30,40")
                                 clearFocus()
                                 noError()
-                                saveButton { performClick() }
+                                confirmButton { performClick() }
                                 @Suppress("UNCHECKED_CAST")
                                 (eventSlot.captured as Event.OnItemChanged<ByteArray>).value.let { array ->
                                     assertThat(array.contentEquals(byteArrayOf(30, 40))).isTrue()
                                 }
                                 verify { event(any()) }
-                                // verify { event(Event.OnItemChanged<ByteArray>(any())) } // t o d o not working
-                                // verify { event(Event.OnItemChanged(any<ByteArray>())) } // t o d o not working
+                                // verify { event(Event.OnItemChanged<ByteArray>(any())) } // t*do not working
+                                // verify { event(Event.OnItemChanged(any<ByteArray>())) } // t*do not working
                             }
                         }
 

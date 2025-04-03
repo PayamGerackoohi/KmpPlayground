@@ -8,9 +8,10 @@
   - [x] Unit
   - [x] UI
 - [x] README.md
-- [ ] KMP Playground Website
+  - [x] add cpp screenshots
+- [x] KMP Playground Website
   - [x] Screens
-  - [x] Screenshots
+  - [x] Screenshots (./scripts/screenshots.sh)
   - [x] Tests
     - [x] Coverage
     - [x] Unit
@@ -21,4 +22,3 @@
     - [x] Android
     - [x] iOS
   - [x] Last Edit Label
-

@@ -46,7 +46,7 @@ interface SamplePageRobot {
 
     interface CodeScope {
         val sni: Sni
-        fun title(text: String, block: SniBlock = {})
+        fun title(text: String, block: SniBlock = {}): Any
         fun snippet(text: String, scroll: Boolean = true): Any
     }
 }
@@ -112,9 +112,10 @@ class SamplePageRobotImpl(private val rule: ComposeContentTestRule) : SamplePage
     inner class PreviewScopeImpl(override val sni: Sni) : PreviewScope
 
     inner class CodeScopeImpl(override val sni: Sni) : CodeScope {
-        override fun title(text: String, block: SniBlock) {
-            sni.performScrollToNode(hasText(text))
-            rule.onNodeWithText(text)
+        override fun title(text: String, block: SniBlock) = sni.apply {
+            performScrollToNode(hasText(text))
+            onChildren()
+                .filterToOne(hasTextExactly(text))
                 .assertIsDisplayed()
                 .block()
         }

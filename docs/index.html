@@ -49,6 +49,7 @@
   <div class="last-edit-box">
     <h2>Last Edit</h2>
     <h3>2025-03-11T14:20Z</h3>
+    <h3>2025-04-03T18:44Z</h3>
   </div>
 
   <h1>KMP Playground</h1>
@@ -58,13 +59,15 @@
   <ul>
     <li>Android</li>
     <ul>
-      <a href="output/android/KMP-Playground-1.0.0-250311-1638.apk" target="_blank">KMP-Playground-1.0.0-250311-1638.apk [3 MB]</a>
+      <a href="output/android/KMP-Playground-1.0.0-250403-1816.apk" target="_blank">KMP-Playground-1.0.0-250403-1816.apk
+        [6.3 MB]</a>
     </ul>
     <li>Desktop</li>
     <ul>
       <li>MacOS</li>
       <ul>
-        <a href="https://drive.google.com/file/d/1xeO-WS6LO87eTyFU-bKgcv8o-BXBkdzM/view?usp=sharing" target="_blank">KMP-Playground-1.0.0-250311-1747.dmg [58.3 MB]</a>
+        <a href="https://drive.google.com/file/d/1GEdW1zik4lYKMSbL1Oqex0Icnljgh_aa/view?usp=sharing"
+          target="_blank">KMP-Playground-1.0.0-250403-1816.dmg [58.5 MB]</a>
       </ul>
       <li>Linux</li>
       <li>Windows</li>
@@ -99,17 +102,27 @@
     <li class="uncheck">I/O</li>
     <ul>
       <li class="check">Datastore</li>
+      <li class="uncheck">API</li>
       <li class="uncheck">Database</li>
       <li class="uncheck">File</li>
-      <li class="uncheck">API</li>
     </ul>
-        <li class="uncheck">Miscellaneous</li>
+    <li class="uncheck">Miscellaneous</li>
+    <ul>
+      <li class="check">Date/Time</li>
+      <li class="check">C++
         <ul>
-          <li class="check">Date/Time</li>
-          <li class="uncheck">BLE</li>
-          <li class="uncheck">C++</li>
-          <li class="uncheck">PDF</li>
+          <li class="check">Android</li>
+          <li class="check">iOS</li>
+          <li class="check">macOS x86_64</li>
+          <li class="uncheck">macOS aarch64</li>
+          <li class="uncheck">Linux</li>
+          <li class="uncheck">Windows</li>
         </ul>
+      </li>
+      <li class="uncheck">Rust</li>
+      <li class="uncheck">PDF</li>
+      <li class="uncheck">BLE</li>
+    </ul>
   </ul>
   <sub>* indicates the number of samples</sub>
 
@@ -124,7 +137,7 @@
   <ul>
     <li><a href="resources/values/strings.xml" target="_blank">English</a></li>
     <li><a href="resources/values-de/strings.xml" target="_blank">German</a></li>
-    <li><a href="resources/values-he/strings.xml" target="_blank">Hebrew</a></li>
+    <li><a href="resources/values-iw/strings.xml" target="_blank">Hebrew</a></li>
   </ul>
 
   <h2>Known Issues</h2>
@@ -146,6 +159,7 @@
     <ul>
       <li>Components::PullToRefresh: gestures are not involved</li>
       <li>Too big output file (>50MB for obfuscated optimized release)</li>
+      <li>AnnotatedString::SpanStyle::baselineShift calculates the height wrongly</li>
     </ul>
   </ul>
 </body>

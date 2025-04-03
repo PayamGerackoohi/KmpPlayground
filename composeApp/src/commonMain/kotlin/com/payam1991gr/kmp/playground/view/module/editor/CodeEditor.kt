@@ -26,6 +26,7 @@ interface CodeEditor {
     fun CodeEditor.green(block: () -> String): Any
     fun CodeEditor.lavender(block: () -> String): Any
     fun CodeEditor.teal(block: () -> String): Any
+    fun CodeEditor.olive(block: () -> String): Any
 }
 
 typealias CodeEditorData = Pair<AnnotatedString, Int>

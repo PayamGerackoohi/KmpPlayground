@@ -19,7 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
-import com.payam1991gr.kmp.playground.data.box
+import com.payam1991gr.kmp.playground.data.string.box
 import com.payam1991gr.kmp.playground.data.model.sample.appendTime
 import com.payam1991gr.kmp.playground.data.model.sample.rememberSetting
 import com.payam1991gr.kmp.playground.data.time.format

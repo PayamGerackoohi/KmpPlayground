@@ -114,13 +114,20 @@
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_date_time">תאריך/שעה</string>
-    <string name="miscellaneous_cpp">C++</string>
+    <string name="miscellaneous_cpp">++C</string>
     <string name="miscellaneous_ble">BLE</string>
     <string name="miscellaneous_pdf">PDF</string>
 
     <!-- Miscellaneous.DateTime -->
     <string name="miscellaneous_date_time_analog_clock">שעון אנלוגי</string>
     <string name="miscellaneous_date_time_time_zone_data">נתוני אזור זמן</string>
+
+    <!-- Miscellaneous.C++ -->
+    <string name="miscellaneous_cpp_description">קוד ++C פשוט לחישוב גורמים ראשוניים של מספרים שלמים של 64 סיביות ללא סימן (≤ 18,446,744,073,709,551,615)</string>
+    <string name="miscellaneous_cpp_calculating">מחשב...</string>
+    <string name="miscellaneous_cpp_Calculate">לְחַשֵׁב</string>
+    <string name="miscellaneous_cpp_number">מִספָּר</string>
+    <string name="miscellaneous_cpp_random_calculations">חישובים אקראיים</string>
 
     <!-- Toolbar -->
     <string name="toolbar_back">בְּחֲזָרָה</string>

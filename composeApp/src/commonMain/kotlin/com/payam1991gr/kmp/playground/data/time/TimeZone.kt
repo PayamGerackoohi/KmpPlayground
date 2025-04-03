@@ -13,4 +13,12 @@ infix fun TimeZone.label(label: String) = LabeledTimeZone(this, label)
 
 fun UtcOffset.string() = if (this == UtcOffset.ZERO) "+0 HRS" else toString()
 
-fun UtcOffset.asLabeledTimeZone() = asTimeZone().run { LabeledTimeZone(this, id) }
+fun UtcOffset.asLabeledTimeZone() = asTimeZone().run {
+    LabeledTimeZone(
+        this,
+        when (this) {
+            TimeZone.UTC -> "GMT"
+            else -> "UTC$id"
+        }
+    )
+}

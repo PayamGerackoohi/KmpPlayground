@@ -20,6 +20,10 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+####################
+###### Native ######
+####################
+-keep class com.payam1991gr.kmp.playground.data.Native { *; }
 
 #######################
 ###### DataStore ######

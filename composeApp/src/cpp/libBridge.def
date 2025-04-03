@@ -1,0 +1,2 @@
+headers = ios-bridge.h
+compilerOpts = -Isrc/cpp/

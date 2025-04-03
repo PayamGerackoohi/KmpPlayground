@@ -32,7 +32,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.payam1991gr.kmp.playground.data.math.Mat
 import com.payam1991gr.kmp.playground.data.math.Vec
-import com.payam1991gr.kmp.playground.data.merge
+import com.payam1991gr.kmp.playground.data.string.merge
 import com.payam1991gr.kmp.playground.data.time.isNight
 import com.payam1991gr.kmp.playground.data.time.timeFormat
 import com.payam1991gr.kmp.playground.view.module.clock.AnalogClock.Colors
@@ -56,7 +56,7 @@ data class TimeZoneData(val name: String, val offset: String)
 data class DateTimeData(
     val date: LocalDate,
     val time: LocalTime,
-    val zone: TimeZoneData
+    val zone: TimeZoneData,
 )
 
 @Composable
@@ -109,8 +109,9 @@ object AnalogClock {
                     drawCircle(colors.background)
                     drawTicks(state, colors, strokes)
                 }
-            }) {
-            Numbers(colors)
+            }
+        ) {
+            Numbers(colors.foreground)
         }
     }
 
@@ -203,28 +204,28 @@ object AnalogClock {
         }
 
         @Composable
-        fun BoxScope.Numbers(colors: Colors) = repeat(12) {
-            numberPositions[it].let { position ->
-                Text(
-                    (it + 1).toString(),
-                    color = colors.foreground,
-                    modifier = Modifier.align(BiasAlignment(position[0], position[1]))
-                )
-            }
+        fun BoxScope.Numbers(color: Color) = numberPositions.forEachIndexed { index, position ->
+            Text(
+                (index + 1).toString(),
+                color = color,
+                modifier = Modifier.align(BiasAlignment(position[0], position[1]))
+            )
         }
 
-        fun DrawScope.drawTicks(state: State, colors: Colors, strokes: Strokes) {
-            tickPositions.forEachIndexed { index, (p1, p2) ->
-                val (start, end) = state.run { tick(p1, p2) }
-                val isMajor = index % 5 == 0
-                drawLine(
-                    color = colors.run { if (isMajor) foreground else lightForeground },
-                    start = start,
-                    end = end,
-                    strokeWidth = strokes.run { if (isMajor) thin else default },
-                    cap = if (isMajor) StrokeCap.Round else Stroke.DefaultCap,
-                )
-            }
+        fun DrawScope.drawTicks(
+            state: State,
+            colors: Colors,
+            strokes: Strokes,
+        ) = tickPositions.forEachIndexed { index, (p1, p2) ->
+            val (start, end) = state.run { tick(p1, p2) }
+            val isMajor = index % 5 == 0
+            drawLine(
+                color = colors.run { if (isMajor) foreground else lightForeground },
+                start = start,
+                end = end,
+                strokeWidth = strokes.run { if (isMajor) thin else default },
+                cap = if (isMajor) StrokeCap.Round else Stroke.DefaultCap,
+            )
         }
     }
 
@@ -260,9 +261,9 @@ object AnalogClock {
 
         @Composable
         fun strokes(
-            hour: Dp = 8.dp,
-            minute: Dp = 4.dp,
-            thin: Dp = 2.dp,
+            hour: Dp = 4.dp,
+            minute: Dp = 2.dp,
+            thin: Dp = 1.dp,
         ) = LocalDensity.current.run {
             Strokes(
                 hour = hour.toPx(),
@@ -281,7 +282,7 @@ fun rememberAnalogClockState(time: LocalTime): State {
     val (initialSecond, minute, hour) = remember(time) {
         val secondRatio = time.second / 60f
         val minuteRatio = (time.minute + secondRatio) / 60f
-        val hourRatio = (time.hour + minuteRatio) / 12f
+        val hourRatio = (time.hour + minuteRatio) / 12f // PM hours simply add 360° to the AM angle
         listOf(secondRatio, minuteRatio, hourRatio).map { it * A + B }
     }
     val second by rememberInfiniteTransition().animateFloat(

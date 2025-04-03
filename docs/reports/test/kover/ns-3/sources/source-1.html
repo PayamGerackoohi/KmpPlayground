@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > Mat</title>
+  <title>composeApp Coverage Report > AnimationItem</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,15 +19,18 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.math</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.model</a>
 </div>
 
-<h1>Coverage Summary for Class: Mat (com.payam1991gr.kmp.playground.data.math)</h1>
+<h1>Coverage Summary for Class: AnimationItem (com.payam1991gr.kmp.playground.data.model)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -46,16 +49,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">Mat</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
+  <td class="name">AnimationItem</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -72,24 +66,13 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     (2/2)
   </span>
 </td>
-</tr>
-  <tr>
-    <td class="name">Mat$Companion</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (2/2)
-  </span>
-</td>
     <td class="coverageStat"/>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (2/2)
+    (5/5)
   </span>
 </td>
 <td class="coverageStat">
@@ -97,38 +80,11 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (7/7)
-  </span>
-</td>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (3/3)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (3/3)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (9/9)
+    (47/47)
   </span>
 </td>
 </tr>
+
 </table>
 
 <br/>
@@ -136,20 +92,16 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.math
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.model
 &nbsp;
-<b class="fc">&nbsp;abstract class Mat {</b>
-&nbsp;    companion object {
-<b class="fc">&nbsp;        fun rix(): Mat = MatImpl()</b>
-<b class="fc">&nbsp;        fun rotationOf(angle: Float): Mat = MatImpl.rotationOf(angle)</b>
-&nbsp;    }
+&nbsp;import kmpplayground.composeapp.generated.resources.*
+&nbsp;import org.jetbrains.compose.resources.StringResource
 &nbsp;
-&nbsp;    abstract fun row(vararg n: Float): Mat
-&nbsp;    abstract fun col(vararg n: Float): Mat
-&nbsp;    abstract fun dimension(): Pair&lt;Int, Int&gt;
-&nbsp;    abstract operator fun get(index: Int): List&lt;Float&gt;
-&nbsp;    abstract operator fun times(v: Vec): Mat
-&nbsp;    abstract fun flatten(): Vec
+<b class="fc">&nbsp;enum class AnimationItem(val labelRes: StringResource) {</b>
+<b class="fc">&nbsp;    AnimatedContent(Res.string.animations_animated_content),</b>
+<b class="fc">&nbsp;    AnimatedVisibility(Res.string.animations_animated_visibility),</b>
+<b class="fc">&nbsp;    Crossfade(Res.string.animations_crossfade),</b>
+<b class="fc">&nbsp;    AnimateXAs(Res.string.animations_animate_x_as),</b>
 &nbsp;}
 </code>
 </pre>
@@ -174,7 +126,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-03-11 16:51</div>
+    <div style="float:right;">generated on 2025-04-03 21:05</div>
 </div>
 </body>
 </html>

@@ -2,8 +2,9 @@ import com.android.build.gradle.internal.api.BaseVariantOutputImpl
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.io.FileInputStream
-import java.text.SimpleDateFormat
-import java.util.Date
+import java.time.Clock
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.Properties
 
 plugins {
@@ -22,7 +23,8 @@ object AppInfo {
     const val PROJECT_NAME = "kmpplayground"
     const val APP_NAME = "KMP-Playground"
     const val VERSION = "1.0.0"
-    val buildDate: String by lazy { SimpleDateFormat("yyMMdd-HHmm").format(Date()) }
+    private val formatter = DateTimeFormatter.ofPattern("yyMMdd-HHmm")
+    val buildDate: String get() = LocalDateTime.now(Clock.systemUTC()).format(formatter)
 }
 
 val keystore = FileInputStream(rootProject.file("keystore/keystore.properties")).let { file ->
@@ -43,11 +45,21 @@ kotlin {
     listOf(
         iosX64(),
         iosArm64(),
-        iosSimulatorArm64()
+        iosSimulatorArm64(),
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
             isStatic = true
+        }
+        iosTarget.compilations {
+            val main by getting {
+                cinterops {
+                    val libBridge by creating {
+                        definitionFile.set(project.file("src/cpp/libBridge.def"))
+                        packageName("com.payam1991gr.kmp.playground.data")
+                    }
+                }
+            }
         }
     }
 
@@ -115,6 +127,7 @@ kotlin {
 android {
     namespace = "com.payam1991gr.kmp.playground"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
+    ndkVersion = "27.1.12297006"
 
     defaultConfig {
         applicationId = "com.payam1991gr.kmp.playground"
@@ -154,6 +167,12 @@ android {
             signingConfig = signingConfigs.getByName("release")
         }
     }
+    externalNativeBuild {
+        cmake {
+            path = file("src/cpp/CMakeLists.txt")
+            version = "3.30.3"
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -187,13 +206,14 @@ android {
 AppInfo.apply {
     kover.reports.filters.excludes.classes(
         "${PACKAGE_NAME}.*.sample.*",
-        "${PACKAGE_NAME}.*.*_ComposeKt",
+        "${PACKAGE_NAME}.*.*_ComposeKt*",
         "${PACKAGE_NAME}.*.*_PlatformKt*",
         "${PACKAGE_NAME}.preview.*",
         "${PACKAGE_NAME}.view.*",
         "${PACKAGE_NAME}.AndroidApplication",
         "${PACKAGE_NAME}.data.koin.*",
         "${PACKAGE_NAME}.data.store.*",
+        "${PACKAGE_NAME}.data.Native",
         "${PROJECT_NAME}.composeapp.generated.resources.*",
     )
 }
@@ -209,6 +229,7 @@ compose.desktop.application {
         packageName = "KMP Playground"
         packageVersion = AppInfo.VERSION
         targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+        appResourcesRootDir.set(project.layout.projectDirectory.dir("src/desktopMain/resources"))
         outputBaseDir.set(project.layout.buildDirectory.dir("desktop"))
         licenseFile.set(project.file("../LICENSE"))
         modules("jdk.unsupported") // datastore

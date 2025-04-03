@@ -10,7 +10,7 @@ import kotlinx.collections.immutable.toPersistentList
 
 interface CppRobot {
     suspend fun onState(
-        showCode: Boolean,
+        showCode: Boolean? = null,
         vararg toolbarActions: Action,
         block: suspend State.() -> Unit = {},
     ): Any
@@ -20,18 +20,19 @@ typealias Crt = CircuitReceiveTurbine<State>
 
 class CppRobotImpl(private val crt: Crt) : CppRobot {
     override suspend fun onState(
-        showCode: Boolean,
+        showCode: Boolean?,
         vararg toolbarActions: Action,
         block: suspend State.() -> Unit
     ) = crt.awaitItem().apply {
         assertThat(this).isInstanceOf(State::class.java)
-        assertThat(this.showCode).isEqualTo(showCode)
-        assertThat(this.toolbarActions).isEqualTo(toolbarActions.toPersistentList())
+        showCode?.let { assertThat(this.showCode).isEqualTo(it) }
+        if (toolbarActions.isNotEmpty())
+            assertThat(this.toolbarActions).isEqualTo(toolbarActions.toPersistentList())
         block()
     }
 }
 
 suspend fun CppPresenter.robot(block: suspend CppRobot.() -> Unit) = test {
     CppRobotImpl(this).block()
-    cancel()
+    cancelAndIgnoreRemainingEvents()
 }

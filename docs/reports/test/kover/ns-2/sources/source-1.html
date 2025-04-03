@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > Extended1Kt</title>
+  <title>composeApp Coverage Report > Factor</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,18 +19,15 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.icon</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.math</a>
 </div>
 
-<h1>Coverage Summary for Class: Extended1Kt (com.payam1991gr.kmp.playground.data.icon)</h1>
+<h1>Coverage Summary for Class: Factor (com.payam1991gr.kmp.playground.data.math)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -49,15 +46,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">Extended1Kt</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
+  <td class="name">Factor</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -72,7 +61,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (500/500)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
@@ -80,11 +69,80 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (4962/4962)
+    (22/22)
   </span>
 </td>
 </tr>
-
+  <tr>
+    <td class="name">Factor$Companion</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (68/68)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (90/90)
+  </span>
+</td>
+</tr>
 </table>
 
 <br/>
@@ -92,517 +150,21 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.icon
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.math
 &nbsp;
-&nbsp;import androidx.compose.material.icons.automirrored.filled.*
-&nbsp;import androidx.compose.material.icons.filled.*
-&nbsp;import com.payam1991gr.kmp.playground.data.model.IconData
-&nbsp;import kotlinx.collections.immutable.persistentListOf
-&nbsp;import androidx.compose.material.icons.Icons.AutoMirrored.Filled as AutoMirroredIcon
-&nbsp;import androidx.compose.material.icons.Icons.Default as Icon
+&nbsp;import kotlinx.collections.immutable.PersistentList
+&nbsp;import kotlinx.collections.immutable.toPersistentList
 &nbsp;
-&nbsp;@Suppress(&quot;SpellCheckingInspection&quot;)
-<b class="fc">&nbsp;fun extended1() = persistentListOf(</b>
-<b class="fc">&nbsp;    IconData(&quot;_1k&quot;, Icon._1k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_1kPlus&quot;, Icon._1kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_1xMobiledata&quot;, Icon._1xMobiledata),</b>
-<b class="fc">&nbsp;    IconData(&quot;_2k&quot;, Icon._2k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_2kPlus&quot;, Icon._2kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_2mp&quot;, Icon._2mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_3dRotation&quot;, Icon._3dRotation),</b>
-<b class="fc">&nbsp;    IconData(&quot;_3gMobiledata&quot;, Icon._3gMobiledata),</b>
-<b class="fc">&nbsp;    IconData(&quot;_3k&quot;, Icon._3k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_3kPlus&quot;, Icon._3kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_3mp&quot;, Icon._3mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_3p&quot;, Icon._3p),</b>
-<b class="fc">&nbsp;    IconData(&quot;_4gMobiledata&quot;, Icon._4gMobiledata),</b>
-<b class="fc">&nbsp;    IconData(&quot;_4gPlusMobiledata&quot;, Icon._4gPlusMobiledata),</b>
-<b class="fc">&nbsp;    IconData(&quot;_4k&quot;, Icon._4k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_4kPlus&quot;, Icon._4kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_4mp&quot;, Icon._4mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_5g&quot;, Icon._5g),</b>
-<b class="fc">&nbsp;    IconData(&quot;_5k&quot;, Icon._5k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_5kPlus&quot;, Icon._5kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_5mp&quot;, Icon._5mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_6FtApart&quot;, Icon._6FtApart),</b>
-<b class="fc">&nbsp;    IconData(&quot;_6k&quot;, Icon._6k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_6kPlus&quot;, Icon._6kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_6mp&quot;, Icon._6mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_7k&quot;, Icon._7k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_7kPlus&quot;, Icon._7kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_7mp&quot;, Icon._7mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_8k&quot;, Icon._8k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_8kPlus&quot;, Icon._8kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_8mp&quot;, Icon._8mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_9k&quot;, Icon._9k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_9kPlus&quot;, Icon._9kPlus),</b>
-<b class="fc">&nbsp;    IconData(&quot;_9mp&quot;, Icon._9mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_10k&quot;, Icon._10k),</b>
-<b class="fc">&nbsp;    IconData(&quot;_10mp&quot;, Icon._10mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_11mp&quot;, Icon._11mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_12mp&quot;, Icon._12mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_13mp&quot;, Icon._13mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_14mp&quot;, Icon._14mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_15mp&quot;, Icon._15mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_16mp&quot;, Icon._16mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_17mp&quot;, Icon._17mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_18mp&quot;, Icon._18mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_18UpRating&quot;, Icon._18UpRating),</b>
-<b class="fc">&nbsp;    IconData(&quot;_19mp&quot;, Icon._19mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_20mp&quot;, Icon._20mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_21mp&quot;, Icon._21mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_22mp&quot;, Icon._22mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_23mp&quot;, Icon._23mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_24mp&quot;, Icon._24mp),</b>
-<b class="fc">&nbsp;    IconData(&quot;_30fps&quot;, Icon._30fps),</b>
-<b class="fc">&nbsp;    IconData(&quot;_30fpsSelect&quot;, Icon._30fpsSelect),</b>
-<b class="fc">&nbsp;    IconData(&quot;_60fps&quot;, Icon._60fps),</b>
-<b class="fc">&nbsp;    IconData(&quot;_60fpsSelect&quot;, Icon._60fpsSelect),</b>
-<b class="fc">&nbsp;    IconData(&quot;_123&quot;, Icon._123),</b>
-<b class="fc">&nbsp;    IconData(&quot;_360&quot;, AutoMirroredIcon._360),</b>
-<b class="fc">&nbsp;    IconData(&quot;Abc&quot;, Icon.Abc),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccessAlarm&quot;, Icon.AccessAlarm),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccessAlarms&quot;, Icon.AccessAlarms),</b>
-<b class="fc">&nbsp;    IconData(&quot;Accessibility&quot;, Icon.Accessibility),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccessibilityNew&quot;, Icon.AccessibilityNew),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccessibleForward&quot;, AutoMirroredIcon.AccessibleForward),</b>
-<b class="fc">&nbsp;    IconData(&quot;Accessible&quot;, AutoMirroredIcon.Accessible),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccessTimeFilled&quot;, Icon.AccessTimeFilled),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccessTime&quot;, Icon.AccessTime),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccountBalance&quot;, Icon.AccountBalance),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccountBalanceWallet&quot;, Icon.AccountBalanceWallet),</b>
-<b class="fc">&nbsp;    IconData(&quot;AccountTree&quot;, Icon.AccountTree),</b>
-<b class="fc">&nbsp;    IconData(&quot;AcUnit&quot;, Icon.AcUnit),</b>
-<b class="fc">&nbsp;    IconData(&quot;Adb&quot;, Icon.Adb),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddAlarm&quot;, Icon.AddAlarm),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddAlert&quot;, Icon.AddAlert),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddAPhoto&quot;, Icon.AddAPhoto),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddBox&quot;, Icon.AddBox),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddBusiness&quot;, Icon.AddBusiness),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddCard&quot;, Icon.AddCard),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddChart&quot;, Icon.AddChart),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddCircleOutline&quot;, Icon.AddCircleOutline),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddComment&quot;, Icon.AddComment),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddHome&quot;, Icon.AddHome),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddHomeWork&quot;, Icon.AddHomeWork),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddIcCall&quot;, Icon.AddIcCall),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddLink&quot;, Icon.AddLink),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddLocationAlt&quot;, Icon.AddLocationAlt),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddLocation&quot;, Icon.AddLocation),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddModerator&quot;, Icon.AddModerator),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddPhotoAlternate&quot;, Icon.AddPhotoAlternate),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddReaction&quot;, Icon.AddReaction),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddRoad&quot;, Icon.AddRoad),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddShoppingCart&quot;, Icon.AddShoppingCart),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddTask&quot;, Icon.AddTask),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddToDrive&quot;, Icon.AddToDrive),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddToHomeScreen&quot;, AutoMirroredIcon.AddToHomeScreen),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddToPhotos&quot;, Icon.AddToPhotos),</b>
-<b class="fc">&nbsp;    IconData(&quot;AddToQueue&quot;, Icon.AddToQueue),</b>
-<b class="fc">&nbsp;    IconData(&quot;AdfScanner&quot;, Icon.AdfScanner),</b>
-<b class="fc">&nbsp;    IconData(&quot;Adjust&quot;, Icon.Adjust),</b>
-<b class="fc">&nbsp;    IconData(&quot;AdminPanelSettings&quot;, Icon.AdminPanelSettings),</b>
-<b class="fc">&nbsp;    IconData(&quot;AdsClick&quot;, Icon.AdsClick),</b>
-<b class="fc">&nbsp;    IconData(&quot;AdUnits&quot;, Icon.AdUnits),</b>
-<b class="fc">&nbsp;    IconData(&quot;Agriculture&quot;, Icon.Agriculture),</b>
-<b class="fc">&nbsp;    IconData(&quot;Air&quot;, Icon.Air),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineSeatFlatAngled&quot;, Icon.AirlineSeatFlatAngled),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineSeatFlat&quot;, Icon.AirlineSeatFlat),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineSeatIndividualSuite&quot;, Icon.AirlineSeatIndividualSuite),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineSeatLegroomExtra&quot;, Icon.AirlineSeatLegroomExtra),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineSeatLegroomNormal&quot;, Icon.AirlineSeatLegroomNormal),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineSeatLegroomReduced&quot;, Icon.AirlineSeatLegroomReduced),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineSeatReclineExtra&quot;, Icon.AirlineSeatReclineExtra),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineSeatReclineNormal&quot;, Icon.AirlineSeatReclineNormal),</b>
-<b class="fc">&nbsp;    IconData(&quot;Airlines&quot;, Icon.Airlines),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirlineStops&quot;, Icon.AirlineStops),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirplanemodeActive&quot;, Icon.AirplanemodeActive),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirplanemodeInactive&quot;, Icon.AirplanemodeInactive),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirplaneTicket&quot;, AutoMirroredIcon.AirplaneTicket),</b>
-<b class="fc">&nbsp;    IconData(&quot;Airplay&quot;, Icon.Airplay),</b>
-<b class="fc">&nbsp;    IconData(&quot;AirportShuttle&quot;, Icon.AirportShuttle),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlarmAdd&quot;, Icon.AlarmAdd),</b>
-<b class="fc">&nbsp;    IconData(&quot;Alarm&quot;, Icon.Alarm),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlarmOff&quot;, Icon.AlarmOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlarmOn&quot;, Icon.AlarmOn),</b>
-<b class="fc">&nbsp;    IconData(&quot;Album&quot;, Icon.Album),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlignHorizontalCenter&quot;, Icon.AlignHorizontalCenter),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlignHorizontalLeft&quot;, AutoMirroredIcon.AlignHorizontalLeft),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlignHorizontalRight&quot;, AutoMirroredIcon.AlignHorizontalRight),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlignVerticalBottom&quot;, Icon.AlignVerticalBottom),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlignVerticalCenter&quot;, Icon.AlignVerticalCenter),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlignVerticalTop&quot;, Icon.AlignVerticalTop),</b>
-<b class="fc">&nbsp;    IconData(&quot;AllInbox&quot;, Icon.AllInbox),</b>
-<b class="fc">&nbsp;    IconData(&quot;AllInclusive&quot;, Icon.AllInclusive),</b>
-<b class="fc">&nbsp;    IconData(&quot;AllOut&quot;, Icon.AllOut),</b>
-<b class="fc">&nbsp;    IconData(&quot;AlternateEmail&quot;, Icon.AlternateEmail),</b>
-<b class="fc">&nbsp;    IconData(&quot;AltRoute&quot;, AutoMirroredIcon.AltRoute),</b>
-<b class="fc">&nbsp;    IconData(&quot;AmpStories&quot;, Icon.AmpStories),</b>
-<b class="fc">&nbsp;    IconData(&quot;Analytics&quot;, Icon.Analytics),</b>
-<b class="fc">&nbsp;    IconData(&quot;Anchor&quot;, Icon.Anchor),</b>
-<b class="fc">&nbsp;    IconData(&quot;Android&quot;, Icon.Android),</b>
-<b class="fc">&nbsp;    IconData(&quot;Animation&quot;, Icon.Animation),</b>
-<b class="fc">&nbsp;    IconData(&quot;Announcement&quot;, AutoMirroredIcon.Announcement),</b>
-<b class="fc">&nbsp;    IconData(&quot;Aod&quot;, Icon.Aod),</b>
-<b class="fc">&nbsp;    IconData(&quot;Apartment&quot;, Icon.Apartment),</b>
-<b class="fc">&nbsp;    IconData(&quot;Api&quot;, Icon.Api),</b>
-<b class="fc">&nbsp;    IconData(&quot;AppBlocking&quot;, Icon.AppBlocking),</b>
-<b class="fc">&nbsp;    IconData(&quot;AppRegistration&quot;, Icon.AppRegistration),</b>
-<b class="fc">&nbsp;    IconData(&quot;Approval&quot;, Icon.Approval),</b>
-<b class="fc">&nbsp;    IconData(&quot;AppSettingsAlt&quot;, Icon.AppSettingsAlt),</b>
-<b class="fc">&nbsp;    IconData(&quot;AppShortcut&quot;, Icon.AppShortcut),</b>
-<b class="fc">&nbsp;    IconData(&quot;Apps&quot;, Icon.Apps),</b>
-<b class="fc">&nbsp;    IconData(&quot;AppsOutage&quot;, Icon.AppsOutage),</b>
-<b class="fc">&nbsp;    IconData(&quot;Architecture&quot;, Icon.Architecture),</b>
-<b class="fc">&nbsp;    IconData(&quot;Archive&quot;, Icon.Archive),</b>
-<b class="fc">&nbsp;    IconData(&quot;AreaChart&quot;, Icon.AreaChart),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowBackIos&quot;, AutoMirroredIcon.ArrowBackIos),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowBackIosNew&quot;, Icon.ArrowBackIosNew),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowCircleDown&quot;, Icon.ArrowCircleDown),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowCircleLeft&quot;, Icon.ArrowCircleLeft),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowCircleRight&quot;, Icon.ArrowCircleRight),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowCircleUp&quot;, Icon.ArrowCircleUp),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowDownward&quot;, Icon.ArrowDownward),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowDropDownCircle&quot;, Icon.ArrowDropDownCircle),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowDropUp&quot;, Icon.ArrowDropUp),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowForwardIos&quot;, AutoMirroredIcon.ArrowForwardIos),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowLeft&quot;, AutoMirroredIcon.ArrowLeft),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowOutward&quot;, Icon.ArrowOutward),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowRightAlt&quot;, AutoMirroredIcon.ArrowRightAlt),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowRight&quot;, AutoMirroredIcon.ArrowRight),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArrowUpward&quot;, Icon.ArrowUpward),</b>
-<b class="fc">&nbsp;    IconData(&quot;Article&quot;, AutoMirroredIcon.Article),</b>
-<b class="fc">&nbsp;    IconData(&quot;ArtTrack&quot;, Icon.ArtTrack),</b>
-<b class="fc">&nbsp;    IconData(&quot;AspectRatio&quot;, Icon.AspectRatio),</b>
-<b class="fc">&nbsp;    IconData(&quot;Assessment&quot;, Icon.Assessment),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssignmentInd&quot;, Icon.AssignmentInd),</b>
-<b class="fc">&nbsp;    IconData(&quot;Assignment&quot;, AutoMirroredIcon.Assignment),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssignmentLate&quot;, Icon.AssignmentLate),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssignmentReturned&quot;, Icon.AssignmentReturned),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssignmentReturn&quot;, AutoMirroredIcon.AssignmentReturn),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssignmentTurnedIn&quot;, Icon.AssignmentTurnedIn),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssistantDirection&quot;, AutoMirroredIcon.AssistantDirection),</b>
-<b class="fc">&nbsp;    IconData(&quot;Assistant&quot;, Icon.Assistant),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssistantPhoto&quot;, Icon.AssistantPhoto),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssistWalker&quot;, Icon.AssistWalker),</b>
-<b class="fc">&nbsp;    IconData(&quot;AssuredWorkload&quot;, Icon.AssuredWorkload),</b>
-<b class="fc">&nbsp;    IconData(&quot;Atm&quot;, Icon.Atm),</b>
-<b class="fc">&nbsp;    IconData(&quot;AttachEmail&quot;, Icon.AttachEmail),</b>
-<b class="fc">&nbsp;    IconData(&quot;AttachFile&quot;, Icon.AttachFile),</b>
-<b class="fc">&nbsp;    IconData(&quot;Attachment&quot;, Icon.Attachment),</b>
-<b class="fc">&nbsp;    IconData(&quot;AttachMoney&quot;, Icon.AttachMoney),</b>
-<b class="fc">&nbsp;    IconData(&quot;Attractions&quot;, Icon.Attractions),</b>
-<b class="fc">&nbsp;    IconData(&quot;Attribution&quot;, Icon.Attribution),</b>
-<b class="fc">&nbsp;    IconData(&quot;AudioFile&quot;, Icon.AudioFile),</b>
-<b class="fc">&nbsp;    IconData(&quot;Audiotrack&quot;, Icon.Audiotrack),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoAwesome&quot;, Icon.AutoAwesome),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoAwesomeMosaic&quot;, Icon.AutoAwesomeMosaic),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoAwesomeMotion&quot;, Icon.AutoAwesomeMotion),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoDelete&quot;, Icon.AutoDelete),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoFixHigh&quot;, Icon.AutoFixHigh),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoFixNormal&quot;, Icon.AutoFixNormal),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoFixOff&quot;, Icon.AutoFixOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutofpsSelect&quot;, Icon.AutofpsSelect),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoGraph&quot;, Icon.AutoGraph),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoMode&quot;, Icon.AutoMode),</b>
-<b class="fc">&nbsp;    IconData(&quot;Autorenew&quot;, Icon.Autorenew),</b>
-<b class="fc">&nbsp;    IconData(&quot;AutoStories&quot;, Icon.AutoStories),</b>
-<b class="fc">&nbsp;    IconData(&quot;AvTimer&quot;, Icon.AvTimer),</b>
-<b class="fc">&nbsp;    IconData(&quot;BabyChangingStation&quot;, Icon.BabyChangingStation),</b>
-<b class="fc">&nbsp;    IconData(&quot;BackHand&quot;, Icon.BackHand),</b>
-<b class="fc">&nbsp;    IconData(&quot;Backpack&quot;, Icon.Backpack),</b>
-<b class="fc">&nbsp;    IconData(&quot;Backspace&quot;, AutoMirroredIcon.Backspace),</b>
-<b class="fc">&nbsp;    IconData(&quot;Backup&quot;, Icon.Backup),</b>
-<b class="fc">&nbsp;    IconData(&quot;BackupTable&quot;, Icon.BackupTable),</b>
-<b class="fc">&nbsp;    IconData(&quot;Badge&quot;, Icon.Badge),</b>
-<b class="fc">&nbsp;    IconData(&quot;BakeryDining&quot;, Icon.BakeryDining),</b>
-<b class="fc">&nbsp;    IconData(&quot;Balance&quot;, Icon.Balance),</b>
-<b class="fc">&nbsp;    IconData(&quot;Balcony&quot;, Icon.Balcony),</b>
-<b class="fc">&nbsp;    IconData(&quot;Ballot&quot;, Icon.Ballot),</b>
-<b class="fc">&nbsp;    IconData(&quot;BarChart&quot;, Icon.BarChart),</b>
-<b class="fc">&nbsp;    IconData(&quot;BatchPrediction&quot;, Icon.BatchPrediction),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bathroom&quot;, Icon.Bathroom),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bathtub&quot;, Icon.Bathtub),</b>
-<b class="fc">&nbsp;    IconData(&quot;Battery0Bar&quot;, Icon.Battery0Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;Battery1Bar&quot;, Icon.Battery1Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;Battery2Bar&quot;, Icon.Battery2Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;Battery3Bar&quot;, Icon.Battery3Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;Battery4Bar&quot;, Icon.Battery4Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;Battery5Bar&quot;, Icon.Battery5Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;Battery6Bar&quot;, Icon.Battery6Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;BatteryAlert&quot;, Icon.BatteryAlert),</b>
-<b class="fc">&nbsp;    IconData(&quot;BatteryChargingFull&quot;, Icon.BatteryChargingFull),</b>
-<b class="fc">&nbsp;    IconData(&quot;BatteryFull&quot;, Icon.BatteryFull),</b>
-<b class="fc">&nbsp;    IconData(&quot;BatterySaver&quot;, Icon.BatterySaver),</b>
-<b class="fc">&nbsp;    IconData(&quot;BatteryStd&quot;, Icon.BatteryStd),</b>
-<b class="fc">&nbsp;    IconData(&quot;BatteryUnknown&quot;, AutoMirroredIcon.BatteryUnknown),</b>
-<b class="fc">&nbsp;    IconData(&quot;BeachAccess&quot;, Icon.BeachAccess),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bed&quot;, Icon.Bed),</b>
-<b class="fc">&nbsp;    IconData(&quot;BedroomBaby&quot;, Icon.BedroomBaby),</b>
-<b class="fc">&nbsp;    IconData(&quot;BedroomChild&quot;, Icon.BedroomChild),</b>
-<b class="fc">&nbsp;    IconData(&quot;BedroomParent&quot;, Icon.BedroomParent),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bedtime&quot;, Icon.Bedtime),</b>
-<b class="fc">&nbsp;    IconData(&quot;BedtimeOff&quot;, Icon.BedtimeOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;Beenhere&quot;, Icon.Beenhere),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bento&quot;, Icon.Bento),</b>
-<b class="fc">&nbsp;    IconData(&quot;BikeScooter&quot;, Icon.BikeScooter),</b>
-<b class="fc">&nbsp;    IconData(&quot;Biotech&quot;, Icon.Biotech),</b>
-<b class="fc">&nbsp;    IconData(&quot;Blender&quot;, Icon.Blender),</b>
-<b class="fc">&nbsp;    IconData(&quot;Blind&quot;, Icon.Blind),</b>
-<b class="fc">&nbsp;    IconData(&quot;BlindsClosed&quot;, Icon.BlindsClosed),</b>
-<b class="fc">&nbsp;    IconData(&quot;Blinds&quot;, Icon.Blinds),</b>
-<b class="fc">&nbsp;    IconData(&quot;Block&quot;, Icon.Block),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bloodtype&quot;, Icon.Bloodtype),</b>
-<b class="fc">&nbsp;    IconData(&quot;BluetoothAudio&quot;, Icon.BluetoothAudio),</b>
-<b class="fc">&nbsp;    IconData(&quot;BluetoothConnected&quot;, Icon.BluetoothConnected),</b>
-<b class="fc">&nbsp;    IconData(&quot;BluetoothDisabled&quot;, Icon.BluetoothDisabled),</b>
-<b class="fc">&nbsp;    IconData(&quot;BluetoothDrive&quot;, Icon.BluetoothDrive),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bluetooth&quot;, Icon.Bluetooth),</b>
-<b class="fc">&nbsp;    IconData(&quot;BluetoothSearching&quot;, AutoMirroredIcon.BluetoothSearching),</b>
-<b class="fc">&nbsp;    IconData(&quot;BlurCircular&quot;, Icon.BlurCircular),</b>
-<b class="fc">&nbsp;    IconData(&quot;BlurLinear&quot;, Icon.BlurLinear),</b>
-<b class="fc">&nbsp;    IconData(&quot;BlurOff&quot;, Icon.BlurOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;BlurOn&quot;, Icon.BlurOn),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bolt&quot;, Icon.Bolt),</b>
-<b class="fc">&nbsp;    IconData(&quot;Book&quot;, Icon.Book),</b>
-<b class="fc">&nbsp;    IconData(&quot;BookmarkAdded&quot;, Icon.BookmarkAdded),</b>
-<b class="fc">&nbsp;    IconData(&quot;BookmarkAdd&quot;, Icon.BookmarkAdd),</b>
-<b class="fc">&nbsp;    IconData(&quot;BookmarkBorder&quot;, Icon.BookmarkBorder),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bookmark&quot;, Icon.Bookmark),</b>
-<b class="fc">&nbsp;    IconData(&quot;BookmarkRemove&quot;, Icon.BookmarkRemove),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bookmarks&quot;, Icon.Bookmarks),</b>
-<b class="fc">&nbsp;    IconData(&quot;BookOnline&quot;, Icon.BookOnline),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderAll&quot;, Icon.BorderAll),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderBottom&quot;, Icon.BorderBottom),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderClear&quot;, Icon.BorderClear),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderColor&quot;, Icon.BorderColor),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderHorizontal&quot;, Icon.BorderHorizontal),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderInner&quot;, Icon.BorderInner),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderLeft&quot;, Icon.BorderLeft),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderOuter&quot;, Icon.BorderOuter),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderRight&quot;, Icon.BorderRight),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderStyle&quot;, Icon.BorderStyle),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderTop&quot;, Icon.BorderTop),</b>
-<b class="fc">&nbsp;    IconData(&quot;BorderVertical&quot;, Icon.BorderVertical),</b>
-<b class="fc">&nbsp;    IconData(&quot;Boy&quot;, Icon.Boy),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrandingWatermark&quot;, AutoMirroredIcon.BrandingWatermark),</b>
-<b class="fc">&nbsp;    IconData(&quot;BreakfastDining&quot;, Icon.BreakfastDining),</b>
-<b class="fc">&nbsp;    IconData(&quot;Brightness1&quot;, Icon.Brightness1),</b>
-<b class="fc">&nbsp;    IconData(&quot;Brightness2&quot;, Icon.Brightness2),</b>
-<b class="fc">&nbsp;    IconData(&quot;Brightness3&quot;, Icon.Brightness3),</b>
-<b class="fc">&nbsp;    IconData(&quot;Brightness4&quot;, Icon.Brightness4),</b>
-<b class="fc">&nbsp;    IconData(&quot;Brightness5&quot;, Icon.Brightness5),</b>
-<b class="fc">&nbsp;    IconData(&quot;Brightness6&quot;, Icon.Brightness6),</b>
-<b class="fc">&nbsp;    IconData(&quot;Brightness7&quot;, Icon.Brightness7),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrightnessAuto&quot;, Icon.BrightnessAuto),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrightnessHigh&quot;, Icon.BrightnessHigh),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrightnessLow&quot;, Icon.BrightnessLow),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrightnessMedium&quot;, Icon.BrightnessMedium),</b>
-<b class="fc">&nbsp;    IconData(&quot;BroadcastOnHome&quot;, Icon.BroadcastOnHome),</b>
-<b class="fc">&nbsp;    IconData(&quot;BroadcastOnPersonal&quot;, Icon.BroadcastOnPersonal),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrokenImage&quot;, Icon.BrokenImage),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrowseGallery&quot;, Icon.BrowseGallery),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrowserNotSupported&quot;, Icon.BrowserNotSupported),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrowserUpdated&quot;, Icon.BrowserUpdated),</b>
-<b class="fc">&nbsp;    IconData(&quot;BrunchDining&quot;, Icon.BrunchDining),</b>
-<b class="fc">&nbsp;    IconData(&quot;Brush&quot;, Icon.Brush),</b>
-<b class="fc">&nbsp;    IconData(&quot;BubbleChart&quot;, Icon.BubbleChart),</b>
-<b class="fc">&nbsp;    IconData(&quot;BugReport&quot;, Icon.BugReport),</b>
-<b class="fc">&nbsp;    IconData(&quot;BuildCircle&quot;, Icon.BuildCircle),</b>
-<b class="fc">&nbsp;    IconData(&quot;Bungalow&quot;, Icon.Bungalow),</b>
-<b class="fc">&nbsp;    IconData(&quot;BurstMode&quot;, Icon.BurstMode),</b>
-<b class="fc">&nbsp;    IconData(&quot;BusAlert&quot;, Icon.BusAlert),</b>
-<b class="fc">&nbsp;    IconData(&quot;BusinessCenter&quot;, Icon.BusinessCenter),</b>
-<b class="fc">&nbsp;    IconData(&quot;Business&quot;, Icon.Business),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cabin&quot;, Icon.Cabin),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cable&quot;, Icon.Cable),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cached&quot;, Icon.Cached),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cake&quot;, Icon.Cake),</b>
-<b class="fc">&nbsp;    IconData(&quot;Calculate&quot;, Icon.Calculate),</b>
-<b class="fc">&nbsp;    IconData(&quot;CalendarMonth&quot;, Icon.CalendarMonth),</b>
-<b class="fc">&nbsp;    IconData(&quot;CalendarToday&quot;, Icon.CalendarToday),</b>
-<b class="fc">&nbsp;    IconData(&quot;CalendarViewDay&quot;, Icon.CalendarViewDay),</b>
-<b class="fc">&nbsp;    IconData(&quot;CalendarViewMonth&quot;, Icon.CalendarViewMonth),</b>
-<b class="fc">&nbsp;    IconData(&quot;CalendarViewWeek&quot;, Icon.CalendarViewWeek),</b>
-<b class="fc">&nbsp;    IconData(&quot;CallEnd&quot;, Icon.CallEnd),</b>
-<b class="fc">&nbsp;    IconData(&quot;CallMade&quot;, AutoMirroredIcon.CallMade),</b>
-<b class="fc">&nbsp;    IconData(&quot;CallMerge&quot;, AutoMirroredIcon.CallMerge),</b>
-<b class="fc">&nbsp;    IconData(&quot;CallMissed&quot;, AutoMirroredIcon.CallMissed),</b>
-<b class="fc">&nbsp;    IconData(&quot;CallMissedOutgoing&quot;, AutoMirroredIcon.CallMissedOutgoing),</b>
-<b class="fc">&nbsp;    IconData(&quot;CallReceived&quot;, AutoMirroredIcon.CallReceived),</b>
-<b class="fc">&nbsp;    IconData(&quot;CallSplit&quot;, AutoMirroredIcon.CallSplit),</b>
-<b class="fc">&nbsp;    IconData(&quot;CallToAction&quot;, Icon.CallToAction),</b>
-<b class="fc">&nbsp;    IconData(&quot;CameraAlt&quot;, Icon.CameraAlt),</b>
-<b class="fc">&nbsp;    IconData(&quot;CameraEnhance&quot;, Icon.CameraEnhance),</b>
-<b class="fc">&nbsp;    IconData(&quot;CameraFront&quot;, Icon.CameraFront),</b>
-<b class="fc">&nbsp;    IconData(&quot;CameraIndoor&quot;, Icon.CameraIndoor),</b>
-<b class="fc">&nbsp;    IconData(&quot;Camera&quot;, Icon.Camera),</b>
-<b class="fc">&nbsp;    IconData(&quot;CameraOutdoor&quot;, Icon.CameraOutdoor),</b>
-<b class="fc">&nbsp;    IconData(&quot;CameraRear&quot;, Icon.CameraRear),</b>
-<b class="fc">&nbsp;    IconData(&quot;CameraRoll&quot;, Icon.CameraRoll),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cameraswitch&quot;, Icon.Cameraswitch),</b>
-<b class="fc">&nbsp;    IconData(&quot;Campaign&quot;, Icon.Campaign),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cancel&quot;, Icon.Cancel),</b>
-<b class="fc">&nbsp;    IconData(&quot;CancelPresentation&quot;, Icon.CancelPresentation),</b>
-<b class="fc">&nbsp;    IconData(&quot;CancelScheduleSend&quot;, Icon.CancelScheduleSend),</b>
-<b class="fc">&nbsp;    IconData(&quot;CandlestickChart&quot;, Icon.CandlestickChart),</b>
-<b class="fc">&nbsp;    IconData(&quot;CarCrash&quot;, Icon.CarCrash),</b>
-<b class="fc">&nbsp;    IconData(&quot;CardGiftcard&quot;, Icon.CardGiftcard),</b>
-<b class="fc">&nbsp;    IconData(&quot;CardMembership&quot;, Icon.CardMembership),</b>
-<b class="fc">&nbsp;    IconData(&quot;CardTravel&quot;, Icon.CardTravel),</b>
-<b class="fc">&nbsp;    IconData(&quot;Carpenter&quot;, Icon.Carpenter),</b>
-<b class="fc">&nbsp;    IconData(&quot;CarRental&quot;, Icon.CarRental),</b>
-<b class="fc">&nbsp;    IconData(&quot;CarRepair&quot;, Icon.CarRepair),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cases&quot;, Icon.Cases),</b>
-<b class="fc">&nbsp;    IconData(&quot;Casino&quot;, Icon.Casino),</b>
-<b class="fc">&nbsp;    IconData(&quot;CastConnected&quot;, Icon.CastConnected),</b>
-<b class="fc">&nbsp;    IconData(&quot;CastForEducation&quot;, Icon.CastForEducation),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cast&quot;, Icon.Cast),</b>
-<b class="fc">&nbsp;    IconData(&quot;Castle&quot;, Icon.Castle),</b>
-<b class="fc">&nbsp;    IconData(&quot;CatchingPokemon&quot;, Icon.CatchingPokemon),</b>
-<b class="fc">&nbsp;    IconData(&quot;Category&quot;, Icon.Category),</b>
-<b class="fc">&nbsp;    IconData(&quot;Celebration&quot;, Icon.Celebration),</b>
-<b class="fc">&nbsp;    IconData(&quot;CellTower&quot;, Icon.CellTower),</b>
-<b class="fc">&nbsp;    IconData(&quot;CellWifi&quot;, Icon.CellWifi),</b>
-<b class="fc">&nbsp;    IconData(&quot;CenterFocusStrong&quot;, Icon.CenterFocusStrong),</b>
-<b class="fc">&nbsp;    IconData(&quot;CenterFocusWeak&quot;, Icon.CenterFocusWeak),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChairAlt&quot;, Icon.ChairAlt),</b>
-<b class="fc">&nbsp;    IconData(&quot;Chair&quot;, Icon.Chair),</b>
-<b class="fc">&nbsp;    IconData(&quot;Chalet&quot;, Icon.Chalet),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChangeCircle&quot;, Icon.ChangeCircle),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChangeHistory&quot;, Icon.ChangeHistory),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChargingStation&quot;, Icon.ChargingStation),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChatBubble&quot;, Icon.ChatBubble),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChatBubbleOutline&quot;, Icon.ChatBubbleOutline),</b>
-<b class="fc">&nbsp;    IconData(&quot;Chat&quot;, AutoMirroredIcon.Chat),</b>
-<b class="fc">&nbsp;    IconData(&quot;CheckBox&quot;, Icon.CheckBox),</b>
-<b class="fc">&nbsp;    IconData(&quot;CheckBoxOutlineBlank&quot;, Icon.CheckBoxOutlineBlank),</b>
-<b class="fc">&nbsp;    IconData(&quot;CheckCircleOutline&quot;, Icon.CheckCircleOutline),</b>
-<b class="fc">&nbsp;    IconData(&quot;Checklist&quot;, Icon.Checklist),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChecklistRtl&quot;, Icon.ChecklistRtl),</b>
-<b class="fc">&nbsp;    IconData(&quot;Checkroom&quot;, Icon.Checkroom),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChevronLeft&quot;, Icon.ChevronLeft),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChevronRight&quot;, Icon.ChevronRight),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChildCare&quot;, Icon.ChildCare),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChildFriendly&quot;, Icon.ChildFriendly),</b>
-<b class="fc">&nbsp;    IconData(&quot;ChromeReaderMode&quot;, AutoMirroredIcon.ChromeReaderMode),</b>
-<b class="fc">&nbsp;    IconData(&quot;Church&quot;, Icon.Church),</b>
-<b class="fc">&nbsp;    IconData(&quot;Circle&quot;, Icon.Circle),</b>
-<b class="fc">&nbsp;    IconData(&quot;CircleNotifications&quot;, Icon.CircleNotifications),</b>
-<b class="fc">&nbsp;    IconData(&quot;Class&quot;, Icon.Class),</b>
-<b class="fc">&nbsp;    IconData(&quot;CleanHands&quot;, Icon.CleanHands),</b>
-<b class="fc">&nbsp;    IconData(&quot;CleaningServices&quot;, Icon.CleaningServices),</b>
-<b class="fc">&nbsp;    IconData(&quot;ClearAll&quot;, Icon.ClearAll),</b>
-<b class="fc">&nbsp;    IconData(&quot;ClosedCaptionDisabled&quot;, Icon.ClosedCaptionDisabled),</b>
-<b class="fc">&nbsp;    IconData(&quot;ClosedCaption&quot;, Icon.ClosedCaption),</b>
-<b class="fc">&nbsp;    IconData(&quot;ClosedCaptionOff&quot;, Icon.ClosedCaptionOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;CloseFullscreen&quot;, Icon.CloseFullscreen),</b>
-<b class="fc">&nbsp;    IconData(&quot;CloudCircle&quot;, Icon.CloudCircle),</b>
-<b class="fc">&nbsp;    IconData(&quot;CloudDone&quot;, Icon.CloudDone),</b>
-<b class="fc">&nbsp;    IconData(&quot;CloudDownload&quot;, Icon.CloudDownload),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cloud&quot;, Icon.Cloud),</b>
-<b class="fc">&nbsp;    IconData(&quot;CloudOff&quot;, Icon.CloudOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;CloudQueue&quot;, Icon.CloudQueue),</b>
-<b class="fc">&nbsp;    IconData(&quot;CloudSync&quot;, Icon.CloudSync),</b>
-<b class="fc">&nbsp;    IconData(&quot;CloudUpload&quot;, Icon.CloudUpload),</b>
-<b class="fc">&nbsp;    IconData(&quot;Co2&quot;, Icon.Co2),</b>
-<b class="fc">&nbsp;    IconData(&quot;Code&quot;, Icon.Code),</b>
-<b class="fc">&nbsp;    IconData(&quot;CodeOff&quot;, Icon.CodeOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;Coffee&quot;, Icon.Coffee),</b>
-<b class="fc">&nbsp;    IconData(&quot;CoffeeMaker&quot;, Icon.CoffeeMaker),</b>
-<b class="fc">&nbsp;    IconData(&quot;CollectionsBookmark&quot;, Icon.CollectionsBookmark),</b>
-<b class="fc">&nbsp;    IconData(&quot;Collections&quot;, Icon.Collections),</b>
-<b class="fc">&nbsp;    IconData(&quot;Colorize&quot;, Icon.Colorize),</b>
-<b class="fc">&nbsp;    IconData(&quot;ColorLens&quot;, Icon.ColorLens),</b>
-<b class="fc">&nbsp;    IconData(&quot;CommentBank&quot;, Icon.CommentBank),</b>
-<b class="fc">&nbsp;    IconData(&quot;Comment&quot;, AutoMirroredIcon.Comment),</b>
-<b class="fc">&nbsp;    IconData(&quot;CommentsDisabled&quot;, Icon.CommentsDisabled),</b>
-<b class="fc">&nbsp;    IconData(&quot;Commit&quot;, Icon.Commit),</b>
-<b class="fc">&nbsp;    IconData(&quot;Commute&quot;, Icon.Commute),</b>
-<b class="fc">&nbsp;    IconData(&quot;CompareArrows&quot;, AutoMirroredIcon.CompareArrows),</b>
-<b class="fc">&nbsp;    IconData(&quot;Compare&quot;, Icon.Compare),</b>
-<b class="fc">&nbsp;    IconData(&quot;CompassCalibration&quot;, Icon.CompassCalibration),</b>
-<b class="fc">&nbsp;    IconData(&quot;Compost&quot;, Icon.Compost),</b>
-<b class="fc">&nbsp;    IconData(&quot;Compress&quot;, Icon.Compress),</b>
-<b class="fc">&nbsp;    IconData(&quot;Computer&quot;, Icon.Computer),</b>
-<b class="fc">&nbsp;    IconData(&quot;ConfirmationNumber&quot;, Icon.ConfirmationNumber),</b>
-<b class="fc">&nbsp;    IconData(&quot;ConnectedTv&quot;, Icon.ConnectedTv),</b>
-<b class="fc">&nbsp;    IconData(&quot;ConnectingAirports&quot;, Icon.ConnectingAirports),</b>
-<b class="fc">&nbsp;    IconData(&quot;ConnectWithoutContact&quot;, Icon.ConnectWithoutContact),</b>
-<b class="fc">&nbsp;    IconData(&quot;Construction&quot;, Icon.Construction),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContactEmergency&quot;, Icon.ContactEmergency),</b>
-<b class="fc">&nbsp;    IconData(&quot;Contactless&quot;, Icon.Contactless),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContactMail&quot;, Icon.ContactMail),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContactPage&quot;, Icon.ContactPage),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContactPhone&quot;, Icon.ContactPhone),</b>
-<b class="fc">&nbsp;    IconData(&quot;Contacts&quot;, Icon.Contacts),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContactSupport&quot;, AutoMirroredIcon.ContactSupport),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContentCopy&quot;, Icon.ContentCopy),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContentCut&quot;, Icon.ContentCut),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContentPasteGo&quot;, Icon.ContentPasteGo),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContentPaste&quot;, Icon.ContentPaste),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContentPasteOff&quot;, Icon.ContentPasteOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;ContentPasteSearch&quot;, Icon.ContentPasteSearch),</b>
-<b class="fc">&nbsp;    IconData(&quot;Contrast&quot;, Icon.Contrast),</b>
-<b class="fc">&nbsp;    IconData(&quot;ControlCamera&quot;, Icon.ControlCamera),</b>
-<b class="fc">&nbsp;    IconData(&quot;ControlPointDuplicate&quot;, Icon.ControlPointDuplicate),</b>
-<b class="fc">&nbsp;    IconData(&quot;ControlPoint&quot;, Icon.ControlPoint),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cookie&quot;, Icon.Cookie),</b>
-<b class="fc">&nbsp;    IconData(&quot;CoPresent&quot;, Icon.CoPresent),</b>
-<b class="fc">&nbsp;    IconData(&quot;CopyAll&quot;, Icon.CopyAll),</b>
-<b class="fc">&nbsp;    IconData(&quot;Copyright&quot;, Icon.Copyright),</b>
-<b class="fc">&nbsp;    IconData(&quot;Coronavirus&quot;, Icon.Coronavirus),</b>
-<b class="fc">&nbsp;    IconData(&quot;CorporateFare&quot;, Icon.CorporateFare),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cottage&quot;, Icon.Cottage),</b>
-<b class="fc">&nbsp;    IconData(&quot;Countertops&quot;, Icon.Countertops),</b>
-<b class="fc">&nbsp;    IconData(&quot;CreateNewFolder&quot;, Icon.CreateNewFolder),</b>
-<b class="fc">&nbsp;    IconData(&quot;CreditCard&quot;, Icon.CreditCard),</b>
-<b class="fc">&nbsp;    IconData(&quot;CreditCardOff&quot;, Icon.CreditCardOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;CreditScore&quot;, Icon.CreditScore),</b>
-<b class="fc">&nbsp;    IconData(&quot;Crib&quot;, Icon.Crib),</b>
-<b class="fc">&nbsp;    IconData(&quot;CrisisAlert&quot;, Icon.CrisisAlert),</b>
-<b class="fc">&nbsp;    IconData(&quot;Crop32&quot;, Icon.Crop32),</b>
-<b class="fc">&nbsp;    IconData(&quot;Crop54&quot;, Icon.Crop54),</b>
-<b class="fc">&nbsp;    IconData(&quot;Crop75&quot;, Icon.Crop75),</b>
-<b class="fc">&nbsp;    IconData(&quot;Crop169&quot;, Icon.Crop169),</b>
-<b class="fc">&nbsp;    IconData(&quot;CropDin&quot;, Icon.CropDin),</b>
-<b class="fc">&nbsp;    IconData(&quot;CropFree&quot;, Icon.CropFree),</b>
-<b class="fc">&nbsp;    IconData(&quot;Crop&quot;, Icon.Crop),</b>
-<b class="fc">&nbsp;    IconData(&quot;CropLandscape&quot;, Icon.CropLandscape),</b>
-<b class="fc">&nbsp;    IconData(&quot;CropOriginal&quot;, Icon.CropOriginal),</b>
-<b class="fc">&nbsp;    IconData(&quot;CropPortrait&quot;, Icon.CropPortrait),</b>
-<b class="fc">&nbsp;    IconData(&quot;CropRotate&quot;, Icon.CropRotate),</b>
-<b class="fc">&nbsp;    IconData(&quot;CropSquare&quot;, Icon.CropSquare),</b>
-<b class="fc">&nbsp;    IconData(&quot;CrueltyFree&quot;, Icon.CrueltyFree),</b>
-<b class="fc">&nbsp;    IconData(&quot;Css&quot;, Icon.Css),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyBitcoin&quot;, Icon.CurrencyBitcoin),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyExchange&quot;, Icon.CurrencyExchange),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyFranc&quot;, Icon.CurrencyFranc),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyLira&quot;, Icon.CurrencyLira),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyPound&quot;, Icon.CurrencyPound),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyRuble&quot;, Icon.CurrencyRuble),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyRupee&quot;, Icon.CurrencyRupee),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyYen&quot;, Icon.CurrencyYen),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurrencyYuan&quot;, Icon.CurrencyYuan),</b>
-<b class="fc">&nbsp;    IconData(&quot;CurtainsClosed&quot;, Icon.CurtainsClosed),</b>
-<b class="fc">&nbsp;    IconData(&quot;Curtains&quot;, Icon.Curtains),</b>
-<b class="fc">&nbsp;    IconData(&quot;Cyclone&quot;, Icon.Cyclone),</b>
-<b class="fc">&nbsp;    IconData(&quot;Dangerous&quot;, Icon.Dangerous),</b>
-<b class="fc">&nbsp;    IconData(&quot;DarkMode&quot;, Icon.DarkMode),</b>
-<b class="fc">&nbsp;    IconData(&quot;DashboardCustomize&quot;, Icon.DashboardCustomize),</b>
-<b class="fc">&nbsp;    IconData(&quot;Dashboard&quot;, Icon.Dashboard),</b>
-<b class="fc">&nbsp;    IconData(&quot;DataArray&quot;, Icon.DataArray),</b>
-<b class="fc">&nbsp;    IconData(&quot;DataExploration&quot;, Icon.DataExploration),</b>
-<b class="fc">&nbsp;    IconData(&quot;DataObject&quot;, Icon.DataObject),</b>
-<b class="fc">&nbsp;    IconData(&quot;DataSaverOff&quot;, Icon.DataSaverOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;DataSaverOn&quot;, Icon.DataSaverOn),</b>
-<b class="fc">&nbsp;    IconData(&quot;Dataset&quot;, Icon.Dataset),</b>
-<b class="fc">&nbsp;    IconData(&quot;DatasetLinked&quot;, Icon.DatasetLinked),</b>
-<b class="fc">&nbsp;    IconData(&quot;DataThresholding&quot;, Icon.DataThresholding),</b>
-<b class="fc">&nbsp;    IconData(&quot;DataUsage&quot;, Icon.DataUsage),</b>
-<b class="fc">&nbsp;    IconData(&quot;Deblur&quot;, Icon.Deblur),</b>
-<b class="fc">&nbsp;    IconData(&quot;Deck&quot;, Icon.Deck),</b>
-&nbsp;)
+<b class="fc">&nbsp;data class Factor(val base: String, val power: String? = null) {</b>
+&nbsp;    companion object {
+<b class="fc">&nbsp;        fun parse(factors: String): PersistentList&lt;Factor&gt; = factors</b>
+<b class="fc">&nbsp;            .split(&#39;*&#39;)</b>
+<b class="fc">&nbsp;            .filter { it.trim().isNotEmpty() }</b>
+<b class="fc">&nbsp;            .map { it.split(&#39;^&#39;) }</b>
+<b class="fc">&nbsp;            .map { Factor(it.first(), it.getOrNull(1)) }</b>
+<b class="fc">&nbsp;            .toPersistentList()</b>
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -626,7 +188,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-03-11 16:51</div>
+    <div style="float:right;">generated on 2025-04-03 21:05</div>
 </div>
 </body>
 </html>

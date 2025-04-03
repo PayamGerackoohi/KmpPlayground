@@ -10,7 +10,7 @@ enum class Component(val labelRes: StringResource) {
     DateTimePicker(Res.string.components_date_time_picker),
 }
 
-/* t o d o
+/* t*do
 Chip
 BadgeDefaults
 BottomAppBarDefaults

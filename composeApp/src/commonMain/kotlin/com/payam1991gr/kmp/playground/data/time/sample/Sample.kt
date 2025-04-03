@@ -25,6 +25,14 @@ fun CodeEditor.appendTimeZoneData() {
     line()
     line { `fun`; normal { " UtcOffset." }; blue { "string" }; normal { "() = " }; `if`; normal { " (" }; `this`; normal { " == UtcOffset." }; purple { "ZERO" }; normal { ") " }; green { "\"+0 HRS\" " }; `else`; normal { " toString()" } }
     line()
-    line { `fun`; normal { " UtcOffset." }; blue { "asLabeledTimeZone" }; normal { "() = " }; blue { "asTimeZone" }; normal { "()." }; blue { "run" }; normal { " { LabeledTimeZone(" }; `this`; normal { ", " }; purple { "id" }; normal { ") }" } }
+    line { `fun`; normal { " UtcOffset." }; blue { "asLabeledTimeZone" }; normal { "() = " }; blue { "asTimeZone" }; normal { "()." }; blue { "run" }; normal { " {" } }
+    line(1) { normal { "LabeledTimeZone(" } }
+    line(2) { `this`; normal { "," } }
+    line(2) { `when`; normal { " (" }; `this`; normal { ") {" } }
+    line(3) { normal { "TimeZone." }; purple { "UTC" }; normal { " -> " }; green { "\"GMT\"" } }
+    line(3) { `else`; normal { " -> " }; green { "\"UTC" }; orange { "\$" }; purple { "id" }; green { "\"" } }
+    line(2) { normal { "}" } }
+    line(1) { normal { ")" } }
+    line { normal { "}" } }
     line()
 }

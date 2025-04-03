@@ -12,7 +12,7 @@ import kotlinx.collections.immutable.persistentListOf
 import kotlinx.datetime.Instant
 import kotlinx.datetime.Clock
 
-//@SinglePreview
+@SinglePreview
 @Composable
 fun DateTime_Preview_Preview() = preview {
     val timeZoneRepository = remember { TimeZoneRepositoryImpl() }
@@ -30,7 +30,6 @@ fun DateTime_Preview_Preview() = preview {
     )
 }
 
-@SinglePreview
 @Composable
 fun DateTime_Code_Preview() = preview {
     DateTime().Content(

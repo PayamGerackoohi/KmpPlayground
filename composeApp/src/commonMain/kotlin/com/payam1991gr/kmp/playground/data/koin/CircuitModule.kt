@@ -141,7 +141,7 @@ val circuitModule by lazy {
                         is FileScreen -> FilePresenter(navigator)
                         is MiscellaneousScreen -> MiscellaneousPresenter(navigator)
                         is BleScreen -> BlePresenter(navigator)
-                        is CppScreen -> CppPresenter(navigator)
+                        is CppScreen -> CppPresenter(navigator, get())
                         is DateTimeScreen -> DateTimePresenter(navigator, get(), get(), get())
                         is PdfScreen -> PdfPresenter(navigator)
                         else -> null

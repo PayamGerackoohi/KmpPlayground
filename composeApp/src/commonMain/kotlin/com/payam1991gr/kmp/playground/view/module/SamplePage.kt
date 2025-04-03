@@ -39,6 +39,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -164,16 +165,25 @@ object SamplePage {
 
     object Preview {
         @Composable
-        fun Header(
-            title: String,
-            modifier: Modifier = Modifier,
-        ) {
-            Text(
-                text = title,
-                style = MaterialTheme.typography.titleLarge,
-                modifier = modifier,
-            )
+        fun Header(title: CharSequence, modifier: Modifier = Modifier) = when (title) {
+            is AnnotatedString -> Header(title, modifier)
+            is String -> Header(title, modifier)
+            else -> Text("Unknown title type!")
         }
+
+        @Composable
+        fun Header(title: String, modifier: Modifier = Modifier) = Text(
+            text = title,
+            style = MaterialTheme.typography.titleLarge,
+            modifier = modifier,
+        )
+
+        @Composable
+        fun Header(title: AnnotatedString, modifier: Modifier = Modifier) = Text(
+            text = title,
+            style = MaterialTheme.typography.titleLarge,
+            modifier = modifier,
+        )
 
         @Composable
         fun Description(

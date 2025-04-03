@@ -123,6 +123,13 @@
     <string name="miscellaneous_date_time_analog_clock">Analog Clock</string>
     <string name="miscellaneous_date_time_time_zone_data">Time Zone Data</string>
 
+    <!-- Miscellaneous.C++ -->
+    <string name="miscellaneous_cpp_description">A simple C++ code to calculate prime factors of unsigned 64-bit integers (≤ 18,446,744,073,709,551,615)</string>
+    <string name="miscellaneous_cpp_calculating">Calculating…</string>
+    <string name="miscellaneous_cpp_calculate">Calculate</string>
+    <string name="miscellaneous_cpp_number">Number</string>
+    <string name="miscellaneous_cpp_random_calculations">Random Calculations</string>
+
     <!-- Toolbar -->
     <string name="toolbar_back">Back</string>
     <string name="toolbar_code">Code</string>
@@ -154,4 +161,7 @@
     <string name="decrement">Decrement</string>
     <string name="toggle">Toggle</string>
     <string name="save">Save</string>
+    <string name="ui" translatable="false">UI</string>
+    <string name="state" translatable="false">State</string>
+    <string name="presenter" translatable="false">Presenter</string>
 </resources>

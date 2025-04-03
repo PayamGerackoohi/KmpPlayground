@@ -61,7 +61,9 @@ class IconsImpl : Icons {
         IconData("Warning", Icon.Warning),
     )
 
-    override suspend fun extended() = listOf(
+    override suspend fun extended() = syncExtended()
+
+     fun syncExtended() = listOf(
         extended1(),
         extended2(),
         extended3(),

@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > Extended5Kt</title>
+  <title>composeApp Coverage Report > VecImpl</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.icon</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.math</a>
 </div>
 
-<h1>Coverage Summary for Class: Extended5Kt (com.payam1991gr.kmp.playground.data.icon)</h1>
+<h1>Coverage Summary for Class: VecImpl (com.payam1991gr.kmp.playground.data.math)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -49,7 +49,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">Extended5Kt</td>
+  <td class="name">VecImpl</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -63,16 +63,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (1/1)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (84/84)
+    (6/6)
   </span>
 </td>
 <td class="coverageStat">
@@ -80,7 +71,23 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (829/829)
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (65/65)
   </span>
 </td>
 </tr>
@@ -92,101 +99,31 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.icon
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.math
 &nbsp;
-&nbsp;import androidx.compose.material.icons.automirrored.filled.*
-&nbsp;import androidx.compose.material.icons.filled.*
-&nbsp;import com.payam1991gr.kmp.playground.data.model.IconData
-&nbsp;import kotlinx.collections.immutable.persistentListOf
-&nbsp;import androidx.compose.material.icons.Icons.AutoMirrored.Filled as AutoMirroredIcon
-&nbsp;import androidx.compose.material.icons.Icons.Default as Icon
+<b class="fc">&nbsp;class VecImpl(vararg x: Float) : Vec() {</b>
+<b class="fc">&nbsp;    private var data = mutableListOf&lt;Float&gt;()</b>
 &nbsp;
-&nbsp;@Suppress(&quot;SpellCheckingInspection&quot;)
-<b class="fc">&nbsp;fun extended5() = persistentListOf(</b>
-<b class="fc">&nbsp;    IconData(&quot;VoiceOverOff&quot;, Icon.VoiceOverOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;Volcano&quot;, Icon.Volcano),</b>
-<b class="fc">&nbsp;    IconData(&quot;VolumeDown&quot;, AutoMirroredIcon.VolumeDown),</b>
-<b class="fc">&nbsp;    IconData(&quot;VolumeMute&quot;, AutoMirroredIcon.VolumeMute),</b>
-<b class="fc">&nbsp;    IconData(&quot;VolumeOff&quot;, AutoMirroredIcon.VolumeOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;VolumeUp&quot;, AutoMirroredIcon.VolumeUp),</b>
-<b class="fc">&nbsp;    IconData(&quot;VolunteerActivism&quot;, Icon.VolunteerActivism),</b>
-<b class="fc">&nbsp;    IconData(&quot;VpnKey&quot;, Icon.VpnKey),</b>
-<b class="fc">&nbsp;    IconData(&quot;VpnKeyOff&quot;, Icon.VpnKeyOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;VpnLock&quot;, Icon.VpnLock),</b>
-<b class="fc">&nbsp;    IconData(&quot;Vrpano&quot;, Icon.Vrpano),</b>
-<b class="fc">&nbsp;    IconData(&quot;Wallet&quot;, Icon.Wallet),</b>
-<b class="fc">&nbsp;    IconData(&quot;Wallpaper&quot;, Icon.Wallpaper),</b>
-<b class="fc">&nbsp;    IconData(&quot;Warehouse&quot;, Icon.Warehouse),</b>
-<b class="fc">&nbsp;    IconData(&quot;WarningAmber&quot;, Icon.WarningAmber),</b>
-<b class="fc">&nbsp;    IconData(&quot;Wash&quot;, Icon.Wash),</b>
-<b class="fc">&nbsp;    IconData(&quot;Watch&quot;, Icon.Watch),</b>
-<b class="fc">&nbsp;    IconData(&quot;WatchLater&quot;, Icon.WatchLater),</b>
-<b class="fc">&nbsp;    IconData(&quot;WatchOff&quot;, Icon.WatchOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;WaterDamage&quot;, Icon.WaterDamage),</b>
-<b class="fc">&nbsp;    IconData(&quot;WaterDrop&quot;, Icon.WaterDrop),</b>
-<b class="fc">&nbsp;    IconData(&quot;WaterfallChart&quot;, Icon.WaterfallChart),</b>
-<b class="fc">&nbsp;    IconData(&quot;Water&quot;, Icon.Water),</b>
-<b class="fc">&nbsp;    IconData(&quot;Waves&quot;, Icon.Waves),</b>
-<b class="fc">&nbsp;    IconData(&quot;WavingHand&quot;, Icon.WavingHand),</b>
-<b class="fc">&nbsp;    IconData(&quot;WbAuto&quot;, Icon.WbAuto),</b>
-<b class="fc">&nbsp;    IconData(&quot;WbCloudy&quot;, Icon.WbCloudy),</b>
-<b class="fc">&nbsp;    IconData(&quot;WbIncandescent&quot;, Icon.WbIncandescent),</b>
-<b class="fc">&nbsp;    IconData(&quot;WbIridescent&quot;, Icon.WbIridescent),</b>
-<b class="fc">&nbsp;    IconData(&quot;WbShade&quot;, Icon.WbShade),</b>
-<b class="fc">&nbsp;    IconData(&quot;WbSunny&quot;, Icon.WbSunny),</b>
-<b class="fc">&nbsp;    IconData(&quot;WbTwilight&quot;, Icon.WbTwilight),</b>
-<b class="fc">&nbsp;    IconData(&quot;Wc&quot;, Icon.Wc),</b>
-<b class="fc">&nbsp;    IconData(&quot;WebAsset&quot;, Icon.WebAsset),</b>
-<b class="fc">&nbsp;    IconData(&quot;WebAssetOff&quot;, Icon.WebAssetOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;Webhook&quot;, Icon.Webhook),</b>
-<b class="fc">&nbsp;    IconData(&quot;Web&quot;, Icon.Web),</b>
-<b class="fc">&nbsp;    IconData(&quot;WebStories&quot;, Icon.WebStories),</b>
-<b class="fc">&nbsp;    IconData(&quot;Weekend&quot;, Icon.Weekend),</b>
-<b class="fc">&nbsp;    IconData(&quot;West&quot;, Icon.West),</b>
-<b class="fc">&nbsp;    IconData(&quot;Whatsapp&quot;, Icon.Whatsapp),</b>
-<b class="fc">&nbsp;    IconData(&quot;Whatshot&quot;, Icon.Whatshot),</b>
-<b class="fc">&nbsp;    IconData(&quot;WheelchairPickup&quot;, Icon.WheelchairPickup),</b>
-<b class="fc">&nbsp;    IconData(&quot;WhereToVote&quot;, Icon.WhereToVote),</b>
-<b class="fc">&nbsp;    IconData(&quot;Widgets&quot;, Icon.Widgets),</b>
-<b class="fc">&nbsp;    IconData(&quot;WidthFull&quot;, Icon.WidthFull),</b>
-<b class="fc">&nbsp;    IconData(&quot;WidthNormal&quot;, Icon.WidthNormal),</b>
-<b class="fc">&nbsp;    IconData(&quot;WidthWide&quot;, Icon.WidthWide),</b>
-<b class="fc">&nbsp;    IconData(&quot;Wifi1Bar&quot;, Icon.Wifi1Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;Wifi2Bar&quot;, Icon.Wifi2Bar),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiCalling3&quot;, Icon.WifiCalling3),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiCalling&quot;, Icon.WifiCalling),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiChannel&quot;, Icon.WifiChannel),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiFind&quot;, Icon.WifiFind),</b>
-<b class="fc">&nbsp;    IconData(&quot;Wifi&quot;, Icon.Wifi),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiLock&quot;, Icon.WifiLock),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiOff&quot;, Icon.WifiOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiPassword&quot;, Icon.WifiPassword),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiProtectedSetup&quot;, Icon.WifiProtectedSetup),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiTetheringError&quot;, Icon.WifiTetheringError),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiTetheringErrorRounded&quot;, Icon.WifiTetheringErrorRounded),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiTethering&quot;, Icon.WifiTethering),</b>
-<b class="fc">&nbsp;    IconData(&quot;WifiTetheringOff&quot;, Icon.WifiTetheringOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;Window&quot;, Icon.Window),</b>
-<b class="fc">&nbsp;    IconData(&quot;WindPower&quot;, Icon.WindPower),</b>
-<b class="fc">&nbsp;    IconData(&quot;WineBar&quot;, Icon.WineBar),</b>
-<b class="fc">&nbsp;    IconData(&quot;Woman2&quot;, Icon.Woman2),</b>
-<b class="fc">&nbsp;    IconData(&quot;Woman&quot;, Icon.Woman),</b>
-<b class="fc">&nbsp;    IconData(&quot;WorkHistory&quot;, Icon.WorkHistory),</b>
-<b class="fc">&nbsp;    IconData(&quot;Work&quot;, Icon.Work),</b>
-<b class="fc">&nbsp;    IconData(&quot;WorkOff&quot;, Icon.WorkOff),</b>
-<b class="fc">&nbsp;    IconData(&quot;WorkOutline&quot;, Icon.WorkOutline),</b>
-<b class="fc">&nbsp;    IconData(&quot;WorkspacePremium&quot;, Icon.WorkspacePremium),</b>
-<b class="fc">&nbsp;    IconData(&quot;Workspaces&quot;, Icon.Workspaces),</b>
-<b class="fc">&nbsp;    IconData(&quot;WrapText&quot;, AutoMirroredIcon.WrapText),</b>
-<b class="fc">&nbsp;    IconData(&quot;WrongLocation&quot;, Icon.WrongLocation),</b>
-<b class="fc">&nbsp;    IconData(&quot;Wysiwyg&quot;, AutoMirroredIcon.Wysiwyg),</b>
-<b class="fc">&nbsp;    IconData(&quot;Yard&quot;, Icon.Yard),</b>
-<b class="fc">&nbsp;    IconData(&quot;YoutubeSearchedFor&quot;, Icon.YoutubeSearchedFor),</b>
-<b class="fc">&nbsp;    IconData(&quot;ZoomIn&quot;, Icon.ZoomIn),</b>
-<b class="fc">&nbsp;    IconData(&quot;ZoomInMap&quot;, Icon.ZoomInMap),</b>
-<b class="fc">&nbsp;    IconData(&quot;ZoomOut&quot;, Icon.ZoomOut),</b>
-<b class="fc">&nbsp;    IconData(&quot;ZoomOutMap&quot;, Icon.ZoomOutMap),</b>
-&nbsp;)
+<b class="fc">&nbsp;    init {</b>
+<b class="fc">&nbsp;        data.addAll(x.toTypedArray())</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+<b class="fc">&nbsp;    override operator fun get(index: Int): Float = data[index]</b>
+<b class="fc">&nbsp;    override fun toString(): String = data.joinToString(&quot;, &quot;, prefix = &quot;[&quot;, postfix = &quot;]&quot;)</b>
+<b class="fc">&nbsp;    override fun size(): Int = data.size</b>
+&nbsp;    override fun equals(other: Any?): Boolean {
+<b class="fc">&nbsp;        if (this === other) return true</b>
+<b class="fc">&nbsp;        if (other == null || this::class != other::class) return false</b>
+&nbsp;
+<b class="fc">&nbsp;        other as VecImpl</b>
+&nbsp;
+<b class="fc">&nbsp;        return data == other.data</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    override fun hashCode(): Int {
+<b class="fc">&nbsp;        return data.hashCode()</b>
+&nbsp;    }
+&nbsp;}
 </code>
 </pre>
 </div>
@@ -210,7 +147,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-03-11 16:51</div>
+    <div style="float:right;">generated on 2025-04-03 21:05</div>
 </div>
 </body>
 </html>

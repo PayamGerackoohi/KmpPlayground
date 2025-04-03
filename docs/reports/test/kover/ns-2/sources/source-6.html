@@ -63,7 +63,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (3/3)
+    (4/4)
   </span>
 </td>
     <td class="coverageStat"/>
@@ -72,7 +72,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (58/58)
+    (59/59)
   </span>
 </td>
 <td class="coverageStat">
@@ -80,7 +80,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (519/519)
+    (521/521)
   </span>
 </td>
 </tr>
@@ -155,7 +155,9 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 <b class="fc">&nbsp;        IconData(&quot;Warning&quot;, Icon.Warning),</b>
 &nbsp;    )
 &nbsp;
-<b class="fc">&nbsp;    override suspend fun extended() = listOf(</b>
+<b class="fc">&nbsp;    override suspend fun extended() = syncExtended()</b>
+&nbsp;
+<b class="fc">&nbsp;     fun syncExtended() = listOf(</b>
 <b class="fc">&nbsp;        extended1(),</b>
 <b class="fc">&nbsp;        extended2(),</b>
 <b class="fc">&nbsp;        extended3(),</b>
@@ -186,7 +188,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-03-11 16:51</div>
+    <div style="float:right;">generated on 2025-04-03 21:04</div>
 </div>
 </body>
 </html>

@@ -122,6 +122,13 @@
     <string name="miscellaneous_date_time_analog_clock">Analoguhr</string>
     <string name="miscellaneous_date_time_time_zone_data">Zeitzonendaten</string>
 
+    <!-- Miscellaneous.C++ -->
+    <string name="miscellaneous_cpp_description">Ein einfacher C++-Code zum Berechnen von Primfaktoren vorzeichenloser 64-Bit-Ganzzahlen (≤ 18.446.744.073.709.551.615)</string>
+    <string name="miscellaneous_cpp_calculating">Berechnung…</string>
+    <string name="miscellaneous_cpp_Calculate">Berechnen</string>
+    <string name="miscellaneous_cpp_number">Nummer</string>
+    <string name="miscellaneous_cpp_random_calculations">Zufallsberechnungen</string>
+
     <!-- Toolbar -->
     <string name="toolbar_back">Zurück</string>
     <string name="toolbar_code">Code</string>

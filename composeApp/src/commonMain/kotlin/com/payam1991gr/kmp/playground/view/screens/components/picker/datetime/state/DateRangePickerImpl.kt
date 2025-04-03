@@ -3,7 +3,7 @@ package com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.s
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
-import com.payam1991gr.kmp.playground.data.box
+import com.payam1991gr.kmp.playground.data.string.box
 import com.payam1991gr.kmp.playground.data.time.DateImpl
 import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePickerScreen.State.DateRangePicker
 

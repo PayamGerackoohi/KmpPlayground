@@ -135,6 +135,14 @@ fun CodeEditor.appendTextFieldInput() {
 }
 
 fun CodeEditor.appendAnalogClock() {
+    line { `typealias`; normal { " Offsets = Pair<Offset, Offset>" } }
+    line()
+    line { orange { "data class" }; normal { " DateTimeData(" } }
+    line(1) { `val`; purple { " date" }; normal { ": LocalDate," } }
+    line(1) { `val`; purple { " time" }; normal { ": LocalTime," } }
+    line(1) { `val`; purple { " zone" }; normal { ": TimeZoneData," } }
+    line { normal { ")" } }
+    line()
     appendComposable()
     line { `fun`; blue { " AnalogClock" }; normal { "(" } }
     line(1) { normal { "date: LocalDate," } }
@@ -195,8 +203,9 @@ fun CodeEditor.appendObject_AnalogClock() {
     line(5) { normal { "drawCircle(colors." }; purple { "background" }; normal { ")" } }
     line(5) { blue { "drawTicks" }; normal { "(state, colors, strokes)" } }
     line(4) { normal { "}" } }
-    line(3) { normal { "}) {" } }
-    line(3) { blue { "Numbers" }; normal { "(colors)" } }
+    line(3) { normal { "}" } }
+    line(2) { normal { ") {" } }
+    line(3) { blue { "Numbers" }; normal { "(colors." }; purple { "foreground" }; normal { ")" } }
     line(2) { normal { "}" } }
     line(1) { normal { "}" } }
     line()
@@ -290,28 +299,28 @@ fun CodeEditor.appendObject_AnalogClock() {
     line()
 
     appendComposable(2)
-    line(2) { `fun`; normal { " BoxScope." }; blue { "Numbers" }; normal { "(colors: Colors) = repeat(" }; cyan { "12" }; normal { ") {" } }
-    line(3) { purple { "numberPositions" }; normal { "[it]." }; blue { "let" }; normal { " { position ->" } }
-    line(4) { normal { "Text(" } }
-    line(5) { normal { "(it + " }; cyan { "1" }; normal { ").toString()," } }
-    line(5) { cyan { "color =" }; normal { " colors." }; purple { "foreground" }; normal { "," } }
-    line(5) { cyan { "modifier =" }; normal { " Modifier." }; blue { "align" }; normal { "(BiasAlignment(position[" }; cyan { "0" }; normal { "], position[" }; cyan { "1" }; normal { "]))" } }
-    line(4) { normal { ")" } }
-    line(3) { normal { "}" } }
+    line(2) { `fun`; normal { " BoxScope." }; blue { "Numbers" }; normal { "(color: Color) = " }; purple { "numberPositions" }; normal { "." }; blue { "forEachIndexed" }; normal { " { index, position ->" } }
+    line(3) { normal { "Text(" } }
+    line(4) { normal { "(index + " }; cyan { "1" }; normal { ").toString()," } }
+    line(4) { cyan { "color =" }; normal { " color," } }
+    line(4) { cyan { "modifier =" }; normal { " Modifier." }; blue { "align" }; normal { "(BiasAlignment(position[" }; cyan { "0" }; normal { "], position[" }; cyan { "1" }; normal { "]))" } }
+    line(3) { normal { ")" } }
     line(2) { normal { "}" } }
     line()
-    line(2) { `fun`; normal { " DrawScope." }; blue { "drawTicks" }; normal { "(state: State, colors: Colors, strokes: Strokes) {" } }
-    line(3) { purple { "tickPositions" }; normal { "." }; blue { "forEachIndexed" }; normal { " { index, (p1, p2) ->" } }
-    line(4) { `val`; normal { " (start, end) = state." }; blue { "run" }; normal { " { " }; blue { "tick" }; normal { "(p1, p2) }" } }
-    line(4) { `val`; normal { " isMajor = index % " }; cyan { "5" }; normal { " == " }; cyan { "0" } }
-    line(4) { normal { "drawLine(" } }
-    line(5) { cyan { "color =" }; normal { " colors." }; blue { "run" }; normal { " { " }; `if`; normal { " (isMajor) " }; purple { "foreground " }; `else`; purple { " lightForeground" }; normal { " }," } }
-    line(5) { cyan { "start =" }; normal { " start," } }
-    line(5) { cyan { "end =" }; normal { " end," } }
-    line(5) { cyan { "strokeWidth =" }; normal { " strokes." }; blue { "run" }; normal { " { " }; `if`; normal { " (isMajor) " }; purple { "thin " }; `else`; purple { " default" }; normal { " }," } }
-    line(5) { cyan { "cap = " }; `if`; normal { " (isMajor) StrokeCap." }; purple { "Round " }; `else`; normal { " Stroke." }; purple { "DefaultCap" }; normal { "," } }
-    line(4) { normal { ")" } }
-    line(3) { normal { "}" } }
+    line(2) { `fun`; normal { " DrawScope." }; blue { "drawTicks" }; normal { "(" } }
+    line(3) { normal { "state: State," } }
+    line(3) { normal { "colors: Colors," } }
+    line(3) { normal { "strokes: Strokes," } }
+    line(2) { normal { ") = " }; purple { "tickPositions" }; normal { "." }; blue { "forEachIndexed" }; normal { " { index, (p1, p2) ->" } }
+    line(3) { `val`; normal { " (start, end) = state." }; blue { "run" }; normal { " { " }; blue { "tick" }; normal { "(p1, p2) }" } }
+    line(3) { `val`; normal { " isMajor = index % " }; cyan { "5" }; normal { " == " }; cyan { "0" } }
+    line(3) { normal { "drawLine(" } }
+    line(4) { cyan { "color =" }; normal { " colors." }; blue { "run" }; normal { " { " }; `if`; normal { " (isMajor) " }; purple { "foreground " }; `else`; purple { " lightForeground" }; normal { " }," } }
+    line(4) { cyan { "start =" }; normal { " start," } }
+    line(4) { cyan { "end =" }; normal { " end," } }
+    line(4) { cyan { "strokeWidth =" }; normal { " strokes." }; blue { "run" }; normal { " { " }; `if`; normal { " (isMajor) " }; purple { "thin " }; `else`; purple { " default" }; normal { " }," } }
+    line(4) { cyan { "cap = " }; `if`; normal { " (isMajor) StrokeCap." }; purple { "Round " }; `else`; normal { " Stroke." }; purple { "DefaultCap" }; normal { "," } }
+    line(3) { normal { ")" } }
     line(2) { normal { "}" } }
     line(1) { normal { "}" } }
     line()
@@ -364,7 +373,6 @@ fun CodeEditor.appendObject_AnalogClock() {
 
 fun CodeEditor.appendRememberAnalogClockState() {
     line { orange { "private const val" }; purple { " A" }; normal { " = (" }; cyan { "2" }; normal { " * " }; purple { "PI" }; normal { ").toFloat()" } }
-    line()
     line { orange { "private const val" }; purple { " B" }; normal { " = (-" }; purple { "PI" }; normal { " / " }; cyan { "2" }; normal { ").toFloat()" } }
     line()
     appendComposable()
@@ -372,7 +380,7 @@ fun CodeEditor.appendRememberAnalogClockState() {
     line(1) { `val`; normal { " (initialSecond, minute, hour) = remember(time) {" } }
     line(2) { `val`; normal { " secondRatio = time." }; purple { "second" }; normal { " / " }; cyan { "60f" } }
     line(2) { `val`; normal { " minuteRatio = (time." }; purple { "minute" }; normal { " + secondRatio) / " }; cyan { "60f" } }
-    line(2) { `val`; normal { " hourRatio = (time." }; purple { "hour" }; normal { " + minuteRatio) / " }; cyan { "12f" } }
+    line(2) { `val`; normal { " hourRatio = (time." }; purple { "hour" }; normal { " + minuteRatio) / " }; cyan { "12f" }; gray { " // PM hours simply add 360° to AM angle" } }
     line(2) { normal { "listOf(secondRatio, minuteRatio, hourRatio)." }; blue { "map" }; normal { " { it * " }; purple { "A" }; normal { " + " }; purple { "B" }; normal { " }" } }
     line(1) { normal { "}" } }
     line(1) { `val`; normal { " second " }; `by`; normal { " rememberInfiniteTransition()." }; blue { "animateFloat" }; normal { "(" } }

@@ -1,7 +1,7 @@
 package com.payam1991gr.kmp.playground.view.module
 
 import androidx.compose.ui.test.performClick
-import com.payam1991gr.kmp.playground.data.isDecimal
+import com.payam1991gr.kmp.playground.data.string.isDecimal
 import com.payam1991gr.kmp.playground.data.model.textfield.IntConverter
 import com.payam1991gr.kmp.playground.view.module.robot.textFieldInputRobot
 import com.payam1991gr.kmp.playground.view.test.util.BaseTest
@@ -23,7 +23,7 @@ class TextFieldInputTest : BaseTest() {
                 initialData = 123,
                 converter = IntConverter(),
                 onTextChanged = { text -> text.filter { it.isDecimal() } },
-                onSave = onSave,
+                onConfirm = onSave,
             )
         }
         textFieldInputRobot(rule) {
@@ -31,14 +31,14 @@ class TextFieldInputTest : BaseTest() {
             input {
                 noError()
                 hasText("123")
-                saveButton(isEnabled = false)
+                confirmButton(isEnabled = false)
                 putText("12")
-                saveButton { performClick() }
+                confirmButton { performClick() }
                 verify { onSave(12) }
 
                 putText("a")
                 hasError()
-                saveButton(isEnabled = false)
+                confirmButton(isEnabled = false)
             }
         }
         confirmVerified()

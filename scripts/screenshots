@@ -1,3 +1,0 @@
-set -e
-./scripts/screenshots-take
-./scripts/screenshots-compress

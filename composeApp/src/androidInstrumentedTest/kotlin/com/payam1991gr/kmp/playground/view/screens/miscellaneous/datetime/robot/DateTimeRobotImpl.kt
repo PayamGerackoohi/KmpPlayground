@@ -40,7 +40,7 @@ class DateTimeRobotImpl(private val rule: ComposeContentTestRule) : DateTimeRobo
         snippet("fun TimeZone.offsetStringAt(instant: Instant) = offsetAt(instant).string()")
         snippet("infix fun TimeZone.label(label: String) = LabeledTimeZone(this, label)")
         snippet("fun UtcOffset.string() = if (this == UtcOffset.ZERO) \"+0 HRS\" else toString()")
-        snippet("fun UtcOffset.asLabeledTimeZone() = asTimeZone().run { LabeledTimeZone(this, id) }")
+        snippet("fun UtcOffset.asLabeledTimeZone() = asTimeZone().run {")
     }
 
     inner class CardScopeImpl(private val tag: String, private val sni: Sni) : CardScope {

@@ -6,9 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.TransformedText
-import com.payam1991gr.kmp.playground.data.isDecimal
-import com.payam1991gr.kmp.playground.data.isDecimalArray
-import com.payam1991gr.kmp.playground.data.isFloat
+import com.payam1991gr.kmp.playground.data.string.isDecimal
+import com.payam1991gr.kmp.playground.data.string.isDecimalArray
+import com.payam1991gr.kmp.playground.data.string.isFloat
 import com.payam1991gr.kmp.playground.data.model.sample.appendConverters
 import com.payam1991gr.kmp.playground.data.model.textfield.ByteArrayConverter
 import com.payam1991gr.kmp.playground.data.model.textfield.FloatConverter
@@ -75,7 +75,7 @@ class Datastore : Ui<State> {
         initialData = byteArray,
         converter = remember { ByteArrayConverter() },
         onTextChanged = { text -> text.filter { it.isDecimalArray() } },
-        canSave = { !(hasError || value contentEquals byteArray) },
+        canConfirm = { !(hasError || value contentEquals byteArray) },
         visualTransformation = { text ->
             TransformedText(AnnotatedString("[$text]"), object : OffsetMapping {
                 override fun originalToTransformed(offset: Int): Int = offset + 1
