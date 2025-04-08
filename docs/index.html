@@ -6,6 +6,18 @@
   <title>KMP Playground</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root {
+      --primary: #3e8e41;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .toolbar {
+      display: flex;
+    }
+
     .check {
       list-style: none;
     }
@@ -27,138 +39,357 @@
     }
 
     .last-edit-box {
-      position: absolute;
-      top: 1em;
-      right: 1em;
       font-size: 60%;
       color: deepskyblue;
-      text-align: right;
+      margin: 1em;
     }
 
     .last-edit-box>* {
       margin: 0;
     }
 
-    .small {
-      font-size: 70%;
+    .dropbtn {
+      background-color: transparent;
+      padding: .75em 1.5em;
+      font-size: 1em;
+      border: none;
+      transition: .3s;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: .5em 1em;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .header-container {
+      background-color: var(--primary);
+    }
+
+    .header-container>.header {
+      width: 60%;
+      padding: 2em 0 5em 0;
+      justify-self: center;
+      justify-items: center;
+      color: white;
+    }
+
+    .header-container>.header>* {
+      text-align: justify;
+    }
+
+    .platforms {
+      width: 80%;
+      justify-self: center;
+      display: flex;
+      position: relative;
+      justify-content: space-evenly;
+      top: -3em;
+    }
+
+    .platforms>.platform {
+      min-width: 25%;
+      background-color: var(--primary);
+      border-radius: 1em;
+      color: white;
+      box-shadow: 4px -4px 16px 0px rgba(0, 0, 0, 0.3);
+      margin-bottom: -2em;
+    }
+
+    .platforms>.platform>.title {
+      background-color: red;
+      margin: 0;
+      border-top-left-radius: 1em;
+      border-top-right-radius: 1em;
+      text-align: center;
+      padding: .5em;
+    }
+
+    .platforms>.platform>.content {
+      margin: .5em 1em;
+    }
+
+    .platforms>.platform>.content>*+* {
+      margin-top: .5em;
+    }
+
+    .platforms>.platform>.content .sub-title {
+      font-size: smaller;
+      color: lightgray;
+    }
+
+    .platforms>.platform>.download {
+      display: block;
+      padding: .5em 1em;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      background-color: navy;
+      color: white;
+      text-decoration: auto;
+      text-align: center;
+    }
+
+    .pack>* {
+      margin: 0;
+    }
+
+    .title-divider {
+      width: 3em;
+      height: .1em;
+      background-color: cadetblue;
+    }
+
+    .center {
+      justify-items: center;
+    }
+
+    .sector,
+    .sector2 {
+      width: 80%;
+      justify-self: center;
+      justify-items: center;
+      margin-top: 2em;
+    }
+
+    .screens {
+      display: flex;
+    }
+
+    .screens>* {
+      margin: 0;
+    }
+
+    .screens>ul {
+      padding-left: 1em;
+    }
+
+    .screens>hr {
+      margin-inline: 1em;
+    }
+
+    @media screen and (max-width: 700px) {
+      .platforms {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .screens {
+        display: block;
+      }
+
+      .screens>hr {
+        display: none;
+      }
+
+      .sector2 {
+        width: 100%;
+        justify-self: unset;
+        justify-items: unset;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="toolbar">
+    <div class="dropdown">
+      <button class="dropbtn">Tests</button>
+      <div class="dropdown-content">
+        <a href="reports/test/unit/index.html" target="_blank">Unit Tests</a>
+        <a href="reports/test/ui/index.html" target="_blank">UI Tests</a>
+        <a href="reports/test/kover/index.html" target="_blank">Coverage</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Translations</button>
+      <div class="dropdown-content">
+        <a href="resources/values/strings.xml" target="_blank">English</a>
+        <a href="resources/values-de/strings.xml" target="_blank">German</a>
+        <a href="resources/values-iw/strings.xml" target="_blank">Hebrew</a>
+      </div>
+    </div>
+  </div>
+  <div class="header-container">
+    <div class="header">
+      <h1>KMP Playground</h1>
+      <p>A sample Kotlin Multi-Platform project to demonstrate different app features, targeted on Android, iOS and
+        Desktop.
+    </div>
+  </div>
+  <div class="platforms">
+    <div class="platform">
+      <p class="title">Android</p>
+      <div class="content">
+        <div class="pack">
+          <p class="sub-title">Version</p>
+          <p>1.0.0-250403-1816</p>
+        </div>
+        <div class="pack">
+          <p class="sub-title">Size</p>
+          <p>6.3 MB</p>
+        </div>
+        <div class="pack">
+          <p class="sub-title">Type</p>
+          <p>apk</p>
+        </div>
+      </div>
+      <a class="download" href="output/android/KMP-Playground-1.0.0-250403-1816.apk" target="_blank">Download</a>
+    </div>
+    <div class="platform">
+      <p class="title">MacOS</p>
+      <div class="content">
+        <div class="pack">
+          <p class="sub-title">Version</p>
+          <p>1.0.0-250403-1816</p>
+        </div>
+        <div class="pack">
+          <p class="sub-title">Size</p>
+          <p>58.5 MB</p>
+        </div>
+        <div class="pack">
+          <p class="sub-title">Type</p>
+          <p>dmg</p>
+        </div>
+      </div>
+      <a class="download" href="https://drive.google.com/file/d/1GEdW1zik4lYKMSbL1Oqex0Icnljgh_aa/view?usp=sharing"
+        target="_blank">Download</a>
+    </div>
+    <div class="platform">
+      <p class="title">Other Plaforms</p>
+      <div class="content">
+        <p>iOS</p>
+        <p>Linux</p>
+        <p>Windows</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sector">
+    <div class="pack center">
+      <h2>Screens</h2>
+      <div class="title-divider"></div>
+    </div>
+    <p>The list of all the implented and planned screens. In order to see the automatic screenshots of them <a
+        href="screenshots/screenshots.html" target="_blank">visit here</a>.
+    </p>
+    <div class="screens">
+      <ul>
+        <li class="check">Home</li>
+        <li class="check">Components (13)<sup>*</sup></li>
+        <ul>
+          <li class="check">Carousel (2)</li>
+          <li class="check">Dialog (3)</li>
+          <li class="check">Date/Time Picker (4)</li>
+          <li class="check">Pull to Refresh (4)</li>
+        </ul>
+        <li class="check">Animations (28)</li>
+        <ul>
+          <li class="check">animate*As (6)</li>
+          <li class="check">Animated Content (5)</li>
+          <li class="check">Animated Visibility (16)</li>
+          <li class="check">Crossfade (1)</li>
+        </ul>
+      </ul>
+      <hr>
+      <ul>
+        <li class="uncheck">Graphics</li>
+        <ul>
+          <li class="check">Color Scheme</li>
+          <li class="check">Icons</li>
+          <li class="uncheck">OpenGL</li>
+          <li class="uncheck">Charts</li>
+        </ul>
+        <li class="uncheck">I/O</li>
+        <ul>
+          <li class="check">Datastore</li>
+          <li class="uncheck">API</li>
+          <li class="uncheck">Database</li>
+          <li class="uncheck">File</li>
+        </ul>
+      </ul>
+      <hr>
+      <ul>
+        <li class="uncheck">Miscellaneous</li>
+        <ul>
+          <li class="check">Date/Time</li>
+          <li class="check">C++
+            <ul>
+              <li class="check">Android</li>
+              <li class="check">iOS</li>
+              <li class="check">macOS x86_64</li>
+              <li class="uncheck">macOS aarch64</li>
+              <li class="uncheck">Linux</li>
+              <li class="uncheck">Windows</li>
+            </ul>
+          </li>
+          <li class="uncheck">Rust</li>
+          <li class="uncheck">PDF</li>
+          <li class="uncheck">BLE</li>
+        </ul>
+      </ul>
+    </div>
+    <sub>* indicates the number of samples</sub>
+  </div>
+
+  <div class="sector2">
+    <div class="pack center">
+      <h2>Known Issues</h2>
+      <div class="title-divider"></div>
+    </div>
+    <ul>
+      <li>Kover False-Negative
+        <ul>
+          <li>Kotlin: ?:
+            <p>#com.payam1991gr.kmp.playground.data.StringUtilKt { java.lang.String box(java.lang.Object); }</p>
+          </li>
+          <li>Compose: by, remember
+            <p>#com.payam1991gr.kmp.playground.data.time.DateImpl</p>
+          </li>
+          <li>Circuit: event
+            <p>#com.payam1991gr.kmp.playground.presenter.screens.animations.AnimationsPresenter</p>
+          </li>
+        </ul>
+      </li>
+      <li>Desktop</li>
+      <ul>
+        <li>Components::PullToRefresh: gestures are not involved</li>
+        <li>Too big output file (>50MB for obfuscated optimized release)</li>
+        <li>AnnotatedString::SpanStyle::baselineShift calculates the height wrongly</li>
+      </ul>
+    </ul>
+  </div>
+  <hr>
   <div class="last-edit-box">
     <h2>Last Edit</h2>
     <h3>2025-04-03T18:44Z</h3>
   </div>
-
-  <h1>KMP Playground</h1>
-  <p>A sample Kotlin Multi-Platform project to demonstrate different app features, targeted on Android, iOS and Desktop.
-  </p>
-  <h2>Platforms</h2>
-  <ul>
-    <li>Android</li>
-    <ul>
-      <a href="output/android/KMP-Playground-1.0.0-250403-1816.apk" target="_blank">KMP-Playground-1.0.0-250403-1816.apk
-        [6.3 MB]</a>
-    </ul>
-    <li>Desktop</li>
-    <ul>
-      <li>MacOS</li>
-      <ul>
-        <a href="https://drive.google.com/file/d/1GEdW1zik4lYKMSbL1Oqex0Icnljgh_aa/view?usp=sharing"
-          target="_blank">KMP-Playground-1.0.0-250403-1816.dmg [58.5 MB]</a>
-      </ul>
-      <li>Linux</li>
-      <li>Windows</li>
-    </ul>
-    <li>iOS</li>
-  </ul>
-
-  <h2>Screens (<a class="small" href="screenshots/screenshots.html" target="_blank">Screenshots</a>)</h2>
-  <ul>
-    <li class="check">Home</li>
-    <li class="check">Components (13)<sup>*</sup></li>
-    <ul>
-      <li class="check">Carousel (2)</li>
-      <li class="check">Dialog (3)</li>
-      <li class="check">Date/Time Picker (4)</li>
-      <li class="check">Pull to Refresh (4)</li>
-    </ul>
-    <li class="check">Animations (28)</li>
-    <ul>
-      <li class="check">animate*As (6)</li>
-      <li class="check">Animated Content (5)</li>
-      <li class="check">Animated Visibility (16)</li>
-      <li class="check">Crossfade (1)</li>
-    </ul>
-    <li class="uncheck">Graphics</li>
-    <ul>
-      <li class="check">Color Scheme</li>
-      <li class="check">Icons</li>
-      <li class="uncheck">OpenGL</li>
-      <li class="uncheck">Charts</li>
-    </ul>
-    <li class="uncheck">I/O</li>
-    <ul>
-      <li class="check">Datastore</li>
-      <li class="uncheck">API</li>
-      <li class="uncheck">Database</li>
-      <li class="uncheck">File</li>
-    </ul>
-    <li class="uncheck">Miscellaneous</li>
-    <ul>
-      <li class="check">Date/Time</li>
-      <li class="check">C++
-        <ul>
-          <li class="check">Android</li>
-          <li class="check">iOS</li>
-          <li class="check">macOS x86_64</li>
-          <li class="uncheck">macOS aarch64</li>
-          <li class="uncheck">Linux</li>
-          <li class="uncheck">Windows</li>
-        </ul>
-      </li>
-      <li class="uncheck">Rust</li>
-      <li class="uncheck">PDF</li>
-      <li class="uncheck">BLE</li>
-    </ul>
-  </ul>
-  <sub>* indicates the number of samples</sub>
-
-  <h2>Tests</h2>
-  <ul>
-    <li><a href="reports/test/unit/index.html" target="_blank">Unit Tests</a></li>
-    <li><a href="reports/test/ui/index.html" target="_blank">UI Tests</a></li>
-    <li><a href="reports/test/kover/index.html" target="_blank">Coverage</a></li>
-  </ul>
-
-  <h2>Translations</h2>
-  <ul>
-    <li><a href="resources/values/strings.xml" target="_blank">English</a></li>
-    <li><a href="resources/values-de/strings.xml" target="_blank">German</a></li>
-    <li><a href="resources/values-iw/strings.xml" target="_blank">Hebrew</a></li>
-  </ul>
-
-  <h2>Known Issues</h2>
-  <ul>
-    <li>Kover False-Negative
-      <ul>
-        <li>Kotlin: ?:
-          <p>#com.payam1991gr.kmp.playground.data.StringUtilKt { java.lang.String box(java.lang.Object); }</p>
-        </li>
-        <li>Compose: by, remember
-          <p>#com.payam1991gr.kmp.playground.data.time.DateImpl</p>
-        </li>
-        <li>Circuit: event
-          <p>#com.payam1991gr.kmp.playground.presenter.screens.animations.AnimationsPresenter</p>
-        </li>
-      </ul>
-    </li>
-    <li>Desktop</li>
-    <ul>
-      <li>Components::PullToRefresh: gestures are not involved</li>
-      <li>Too big output file (>50MB for obfuscated optimized release)</li>
-      <li>AnnotatedString::SpanStyle::baselineShift calculates the height wrongly</li>
-    </ul>
-  </ul>
 </body>

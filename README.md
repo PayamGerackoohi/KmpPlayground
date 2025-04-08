@@ -1,6 +1,6 @@
 # [KMP Playground](https://payamgerackoohi.github.io/KmpPlayground/)
 
-A sample Kotlin Multi-platform project to demonstrate different app features, targeted on Android, iOS and Desktop.
+A sample Kotlin Multiplatform project to demonstrate different app features, targeted on Android, iOS and Desktop.
 
 ## [Screens](http://localhost:63342/KmpPlayground/docs/screenshots/screenshots.html)
 
@@ -62,6 +62,14 @@ A sample Kotlin Multi-platform project to demonstrate different app features, ta
 <img alt='Date-Time' src='docs/screenshots/compressed/5.Miscellaneous_3.DateTime_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
 <img alt='C++' src='docs/screenshots/compressed/5.Miscellaneous_2.C++_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
 
+### Modules
+- [x] Clock
+- [x] Editor
+- [x] Math Factors
+- [x] Random Image
+
+<img alt='Date-Time' src='docs/screenshots/compressed/6.Modules_0.RandomImage-English-Light-Landscape-Desktop.webp' width='99%'/>
+
 ## Languages
 - [English](docs/resources/values/strings.xml)
 - [German](docs/resources/values-de/strings.xml)
@@ -96,9 +104,9 @@ gradle packageReleaseDmg
 
 ### C++
 #### Android
-The C++ code compiles during the gradle build system using `android.externalNativeBuild` tool.
+The C++ code compiles during the gradle build process using `android.externalNativeBuild` tool.
 
-#### MacOs
+#### MacOS
 ```shell
 ./scripts/cmake-build-macos.sh
 ```
