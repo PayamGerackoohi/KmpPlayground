@@ -41,11 +41,11 @@ class MiscellaneousTest : BaseTest() {
                         find("C++") { performClick() }
                         verify { event(Event.OnClick(MiscellaneousItem.Cpp)) }
 
-                        find("BLE") { performClick() }
-                        verify { event(Event.OnClick(MiscellaneousItem.Ble)) }
+//                        find("BLE") { performClick() }
+//                        verify { event(Event.OnClick(MiscellaneousItem.Ble)) }
 
-                        find("PDF") { performClick() }
-                        verify { event(Event.OnClick(MiscellaneousItem.Pdf)) }
+//                        find("PDF") { performClick() }
+//                        verify { event(Event.OnClick(MiscellaneousItem.Pdf)) }
                     }
                 }
             }

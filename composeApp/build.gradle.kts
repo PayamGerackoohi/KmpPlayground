@@ -87,6 +87,10 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.datastore)
             implementation(libs.datastore.preferences)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.json)
+            implementation(libs.slf4j.simple)
         }
         androidMain.dependencies {
             implementation(compose.preview)
@@ -94,6 +98,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.android)
             implementation(libs.koin.android)
             implementation("androidx.annotation:annotation-jvm") { version { strictly("1.8.2") } }
+            implementation(libs.ktor.client.okhttp)
         }
         androidUnitTest.dependencies {
             implementation(libs.test.androidx.ui.junit4)
@@ -104,6 +109,7 @@ kotlin {
             implementation(libs.test.roborazzi)
             implementation(libs.test.roborazzi.compose)
             implementation(libs.test.circuit)
+            implementation(libs.ktor.client.mock)
         }
         androidInstrumentedTest.dependencies {
             implementation(libs.test.androidx.ui.junit4)
@@ -115,11 +121,15 @@ kotlin {
             implementation(libs.test.mockk)
             implementation(libs.test.ui.automator)
         }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+        }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
             implementation(libs.androidx.lifecycle.common.jvm)
             implementation("androidx.annotation:annotation-jvm") { version { strictly("1.8.2") } }
+            implementation(libs.ktor.client.okhttp)
         }
     }
 }
@@ -214,6 +224,7 @@ AppInfo.apply {
         "${PACKAGE_NAME}.data.koin.*",
         "${PACKAGE_NAME}.data.store.*",
         "${PACKAGE_NAME}.data.Native",
+        "${PACKAGE_NAME}.data.remote.FakeApi*",
         "${PROJECT_NAME}.composeapp.generated.resources.*",
     )
 }

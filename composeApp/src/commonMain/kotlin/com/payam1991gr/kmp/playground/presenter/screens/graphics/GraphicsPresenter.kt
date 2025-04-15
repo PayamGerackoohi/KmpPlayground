@@ -19,10 +19,10 @@ class GraphicsPresenter(private val navigator: Navigator) : Presenter<State> {
         return State(items = items) {
             when (it) {
                 is State.Event.OnClick -> when (it.item) {
-                    GraphicItem.Charts -> navigator.goTo(ChartsScreen)
+//                    GraphicItem.Charts -> navigator.goTo(ChartsScreen)
                     GraphicItem.ColorScheme -> navigator.goTo(ColorSchemeScreen)
                     GraphicItem.Icons -> navigator.goTo(IconsScreen)
-                    GraphicItem.OpenGL -> navigator.goTo(OpenGlScreen)
+//                    GraphicItem.OpenGL -> navigator.goTo(OpenGlScreen)
                 }
 
                 State.Event.OnBackPressed -> navigator.pop()

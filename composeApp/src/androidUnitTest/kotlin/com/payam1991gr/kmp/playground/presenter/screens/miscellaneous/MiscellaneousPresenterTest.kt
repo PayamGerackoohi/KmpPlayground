@@ -27,11 +27,11 @@ class MiscellaneousPresenterTest {
                 event(Event.OnClick(MiscellaneousItem.Cpp))
                 assertThat(navigator.awaitNextScreen()).isEqualTo(CppScreen)
 
-                event(Event.OnClick(MiscellaneousItem.Ble))
-                assertThat(navigator.awaitNextScreen()).isEqualTo(BleScreen)
+//                event(Event.OnClick(MiscellaneousItem.Ble))
+//                assertThat(navigator.awaitNextScreen()).isEqualTo(BleScreen)
 
-                event(Event.OnClick(MiscellaneousItem.Pdf))
-                assertThat(navigator.awaitNextScreen()).isEqualTo(PdfScreen)
+//                event(Event.OnClick(MiscellaneousItem.Pdf))
+//                assertThat(navigator.awaitNextScreen()).isEqualTo(PdfScreen)
 
                 event(Event.OnBackPressed)
                 assertThat(navigator.awaitPop()).isEqualTo(FakeNavigator.PopEvent(PdfScreen))

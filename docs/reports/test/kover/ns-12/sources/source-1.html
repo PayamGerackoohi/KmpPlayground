@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > PullToRefreshPresenter</title>
+  <title>composeApp Coverage Report > DateTimePickerPresenter</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.components.pull.to.refresh</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.components.picker.datetime</a>
 </div>
 
-<h1>Coverage Summary for Class: PullToRefreshPresenter (com.payam1991gr.kmp.playground.presenter.screens.components.pull.to.refresh)</h1>
+<h1>Coverage Summary for Class: DateTimePickerPresenter (com.payam1991gr.kmp.playground.presenter.screens.components.picker.datetime)</h1>
 
 <table class="coverageStats">
 
@@ -46,42 +46,42 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">PullToRefreshPresenter</td>
+  <td class="name">DateTimePickerPresenter</td>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (4/4)
+    (6/6)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    77.8%
+    88.9%
   </span>
   <span class="absValue">
-    (7/9)
+    (8/9)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    94.7%
+    96.4%
   </span>
   <span class="absValue">
-    (18/19)
+    (27/28)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    95%
+    96.9%
   </span>
   <span class="absValue">
-    (171/180)
+    (249/257)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">PullToRefreshPresenter$WhenMappings</td>
+    <td class="name">DateTimePickerPresenter$WhenMappings</td>
     <td class="coverageStat"/>
   </tr>
 <tr>
@@ -91,31 +91,31 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (4/4)
+    (6/6)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    77.8%
+    88.9%
   </span>
   <span class="absValue">
-    (7/9)
+    (8/9)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    94.7%
+    96.4%
   </span>
   <span class="absValue">
-    (18/19)
+    (27/28)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    95%
+    96.9%
   </span>
   <span class="absValue">
-    (171/180)
+    (249/257)
   </span>
 </td>
 </tr>
@@ -126,33 +126,44 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.components.pull.to.refresh
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.components.picker.datetime
 &nbsp;
-&nbsp;import androidx.compose.material3.ExperimentalMaterial3Api
 &nbsp;import androidx.compose.runtime.Composable
-&nbsp;import androidx.compose.runtime.rememberCoroutineScope
+&nbsp;import androidx.compose.runtime.MutableState
+&nbsp;import androidx.compose.runtime.mutableStateOf
+&nbsp;import androidx.compose.runtime.remember
+&nbsp;import com.payam1991gr.kmp.playground.data.model.time.Time
 &nbsp;import com.payam1991gr.kmp.playground.view.module.SamplePage
 &nbsp;import com.payam1991gr.kmp.playground.view.module.toolbar.rememberToolbarState
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.pull.to.refresh.PullToRefreshScreen.State
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.pull.to.refresh.state.rememberPtrState
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePickerScreen.State
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePickerScreen.State.TimeState.Event as TimeStateEvent
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.state.rememberDatePickerState
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.state.rememberDateRangePickerState
 &nbsp;import com.slack.circuit.runtime.Navigator
 &nbsp;import com.slack.circuit.runtime.presenter.Presenter
-&nbsp;import kotlinx.coroutines.CoroutineScope
+&nbsp;import kotlinx.datetime.LocalDateTime
+&nbsp;import kotlinx.datetime.TimeZone
+&nbsp;import kotlinx.datetime.toInstant
 &nbsp;
-&nbsp;class PullToRefreshPresenter(
-<b class="fc">&nbsp;    private val navigator: Navigator,</b>
-<b class="fc">&nbsp;    private val scope: CoroutineScope? = null,</b>
-&nbsp;) : Presenter&lt;State&gt; {
+<b class="fc">&nbsp;class DateTimePickerPresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
+<b class="fc">&nbsp;    private val initialDate = LocalDateTime(1991, 10, 14, 0, 0)</b>
+<b class="fc">&nbsp;        .toInstant(TimeZone.UTC)</b>
+<b class="fc">&nbsp;        .toEpochMilliseconds()</b>
+&nbsp;
 &nbsp;    @Composable
 <b class="nc">&nbsp;    override fun present(): State {</b>
 <b class="fc">&nbsp;        val toolbarState = rememberToolbarState()</b>
+<b class="fc">&nbsp;        val datePickerState = rememberDatePickerState(initialDate)</b>
+<b class="fc">&nbsp;        val dateRangePicker = rememberDateRangePickerState(initialDate)</b>
+<b class="fc">&nbsp;        val timePickerTime = remember { mutableStateOf(Time()) }</b>
+<b class="fc">&nbsp;        val timeInputTime = remember { mutableStateOf(Time()) }</b>
 <b class="fc">&nbsp;        return State(</b>
 <b class="fc">&nbsp;            showCode = toolbarState.showCode,</b>
 <b class="fc">&nbsp;            toolbarActions = toolbarState.actions,</b>
-<b class="fc">&nbsp;            linearProgressIndicator = prtState(),</b>
-<b class="fc">&nbsp;            pullToRefreshBox = prtState(),</b>
-<b class="fc">&nbsp;            scaling = prtState(),</b>
-<b class="pc">&nbsp;            customBehavior = prtState(),</b>
+<b class="fc">&nbsp;            datePicker = datePickerState,</b>
+<b class="fc">&nbsp;            dateRangePicker = dateRangePicker,</b>
+<b class="fc">&nbsp;            timePicker = timePickerTime.toTimeState(),</b>
+<b class="pc">&nbsp;            timeInput = timeInputTime.toTimeState(),</b>
 <b class="fc">&nbsp;        ) {</b>
 <b class="fc">&nbsp;            when (it) {</b>
 <b class="fc">&nbsp;                is State.Event.OnToolbarAction -&gt; when (it.action) {</b>
@@ -164,11 +175,14 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 &nbsp;        }
 &nbsp;    }
 &nbsp;
-&nbsp;    @OptIn(ExperimentalMaterial3Api::class)
-&nbsp;    @Composable
-<b class="fc">&nbsp;    private fun prtState() = rememberPtrState(</b>
-<b class="pc">&nbsp;        coroutineScope = scope ?: rememberCoroutineScope(),</b>
-&nbsp;    )
+<b class="fc">&nbsp;    private fun MutableState&lt;Time&gt;.toTimeState() = State.TimeState(value) {</b>
+<b class="fc">&nbsp;        value = it.update(value)</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    private fun TimeStateEvent.update(time: Time) = when (this) {</b>
+<b class="fc">&nbsp;        is TimeStateEvent.OnHourChanged -&gt; time.copy(hour = hour)</b>
+<b class="fc">&nbsp;        is TimeStateEvent.OnMinuteChanged -&gt; time.copy(minute = minute)</b>
+&nbsp;    }
 &nbsp;}
 </code>
 </pre>
@@ -193,7 +207,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-04-03 21:05</div>
+    <div style="float:right;">generated on 2025-04-14 20:04</div>
 </div>
 </body>
 </html>

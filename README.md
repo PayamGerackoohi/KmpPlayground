@@ -31,9 +31,9 @@ A sample Kotlin Multiplatform project to demonstrate different app features, tar
 - [ ] Charts
 - [ ] OpenGL
 
-<img alt='Icons' src='docs/screenshots/compressed/3.Graphics_3.Icons_0.Preview-English-Dark-Landscape-Small.webp' width='99%'/>
-<img alt='Color Scheme Preview' src='docs/screenshots/compressed/3.Graphics_2.ColorScheme_0.Preview-English-Dark-Landscape-Small.webp' width='99%'/>
-<img alt='Color Scheme Code' src='docs/screenshots/compressed/3.Graphics_2.ColorScheme_1.Code-Hebrew-Dark-Landscape-Small.webp' width='99%'/>
+<img alt='Icons' src='docs/screenshots/compressed/3.Graphics_2.Icons_0.Preview-English-Dark-Landscape-Small.webp' width='99%'/>
+<img alt='Color Scheme Preview' src='docs/screenshots/compressed/3.Graphics_1.ColorScheme_0.Preview-English-Dark-Landscape-Small.webp' width='99%'/>
+<img alt='Color Scheme Code' src='docs/screenshots/compressed/3.Graphics_1.ColorScheme_1.Code-Hebrew-Dark-Landscape-Small.webp' width='99%'/>
 
 ### I/O
 - [ ] Datastore
@@ -43,15 +43,16 @@ A sample Kotlin Multiplatform project to demonstrate different app features, tar
   - [ ] Room
   - [ ] SqlDelight
 - [ ] API
-  - [ ] REST
+  - [x] REST (Ktor)
   - [ ] GraphQL
   - [ ] GRPC
 - [ ] File
 
 <div>
-  <img alt='DataStore Preview' src='docs/screenshots/compressed/4.Io_3.Datastore_0.Preview-English-Light-Portrait-Small.webp' width='49%'/>
-  <img alt='DataStore Code' src='docs/screenshots/compressed/4.Io_3.Datastore_1.Code-Hebrew-Light-Portrait-Small.webp' width='49%'/>
+  <img alt='DataStore Preview' src='docs/screenshots/compressed/4.Io_2.Datastore_0.Preview-English-Light-Portrait-Small.webp' width='49%'/>
+  <img alt='DataStore Code' src='docs/screenshots/compressed/4.Io_2.Datastore_1.Code-Hebrew-Light-Portrait-Small.webp' width='49%'/>
 </div>
+<img alt='C++' src='docs/screenshots/compressed/4.Io_1.Api_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
 
 ### Miscellaneous
 - [x] Date/Time
@@ -59,8 +60,8 @@ A sample Kotlin Multiplatform project to demonstrate different app features, tar
 - [ ] BLE
 - [ ] PDF
 
-<img alt='Date-Time' src='docs/screenshots/compressed/5.Miscellaneous_3.DateTime_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
-<img alt='C++' src='docs/screenshots/compressed/5.Miscellaneous_2.C++_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
+<img alt='Date-Time' src='docs/screenshots/compressed/5.Miscellaneous_2.DateTime_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
+<img alt='C++' src='docs/screenshots/compressed/5.Miscellaneous_1.C++_0.Preview-English-Dark-Landscape-Tablet.webp' width='99%'/>
 
 ### Modules
 - [x] Clock
@@ -126,7 +127,9 @@ compose.desktop {
     nativeDistributions {
       // In order to include runtime dependencies to the final package file
       modules("java.sql")
-      // Alternatively: includeAllModules = true (no minification)
+      // gradle suggestModules
+      // peek inside createDistributable app runtime legal folder (macOS)
+      // Terrible Alternative: includeAllModules = true (no minification, even bigger than debug app!)
       macOS {
         signing {
           sign.set(true)

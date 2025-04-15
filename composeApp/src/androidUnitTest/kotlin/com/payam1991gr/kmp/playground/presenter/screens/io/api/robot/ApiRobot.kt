@@ -10,8 +10,8 @@ import kotlinx.collections.immutable.toPersistentList
 
 interface ApiRobot {
     suspend fun onState(
-        showCode: Boolean,
-        vararg toolbarAction: Action,
+        showCode: Boolean? = null,
+        vararg toolbarActions: Action,
         block: suspend State.() -> Unit = {},
     ): Any
 }
@@ -20,13 +20,15 @@ typealias Crt = CircuitReceiveTurbine<State>
 
 class ApiRobotImpl(private val crt: Crt) : ApiRobot {
     override suspend fun onState(
-        showCode: Boolean,
-        vararg toolbarAction: Action,
+        showCode: Boolean?,
+        vararg toolbarActions: Action,
         block: suspend State.() -> Unit
     ) = crt.awaitItem().apply {
         assertThat(this).isInstanceOf(State::class.java)
-        assertThat(this.showCode).isEqualTo(showCode)
-        assertThat(this.toolbarActions).isEqualTo(toolbarActions.toPersistentList())
+        showCode?.let { assertThat(this.showCode).isEqualTo(it) }
+        toolbarActions.let {
+            if (it.isNotEmpty()) assertThat(this.toolbarActions).isEqualTo(it.toPersistentList())
+        }
         block()
     }
 }

@@ -4,6 +4,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import com.payam1991gr.kmp.playground.data.store.createDataStore
 import com.payam1991gr.kmp.playground.data.store.dataStoreFileName
+import io.ktor.client.engine.HttpClientEngine
+import io.ktor.client.engine.darwin.Darwin
 import kotlinx.cinterop.ExperimentalForeignApi
 import org.koin.dsl.module
 import platform.Foundation.NSDocumentDirectory
@@ -28,3 +30,5 @@ actual val dataStoreModule by lazy {
         }
     }
 }
+
+actual val httpClientEngine: HttpClientEngine by lazy { Darwin.create() }

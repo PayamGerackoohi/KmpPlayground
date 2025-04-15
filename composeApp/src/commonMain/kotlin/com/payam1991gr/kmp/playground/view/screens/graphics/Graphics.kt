@@ -15,21 +15,19 @@ import org.jetbrains.compose.resources.stringResource
 
 class Graphics : Ui<State> {
     @Composable
-    override fun Content(state: State, modifier: Modifier) {
-        SamplePage(
-            showCode = false,
-            titleRes = Res.string.home_graphics,
-            actions = persistentListOf(Action.Back),
-            onClick = { state.event(Event.OnBackPressed) },
-            preview = {
-                SampleList(
-                    samples = state.items,
-                    nameOf = { stringResource(it.labelRes) },
-                    onClick = { state.event(Event.OnClick(it)) },
-                    modifier = Modifier.fillMaxSize(),
-                )
-            },
-            code = {},
-        )
-    }
+    override fun Content(state: State, modifier: Modifier) = SamplePage(
+        showCode = false,
+        titleRes = Res.string.home_graphics,
+        actions = persistentListOf(Action.Back),
+        onClick = { state.event(Event.OnBackPressed) },
+        preview = {
+            SampleList(
+                samples = state.items,
+                nameOf = { stringResource(it.labelRes) },
+                onClick = { state.event(Event.OnClick(it)) },
+                modifier = Modifier.fillMaxSize(),
+            )
+        },
+        code = {},
+    )
 }

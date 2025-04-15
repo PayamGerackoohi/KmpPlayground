@@ -1,22 +1,50 @@
 package com.payam1991gr.kmp.playground.view.screens.io.api.robot
 
-import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.ComposeContentTestRule
-import androidx.compose.ui.test.onNodeWithText
+import com.payam1991gr.kmp.playground.view.module.robot.SamplePageRobot.PreviewScope
+import com.payam1991gr.kmp.playground.view.module.robot.SamplePageRobot.CodeScope
+import com.payam1991gr.kmp.playground.view.test.util.SniBlock
 
 interface ApiRobot {
-    fun previewContent(): Any
-    fun codeContent(): Any
-}
+    fun PreviewScope.description(): Any
+    fun PreviewScope.configuration(): Any
+    fun PreviewScope.configurationDescription(): Any
+    fun PreviewScope.fakeModeSettings(block: FakeModeScope.() -> Unit): Any
+    fun PreviewScope.hostInput(url: String): Any
+    fun PreviewScope.requests(block: RequestsScope.() -> Unit): Any
+    fun CodeScope.sharedSample(): Any
+    fun CodeScope.stateSample(): Any
+    fun CodeScope.presenterSample(): Any
+    fun CodeScope.uiSample(): Any
 
-class ApiRobotImpl(private val rule: ComposeContentTestRule) : ApiRobot {
-    override fun previewContent() = rule
-        .onNodeWithText("Preview")
-        .assertIsDisplayed()
+    interface FakeModeScope {
+        fun realServerButton(block: SniBlock): Any
+        fun fakeServerButton(block: SniBlock): Any
+    }
 
-    override fun codeContent() = rule
-        .onNodeWithText("Code")
-        .assertIsDisplayed()
+    interface RequestsScope {
+        fun header(): Any
+        fun getHome(block: GetHomeScope.() -> Unit): Any
+        fun getWrittenNumbers(block: GetWrittenNumbersScope.() -> Unit): Any
+
+        interface CardScope {
+            fun button(label: String, block: SniBlock = {}): Any
+            fun url(value: String): Any
+            fun noStatus(): Any
+            fun noContent(): Any
+            fun status(value: String): Any
+            fun content(block: SniBlock): Any
+        }
+
+        interface GetHomeScope : CardScope {
+            fun content(value: String): Any
+        }
+
+        interface GetWrittenNumbersScope : CardScope {
+            fun range(value: String): Any
+            fun content(vararg values: String): Any
+        }
+    }
 }
 
 fun apiRobot(

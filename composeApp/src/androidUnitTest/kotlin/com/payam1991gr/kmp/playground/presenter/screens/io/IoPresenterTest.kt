@@ -24,14 +24,14 @@ class IoPresenterTest {
                 event(Event.OnClick(IoItem.Datastore))
                 assertThat(navigator.awaitNextScreen()).isEqualTo(DatastoreScreen)
 
-                event(Event.OnClick(IoItem.Database))
-                assertThat(navigator.awaitNextScreen()).isEqualTo(DatabaseScreen)
+//                event(Event.OnClick(IoItem.Database))
+//                assertThat(navigator.awaitNextScreen()).isEqualTo(DatabaseScreen)
 
                 event(Event.OnClick(IoItem.API))
                 assertThat(navigator.awaitNextScreen()).isEqualTo(ApiScreen)
 
-                event(Event.OnClick(IoItem.File))
-                assertThat(navigator.awaitNextScreen()).isEqualTo(FileScreen)
+//                event(Event.OnClick(IoItem.File))
+//                assertThat(navigator.awaitNextScreen()).isEqualTo(FileScreen)
 
                 event(Event.OnBackPressed)
                 assertThat(navigator.awaitPop()).isEqualTo(FakeNavigator.PopEvent(FileScreen))

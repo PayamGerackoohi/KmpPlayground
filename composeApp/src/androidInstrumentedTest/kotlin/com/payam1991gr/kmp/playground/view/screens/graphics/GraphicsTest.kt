@@ -38,11 +38,11 @@ class GraphicsTest : BaseTest() {
             preview {
                 graphicsRobot(rule) {
                     items {
-                        find("Charts") { performClick() }
-                        verify { event(Event.OnClick(GraphicItem.Charts)) }
+//                        find("Charts") { performClick() }
+//                        verify { event(Event.OnClick(GraphicItem.Charts)) }
 
-                        find("OpenGL") { performClick() }
-                        verify { event(Event.OnClick(GraphicItem.OpenGL)) }
+//                        find("OpenGL") { performClick() }
+//                        verify { event(Event.OnClick(GraphicItem.OpenGL)) }
                     }
                 }
             }

@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > FormatKt</title>
+  <title>composeApp Coverage Report > ScientificFormat</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,18 +19,15 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.time</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.string</a>
 </div>
 
-<h1>Coverage Summary for Class: FormatKt (com.payam1991gr.kmp.playground.data.time)</h1>
+<h1>Coverage Summary for Class: ScientificFormat (com.payam1991gr.kmp.playground.data.string)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -49,7 +46,42 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">FormatKt</td>
+  <td class="name">ScientificFormat</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (18/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (26/26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.9%
+  </span>
+  <span class="absValue">
+    (187/197)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ScientificFormat$DataUtil</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -63,16 +95,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (2/2)
-  </span>
-</td>
-    <td class="coverageStat"/>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (2/2)
+    (4/4)
   </span>
 </td>
 <td class="coverageStat">
@@ -80,11 +103,53 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (28/28)
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (38/38)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.7%
+  </span>
+  <span class="absValue">
+    (22/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (29/29)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.7%
+  </span>
+  <span class="absValue">
+    (225/235)
   </span>
 </td>
 </tr>
-
 </table>
 
 <br/>
@@ -92,13 +157,51 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.time
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.string
 &nbsp;
-&nbsp;import kotlinx.datetime.LocalTime
-&nbsp;import kotlinx.datetime.format.char
+&nbsp;import com.payam1991gr.kmp.playground.view.isGerman
+&nbsp;import kotlin.math.roundToInt
 &nbsp;
-<b class="fc">&nbsp;val timeFormat = LocalTime.Format {</b>
-<b class="fc">&nbsp;    hour(); char(&#39;:&#39;); minute(); char(&#39;:&#39;); second()</b>
+&nbsp;object ScientificFormat {
+<b class="fc">&nbsp;    class DataUtil(n: Int?, var power: Int, val isTruncatedPartFullyZero: Boolean) {</b>
+<b class="fc">&nbsp;        val hasError = n == null</b>
+<b class="fc">&nbsp;        var number = n ?: 0</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Turns positive integers into scientific form
+&nbsp;     */
+<b class="pc">&nbsp;    fun String.toScientific(): String = (if (isGerman) &quot;.&quot; else &quot;,&quot;).let { delimiter -&gt;</b>
+<b class="fc">&nbsp;        replace(delimiter, &quot;&quot;).trim()</b>
+<b class="fc">&nbsp;    }.run result@{</b>
+<b class="fc">&nbsp;        return if (all { it.isDigit() }) extractBase().run {</b>
+<b class="fc">&nbsp;            if (hasError) return@result &quot;&quot;</b>
+<b class="fc">&nbsp;            var precisionSign = &quot;=&quot;</b>
+<b class="fc">&nbsp;            if (number &gt;= 100) {</b>
+<b class="fc">&nbsp;                number = (number / 10f).roundToInt().also {</b>
+<b class="fc">&nbsp;                    if (!isTruncatedPartFullyZero || it * 10 != number) precisionSign = &quot;≈&quot;</b>
+<b class="fc">&nbsp;                }</b>
+<b class="fc">&nbsp;                power++</b>
+&nbsp;            }
+<b class="fc">&nbsp;            var base = number</b>
+<b class="fc">&nbsp;            var c = 1</b>
+<b class="fc">&nbsp;            while (base &gt;= 10) {</b>
+<b class="fc">&nbsp;                base /= 10</b>
+<b class="fc">&nbsp;                c *= 10</b>
+<b class="fc">&nbsp;                power++</b>
+&nbsp;            }
+<b class="fc">&nbsp;            val b = number.toFloat() / c</b>
+<b class="fc">&nbsp;            b.toString()</b>
+<b class="pc">&nbsp;                .let { if (isGerman) it.replace(&#39;.&#39;, &#39;,&#39;) else it }</b>
+<b class="fc">&nbsp;                .let { &quot;$precisionSign${it}e$power&quot; }</b>
+<b class="fc">&nbsp;        } else &quot;&quot;</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    private fun String.extractBase() = if (length &lt; 3)</b>
+<b class="fc">&nbsp;        DataUtil(toIntOrNull(), 0, true)</b>
+<b class="fc">&nbsp;    else subSequence(3, length).let { rest -&gt;</b>
+<b class="fc">&nbsp;        DataUtil(substring(0, 3).toIntOrNull(), rest.length, rest.all { it == &#39;0&#39; })</b>
+&nbsp;    }
 &nbsp;}
 </code>
 </pre>
@@ -123,7 +226,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-04-03 21:05</div>
+    <div style="float:right;">generated on 2025-04-14 20:04</div>
 </div>
 </body>
 </html>

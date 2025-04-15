@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > DecimalFormatImpl</title>
+  <title>composeApp Coverage Report > TimeZoneRepositoryImpl</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.data.string</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.data.repository</a>
 </div>
 
-<h1>Coverage Summary for Class: DecimalFormatImpl (com.payam1991gr.kmp.playground.data.string)</h1>
+<h1>Coverage Summary for Class: TimeZoneRepositoryImpl (com.payam1991gr.kmp.playground.data.repository)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -49,7 +49,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">DecimalFormatImpl</td>
+  <td class="name">TimeZoneRepositoryImpl</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -63,7 +63,16 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (4/4)
+    (2/2)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
   </span>
 </td>
 <td class="coverageStat">
@@ -71,23 +80,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (6/6)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (12/12)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (88/88)
+    (80/80)
   </span>
 </td>
 </tr>
@@ -99,27 +92,27 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.string
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.data.repository
 &nbsp;
-&nbsp;import androidx.compose.ui.text.AnnotatedString
+&nbsp;import com.payam1991gr.kmp.playground.data.model.time.LabeledTimeZone
+&nbsp;import com.payam1991gr.kmp.playground.data.time.asLabeledTimeZone
+&nbsp;import com.payam1991gr.kmp.playground.data.time.label
+&nbsp;import kotlinx.collections.immutable.PersistentList
+&nbsp;import kotlinx.collections.immutable.toPersistentList
+&nbsp;import kotlinx.datetime.TimeZone
+&nbsp;import kotlinx.datetime.UtcOffset
 &nbsp;
-<b class="fc">&nbsp;class DecimalFormatImpl(text: String) : DecimalFormat {</b>
-<b class="fc">&nbsp;    private val size = text.length</b>
-<b class="fc">&nbsp;    private val remainder = size % 3</b>
-<b class="fc">&nbsp;    private val shift3 = shift(3)</b>
-<b class="fc">&nbsp;    private val shift4 = shift(4)</b>
-<b class="fc">&nbsp;    private val lastTransformedOffset = originalToTransformed(size)</b>
-<b class="fc">&nbsp;    override val annotatedString = AnnotatedString(text.decimalFormat())</b>
-&nbsp;
-<b class="fc">&nbsp;    private fun shift(base: Int) = if (remainder == 0) 0 else base - remainder</b>
-&nbsp;
-&nbsp;    override fun originalToTransformed(offset: Int): Int =
-<b class="fc">&nbsp;        if (offset == size) originalToTransformed(offset - 1) + 1</b>
-<b class="fc">&nbsp;        else offset + (offset + shift3) / 3</b>
-&nbsp;
-&nbsp;    override fun transformedToOriginal(offset: Int): Int =
-<b class="fc">&nbsp;        if (offset == lastTransformedOffset) size</b>
-<b class="fc">&nbsp;        else offset - (offset + shift4) / 4</b>
+<b class="fc">&nbsp;class TimeZoneRepositoryImpl : TimeZoneRepository {</b>
+<b class="fc">&nbsp;    override val timeZones: PersistentList&lt;LabeledTimeZone&gt; by lazy {</b>
+<b class="fc">&nbsp;        (listOf(</b>
+<b class="fc">&nbsp;            TimeZone.of(&quot;America/New_York&quot;) label &quot;New York&quot;,</b>
+<b class="fc">&nbsp;            TimeZone.UTC label &quot;GMT&quot;,</b>
+<b class="fc">&nbsp;            TimeZone.of(&quot;Europe/Berlin&quot;) label &quot;Berlin&quot;,</b>
+<b class="fc">&nbsp;            TimeZone.currentSystemDefault() label &quot;System Default&quot;,</b>
+<b class="fc">&nbsp;            TimeZone.of(&quot;Asia/Tokyo&quot;) label &quot;Tokyo&quot;,</b>
+<b class="fc">&nbsp;        ) + (-12..12).map { UtcOffset(it).asLabeledTimeZone() })</b>
+<b class="fc">&nbsp;            .toPersistentList()</b>
+&nbsp;    }
 &nbsp;}
 </code>
 </pre>
@@ -144,7 +137,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-04-03 21:05</div>
+    <div style="float:right;">generated on 2025-04-14 20:04</div>
 </div>
 </body>
 </html>

@@ -79,6 +79,7 @@ import com.payam1991gr.kmp.playground.view.screens.miscellaneous.datetime.DateTi
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.Pdf
 import com.payam1991gr.kmp.playground.view.screens.miscellaneous.pdf.PdfScreen
 import com.slack.circuit.foundation.Circuit
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val circuitModule by lazy {
@@ -135,7 +136,12 @@ val circuitModule by lazy {
                         is OpenGlScreen -> OpenGlPresenter(navigator)
                         is HomeScreen -> HomePresenter(navigator)
                         is IoScreen -> IoPresenter(navigator)
-                        is ApiScreen -> ApiPresenter(navigator)
+                        is ApiScreen -> ApiPresenter(
+                            navigator,
+                            get(named("real")),
+                            get(named("fake")),
+                        )
+
                         is DatabaseScreen -> DatabasePresenter(navigator)
                         is DatastoreScreen -> DatastorePresenter(navigator, get())
                         is FileScreen -> FilePresenter(navigator)

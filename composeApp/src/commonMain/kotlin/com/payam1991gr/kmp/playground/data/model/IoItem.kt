@@ -5,9 +5,9 @@ import org.jetbrains.compose.resources.StringResource
 
 enum class IoItem(val labelRes: StringResource) {
     Datastore(Res.string.io_datastore),
-    Database(Res.string.io_database),
+//    Database(Res.string.io_database),
     API(Res.string.io_api),
-    File(Res.string.io_file),
+//    File(Res.string.io_file),
 }
 
 /*

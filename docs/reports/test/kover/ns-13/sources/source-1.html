@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>composeApp Coverage Report > GraphicsPresenter</title>
+  <title>composeApp Coverage Report > PullToRefreshPresenter</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,10 +19,10 @@
 <div class="breadCrumbs">
 Current scope: composeApp<span class="separator">|</span>    <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.graphics</a>
+    <a href="../index.html">com.payam1991gr.kmp.playground.presenter.screens.components.pull.to.refresh</a>
 </div>
 
-<h1>Coverage Summary for Class: GraphicsPresenter (com.payam1991gr.kmp.playground.presenter.screens.graphics)</h1>
+<h1>Coverage Summary for Class: PullToRefreshPresenter (com.payam1991gr.kmp.playground.presenter.screens.components.pull.to.refresh)</h1>
 
 <table class="coverageStats">
 
@@ -46,42 +46,42 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 </th>
 </tr>
 <tr>
-  <td class="name">GraphicsPresenter</td>
+  <td class="name">PullToRefreshPresenter</td>
 <td class="coverageStat">
   <span class="percent">
     100%
   </span>
   <span class="absValue">
-    (3/3)
+    (4/4)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    83.3%
+    77.8%
   </span>
   <span class="absValue">
-    (5/6)
+    (7/9)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    94.7%
   </span>
   <span class="absValue">
-    (10/10)
+    (18/19)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    95.3%
+    95%
   </span>
   <span class="absValue">
-    (101/106)
+    (171/180)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">GraphicsPresenter$WhenMappings</td>
+    <td class="name">PullToRefreshPresenter$WhenMappings</td>
     <td class="coverageStat"/>
   </tr>
 <tr>
@@ -91,31 +91,31 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
     100%
   </span>
   <span class="absValue">
-    (3/3)
+    (4/4)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    83.3%
+    77.8%
   </span>
   <span class="absValue">
-    (5/6)
+    (7/9)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    94.7%
   </span>
   <span class="absValue">
-    (10/10)
+    (18/19)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    95.3%
+    95%
   </span>
   <span class="absValue">
-    (101/106)
+    (171/180)
   </span>
 </td>
 </tr>
@@ -126,37 +126,49 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.graphics
+<code class="sourceCode" id="sourceCode">&nbsp;package com.payam1991gr.kmp.playground.presenter.screens.components.pull.to.refresh
 &nbsp;
+&nbsp;import androidx.compose.material3.ExperimentalMaterial3Api
 &nbsp;import androidx.compose.runtime.Composable
-&nbsp;import com.payam1991gr.kmp.playground.data.model.GraphicItem
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.GraphicsScreen.State
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.charts.ChartsScreen
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.color.scheme.ColorSchemeScreen
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.icons.IconsScreen
-&nbsp;import com.payam1991gr.kmp.playground.view.screens.graphics.opengl.OpenGlScreen
+&nbsp;import androidx.compose.runtime.rememberCoroutineScope
+&nbsp;import com.payam1991gr.kmp.playground.view.module.SamplePage
+&nbsp;import com.payam1991gr.kmp.playground.view.module.toolbar.rememberToolbarState
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.pull.to.refresh.PullToRefreshScreen.State
+&nbsp;import com.payam1991gr.kmp.playground.view.screens.components.pull.to.refresh.state.rememberPtrState
 &nbsp;import com.slack.circuit.runtime.Navigator
 &nbsp;import com.slack.circuit.runtime.presenter.Presenter
-&nbsp;import kotlinx.collections.immutable.toPersistentList
+&nbsp;import kotlinx.coroutines.CoroutineScope
 &nbsp;
-<b class="fc">&nbsp;class GraphicsPresenter(private val navigator: Navigator) : Presenter&lt;State&gt; {</b>
-<b class="fc">&nbsp;    private val items = GraphicItem.entries.toPersistentList()</b>
-&nbsp;
+&nbsp;class PullToRefreshPresenter(
+<b class="fc">&nbsp;    private val navigator: Navigator,</b>
+<b class="fc">&nbsp;    private val scope: CoroutineScope? = null,</b>
+&nbsp;) : Presenter&lt;State&gt; {
 &nbsp;    @Composable
-&nbsp;    override fun present(): State {
-<b class="pc">&nbsp;        return State(items = items) {</b>
+<b class="nc">&nbsp;    override fun present(): State {</b>
+<b class="fc">&nbsp;        val toolbarState = rememberToolbarState()</b>
+<b class="fc">&nbsp;        return State(</b>
+<b class="fc">&nbsp;            showCode = toolbarState.showCode,</b>
+<b class="fc">&nbsp;            toolbarActions = toolbarState.actions,</b>
+<b class="fc">&nbsp;            linearProgressIndicator = prtState(),</b>
+<b class="fc">&nbsp;            pullToRefreshBox = prtState(),</b>
+<b class="fc">&nbsp;            scaling = prtState(),</b>
+<b class="pc">&nbsp;            customBehavior = prtState(),</b>
+<b class="fc">&nbsp;        ) {</b>
 <b class="fc">&nbsp;            when (it) {</b>
-<b class="fc">&nbsp;                is State.Event.OnClick -&gt; when (it.item) {</b>
-<b class="fc">&nbsp;                    GraphicItem.Charts -&gt; navigator.goTo(ChartsScreen)</b>
-<b class="fc">&nbsp;                    GraphicItem.ColorScheme -&gt; navigator.goTo(ColorSchemeScreen)</b>
-<b class="fc">&nbsp;                    GraphicItem.Icons -&gt; navigator.goTo(IconsScreen)</b>
-<b class="fc">&nbsp;                    GraphicItem.OpenGL -&gt; navigator.goTo(OpenGlScreen)</b>
+<b class="fc">&nbsp;                is State.Event.OnToolbarAction -&gt; when (it.action) {</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Back -&gt; navigator.pop()</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Code -&gt; toolbarState.code()</b>
+<b class="fc">&nbsp;                    SamplePage.Action.Preview -&gt; toolbarState.preview()</b>
 &nbsp;                }
-&nbsp;
-<b class="fc">&nbsp;                State.Event.OnBackPressed -&gt; navigator.pop()</b>
 &nbsp;            }
 &nbsp;        }
 &nbsp;    }
+&nbsp;
+&nbsp;    @OptIn(ExperimentalMaterial3Api::class)
+&nbsp;    @Composable
+<b class="fc">&nbsp;    private fun prtState() = rememberPtrState(</b>
+<b class="pc">&nbsp;        coroutineScope = scope ?: rememberCoroutineScope(),</b>
+&nbsp;    )
 &nbsp;}
 </code>
 </pre>
@@ -181,7 +193,7 @@ Current scope: composeApp<span class="separator">|</span>    <a href="../../inde
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-04-03 21:05</div>
+    <div style="float:right;">generated on 2025-04-14 20:04</div>
 </div>
 </body>
 </html>

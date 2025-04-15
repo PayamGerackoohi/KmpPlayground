@@ -41,14 +41,14 @@ class IoTest : BaseTest() {
                         find("Datastore") { performClick() }
                         verify { event(Event.OnClick(IoItem.Datastore)) }
 
-                        find("Database") { performClick() }
-                        verify { event(Event.OnClick(IoItem.Database)) }
+//                        find("Database") { performClick() }
+//                        verify { event(Event.OnClick(IoItem.Database)) }
 
                         find("API") { performClick() }
                         verify { event(Event.OnClick(IoItem.API)) }
 
-                        find("File I/O") { performClick() }
-                        verify { event(Event.OnClick(IoItem.File)) }
+//                        find("File I/O") { performClick() }
+//                        verify { event(Event.OnClick(IoItem.File)) }
                     }
                 }
             }

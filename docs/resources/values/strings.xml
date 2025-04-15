@@ -113,6 +113,18 @@
     <string name="io_datastore_float_template">Float %1$s</string>
     <string name="io_datastore_byte_array_template">Byte Array %1$s</string>
 
+    <!-- I/O.Api -->
+    <string name="io_api_real_server">Real Server</string>
+    <string name="io_api_fake_server">Fake Server</string>
+    <string name="io_api_description">Simple API connection using Ktor</string>
+    <string name="io_api_configurations">Configurations</string>
+    <string name="io_api_configurations_description">`real server` mode uses `Base URL` to make requests. A simple implementation of the server is provided in the KmpPlayground::server module. Just run `com.payam1991gr.kmp.playground.main()` and set the `Base URL` in app as your local IP.\n`fake server` mode can be used to provide dummy responses using an internal fake server, mimicking the expected behavior.</string>
+    <string name="io_api_requests">Requests</string>
+    <string name="io_api_base_url">Base URL</string>
+    <string name="io_api_range">Range</string>
+    <string name="io_api_range_slider_template">RangeSlider: [%1$s]</string>
+    <string name="io_api_connecting_to_the_server">Connecting to the Server…</string>
+
     <!-- Miscellaneous -->
     <string name="miscellaneous_date_time">Date/Time</string>
     <string name="miscellaneous_cpp">C++</string>
@@ -161,6 +173,9 @@
     <string name="decrement">Decrement</string>
     <string name="toggle">Toggle</string>
     <string name="save">Save</string>
+    <string name="status">Status</string>
+
+    <!-- No Translation -->
     <string name="ui" translatable="false">UI</string>
     <string name="state" translatable="false">State</string>
     <string name="presenter" translatable="false">Presenter</string>

@@ -56,10 +56,10 @@ object Order : Node() {
     object Graphics : Node("Graphics", this) {
         val List = Leaf("List", this)
 
-        object Charts : Node("Charts", this) {
-            val Preview = Leaf("Preview", this)
-            val Code = Leaf("Code", this)
-        }
+//        object Charts : Node("Charts", this) {
+//            val Preview = Leaf("Preview", this)
+//            val Code = Leaf("Code", this)
+//        }
 
         object ColorScheme : Node("ColorScheme", this) {
             val Preview = Leaf("Preview", this)
@@ -71,10 +71,10 @@ object Order : Node() {
             val Code = Leaf("Code", this)
         }
 
-        object OpenGl : Node("OpenGl", this) {
-            val Preview = Leaf("Preview", this)
-            val Code = Leaf("Code", this)
-        }
+//        object OpenGl : Node("OpenGl", this) {
+//            val Preview = Leaf("Preview", this)
+//            val Code = Leaf("Code", this)
+//        }
     }
 
     object Io : Node("Io", this) {
@@ -85,29 +85,29 @@ object Order : Node() {
             val Code = Leaf("Code", this)
         }
 
-        object Database : Node("Database", this) {
-            val Preview = Leaf("Preview", this)
-            val Code = Leaf("Code", this)
-        }
+//        object Database : Node("Database", this) {
+//            val Preview = Leaf("Preview", this)
+//            val Code = Leaf("Code", this)
+//        }
 
         object Datastore : Node("Datastore", this) {
             val Preview = Leaf("Preview", this)
             val Code = Leaf("Code", this)
         }
 
-        object File : Node("File", this) {
-            val Preview = Leaf("Preview", this)
-            val Code = Leaf("Code", this)
-        }
+//        object File : Node("File", this) {
+//            val Preview = Leaf("Preview", this)
+//            val Code = Leaf("Code", this)
+//        }
     }
 
     object Miscellaneous : Node("Miscellaneous", this) {
         val List = Leaf("List", this)
 
-        object Ble : Node("Ble", this) {
-            val Preview = Leaf("Preview", this)
-            val Code = Leaf("Code", this)
-        }
+//        object Ble : Node("Ble", this) {
+//            val Preview = Leaf("Preview", this)
+//            val Code = Leaf("Code", this)
+//        }
 
         object Cpp : Node("C++", this) {
             val Preview = Leaf("Preview", this)
@@ -119,10 +119,10 @@ object Order : Node() {
             val Code = Leaf("Code", this)
         }
 
-        object Pdf : Node("Pdf", this) {
-            val Preview = Leaf("Preview", this)
-            val Code = Leaf("Code", this)
-        }
+//        object Pdf : Node("Pdf", this) {
+//            val Preview = Leaf("Preview", this)
+//            val Code = Leaf("Code", this)
+//        }
     }
 
     object Modules : Node("Modules", this) {

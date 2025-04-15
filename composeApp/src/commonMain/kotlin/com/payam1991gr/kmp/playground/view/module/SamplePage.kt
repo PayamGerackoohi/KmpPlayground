@@ -56,6 +56,7 @@ import org.jetbrains.compose.resources.vectorResource
 
 /**
  * A screen to show sample usage of kmp features, components, ...
+ *
  * @param showCode whether the screen should show the code or the preview of the content
  * @param titleRes the string resource of the screen title
  * @param actions the action-bar icons
@@ -133,6 +134,7 @@ object SamplePage {
 
     /**
      * A helper composable method to make preview of the content in a sample screen
+     *
      * It can hold any content, framed and separated by a margin of `16.dp`. It also provides some
      * helper functions:
      * - [Preview.Header] The header of the sample section
@@ -193,6 +195,12 @@ object SamplePage {
             Text(description, modifier)
         }
 
+        /**
+         * Some settings to make the sample a little adjustable
+         *
+         * @sample com.payam1991gr.kmp.playground.view.screens.components.dialog.Dialog.BasicAlertDialogSample
+         * @sample com.payam1991gr.kmp.playground.view.screens.components.picker.datetime.DateTimePicker.DatePickerSample
+         */
         @OptIn(ExperimentalLayoutApi::class)
         @Composable
         fun Settings(

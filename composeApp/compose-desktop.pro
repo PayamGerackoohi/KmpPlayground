@@ -20,6 +20,17 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+#-keep class ** { *; }
+
+##################
+###### Ktor ######
+##################
+-dontwarn okhttp3.**
+-dontnote okhttp3.**
+-dontwarn io.ktor.**
+-dontnote io.ktor.**
+-keep class com.payam1991gr.kmp.playground.data.model.WrittenNumber* { *; }
+
 ####################
 ###### Native ######
 ####################
@@ -28,9 +39,11 @@
 #######################
 ###### DataStore ######
 #######################
--keep class androidx.datastore.*.** { *; }
 -dontwarn okio.AsyncTimeout$Watchdog
 -dontwarn androidx.datastore.preferences.protobuf.**
+-dontnote androidx.datastore.**
+-keep class androidx.datastore.** { *; }
+-keep class okio.** { *; }
 
 ##################################
 ###### Kotlin Serialization ######

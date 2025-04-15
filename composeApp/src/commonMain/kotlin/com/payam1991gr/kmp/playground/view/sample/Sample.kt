@@ -24,6 +24,9 @@ val CodeEditor.`out` get() = orange { "out" }
 val CodeEditor.`interface` get() = orange { "interface" }
 val CodeEditor.`as` get() = orange { "as" }
 val CodeEditor.`typealias` get() = orange { "typealias" }
+val CodeEditor.`constructor` get() = orange { "constructor" }
+val CodeEditor.`try` get() = orange { "try" }
+val CodeEditor.`catch` get() = orange { "catch" }
 
 @Suppress("ObjectPropertyName")
 val CodeEditor._true get() = orange { "true" } // `true` cannot compile to swift

@@ -20,8 +20,8 @@ class MiscellaneousPresenter(private val navigator: Navigator) : Presenter<State
             when (it) {
                 is State.Event.OnClick -> when (it.item) {
                     MiscellaneousItem.Cpp -> navigator.goTo(CppScreen)
-                    MiscellaneousItem.Ble -> navigator.goTo(BleScreen)
-                    MiscellaneousItem.Pdf -> navigator.goTo(PdfScreen)
+//                    MiscellaneousItem.Ble -> navigator.goTo(BleScreen)
+//                    MiscellaneousItem.Pdf -> navigator.goTo(PdfScreen)
                     MiscellaneousItem.DateTime -> navigator.goTo(DateTimeScreen)
                 }
 

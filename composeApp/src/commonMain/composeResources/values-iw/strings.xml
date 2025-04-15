@@ -112,6 +112,18 @@
     <string name="io_datastore_float_template">לצוף %1$s</string>
     <string name="io_datastore_byte_array_template">מערך בתים %1$s</string>
 
+    <!-- I/O.Api -->
+    <string name="io_api_real_server">שרת אמיתי</string>
+    <string name="io_api_fake_server">שרת מזויף</string>
+    <string name="io_api_description">חיבור API פשוט באמצעות Ktor</string>
+    <string name="io_api_configurations">תצורות</string>
+    <string name="io_api_configurations_description">מצב 'שרת אמיתי' משתמש ב-'URL בסיס' כדי לשלוח בקשות. יישום פשוט של השרת מסופק במודול KmpPlayground::server. פשוט הפעל את `com.payam1991gr.kmp.playground.main()` והגדר את `כתובת האתר הבסיסית` באפליקציה כ-IP המקומי שלך. ניתן להשתמש במצב `שרת מזויף` כדי לספק תגובות דמה באמצעות שרת מזויף פנימי, המחקה את ההתנהגות הצפויה.</string>
+    <string name="io_api_requests">בקשות</string>
+    <string name="io_api_base_url">כתובת האתר הבסיסית</string>
+    <string name="io_api_range">לָנוּעַ</string>
+    <string name="io_api_range_slider_template">מחוון טווח: [%1$s]</string>
+    <string name="io_api_connecting_to_the_server">מתחבר לשרת…</string>
+
     <!-- Miscellaneous -->
     <string name="miscellaneous_date_time">תאריך/שעה</string>
     <string name="miscellaneous_cpp">++C</string>
@@ -159,4 +171,5 @@
     <string name="increment">תוֹסֶפֶת</string>
     <string name="decrement">ירידה</string>
     <string name="toggle">לְמַתֵג</string>
+    <string name="status">סטָטוּס</string>
 </resources>

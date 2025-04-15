@@ -1,24 +1,24 @@
 # Build Checklist
-- [ ] TODO
-  - [ ] Code
-  - [ ] Unit-Tests
-  - [ ] UI-Tests
-- [ ] Tests
-  - [ ] Coverage (gradle koverHtmlReport)
-  - [ ] Unit
-  - [ ] UI
-- [ ] README.md
-  - [ ] add cpp screenshots
-- [ ] KMP Playground Website
-  - [ ] Screens
-  - [ ] Screenshots (./scripts/screenshots.sh)
-  - [ ] Tests
-    - [ ] Coverage
-    - [ ] Unit
-    - [ ] UI
-  - [ ] Translations
-  - [ ] Versioning / Build / Manual Test
-    - [ ] Mac (gradle packageReleaseDmg)
-    - [ ] Android
-    - [ ] iOS
-  - [ ] Last Edit Label
+- [x] TODO
+  - [x] Code
+  - [x] Unit-Tests
+  - [x] UI-Tests
+- [x] Tests
+  - [x] Coverage (gradle koverHtmlReport)
+  - [x] Unit
+  - [x] UI
+- [x] KMP Playground Website
+  - [x] Screens
+  - [x] Screenshots (./scripts/screenshots.sh)
+  - [x] Tests
+    - [x] Coverage
+    - [x] Unit
+    - [x] UI
+  - [x] Translations
+  - [x] Versioning / Build / Manual Test
+    - [x] iOS
+    - [x] Android
+    - [x] Mac (gradle packageReleaseDmg)
+  - [x] Last Edit Label
+- [x] README.md
+  - [x] Add API Screenshots
